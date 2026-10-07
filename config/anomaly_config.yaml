@@ -1,0 +1,65 @@
+# NovaBank Transaction Anomaly Detection Configuration
+# This is an analytical prototype — NOT a production fraud decision engine.
+
+anomaly_types:
+  high_amount:
+    enabled: true
+    weight: 0.25
+    description: "Transaction amount significantly above customer historical average"
+  high_frequency:
+    enabled: true
+    weight: 0.15
+    description: "Unusually many transactions in 24 hours"
+  rapid_transactions:
+    enabled: true
+    weight: 0.15
+    description: "Multiple transactions within a short time window"
+  unusual_location:
+    enabled: true
+    weight: 0.10
+    description: "Transaction from unusual region relative to customer home region"
+  night_activity:
+    enabled: true
+    weight: 0.10
+    description: "High-value activity during unusual nighttime hours"
+  multiple_failures:
+    enabled: true
+    weight: 0.15
+    description: "Repeated failures followed by successful high-value transaction"
+  sudden_behavior_change:
+    enabled: true
+    weight: 0.10
+    description: "Sudden change in amount relative to recent history"
+
+severity_thresholds:
+  low: 1
+  medium: 2
+  high: 3
+  critical: 4
+
+rule_based:
+  high_amount_zscore: 3.0
+  high_frequency_daily_count: 20
+  rapid_window_minutes: 10
+  rapid_count: 5
+  night_hours: [0, 1, 2, 3, 4, 5]
+  night_min_amount: 1000
+  failure_streak: 3
+  behavior_change_multiplier: 10.0
+
+statistical:
+  zscore_threshold: 3.0
+  min_history_transactions: 5
+
+ml:
+  isolation_forest:
+    enabled: true
+    contamination: 0.02
+    n_estimators: 100
+    random_state: 42
+    features:
+      - amount
+      - hour_of_day
+      - transactions_last_1_hour
+      - amount_vs_customer_avg
+      - day_of_week

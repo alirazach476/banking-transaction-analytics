@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NovaBank BI Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --ink: #0c1222;
+    --paper: #f3f6f8;
+    --panel: #ffffff;
+    --muted: #5c6b7a;
+    --line: #d7e0e8;
+    --accent: #0d6e6e;
+    --deep: #102a43;
+    --good: #1f8a5b;
+    --bad: #c23b3b;
+    --warn-bg: #fff8e8;
+    --warn-bd: #efd9a3;
+    --warn-tx: #6a5420;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "DM Sans", system-ui, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1000px 480px at 0% -5%, #d7ebe8 0%, transparent 55%),
+      radial-gradient(800px 420px at 100% 0%, #e4ebf4 0%, transparent 50%),
+      var(--paper);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  .shell { max-width: 1180px; margin: 0 auto; padding: 0 22px 48px; }
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 0; border-bottom: 1px solid var(--line); margin-bottom: 22px;
+  }
+  .brand { font-family: "Instrument Serif", Georgia, serif; font-size: 26px; }
+  .topbar nav { display: flex; gap: 14px; align-items: center; font-size: 14px; font-weight: 500; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #e6f3f3; color: var(--accent);
+    border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 600;
+  }
+  header h1 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400; font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+    margin: 0 0 8px; letter-spacing: -0.02em;
+  }
+  header p { margin: 0; color: var(--muted); max-width: 62ch; font-size: 15px; }
+  .warn {
+    margin: 18px 0 20px; padding: 12px 14px; border-radius: 10px;
+    background: var(--warn-bg); border: 1px solid var(--warn-bd); color: var(--warn-tx); font-size: 13px;
+  }
+  .kpis {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px;
+  }
+  .kpi {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 16px 14px; box-shadow: 0 1px 0 rgba(16,42,67,0.03);
+  }
+  .kpi .label {
+    color: var(--muted); font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .kpi .value { font-size: 1.45rem; font-weight: 700; margin-top: 8px; letter-spacing: -0.02em; }
+  .kpi.accent .value { color: var(--accent); }
+  .kpi.good .value { color: var(--good); }
+  .kpi.bad .value { color: var(--bad); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 16px 12px; box-shadow: 0 1px 0 rgba(16,42,67,0.03);
+  }
+  .card h2 {
+    margin: 0 0 4px; font-size: 14px; font-weight: 650;
+  }
+  .card .sub { color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+  canvas { max-height: 260px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+  tbody tr:hover { background: #f7fafb; }
+  footer {
+    margin-top: 18px; color: var(--muted); font-size: 12px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  @media (max-width: 900px) {
+    .kpis, .grid2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div class="brand">NovaBank</div>
+    <nav>
+      <a href="/">Home</a>
+      <span class="chip">Synthetic extract</span>
+    </nav>
+  </div>
+  <header>
+    <h1>Transaction Analytics Dashboard</h1>
+    <p>Warehouse-connected BI view of customer activity, channels, branches, and anomaly review queues. Demo data only — not real banking records.</p>
+  </header>
+  <div class="warn">Anomaly Detection Prototype: results are “transactions requiring review,” not confirmed fraud decisions.</div>
+  <div class="kpis" id="kpis"></div>
+  <div class="grid2">
+    <div class="card"><h2>Monthly transaction value</h2><div class="sub">USD millions · last 24 months</div><canvas id="cValue"></canvas></div>
+    <div class="card"><h2>Monthly transaction count</h2><div class="sub">Volume trend</div><canvas id="cCount"></canvas></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2>Channel volume</h2><div class="sub">Transaction count by channel</div><canvas id="cChannel"></canvas></div>
+    <div class="card"><h2>Customer segments</h2><div class="sub">Activity thresholds from analytics mart</div><canvas id="cSeg"></canvas></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2>Regional value</h2><div class="sub">USD millions by customer region</div><canvas id="cRegion"></canvas></div>
+    <div class="card"><h2>Anomalies by severity</h2><div class="sub">monitoring.transaction_anomalies</div><canvas id="cAnom"></canvas></div>
+  </div>
+  <div class="card" style="margin-bottom:14px">
+    <h2>Top branches by completed value</h2>
+    <div class="sub">analytics.mart_branch_performance</div>
+    <table id="branchTable"><thead></thead><tbody></tbody></table>
+  </div>
+  <div class="card">
+    <h2>High-severity anomalies requiring review</h2>
+    <div class="sub">Prototype queue — not confirmed fraud</div>
+    <table id="anomTable"><thead></thead><tbody></tbody></table>
+  </div>
+  <footer>
+    <span>NovaBank portfolio BI · PostgreSQL warehouse extract</span>
+    <span><a href="/">Project home</a></span>
+  </footer>
+</div>
+<script>
+const D = {"kpis": {"transaction_count": 101600, "total_value": 81172698.21, "avg_value": 799.1798583243084, "active_customers": 5000, "active_accounts": 7500, "anomaly_count": 8645, "success_rate": 0.879005905511811, "failure_rate": 0.051181102362204724}, "m_cats": ["2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12"], "m_vals": [2.19, 1.72, 3.1, 2.21, 2.52, 2.28, 2.1, 2.16, 2.08, 2.55, 2.26, 2.37, 2.05, 1.89, 2.09, 2.06, 2.52, 1.94, 2.46, 2.59, 2.56, 2.33, 1.99, 2.11], "m_cnts": [2927, 2684, 2872, 2863, 2889, 2728, 2995, 2955, 2650, 2872, 2680, 2971, 2922, 2596, 2786, 2851, 2888, 2753, 2938, 2935, 2868, 2832, 2695, 2665], "m_fail": [5.19, 5.59, 5.47, 5.45, 4.6, 6.01, 4.64, 5.62, 4.68, 4.87, 5.37, 5.25, 5.27, 5.12, 5.31, 5.54, 5.16, 4.9, 4.63, 4.57, 4.92, 4.94, 5.08, 4.88], "ch_cats": ["Mobile App", "ATM", "POS", "Internet Banking", "Branch", "Online"], "ch_cnt": [31713, 18233, 14799, 14795, 12088, 9940], "ch_val": [22.66, 12.88, 10.58, 10.22, 8.86, 6.69], "ch_fail": [4.94, 5.28, 5.15, 4.97, 5.33, 5.29], "seg_pie": [{"label": "Medium Activity", "value": 2471}, {"label": "Inactive", "value": 1955}, {"label": "High Activity", "value": 388}, {"label": "Low Activity", "value": 186}], "type_cats": ["Payment", "Withdrawal", "Bill Payment", "Transfer", "Deposit", "Fee", "Interest", "Refund"], "type_cnt": [29482, 18020, 15926, 11992, 11946, 6117, 4059, 4013], "reg_cats": ["Southeast", "Midwest", "Southwest", "Northeast", "West"], "reg_val": [18.07, 16.58, 16.25, 15.78, 14.49], "anom_pie": [{"label": "High", "value": 2031}, {"label": "Medium", "value": 1573}, {"label": "Low", "value": 5041}], "branch_rows": [{"Branch": "NovaBank Dallas #50", "Region": "Southwest", "Txns": "1,001", "Value": "$1,149,418", "Fail %": "5.00", "Customers": "639"}, {"Branch": "NovaBank Philadelphia #7", "Region": "Northeast", "Txns": "1,022", "Value": "$1,021,449", "Fail %": "5.48", "Customers": "660"}, {"Branch": "NovaBank Detroit #47", "Region": "Midwest", "Txns": "1,049", "Value": "$1,000,420", "Fail %": "4.96", "Customers": "692"}, {"Branch": "NovaBank Minneapolis #20", "Region": "Midwest", "Txns": "1,101", "Value": "$955,959", "Fail %": "4.63", "Customers": "713"}, {"Branch": "NovaBank Atlanta #22", "Region": "Southeast", "Txns": "1,046", "Value": "$894,079", "Fail %": "4.30", "Customers": "700"}, {"Branch": "NovaBank San Antonio #42", "Region": "Southwest", "Txns": "1,058", "Value": "$874,496", "Fail %": "6.24", "Customers": "670"}, {"Branch": "NovaBank Phoenix #26", "Region": "Southwest", "Txns": "1,067", "Value": "$867,276", "Fail %": "5.44", "Customers": "671"}, {"Branch": "NovaBank Indianapolis #17", "Region": "Midwest", "Txns": "971", "Value": "$854,586", "Fail %": "4.02", "Customers": "629"}, {"Branch": "NovaBank Newark #36", "Region": "Northeast", "Txns": "1,066", "Value": "$851,835", "Fail %": "4.97", "Customers": "654"}, {"Branch": "NovaBank Houston #3", "Region": "Southwest", "Txns": "1,003", "Value": "$850,588", "Fail %": "4.09", "Customers": "644"}], "anom_rows": [{"Txn ID": "TXN-0000039937", "Customer": "CUST-00004035", "Amount": "$1,217,853", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=4.36, amount=1217853.44 vs avg=58632.47); Potential anom"}, {"Txn ID": "TXN-0000090334", "Customer": "CUST-00004635", "Amount": "$384,870", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=8.30, amount=384869.91 vs avg=6475.14); Potential anomal"}, {"Txn ID": "TXN-0000091466", "Customer": "CUST-00001509", "Amount": "$338,646", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=6.71, amount=338645.59 vs avg=9166.42); Potential anomal"}, {"Txn ID": "TXN-0000086598", "Customer": "CUST-00003629", "Amount": "$307,948", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=6.86, amount=307948.22 vs avg=6591.42); Potential anomal"}, {"Txn ID": "TXN-0000044813", "Customer": "CUST-00001012", "Amount": "$248,319", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=4.36, amount=248318.98 vs avg=12694.03); Potential anoma"}, {"Txn ID": "TXN-0000083421", "Customer": "CUST-00001010", "Amount": "$216,195", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=5.75, amount=216194.64 vs avg=6393.44); Potential anomal"}, {"Txn ID": "TXN-0000009620", "Customer": "CUST-00001746", "Amount": "$212,452", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=8.77, amount=212451.90 vs avg=4427.37); Potential anomal"}, {"Txn ID": "TXN-0000016727", "Customer": "CUST-00000762", "Amount": "$185,513", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=4.48, amount=185513.21 vs avg=8867.40); Potential anomal"}, {"Txn ID": "TXN-0000029149", "Customer": "CUST-00001130", "Amount": "$169,350", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=9.19, amount=169349.62 vs avg=3559.80); Potential anomal"}, {"Txn ID": "TXN-0000031657", "Customer": "CUST-00002256", "Amount": "$168,649", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=9.18, amount=168648.57 vs avg=3380.55); Potential anomal"}, {"Txn ID": "TXN-0000063387", "Customer": "CUST-00002104", "Amount": "$150,501", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=3.13, amount=150500.67 vs avg=15176.55); Potential anoma"}, {"Txn ID": "TXN-0000043225", "Customer": "CUST-00000719", "Amount": "$137,365", "Severity": "High", "Reason": "Potential anomaly: high_amount (z=6.60, amount=137365.00 vs avg=4374.15); Potential anomal"}]};
+function money(n) {
+  if (n >= 1e6) return '$' + (n/1e6).toFixed(2) + 'M';
+  if (n >= 1e3) return '$' + (n/1e3).toFixed(1) + 'K';
+  return '$' + n.toFixed(0);
+}
+const k = D.kpis;
+const kpiMeta = [
+  ['Transaction value', money(k.total_value), 'accent'],
+  ['Transactions', k.transaction_count.toLocaleString(), ''],
+  ['Avg transaction', money(k.avg_value), ''],
+  ['Success rate', (k.success_rate*100).toFixed(1) + '%', 'good'],
+  ['Customers', k.active_customers.toLocaleString(), ''],
+  ['Accounts', k.active_accounts.toLocaleString(), ''],
+  ['Failure rate', (k.failure_rate*100).toFixed(2) + '%', 'bad'],
+  ['Anomalies', k.anomaly_count.toLocaleString(), ''],
+];
+document.getElementById('kpis').innerHTML = kpiMeta.map(([l,v,c]) =>
+  `<div class="kpi ${c}"><div class="label">${l}</div><div class="value">${v}</div></div>`
+).join('');
+
+const tick = { color: '#5c6b7a', font: { size: 11, family: 'DM Sans' } };
+const grid = { color: '#e6edf3' };
+Chart.defaults.font.family = 'DM Sans';
+Chart.defaults.color = '#5c6b7a';
+
+new Chart(document.getElementById('cValue'), {
+  type: 'line',
+  data: { labels: D.m_cats, datasets: [{
+    label: 'Value $M', data: D.m_vals,
+    borderColor: '#0d6e6e', backgroundColor: 'rgba(13,110,110,0.12)',
+    fill: true, tension: 0.35, pointRadius: 0, borderWidth: 2.5
+  }] },
+  options: { plugins: { legend: { display: false } }, scales: { x: { ticks: tick, grid: { display: false } }, y: { ticks: tick, grid } } }
+});
+new Chart(document.getElementById('cCount'), {
+  type: 'bar',
+  data: { labels: D.m_cats, datasets: [{ label: 'Count', data: D.m_cnts, backgroundColor: '#102a43', borderRadius: 4 }] },
+  options: { plugins: { legend: { display: false } }, scales: { x: { ticks: tick, grid: { display: false } }, y: { ticks: tick, grid } } }
+});
+new Chart(document.getElementById('cChannel'), {
+  type: 'bar',
+  data: { labels: D.ch_cats, datasets: [{ label: 'Txns', data: D.ch_cnt, backgroundColor: '#0d6e6e', borderRadius: 4 }] },
+  options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { ticks: tick, grid }, y: { ticks: tick, grid: { display: false } } } }
+});
+new Chart(document.getElementById('cSeg'), {
+  type: 'doughnut',
+  data: { labels: D.seg_pie.map(x=>x.label), datasets: [{ data: D.seg_pie.map(x=>x.value), backgroundColor: ['#0d6e6e','#8aa0b2','#102a43','#c4a35a'], borderWidth: 0 }] },
+  options: { cutout: '62%', plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 14 } } } }
+});
+new Chart(document.getElementById('cRegion'), {
+  type: 'bar',
+  data: { labels: D.reg_cats, datasets: [{ label: '$M', data: D.reg_val, backgroundColor: '#345995', borderRadius: 4 }] },
+  options: { plugins: { legend: { display: false } }, scales: { x: { ticks: tick, grid: { display: false } }, y: { ticks: tick, grid } } }
+});
+new Chart(document.getElementById('cAnom'), {
+  type: 'doughnut',
+  data: { labels: D.anom_pie.map(x=>x.label), datasets: [{ data: D.anom_pie.map(x=>x.value), backgroundColor: ['#c23b3b','#c4a35a','#8aa0b2'], borderWidth: 0 }] },
+  options: { cutout: '62%', plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 14 } } } }
+});
+
+function fillTable(id, rows) {
+  if (!rows.length) return;
+  const keys = Object.keys(rows[0]);
+  document.querySelector('#' + id + ' thead').innerHTML = '<tr>' + keys.map(k => `<th>${k}</th>`).join('') + '</tr>';
+  document.querySelector('#' + id + ' tbody').innerHTML = rows.map(r => '<tr>' + keys.map(k => `<td>${r[k]}</td>`).join('') + '</tr>').join('');
+}
+fillTable('branchTable', D.branch_rows);
+fillTable('anomTable', D.anom_rows);
+</script>
+</body>
+</html>

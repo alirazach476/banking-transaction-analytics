@@ -1,0 +1,14 @@
+{
+  "customers": 5050,
+  "accounts": 7575,
+  "branches": 51,
+  "merchants": 1010,
+  "cards": 10100,
+  "transactions": 102616,
+  "transfers": 15150,
+  "atm_transactions": 20200,
+  "card_transactions": 40400,
+  "injected_anomalies": 3600,
+  "generated_at": "2026-10-07T09:55:19.618657Z",
+  "note": "SYNTHETIC DATA ONLY"
+}

@@ -1,0 +1,101 @@
+customer_id,first_name,last_name,date_of_birth,gender,customer_type,registration_date,customer_status,city,region,country
+CUST-00000001,Danielle,Anderson,1955-02-19,Female,Retail,2025-12-02,Active,Detroit,Midwest,United States
+CUST-00000002,Angel,Hart,1964-05-15,Male,Retail,2025-05-29,Active,Philadelphia,Northeast,United States
+CUST-00000003,Joshua,Stone,1991-09-21,Male,Retail,2024-01-09,Active,Atlanta,Southeast,United States
+CUST-00000004,Jeffrey,Welch,1959-09-11,Female,Retail,2023-06-02,Active,Minneapolis,Midwest,United States
+CUST-00000005,Jill,Vasquez,1956-04-19,Male,Retail,2024-10-12,Active,Portland,West,United States
+CUST-00000006,Erica,White,1951-04-05,Male,Premium,2025-09-12,Inactive,Denver,West,United States
+CUST-00000007,Patricia,Lynch,1989-11-28,Female,Retail,2024-01-09,Active,Newark,Northeast,United States
+CUST-00000008,Christopher,Erickson,1954-02-15,Female,Retail,2023-05-01,Active,Portland,West,United States
+CUST-00000009,Robert,Krause,1952-07-28,Female,Premium,2025-06-14,Active,New York,Northeast,United States
+CUST-00000010,Anthony,Smith,1963-12-26,Non-binary,Retail,2024-06-14,Active,Houston,Southwest,United States
+CUST-00000011,Jeffery,Johnson,2000-09-04,Male,Student,2025-04-09,Active,Portland,West,United States
+CUST-00000012,William,Garrett,1963-05-04,Male,Retail,2024-12-24,Active,Denver,West,United States
+CUST-00000013,Anthony,Wilson,2005-06-07,Female,Retail,2024-06-15,Active,Charlotte,Southeast,United States
+CUST-00000014,James,Charles,1973-10-28,Male,Student,2025-02-11,Active,Denver,West,United States
+CUST-00000015,Debra,Marsh,1968-08-20,Male,Premium,2023-03-03,Active,Boston,Northeast,United States
+CUST-00000016,Amy,Duarte,2001-08-28,Male,Premium,2024-08-11,Suspended,Chicago,Midwest,United States
+CUST-00000017,Jeffrey,Gutierrez,1944-05-01,Male,Premium,2024-06-15,Active,Chicago,Midwest,United States
+CUST-00000018,Bridget,Cook,1987-11-10,Male,Retail,2023-06-04,Active,Charlotte,Southeast,United States
+CUST-00000019,Lisa,Castro,2001-02-08,Male,Premium,2023-01-18,Active,Newark,Northeast,United States
+CUST-00000020,Adam,Walsh,1952-06-20,Female,Student,2024-11-08,Active,Houston,Southwest,United States
+CUST-00000021,Linda,Smith,1946-04-08,Female,Student,2023-06-11,Suspended,Orlando,Southeast,United States
+CUST-00000022,Helen,Harris,1945-11-17,Female,Retail,2024-09-15,Active,Austin,Southwest,United States
+CUST-00000023,Matthew,Campbell,1966-10-18,Male,Retail,2024-11-21,Active,Detroit,Midwest,United States
+CUST-00000024,Eric,Tyler,1966-01-23,Male,Business,2025-09-28,Active,Miami,Southeast,United States
+CUST-00000025,Susan,Parker,1981-05-05,Female,Retail,2025-06-17,Inactive,Portland,West,United States
+CUST-00000026,Matthew,Hunter,2004-05-01,Male,Retail,2025-10-01,Active,Newark,Northeast,United States
+CUST-00000027,Christopher,Nguyen,1998-04-07,Male,Retail,2023-03-08,Active,Dallas,Southwest,United States
+CUST-00000028,Colin,Smith,1981-03-18,Female,Retail,2025-12-17,Active,Houston,Southwest,United States
+CUST-00000029,Melanie,Jennings,1960-04-28,Female,Retail,2023-10-11,Active,Charlotte,Southeast,United States
+CUST-00000030,Cassandra,Peterson,1954-05-23,Male,Retail,2025-10-29,Active,Charlotte,Southeast,United States
+CUST-00000031,Lindsay,Ramsey,1968-12-31,Female,Retail,2024-07-13,Active,New York,Northeast,United States
+CUST-00000032,Jessica,Gilbert,1957-04-05,Female,Retail,2024-02-28,Active,Denver,West,United States
+CUST-00000033,Amanda,Johnson,1995-02-25,Female,Student,2025-06-20,Active,San Francisco,West,United States
+CUST-00000034,Teresa,Thompson,1951-05-20,Male,Retail,2025-06-26,Active,Miami,Southeast,United States
+CUST-00000035,Nicholas,Rivera,1981-04-02,Female,Retail,2024-06-18,Active,New York,Northeast,United States
+CUST-00000036,Andrea,Morgan,1956-11-25,Female,Retail,2023-11-21,Active,Buffalo,Northeast,United States
+CUST-00000037,Maria,Chambers,1992-08-13,Male,Retail,2025-06-10,Active,Boston,Northeast,United States
+CUST-00000038,Christine,Hendricks,1998-04-16,Female,Student,2025-06-28,Active,Denver,West,United States
+CUST-00000039,Michelle,Robles,1964-05-25,Female,Student,2023-06-01,Active,Seattle,West,United States
+CUST-00000040,Barbara,Brewer,1968-10-24,Male,Retail,2023-09-27,Active,Buffalo,Northeast,United States
+CUST-00000041,Janet,Olson,1952-06-08,Male,Retail,2025-12-23,Active,Dallas,Southwest,United States
+CUST-00000042,Brandon,Burton,1977-09-04,Male,Retail,2025-12-25,Active,New York,Northeast,United States
+CUST-00000043,Jeremy,Mcclain,1967-03-06,Female,Retail,2023-02-18,Active,Tampa,Southeast,United States
+CUST-00000044,Keith,Herrera,1973-03-21,Male,Retail,2025-06-04,Active,Indianapolis,Midwest,United States
+CUST-00000045,Christopher,Rogers,1961-11-17,Female,Retail,2024-08-21,Active,Phoenix,Southwest,United States
+CUST-00000046,Jesse,Bowers,1999-03-21,Male,Retail,2024-11-21,Inactive,Los Angeles,West,United States
+CUST-00000047,Craig,Gutierrez,1993-04-18,Female,Premium,2025-02-26,Active,Buffalo,Northeast,United States
+CUST-00000048,Joshua,Newton,2002-12-05,Female,Retail,2023-08-09,Active,Boston,Northeast,United States
+CUST-00000049,Cynthia,Conley,2001-06-24,Female,Retail,2025-08-21,Active,Tampa,Southeast,United States
+CUST-00000050,Michael,Evans,2002-05-27,Female,Retail,2024-04-09,Active,Tampa,Southeast,United States
+CUST-00000051,Mitchell,Hardy,1954-07-27,Male,Retail,2025-01-02,Active,Denver,West,United States
+CUST-00000052,Jason,Stewart,1948-12-01,Male,Retail,2023-12-12,Active,Austin,Southwest,United States
+CUST-00000053,Joseph,Herrera,1989-11-09,Female,Retail,2024-12-10,Active,Orlando,Southeast,United States
+CUST-00000054,Sharon,Clark,2005-08-18,Male,Retail,2023-05-14,Active,Seattle,West,United States
+CUST-00000055,Deborah,Jennings,1967-04-16,Female,Retail,2024-05-26,Active,Chicago,Midwest,United States
+CUST-00000056,Chelsea,Marsh,1978-08-01,Female,Business,2023-08-06,Active,Detroit,Midwest,United States
+CUST-00000057,George,Barron,1982-02-05,Female,Student,2023-02-15,Active,Columbus,Midwest,United States
+CUST-00000058,Jessica,Gomez,1957-11-18,Male,Retail,2023-05-06,Active,Buffalo,Northeast,United States
+CUST-00000059,Frank,Montes,1988-10-03,Female,Retail,2023-12-13,Active,Seattle,West,United States
+CUST-00000060,Noah,Ramirez,1953-02-22,Male,Business,2025-01-28,Inactive,Newark,Northeast,United States
+CUST-00000061,Veronica,Johnson,1996-01-28,Female,Premium,2025-07-16,Active,New York,Northeast,United States
+CUST-00000062,Danielle,Terrell,2001-08-18,Female,Retail,2025-04-29,Inactive,Charlotte,Southeast,United States
+CUST-00000063,Angela,Sims,2000-12-10,Female,Retail,2024-10-25,Active,Charlotte,Southeast,United States
+CUST-00000064,Gabrielle,Kirby,1985-08-02,Female,Retail,2025-04-01,Active,Buffalo,Northeast,United States
+CUST-00000065,Megan,Duncan,1972-04-29,Male,Premium,2023-05-19,Active,Boston,Northeast,United States
+CUST-00000066,Kimberly,Price,2005-10-06,Female,Retail,2023-08-10,Active,Houston,Southwest,United States
+CUST-00000067,Jeremy,Larson,1985-04-01,Female,Retail,2023-06-16,Active,San Francisco,West,United States
+CUST-00000068,Antonio,Hancock,1998-10-26,Male,Retail,2023-12-24,Active,New York,Northeast,United States
+CUST-00000069,Leslie,Walton,1993-11-02,Female,Retail,2024-09-26,Active,Charlotte,Southeast,United States
+CUST-00000070,Joseph,Thornton,1999-11-12,Female,Retail,2025-07-05,Active,Columbus,Midwest,United States
+CUST-00000071,Jason,Edwards,2004-12-14,Non-binary,Premium,2023-03-18,Inactive,Denver,West,United States
+CUST-00000072,Sherri,Johnson,1972-05-05,Female,Retail,2025-01-28,Active,San Antonio,Southwest,United States
+CUST-00000073,Nancy,Gutierrez,1963-12-26,Male,Retail,2024-01-13,Active,Dallas,Southwest,United States
+CUST-00000074,Leonard,Crawford,1966-05-12,Female,Retail,2024-01-01,Active,Detroit,Midwest,United States
+CUST-00000075,Diana,Young,1953-03-20,Male,Business,2025-04-18,Suspended,Detroit,Midwest,United States
+CUST-00000076,Randall,Hayes,1956-01-28,Female,Retail,2025-05-19,Inactive,Boston,Northeast,United States
+CUST-00000077,Robin,Sampson,1969-08-22,Male,Retail,2024-02-01,Closed,Denver,West,United States
+CUST-00000078,Stephen,Robinson,1955-10-02,Female,Retail,2024-11-20,Suspended,Los Angeles,West,United States
+CUST-00000079,Joseph,Turner,1974-08-28,Male,Business,2024-05-08,Active,New York,Northeast,United States
+CUST-00000080,John,Rodriguez,2000-04-23,Male,Business,2023-03-15,Active,San Antonio,Southwest,United States
+CUST-00000081,Anna,Glover,2001-10-07,Male,Student,2024-08-04,Active,Buffalo,Northeast,United States
+CUST-00000082,Jose,Strickland,1987-02-23,Female,Premium,2025-10-12,Inactive,Houston,Southwest,United States
+CUST-00000083,Brenda,Gentry,1981-01-12,Male,Retail,2023-04-08,Active,San Francisco,West,United States
+CUST-00000084,Rachael,Wallace,1997-09-03,Male,Retail,2025-10-29,Active,Philadelphia,Northeast,United States
+CUST-00000085,Reginald,Johnson,1974-05-01,Male,Retail,2024-12-15,Suspended,Minneapolis,Midwest,United States
+CUST-00000086,Jeffrey,Webb,1975-02-07,Male,Premium,2025-11-11,Inactive,Buffalo,Northeast,United States
+CUST-00000087,Whitney,Porter,1978-04-27,Female,Premium,2024-11-14,Closed,Minneapolis,Midwest,United States
+CUST-00000088,William,Lee,1969-12-08,Female,Retail,2023-08-18,Active,Los Angeles,West,United States
+CUST-00000089,Christopher,Mclean,1944-10-23,Male,Student,2024-12-14,Active,Philadelphia,Northeast,United States
+CUST-00000090,Brandon,Oconnor,1949-06-14,Male,Retail,2023-08-24,Active,Charlotte,Southeast,United States
+CUST-00000091,Daniel,Mills,1953-01-07,Male,Retail,2025-03-02,Active,Seattle,West,United States
+CUST-00000092,Courtney,Rowe,1989-05-21,Male,Retail,2024-06-10,Active,Charlotte,Southeast,United States
+CUST-00000093,Laura,Thomas,1970-08-28,Male,Student,2024-08-02,Active,Buffalo,Northeast,United States
+CUST-00000094,Robert,Wiggins,1947-03-25,Male,Student,2024-04-03,Inactive,Indianapolis,Midwest,United States
+CUST-00000095,Bryan,Short,1947-03-02,Male,Retail,2024-11-17,Active,Detroit,Midwest,United States
+CUST-00000096,Patrick,Hurley,1970-01-01,Male,Student,2024-07-27,Active,Houston,Southwest,United States
+CUST-00000097,Wendy,Rhodes,1992-11-11,Female,Student,2025-07-28,Inactive,Orlando,Southeast,United States
+CUST-00000098,Allison,Anderson,1989-05-30,Male,Business,2025-08-07,Active,Seattle,West,United States
+CUST-00000099,Tasha,Hardy,1968-04-05,Female,Student,2025-04-28,Active,Minneapolis,Midwest,United States
+CUST-00000100,Michelle,Stevens,1978-02-10,Female,Retail,2025-09-22,Active,Atlanta,Southeast,United States

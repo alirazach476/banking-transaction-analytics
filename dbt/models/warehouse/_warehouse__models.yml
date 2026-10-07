@@ -1,0 +1,136 @@
+version: 2
+
+models:
+  - name: dim_date
+    columns:
+      - name: date_key
+        tests:
+          - unique
+          - not_null
+      - name: calendar_date
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_customer
+    columns:
+      - name: customer_key
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+
+  - name: dim_account
+    columns:
+      - name: account_key
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_branch
+    columns:
+      - name: branch_key
+        tests:
+          - unique
+          - not_null
+      - name: branch_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_merchant
+    columns:
+      - name: merchant_key
+        tests:
+          - unique
+          - not_null
+      - name: merchant_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_card
+    columns:
+      - name: card_key
+        tests:
+          - unique
+          - not_null
+      - name: card_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_channel
+    columns:
+      - name: channel_key
+        tests:
+          - unique
+          - not_null
+      - name: channel_name
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_transaction_type
+    columns:
+      - name: transaction_type_key
+        tests:
+          - unique
+          - not_null
+      - name: transaction_type
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_key
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_key
+              config:
+                severity: warn
+      - name: account_key
+        tests:
+          - relationships:
+              to: ref('dim_account')
+              field: account_key
+              config:
+                severity: warn
+      - name: date_key
+        tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+
+  - name: fact_card_transactions
+    columns:
+      - name: card_txn_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_atm_transactions
+    columns:
+      - name: atm_txn_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_transfers
+    columns:
+      - name: transfer_id
+        tests:
+          - unique
+          - not_null

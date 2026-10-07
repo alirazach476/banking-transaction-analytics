@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NovaBank — Transaction Analytics Pipeline</title>
+  <meta name="description" content="Portfolio end-to-end banking analytics platform: PostgreSQL, dbt, anomaly detection, BI. Synthetic data only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0c1222;
+      --paper: #f4f6f8;
+      --panel: #ffffff;
+      --muted: #5b6b7c;
+      --line: #d5dde6;
+      --accent: #0d6e6e;
+      --accent-soft: #e6f3f3;
+      --deep: #102a43;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #d9eeea 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #e8eef5 0%, transparent 50%),
+        var(--paper);
+      line-height: 1.5;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 28px; letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; gap: 18px; align-items: center; font-size: 14px; font-weight: 500; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--deep); color: #fff; border: none;
+      padding: 11px 18px; border-radius: 8px; font-weight: 600; font-size: 14px;
+      text-decoration: none;
+    }
+    .btn:hover { background: #183b5c; text-decoration: none; color: #fff; }
+    .btn-accent { background: var(--accent); }
+    .btn-accent:hover { background: #0a5858; }
+    .btn-ghost {
+      background: transparent; color: var(--ink);
+      border: 1px solid var(--line); padding: 10px 16px;
+    }
+    .btn-ghost:hover { background: #fff; color: var(--ink); }
+    hero, .hero { padding: 72px 0 48px; }
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 6px 10px; border-radius: 999px; margin-bottom: 18px;
+    }
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.08; letter-spacing: -0.03em;
+      margin: 0 0 16px; max-width: 16ch;
+      font-weight: 400;
+    }
+    .lede {
+      font-size: 1.125rem; color: var(--muted); max-width: 52ch; margin: 0 0 28px;
+    }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      margin: 48px 0 16px;
+    }
+    .stat {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 12px; padding: 18px 16px;
+    }
+    .stat b { display: block; font-size: 1.35rem; margin-bottom: 4px; }
+    .stat span { color: var(--muted); font-size: 13px; }
+    section { padding: 40px 0; }
+    h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 2rem; font-weight: 400; margin: 0 0 12px;
+    }
+    .section-copy { color: var(--muted); max-width: 60ch; margin: 0 0 24px; }
+    .cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+    }
+    .card {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 14px; padding: 20px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .pipeline {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      font-size: 13px; font-weight: 600;
+    }
+    .pipe {
+      background: #fff; border: 1px solid var(--line);
+      padding: 8px 12px; border-radius: 8px;
+    }
+    .arrow { color: var(--muted); }
+    .note {
+      margin-top: 28px; padding: 14px 16px; border-radius: 10px;
+      background: #fff8e8; border: 1px solid #efd9a3; color: #6a5420;
+      font-size: 14px;
+    }
+    footer {
+      border-top: 1px solid var(--line); padding: 28px 0 40px;
+      color: var(--muted); font-size: 13px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    @media (max-width: 800px) {
+      .stats, .cards { grid-template-columns: 1fr 1fr; }
+      nav .nav-links a.hide-sm { display: none; }
+    }
+    @media (max-width: 520px) {
+      .stats, .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="brand">NovaBank</div>
+      <div class="nav-links">
+        <a class="hide-sm" href="https://github.com/alirazach476/banking-transaction-analytics">GitHub</a>
+        <a class="btn btn-accent" href="/dashboard">Open BI Dashboard</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <span class="eyebrow">Portfolio · Data Engineering + Analytics</span>
+      <h1>Banking Transaction Analytics Pipeline</h1>
+      <p class="lede">
+        End-to-end analytics platform for a fictional retail bank: synthetic multi-source ingestion,
+        PostgreSQL warehouse, dbt transformations, reconciliation, and a transaction anomaly detection prototype.
+      </p>
+      <div class="cta">
+        <a class="btn btn-accent" href="/dashboard">Explore live BI dashboard</a>
+        <a class="btn btn-ghost" href="https://github.com/alirazach476/banking-transaction-analytics">View source on GitHub</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>$81.2M</b><span>Transaction value (demo)</span></div>
+        <div class="stat"><b>101,600</b><span>Fact transactions</span></div>
+        <div class="stat"><b>5,000</b><span>Customers</span></div>
+        <div class="stat"><b>8,645</b><span>Anomalies for review</span></div>
+      </div>
+    </div>
+
+    <section>
+      <h2>Architecture</h2>
+      <p class="section-copy">Designed as a production-style portfolio stack — not a CSV + Pandas + Power BI demo.</p>
+      <div class="pipeline">
+        <span class="pipe">Sources</span><span class="arrow">→</span>
+        <span class="pipe">Ingest</span><span class="arrow">→</span>
+        <span class="pipe">Raw + DQ</span><span class="arrow">→</span>
+        <span class="pipe">dbt Warehouse</span><span class="arrow">→</span>
+        <span class="pipe">Analytics Marts</span><span class="arrow">→</span>
+        <span class="pipe">Anomaly + BI</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>What you can explore</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Executive KPIs</h3>
+          <p>Volume, success rate, active customers/accounts, and review-queue anomaly counts from the warehouse extract.</p>
+        </div>
+        <div class="card">
+          <h3>Channel &amp; branch performance</h3>
+          <p>Mobile, ATM, POS, branch rankings with failure rates and completed value.</p>
+        </div>
+        <div class="card">
+          <h3>Anomaly monitoring</h3>
+          <p>Rule-based + statistical + Isolation Forest prototype results labeled for human review only.</p>
+        </div>
+      </div>
+      <div class="note">
+        This project uses <strong>synthetic banking data</strong> generated solely for demonstrating data engineering,
+        analytics, and transaction-monitoring capabilities. It does not represent real customer or banking data.
+        Anomaly Detection Prototype results are “transactions requiring review,” not confirmed fraud decisions.
+      </div>
+    </section>
+
+    <footer>
+      <div>NovaBank Analytics · Ali Raza · Portfolio project</div>
+      <div>
+        <a href="https://github.com/alirazach476/banking-transaction-analytics">GitHub</a>
+        ·
+        <a href="/dashboard">Dashboard</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

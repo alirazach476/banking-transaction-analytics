@@ -1,0 +1,78 @@
+# Environment & secrets
+.env
+*.env.local
+!.env.example
+
+# Local Vercel
+.vercel/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg
+.coverage
+htmlcov/
+.tox/
+
+# Data (generated — keep samples only)
+data/source/**/*.csv
+data/raw/**/*
+data/processed/**/*
+!data/source/**/.gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/samples/**
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/.user.yml
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+airflow/airflow.cfg
+airflow/webserver_config.py
+airflow/*.pid
+airflow/*.err
+airflow/*.out
+airflow/*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+postgres_data/
+airflow_data/
+
+# Embedded PostgreSQL local data
+.pgdata/
+
+# OS
+desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs & temp
+*.log
+tmp/
+temp/
+*.tmp

@@ -1,0 +1,1807 @@
+{
+  "meta": {
+    "bank": "NovaBank",
+    "disclaimer": "Synthetic banking data for demonstration only. Not real customer or financial records.",
+    "generated_at": "2026-10-07T12:33:20.885352Z",
+    "source": "PostgreSQL analytics + warehouse schemas"
+  },
+  "kpis": {
+    "transaction_count": 101600,
+    "total_value": 81172698.21,
+    "avg_value": 799.1798583243084,
+    "active_customers": 5000,
+    "active_accounts": 7500,
+    "anomaly_count": 8645,
+    "success_rate": 0.879005905511811,
+    "failure_rate": 0.051181102362204724
+  },
+  "daily": [
+    {
+      "day": "2023-01-01",
+      "transaction_count": 50,
+      "transaction_value": 72321.91,
+      "completed_value": 71678.98,
+      "rolling_7d_count": 50.0,
+      "rolling_30d_value": 71678.98
+    },
+    {
+      "day": "2023-01-13",
+      "transaction_count": 101,
+      "transaction_value": 85619.25,
+      "completed_value": 79969.73,
+      "rolling_7d_count": 88.1,
+      "rolling_30d_value": 59833.61
+    },
+    {
+      "day": "2023-01-25",
+      "transaction_count": 101,
+      "transaction_value": 29111.19,
+      "completed_value": 25616.88,
+      "rolling_7d_count": 98.1,
+      "rolling_30d_value": 62581.9
+    },
+    {
+      "day": "2023-02-06",
+      "transaction_count": 112,
+      "transaction_value": 64605.72,
+      "completed_value": 57896.63,
+      "rolling_7d_count": 96.7,
+      "rolling_30d_value": 64842.91
+    },
+    {
+      "day": "2023-02-18",
+      "transaction_count": 54,
+      "transaction_value": 27667.32,
+      "completed_value": 22866.73,
+      "rolling_7d_count": 90.9,
+      "rolling_30d_value": 62826.36
+    },
+    {
+      "day": "2023-03-02",
+      "transaction_count": 94,
+      "transaction_value": 156726.16,
+      "completed_value": 54564.07,
+      "rolling_7d_count": 90.3,
+      "rolling_30d_value": 62644.08
+    },
+    {
+      "day": "2023-03-14",
+      "transaction_count": 98,
+      "transaction_value": 48519.62,
+      "completed_value": 46121.89,
+      "rolling_7d_count": 92.0,
+      "rolling_30d_value": 66062.82
+    },
+    {
+      "day": "2023-03-26",
+      "transaction_count": 74,
+      "transaction_value": 34197.41,
+      "completed_value": 24413.56,
+      "rolling_7d_count": 91.9,
+      "rolling_30d_value": 66592.79
+    },
+    {
+      "day": "2023-04-07",
+      "transaction_count": 91,
+      "transaction_value": 49168.15,
+      "completed_value": 44325.79,
+      "rolling_7d_count": 83.3,
+      "rolling_30d_value": 67233.11
+    },
+    {
+      "day": "2023-04-19",
+      "transaction_count": 111,
+      "transaction_value": 90181.75,
+      "completed_value": 84460.56,
+      "rolling_7d_count": 98.0,
+      "rolling_30d_value": 69958.68
+    },
+    {
+      "day": "2023-05-01",
+      "transaction_count": 107,
+      "transaction_value": 58604.26,
+      "completed_value": 54560.88,
+      "rolling_7d_count": 88.7,
+      "rolling_30d_value": 68943.37
+    },
+    {
+      "day": "2023-05-13",
+      "transaction_count": 63,
+      "transaction_value": 20914.36,
+      "completed_value": 20560.71,
+      "rolling_7d_count": 95.9,
+      "rolling_30d_value": 70387.56
+    },
+    {
+      "day": "2023-05-25",
+      "transaction_count": 111,
+      "transaction_value": 144559.44,
+      "completed_value": 137894.8,
+      "rolling_7d_count": 96.1,
+      "rolling_30d_value": 62906.67
+    },
+    {
+      "day": "2023-06-06",
+      "transaction_count": 115,
+      "transaction_value": 139807.98,
+      "completed_value": 134652.58,
+      "rolling_7d_count": 95.3,
+      "rolling_30d_value": 67508.16
+    },
+    {
+      "day": "2023-06-18",
+      "transaction_count": 60,
+      "transaction_value": 84181.41,
+      "completed_value": 48103.39,
+      "rolling_7d_count": 85.1,
+      "rolling_30d_value": 67366.12
+    },
+    {
+      "day": "2023-06-30",
+      "transaction_count": 120,
+      "transaction_value": 47996.48,
+      "completed_value": 42158.22,
+      "rolling_7d_count": 94.1,
+      "rolling_30d_value": 69657.52
+    },
+    {
+      "day": "2023-07-12",
+      "transaction_count": 111,
+      "transaction_value": 64471.8,
+      "completed_value": 45859.97,
+      "rolling_7d_count": 97.3,
+      "rolling_30d_value": 73712.58
+    },
+    {
+      "day": "2023-07-24",
+      "transaction_count": 86,
+      "transaction_value": 78288.1,
+      "completed_value": 52656.15,
+      "rolling_7d_count": 95.7,
+      "rolling_30d_value": 66201.56
+    },
+    {
+      "day": "2023-08-05",
+      "transaction_count": 52,
+      "transaction_value": 39172.53,
+      "completed_value": 37056.54,
+      "rolling_7d_count": 96.3,
+      "rolling_30d_value": 62491.59
+    },
+    {
+      "day": "2023-08-17",
+      "transaction_count": 108,
+      "transaction_value": 106247.81,
+      "completed_value": 104463.27,
+      "rolling_7d_count": 92.7,
+      "rolling_30d_value": 72532.89
+    },
+    {
+      "day": "2023-08-29",
+      "transaction_count": 106,
+      "transaction_value": 110894.98,
+      "completed_value": 105539.43,
+      "rolling_7d_count": 92.4,
+      "rolling_30d_value": 67794.14
+    },
+    {
+      "day": "2023-09-10",
+      "transaction_count": 56,
+      "transaction_value": 39328.77,
+      "completed_value": 38102.29,
+      "rolling_7d_count": 91.4,
+      "rolling_30d_value": 54580.8
+    },
+    {
+      "day": "2023-09-22",
+      "transaction_count": 111,
+      "transaction_value": 62772.73,
+      "completed_value": 60525.95,
+      "rolling_7d_count": 95.9,
+      "rolling_30d_value": 51942.88
+    },
+    {
+      "day": "2023-10-04",
+      "transaction_count": 117,
+      "transaction_value": 101355.03,
+      "completed_value": 95073.2,
+      "rolling_7d_count": 93.6,
+      "rolling_30d_value": 55898.26
+    },
+    {
+      "day": "2023-10-16",
+      "transaction_count": 98,
+      "transaction_value": 70031.63,
+      "completed_value": 64418.45,
+      "rolling_7d_count": 90.9,
+      "rolling_30d_value": 58017.5
+    },
+    {
+      "day": "2023-10-28",
+      "transaction_count": 63,
+      "transaction_value": 44692.33,
+      "completed_value": 40673.72,
+      "rolling_7d_count": 88.1,
+      "rolling_30d_value": 55986.75
+    },
+    {
+      "day": "2023-11-09",
+      "transaction_count": 111,
+      "transaction_value": 55062.91,
+      "completed_value": 36308.33,
+      "rolling_7d_count": 93.9,
+      "rolling_30d_value": 67354.03
+    },
+    {
+      "day": "2023-11-21",
+      "transaction_count": 95,
+      "transaction_value": 66208.72,
+      "completed_value": 57584.07,
+      "rolling_7d_count": 93.9,
+      "rolling_30d_value": 76784.79
+    },
+    {
+      "day": "2023-12-03",
+      "transaction_count": 60,
+      "transaction_value": 24342.19,
+      "completed_value": 20740.08,
+      "rolling_7d_count": 92.1,
+      "rolling_30d_value": 70586.38
+    },
+    {
+      "day": "2023-12-15",
+      "transaction_count": 99,
+      "transaction_value": 124896.03,
+      "completed_value": 121025.64,
+      "rolling_7d_count": 90.1,
+      "rolling_30d_value": 68690.08
+    },
+    {
+      "day": "2023-12-27",
+      "transaction_count": 114,
+      "transaction_value": 101164.25,
+      "completed_value": 96797.4,
+      "rolling_7d_count": 94.4,
+      "rolling_30d_value": 69356.69
+    },
+    {
+      "day": "2024-01-08",
+      "transaction_count": 125,
+      "transaction_value": 67251.61,
+      "completed_value": 62134.41,
+      "rolling_7d_count": 96.0,
+      "rolling_30d_value": 67129.24
+    },
+    {
+      "day": "2024-01-20",
+      "transaction_count": 43,
+      "transaction_value": 19536.3,
+      "completed_value": 15409.7,
+      "rolling_7d_count": 89.7,
+      "rolling_30d_value": 65621.48
+    },
+    {
+      "day": "2024-02-01",
+      "transaction_count": 99,
+      "transaction_value": 69175.42,
+      "completed_value": 61844.45,
+      "rolling_7d_count": 89.4,
+      "rolling_30d_value": 62094.16
+    },
+    {
+      "day": "2024-02-13",
+      "transaction_count": 95,
+      "transaction_value": 72351.02,
+      "completed_value": 68344.01,
+      "rolling_7d_count": 94.0,
+      "rolling_30d_value": 54466.17
+    },
+    {
+      "day": "2024-02-25",
+      "transaction_count": 62,
+      "transaction_value": 19961.56,
+      "completed_value": 18133.11,
+      "rolling_7d_count": 91.1,
+      "rolling_30d_value": 49017.98
+    },
+    {
+      "day": "2024-03-08",
+      "transaction_count": 115,
+      "transaction_value": 54931.25,
+      "completed_value": 46511.74,
+      "rolling_7d_count": 90.4,
+      "rolling_30d_value": 49981.25
+    },
+    {
+      "day": "2024-03-20",
+      "transaction_count": 107,
+      "transaction_value": 73861.47,
+      "completed_value": 70445.06,
+      "rolling_7d_count": 99.0,
+      "rolling_30d_value": 91362.79
+    },
+    {
+      "day": "2024-04-01",
+      "transaction_count": 100,
+      "transaction_value": 56034.98,
+      "completed_value": 50395.36,
+      "rolling_7d_count": 89.7,
+      "rolling_30d_value": 91669.71
+    },
+    {
+      "day": "2024-04-13",
+      "transaction_count": 66,
+      "transaction_value": 82638.97,
+      "completed_value": 81016.71,
+      "rolling_7d_count": 98.9,
+      "rolling_30d_value": 58686.76
+    },
+    {
+      "day": "2024-04-25",
+      "transaction_count": 109,
+      "transaction_value": 70404.3,
+      "completed_value": 51898.36,
+      "rolling_7d_count": 93.9,
+      "rolling_30d_value": 66663.7
+    },
+    {
+      "day": "2024-05-07",
+      "transaction_count": 103,
+      "transaction_value": 73262.67,
+      "completed_value": 66729.23,
+      "rolling_7d_count": 91.1,
+      "rolling_30d_value": 76500.61
+    },
+    {
+      "day": "2024-05-19",
+      "transaction_count": 63,
+      "transaction_value": 53270.62,
+      "completed_value": 51655.95,
+      "rolling_7d_count": 90.1,
+      "rolling_30d_value": 73256.85
+    },
+    {
+      "day": "2024-05-31",
+      "transaction_count": 108,
+      "transaction_value": 36032.91,
+      "completed_value": 34751.48,
+      "rolling_7d_count": 95.3,
+      "rolling_30d_value": 70322.97
+    },
+    {
+      "day": "2024-06-12",
+      "transaction_count": 122,
+      "transaction_value": 102715.31,
+      "completed_value": 82825.77,
+      "rolling_7d_count": 95.6,
+      "rolling_30d_value": 67330.36
+    },
+    {
+      "day": "2024-06-24",
+      "transaction_count": 98,
+      "transaction_value": 112891.68,
+      "completed_value": 107780.97,
+      "rolling_7d_count": 92.0,
+      "rolling_30d_value": 65765.45
+    },
+    {
+      "day": "2024-07-06",
+      "transaction_count": 63,
+      "transaction_value": 33875.39,
+      "completed_value": 23569.93,
+      "rolling_7d_count": 98.1,
+      "rolling_30d_value": 64243.25
+    },
+    {
+      "day": "2024-07-18",
+      "transaction_count": 99,
+      "transaction_value": 35131.69,
+      "completed_value": 28236.3,
+      "rolling_7d_count": 91.9,
+      "rolling_30d_value": 57607.43
+    },
+    {
+      "day": "2024-07-30",
+      "transaction_count": 100,
+      "transaction_value": 64026.81,
+      "completed_value": 40227.28,
+      "rolling_7d_count": 95.7,
+      "rolling_30d_value": 62829.88
+    },
+    {
+      "day": "2024-08-11",
+      "transaction_count": 59,
+      "transaction_value": 30635.02,
+      "completed_value": 25102.32,
+      "rolling_7d_count": 91.9,
+      "rolling_30d_value": 60446.19
+    },
+    {
+      "day": "2024-08-23",
+      "transaction_count": 99,
+      "transaction_value": 45940.29,
+      "completed_value": 44507.57,
+      "rolling_7d_count": 92.4,
+      "rolling_30d_value": 64858.23
+    },
+    {
+      "day": "2024-09-04",
+      "transaction_count": 98,
+      "transaction_value": 56450.26,
+      "completed_value": 52609.6,
+      "rolling_7d_count": 93.3,
+      "rolling_30d_value": 58626.56
+    },
+    {
+      "day": "2024-09-16",
+      "transaction_count": 82,
+      "transaction_value": 54261.23,
+      "completed_value": 51024.88,
+      "rolling_7d_count": 91.1,
+      "rolling_30d_value": 58120.35
+    },
+    {
+      "day": "2024-09-28",
+      "transaction_count": 68,
+      "transaction_value": 80313.8,
+      "completed_value": 78185.56,
+      "rolling_7d_count": 86.7,
+      "rolling_30d_value": 61188.5
+    },
+    {
+      "day": "2024-10-10",
+      "transaction_count": 109,
+      "transaction_value": 63971.38,
+      "completed_value": 61184.33,
+      "rolling_7d_count": 92.1,
+      "rolling_30d_value": 72577.05
+    },
+    {
+      "day": "2024-10-22",
+      "transaction_count": 109,
+      "transaction_value": 69049.34,
+      "completed_value": 65910.05,
+      "rolling_7d_count": 92.0,
+      "rolling_30d_value": 75799.4
+    },
+    {
+      "day": "2024-11-03",
+      "transaction_count": 43,
+      "transaction_value": 33211.58,
+      "completed_value": 31369.64,
+      "rolling_7d_count": 85.3,
+      "rolling_30d_value": 61991.84
+    },
+    {
+      "day": "2024-11-15",
+      "transaction_count": 94,
+      "transaction_value": 89019.6,
+      "completed_value": 86501.18,
+      "rolling_7d_count": 89.1,
+      "rolling_30d_value": 54886.05
+    },
+    {
+      "day": "2024-11-27",
+      "transaction_count": 107,
+      "transaction_value": 136954.29,
+      "completed_value": 124828.12,
+      "rolling_7d_count": 89.7,
+      "rolling_30d_value": 63847.65
+    },
+    {
+      "day": "2024-12-09",
+      "transaction_count": 103,
+      "transaction_value": 46665.97,
+      "completed_value": 43460.22,
+      "rolling_7d_count": 96.1,
+      "rolling_30d_value": 71404.29
+    },
+    {
+      "day": "2024-12-21",
+      "transaction_count": 57,
+      "transaction_value": 37052.83,
+      "completed_value": 34923.85,
+      "rolling_7d_count": 95.1,
+      "rolling_30d_value": 80883.89
+    },
+    {
+      "day": "2025-01-02",
+      "transaction_count": 97,
+      "transaction_value": 51179.23,
+      "completed_value": 41789.99,
+      "rolling_7d_count": 96.3,
+      "rolling_30d_value": 69237.39
+    },
+    {
+      "day": "2025-01-14",
+      "transaction_count": 120,
+      "transaction_value": 147960.26,
+      "completed_value": 143347.26,
+      "rolling_7d_count": 92.9,
+      "rolling_30d_value": 64901.85
+    },
+    {
+      "day": "2025-01-26",
+      "transaction_count": 73,
+      "transaction_value": 59874.51,
+      "completed_value": 51043.05,
+      "rolling_7d_count": 95.7,
+      "rolling_30d_value": 53919.33
+    },
+    {
+      "day": "2025-02-07",
+      "transaction_count": 107,
+      "transaction_value": 35570.45,
+      "completed_value": 32086.48,
+      "rolling_7d_count": 87.4,
+      "rolling_30d_value": 60386.06
+    },
+    {
+      "day": "2025-02-19",
+      "transaction_count": 109,
+      "transaction_value": 65587.96,
+      "completed_value": 54687.75,
+      "rolling_7d_count": 100.4,
+      "rolling_30d_value": 59557.98
+    },
+    {
+      "day": "2025-03-03",
+      "transaction_count": 97,
+      "transaction_value": 92790.99,
+      "completed_value": 81982.24,
+      "rolling_7d_count": 89.6,
+      "rolling_30d_value": 60285.01
+    },
+    {
+      "day": "2025-03-15",
+      "transaction_count": 78,
+      "transaction_value": 25792.58,
+      "completed_value": 25307.14,
+      "rolling_7d_count": 98.3,
+      "rolling_30d_value": 58627.28
+    },
+    {
+      "day": "2025-03-27",
+      "transaction_count": 94,
+      "transaction_value": 23675.27,
+      "completed_value": 19139.11,
+      "rolling_7d_count": 89.0,
+      "rolling_30d_value": 64039.57
+    },
+    {
+      "day": "2025-04-08",
+      "transaction_count": 94,
+      "transaction_value": 61234.09,
+      "completed_value": 57015.97,
+      "rolling_7d_count": 91.6,
+      "rolling_30d_value": 66895.76
+    },
+    {
+      "day": "2025-04-20",
+      "transaction_count": 70,
+      "transaction_value": 36605.99,
+      "completed_value": 36185.38,
+      "rolling_7d_count": 93.7,
+      "rolling_30d_value": 57731.28
+    },
+    {
+      "day": "2025-05-02",
+      "transaction_count": 93,
+      "transaction_value": 57983.13,
+      "completed_value": 54400.23,
+      "rolling_7d_count": 91.1,
+      "rolling_30d_value": 62433.34
+    },
+    {
+      "day": "2025-05-14",
+      "transaction_count": 108,
+      "transaction_value": 98406.25,
+      "completed_value": 87642.8,
+      "rolling_7d_count": 94.1,
+      "rolling_30d_value": 64826.74
+    },
+    {
+      "day": "2025-05-26",
+      "transaction_count": 96,
+      "transaction_value": 173125.42,
+      "completed_value": 160879.7,
+      "rolling_7d_count": 93.9,
+      "rolling_30d_value": 77452.61
+    },
+    {
+      "day": "2025-06-07",
+      "transaction_count": 52,
+      "transaction_value": 21599.43,
+      "completed_value": 19374.12,
+      "rolling_7d_count": 93.3,
+      "rolling_30d_value": 71402.9
+    },
+    {
+      "day": "2025-06-19",
+      "transaction_count": 104,
+      "transaction_value": 77289.01,
+      "completed_value": 72496.03,
+      "rolling_7d_count": 91.6,
+      "rolling_30d_value": 62996.92
+    },
+    {
+      "day": "2025-07-01",
+      "transaction_count": 105,
+      "transaction_value": 260741.54,
+      "completed_value": 254214.11,
+      "rolling_7d_count": 95.7,
+      "rolling_30d_value": 65452.06
+    },
+    {
+      "day": "2025-07-13",
+      "transaction_count": 68,
+      "transaction_value": 27076.98,
+      "completed_value": 22674.59,
+      "rolling_7d_count": 92.1,
+      "rolling_30d_value": 64272.53
+    },
+    {
+      "day": "2025-07-25",
+      "transaction_count": 100,
+      "transaction_value": 40926.59,
+      "completed_value": 38599.48,
+      "rolling_7d_count": 95.3,
+      "rolling_30d_value": 69703.17
+    },
+    {
+      "day": "2025-08-06",
+      "transaction_count": 109,
+      "transaction_value": 77006.66,
+      "completed_value": 68689.98,
+      "rolling_7d_count": 100.0,
+      "rolling_30d_value": 77848.04
+    },
+    {
+      "day": "2025-08-18",
+      "transaction_count": 112,
+      "transaction_value": 121103.16,
+      "completed_value": 102028.9,
+      "rolling_7d_count": 91.9,
+      "rolling_30d_value": 73172.24
+    },
+    {
+      "day": "2025-08-30",
+      "transaction_count": 57,
+      "transaction_value": 36371.08,
+      "completed_value": 33715.48,
+      "rolling_7d_count": 100.4,
+      "rolling_30d_value": 76444.65
+    },
+    {
+      "day": "2025-09-11",
+      "transaction_count": 126,
+      "transaction_value": 100717.49,
+      "completed_value": 95176.46,
+      "rolling_7d_count": 97.4,
+      "rolling_30d_value": 68117.78
+    },
+    {
+      "day": "2025-09-23",
+      "transaction_count": 109,
+      "transaction_value": 61267.62,
+      "completed_value": 52010.87,
+      "rolling_7d_count": 93.1,
+      "rolling_30d_value": 70926.55
+    },
+    {
+      "day": "2025-10-05",
+      "transaction_count": 72,
+      "transaction_value": 41033.23,
+      "completed_value": 38715.54,
+      "rolling_7d_count": 93.6,
+      "rolling_30d_value": 81384.04
+    },
+    {
+      "day": "2025-10-17",
+      "transaction_count": 113,
+      "transaction_value": 179890.07,
+      "completed_value": 176426.68,
+      "rolling_7d_count": 90.0,
+      "rolling_30d_value": 76346.66
+    },
+    {
+      "day": "2025-10-29",
+      "transaction_count": 105,
+      "transaction_value": 48373.46,
+      "completed_value": 36315.59,
+      "rolling_7d_count": 82.0,
+      "rolling_30d_value": 67380.25
+    },
+    {
+      "day": "2025-11-10",
+      "transaction_count": 102,
+      "transaction_value": 74591.62,
+      "completed_value": 65584.83,
+      "rolling_7d_count": 93.0,
+      "rolling_30d_value": 59394.8
+    },
+    {
+      "day": "2025-11-22",
+      "transaction_count": 82,
+      "transaction_value": 39143.88,
+      "completed_value": 36566.67,
+      "rolling_7d_count": 87.7,
+      "rolling_30d_value": 54332.58
+    },
+    {
+      "day": "2025-12-04",
+      "transaction_count": 105,
+      "transaction_value": 61261.01,
+      "completed_value": 59152.91,
+      "rolling_7d_count": 89.9,
+      "rolling_30d_value": 61272.68
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2023-01-01",
+      "month_label": "2023-01",
+      "transaction_count": 2838.0,
+      "transaction_value": 2275640.93,
+      "completed_value": 1989895.12,
+      "avg_transaction_value": 791.88,
+      "failure_rate_pct": 4.79
+    },
+    {
+      "month": "2023-02-01",
+      "month_label": "2023-02",
+      "transaction_count": 2632.0,
+      "transaction_value": 1936463.39,
+      "completed_value": 1732890.48,
+      "avg_transaction_value": 721.17,
+      "failure_rate_pct": 4.79
+    },
+    {
+      "month": "2023-03-01",
+      "month_label": "2023-03",
+      "transaction_count": 2886.0,
+      "transaction_value": 2634578.16,
+      "completed_value": 2091846.11,
+      "avg_transaction_value": 802.93,
+      "failure_rate_pct": 6.2
+    },
+    {
+      "month": "2023-04-01",
+      "month_label": "2023-04",
+      "transaction_count": 2634.0,
+      "transaction_value": 2298087.27,
+      "completed_value": 2047216.31,
+      "avg_transaction_value": 948.54,
+      "failure_rate_pct": 5.54
+    },
+    {
+      "month": "2023-05-01",
+      "month_label": "2023-05",
+      "transaction_count": 2904.0,
+      "transaction_value": 2186925.65,
+      "completed_value": 1987895.27,
+      "avg_transaction_value": 766.55,
+      "failure_rate_pct": 5.61
+    },
+    {
+      "month": "2023-06-01",
+      "month_label": "2023-06",
+      "transaction_count": 2784.0,
+      "transaction_value": 2391954.66,
+      "completed_value": 2089725.71,
+      "avg_transaction_value": 859.86,
+      "failure_rate_pct": 5.06
+    },
+    {
+      "month": "2023-07-01",
+      "month_label": "2023-07",
+      "transaction_count": 2953.0,
+      "transaction_value": 2293772.42,
+      "completed_value": 2045880.83,
+      "avg_transaction_value": 764.45,
+      "failure_rate_pct": 5.08
+    },
+    {
+      "month": "2023-08-01",
+      "month_label": "2023-08",
+      "transaction_count": 2974.0,
+      "transaction_value": 2386464.76,
+      "completed_value": 2106365.83,
+      "avg_transaction_value": 799.28,
+      "failure_rate_pct": 4.84
+    },
+    {
+      "month": "2023-09-01",
+      "month_label": "2023-09",
+      "transaction_count": 2784.0,
+      "transaction_value": 1789812.2,
+      "completed_value": 1616101.89,
+      "avg_transaction_value": 681.31,
+      "failure_rate_pct": 4.06
+    },
+    {
+      "month": "2023-10-01",
+      "month_label": "2023-10",
+      "transaction_count": 2804.0,
+      "transaction_value": 2064196.0,
+      "completed_value": 1722573.19,
+      "avg_transaction_value": 710.59,
+      "failure_rate_pct": 5.49
+    },
+    {
+      "month": "2023-11-01",
+      "month_label": "2023-11",
+      "transaction_count": 2808.0,
+      "transaction_value": 2557720.22,
+      "completed_value": 2293675.34,
+      "avg_transaction_value": 905.11,
+      "failure_rate_pct": 4.45
+    },
+    {
+      "month": "2023-12-01",
+      "month_label": "2023-12",
+      "transaction_count": 2750.0,
+      "transaction_value": 2218166.04,
+      "completed_value": 2001418.69,
+      "avg_transaction_value": 797.35,
+      "failure_rate_pct": 5.24
+    },
+    {
+      "month": "2024-01-01",
+      "month_label": "2024-01",
+      "transaction_count": 2927.0,
+      "transaction_value": 2190162.24,
+      "completed_value": 1971277.0,
+      "avg_transaction_value": 754.99,
+      "failure_rate_pct": 5.19
+    },
+    {
+      "month": "2024-02-01",
+      "month_label": "2024-02",
+      "transaction_count": 2684.0,
+      "transaction_value": 1717787.97,
+      "completed_value": 1503843.1,
+      "avg_transaction_value": 639.11,
+      "failure_rate_pct": 5.59
+    },
+    {
+      "month": "2024-03-01",
+      "month_label": "2024-03",
+      "transaction_count": 2872.0,
+      "transaction_value": 3102046.64,
+      "completed_value": 2785434.85,
+      "avg_transaction_value": 1049.17,
+      "failure_rate_pct": 5.47
+    },
+    {
+      "month": "2024-04-01",
+      "month_label": "2024-04",
+      "transaction_count": 2863.0,
+      "transaction_value": 2211326.42,
+      "completed_value": 2000097.67,
+      "avg_transaction_value": 815.79,
+      "failure_rate_pct": 5.45
+    },
+    {
+      "month": "2024-05-01",
+      "month_label": "2024-05",
+      "transaction_count": 2889.0,
+      "transaction_value": 2519417.14,
+      "completed_value": 2191967.56,
+      "avg_transaction_value": 952.38,
+      "failure_rate_pct": 4.6
+    },
+    {
+      "month": "2024-06-01",
+      "month_label": "2024-06",
+      "transaction_count": 2728.0,
+      "transaction_value": 2281243.02,
+      "completed_value": 2026936.29,
+      "avg_transaction_value": 806.87,
+      "failure_rate_pct": 6.01
+    },
+    {
+      "month": "2024-07-01",
+      "month_label": "2024-07",
+      "transaction_count": 2995.0,
+      "transaction_value": 2095428.14,
+      "completed_value": 1930777.41,
+      "avg_transaction_value": 735.62,
+      "failure_rate_pct": 4.64
+    },
+    {
+      "month": "2024-08-01",
+      "month_label": "2024-08",
+      "transaction_count": 2955.0,
+      "transaction_value": 2164435.35,
+      "completed_value": 1859710.34,
+      "avg_transaction_value": 682.32,
+      "failure_rate_pct": 5.62
+    },
+    {
+      "month": "2024-09-01",
+      "month_label": "2024-09",
+      "transaction_count": 2650.0,
+      "transaction_value": 2081611.36,
+      "completed_value": 1807888.41,
+      "avg_transaction_value": 779.77,
+      "failure_rate_pct": 4.68
+    },
+    {
+      "month": "2024-10-01",
+      "month_label": "2024-10",
+      "transaction_count": 2872.0,
+      "transaction_value": 2546665.54,
+      "completed_value": 2167156.95,
+      "avg_transaction_value": 835.34,
+      "failure_rate_pct": 4.87
+    },
+    {
+      "month": "2024-11-01",
+      "month_label": "2024-11",
+      "transaction_count": 2680.0,
+      "transaction_value": 2262307.4,
+      "completed_value": 2058762.34,
+      "avg_transaction_value": 873.67,
+      "failure_rate_pct": 5.37
+    },
+    {
+      "month": "2024-12-01",
+      "month_label": "2024-12",
+      "transaction_count": 2971.0,
+      "transaction_value": 2366979.83,
+      "completed_value": 2172356.55,
+      "avg_transaction_value": 832.18,
+      "failure_rate_pct": 5.25
+    },
+    {
+      "month": "2025-01-01",
+      "month_label": "2025-01",
+      "transaction_count": 2922.0,
+      "transaction_value": 2047737.26,
+      "completed_value": 1786783.82,
+      "avg_transaction_value": 684.91,
+      "failure_rate_pct": 5.27
+    },
+    {
+      "month": "2025-02-01",
+      "month_label": "2025-02",
+      "transaction_count": 2596.0,
+      "transaction_value": 1886116.41,
+      "completed_value": 1683673.16,
+      "avg_transaction_value": 739.12,
+      "failure_rate_pct": 5.12
+    },
+    {
+      "month": "2025-03-01",
+      "month_label": "2025-03",
+      "transaction_count": 2786.0,
+      "transaction_value": 2088242.82,
+      "completed_value": 1864458.34,
+      "avg_transaction_value": 764.68,
+      "failure_rate_pct": 5.31
+    },
+    {
+      "month": "2025-04-01",
+      "month_label": "2025-04",
+      "transaction_count": 2851.0,
+      "transaction_value": 2062076.9,
+      "completed_value": 1873421.07,
+      "avg_transaction_value": 728.73,
+      "failure_rate_pct": 5.54
+    },
+    {
+      "month": "2025-05-01",
+      "month_label": "2025-05",
+      "transaction_count": 2888.0,
+      "transaction_value": 2523012.09,
+      "completed_value": 2314390.29,
+      "avg_transaction_value": 915.96,
+      "failure_rate_pct": 5.16
+    },
+    {
+      "month": "2025-06-01",
+      "month_label": "2025-06",
+      "transaction_count": 2753.0,
+      "transaction_value": 1937130.64,
+      "completed_value": 1722549.9,
+      "avg_transaction_value": 694.07,
+      "failure_rate_pct": 4.9
+    },
+    {
+      "month": "2025-07-01",
+      "month_label": "2025-07",
+      "transaction_count": 2938.0,
+      "transaction_value": 2457640.24,
+      "completed_value": 2139498.12,
+      "avg_transaction_value": 801.19,
+      "failure_rate_pct": 4.63
+    },
+    {
+      "month": "2025-08-01",
+      "month_label": "2025-08",
+      "transaction_count": 2935.0,
+      "transaction_value": 2588939.36,
+      "completed_value": 2357831.13,
+      "avg_transaction_value": 878.1,
+      "failure_rate_pct": 4.57
+    },
+    {
+      "month": "2025-09-01",
+      "month_label": "2025-09",
+      "transaction_count": 2868.0,
+      "transaction_value": 2564679.17,
+      "completed_value": 2325120.88,
+      "avg_transaction_value": 932.81,
+      "failure_rate_pct": 4.92
+    },
+    {
+      "month": "2025-10-01",
+      "month_label": "2025-10",
+      "transaction_count": 2832.0,
+      "transaction_value": 2334273.22,
+      "completed_value": 2081268.9,
+      "avg_transaction_value": 818.91,
+      "failure_rate_pct": 4.94
+    },
+    {
+      "month": "2025-11-01",
+      "month_label": "2025-11",
+      "transaction_count": 2695.0,
+      "transaction_value": 1985396.93,
+      "completed_value": 1724313.89,
+      "avg_transaction_value": 748.7,
+      "failure_rate_pct": 5.08
+    },
+    {
+      "month": "2025-12-01",
+      "month_label": "2025-12",
+      "transaction_count": 2665.0,
+      "transaction_value": 2107731.06,
+      "completed_value": 1822043.25,
+      "avg_transaction_value": 773.31,
+      "failure_rate_pct": 4.88
+    }
+  ],
+  "channels": [
+    {
+      "channel": "Mobile App",
+      "transaction_count": 31713.0,
+      "transaction_value": 22663072.93,
+      "failure_rate_pct": 4.94,
+      "success_rate_pct": 88.36
+    },
+    {
+      "channel": "ATM",
+      "transaction_count": 18233.0,
+      "transaction_value": 12880270.39,
+      "failure_rate_pct": 5.28,
+      "success_rate_pct": 87.39
+    },
+    {
+      "channel": "POS",
+      "transaction_count": 14799.0,
+      "transaction_value": 10577910.33,
+      "failure_rate_pct": 5.15,
+      "success_rate_pct": 87.82
+    },
+    {
+      "channel": "Internet Banking",
+      "transaction_count": 14795.0,
+      "transaction_value": 10215309.58,
+      "failure_rate_pct": 4.97,
+      "success_rate_pct": 87.95
+    },
+    {
+      "channel": "Branch",
+      "transaction_count": 12088.0,
+      "transaction_value": 8858736.47,
+      "failure_rate_pct": 5.33,
+      "success_rate_pct": 87.55
+    },
+    {
+      "channel": "Online",
+      "transaction_count": 9940.0,
+      "transaction_value": 6693539.05,
+      "failure_rate_pct": 5.29,
+      "success_rate_pct": 87.82
+    }
+  ],
+  "segments": [
+    {
+      "segment": "Medium Activity",
+      "customers": 2471
+    },
+    {
+      "segment": "Inactive",
+      "customers": 1955
+    },
+    {
+      "segment": "High Activity",
+      "customers": 388
+    },
+    {
+      "segment": "Low Activity",
+      "customers": 186
+    }
+  ],
+  "branches": [
+    {
+      "branch_name": "NovaBank Dallas #50",
+      "region": "Southwest",
+      "city": "Dallas",
+      "transaction_count": 1001,
+      "transaction_value": 1149418.36,
+      "failure_rate_pct": 5.0,
+      "active_customers": 639
+    },
+    {
+      "branch_name": "NovaBank Philadelphia #7",
+      "region": "Northeast",
+      "city": "Philadelphia",
+      "transaction_count": 1022,
+      "transaction_value": 1021448.59,
+      "failure_rate_pct": 5.48,
+      "active_customers": 660
+    },
+    {
+      "branch_name": "NovaBank Detroit #47",
+      "region": "Midwest",
+      "city": "Detroit",
+      "transaction_count": 1049,
+      "transaction_value": 1000420.33,
+      "failure_rate_pct": 4.96,
+      "active_customers": 692
+    },
+    {
+      "branch_name": "NovaBank Minneapolis #20",
+      "region": "Midwest",
+      "city": "Minneapolis",
+      "transaction_count": 1101,
+      "transaction_value": 955958.77,
+      "failure_rate_pct": 4.63,
+      "active_customers": 713
+    },
+    {
+      "branch_name": "NovaBank Atlanta #22",
+      "region": "Southeast",
+      "city": "Atlanta",
+      "transaction_count": 1046,
+      "transaction_value": 894079.01,
+      "failure_rate_pct": 4.3,
+      "active_customers": 700
+    },
+    {
+      "branch_name": "NovaBank San Antonio #42",
+      "region": "Southwest",
+      "city": "San Antonio",
+      "transaction_count": 1058,
+      "transaction_value": 874495.87,
+      "failure_rate_pct": 6.24,
+      "active_customers": 670
+    },
+    {
+      "branch_name": "NovaBank Phoenix #26",
+      "region": "Southwest",
+      "city": "Phoenix",
+      "transaction_count": 1067,
+      "transaction_value": 867276.27,
+      "failure_rate_pct": 5.44,
+      "active_customers": 671
+    },
+    {
+      "branch_name": "NovaBank Indianapolis #17",
+      "region": "Midwest",
+      "city": "Indianapolis",
+      "transaction_count": 971,
+      "transaction_value": 854586.47,
+      "failure_rate_pct": 4.02,
+      "active_customers": 629
+    },
+    {
+      "branch_name": "NovaBank Newark #36",
+      "region": "Northeast",
+      "city": "Newark",
+      "transaction_count": 1066,
+      "transaction_value": 851835.04,
+      "failure_rate_pct": 4.97,
+      "active_customers": 654
+    },
+    {
+      "branch_name": "NovaBank Houston #3",
+      "region": "Southwest",
+      "city": "Houston",
+      "transaction_count": 1003,
+      "transaction_value": 850588.16,
+      "failure_rate_pct": 4.09,
+      "active_customers": 644
+    },
+    {
+      "branch_name": "NovaBank Newark #1",
+      "region": "Northeast",
+      "city": "Newark",
+      "transaction_count": 1014,
+      "transaction_value": 838814.2,
+      "failure_rate_pct": 4.44,
+      "active_customers": 657
+    },
+    {
+      "branch_name": "NovaBank Indianapolis #11",
+      "region": "Midwest",
+      "city": "Indianapolis",
+      "transaction_count": 1119,
+      "transaction_value": 784524.31,
+      "failure_rate_pct": 6.08,
+      "active_customers": 671
+    },
+    {
+      "branch_name": "NovaBank Los Angeles #24",
+      "region": "West",
+      "city": "Los Angeles",
+      "transaction_count": 993,
+      "transaction_value": 781062.7,
+      "failure_rate_pct": 4.63,
+      "active_customers": 654
+    },
+    {
+      "branch_name": "NovaBank San Antonio #40",
+      "region": "Southwest",
+      "city": "San Antonio",
+      "transaction_count": 993,
+      "transaction_value": 774857.28,
+      "failure_rate_pct": 3.73,
+      "active_customers": 648
+    },
+    {
+      "branch_name": "NovaBank Miami #44",
+      "region": "Southeast",
+      "city": "Miami",
+      "transaction_count": 1054,
+      "transaction_value": 767954.35,
+      "failure_rate_pct": 6.17,
+      "active_customers": 703
+    }
+  ],
+  "txn_types": [
+    {
+      "transaction_type": "Payment",
+      "transaction_count": 29482,
+      "transaction_value": 4511723.72
+    },
+    {
+      "transaction_type": "Withdrawal",
+      "transaction_count": 18020,
+      "transaction_value": 4770406.35
+    },
+    {
+      "transaction_type": "Bill Payment",
+      "transaction_count": 15926,
+      "transaction_value": 5464695.06
+    },
+    {
+      "transaction_type": "Transfer",
+      "transaction_count": 11992,
+      "transaction_value": 30656582.31
+    },
+    {
+      "transaction_type": "Deposit",
+      "transaction_count": 11946,
+      "transaction_value": 34842150.0
+    },
+    {
+      "transaction_type": "Fee",
+      "transaction_count": 6117,
+      "transaction_value": 232230.82
+    },
+    {
+      "transaction_type": "Interest",
+      "transaction_count": 4059,
+      "transaction_value": 122059.6
+    },
+    {
+      "transaction_type": "Refund",
+      "transaction_count": 4013,
+      "transaction_value": 483663.13
+    },
+    {
+      "transaction_type": null,
+      "transaction_count": 45,
+      "transaction_value": 89187.22
+    }
+  ],
+  "anomalies": [
+    {
+      "severity": "Low",
+      "cnt": 5041,
+      "amount": 11730695.1
+    },
+    {
+      "severity": "High",
+      "cnt": 2031,
+      "amount": 34180954.99
+    },
+    {
+      "severity": "Medium",
+      "cnt": 1573,
+      "amount": 4769923.5
+    }
+  ],
+  "anomaly_sample": [
+    {
+      "transaction_id": "TXN-0000039937",
+      "customer_id": "CUST-00004035",
+      "ts": "2024-03-13 08:13:51+05",
+      "amount": 1217853.44,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=4.36, amount=1217853.44 vs avg=58632.47); Potential anomaly: night_activity (hour=3, amount=1217853.44); Potential anomaly: sudden_behavior_change (amount=1217853.44 vs recent_avg=365.55); Potential anomaly: statistical z-score 4.36 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7757)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000090334",
+      "customer_id": "CUST-00004635",
+      "ts": "2025-09-14 09:46:51+05",
+      "amount": 384869.91,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=8.30, amount=384869.91 vs avg=6475.14); Potential anomaly: night_activity (hour=4, amount=384869.91); Potential anomaly: sudden_behavior_change (amount=384869.91 vs recent_avg=2608.57); Potential anomaly: statistical z-score 8.30 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7870)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000091466",
+      "customer_id": "CUST-00001509",
+      "ts": "2025-09-26 06:33:12+05",
+      "amount": 338645.59,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=6.71, amount=338645.59 vs avg=9166.42); Potential anomaly: night_activity (hour=1, amount=338645.59); Potential anomaly: sudden_behavior_change (amount=338645.59 vs recent_avg=765.42); Potential anomaly: statistical z-score 6.71 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7717)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000086598",
+      "customer_id": "CUST-00003629",
+      "ts": "2025-08-05 08:32:35+05",
+      "amount": 307948.22,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=6.86, amount=307948.22 vs avg=6591.42); Potential anomaly: night_activity (hour=3, amount=307948.22); Potential anomaly: sudden_behavior_change (amount=307948.22 vs recent_avg=220.71); Potential anomaly: statistical z-score 6.86 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7832)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000044813",
+      "customer_id": "CUST-00001012",
+      "ts": "2024-05-04 09:25:14+05",
+      "amount": 248318.98,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=4.36, amount=248318.98 vs avg=12694.03); Potential anomaly: night_activity (hour=4, amount=248318.98); Potential anomaly: sudden_behavior_change (amount=248318.98 vs recent_avg=417.60); Potential anomaly: statistical z-score 4.36 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7681)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000083421",
+      "customer_id": "CUST-00001010",
+      "ts": "2025-07-01 21:27:13+05",
+      "amount": 216194.64,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=5.75, amount=216194.64 vs avg=6393.44); Potential anomaly: sudden_behavior_change (amount=216194.64 vs recent_avg=207.95); Potential anomaly: statistical z-score 5.75 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7671)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000009620",
+      "customer_id": "CUST-00001746",
+      "ts": "2023-04-16 17:52:45+05",
+      "amount": 212451.9,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=8.77, amount=212451.90 vs avg=4427.37); Potential anomaly: sudden_behavior_change (amount=212451.90 vs recent_avg=2117.67); Potential anomaly: statistical z-score 8.77 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7759)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000016727",
+      "customer_id": "CUST-00000762",
+      "ts": "2023-07-03 17:51:10+05",
+      "amount": 185513.21,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=4.48, amount=185513.21 vs avg=8867.40); Potential anomaly: sudden_behavior_change (amount=185513.21 vs recent_avg=28.87); Potential anomaly: statistical z-score 4.48 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7711)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000029149",
+      "customer_id": "CUST-00001130",
+      "ts": "2023-11-14 19:28:55+05",
+      "amount": 169349.62,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=9.19, amount=169349.62 vs avg=3559.80); Potential anomaly: sudden_behavior_change (amount=169349.62 vs recent_avg=844.65); Potential anomaly: statistical z-score 9.19 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7697)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000031657",
+      "customer_id": "CUST-00002256",
+      "ts": "2023-12-12 14:50:05+05",
+      "amount": 168648.57,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=9.18, amount=168648.57 vs avg=3380.55); Potential anomaly: sudden_behavior_change (amount=168648.57 vs recent_avg=648.24); Potential anomaly: statistical z-score 9.18 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7802)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000063387",
+      "customer_id": "CUST-00002104",
+      "ts": "2024-11-24 21:38:07+05",
+      "amount": 150500.67,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=3.13, amount=150500.67 vs avg=15176.55); Potential anomaly: sudden_behavior_change (amount=150500.67 vs recent_avg=6020.02); Potential anomaly: statistical z-score 3.13 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7501)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000043225",
+      "customer_id": "CUST-00000719",
+      "ts": "2024-04-17 08:50:36+05",
+      "amount": 137365.0,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=6.60, amount=137365.00 vs avg=4374.15); Potential anomaly: night_activity (hour=3, amount=137365.00); Potential anomaly: sudden_behavior_change (amount=137365.00 vs recent_avg=967.24); Potential anomaly: statistical z-score 6.60 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7800)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000020247",
+      "customer_id": "CUST-00003372",
+      "ts": "2023-08-09 11:32:19+05",
+      "amount": 133691.99,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=6.29, amount=133691.99 vs avg=4268.67); Potential anomaly: sudden_behavior_change (amount=133691.99 vs recent_avg=255.06); Potential anomaly: statistical z-score 6.29 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7801)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000007617",
+      "customer_id": "CUST-00004491",
+      "ts": "2023-03-24 23:31:25+05",
+      "amount": 131861.8,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=8.17, amount=131861.80 vs avg=3064.88); Potential anomaly: sudden_behavior_change (amount=131861.80 vs recent_avg=1582.19); Potential anomaly: statistical z-score 8.17 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7639)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000015581",
+      "customer_id": "CUST-00002407",
+      "ts": "2023-06-20 23:29:33+05",
+      "amount": 129319.52,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=8.26, amount=129319.52 vs avg=3281.86); Potential anomaly: sudden_behavior_change (amount=129319.52 vs recent_avg=633.64); Potential anomaly: statistical z-score 8.26 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7683)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000065358",
+      "customer_id": "CUST-00000895",
+      "ts": "2024-12-16 06:22:25+05",
+      "amount": 127931.74,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=4.54, amount=127931.74 vs avg=7274.60); Potential anomaly: night_activity (hour=1, amount=127931.74); Potential anomaly: sudden_behavior_change (amount=127931.74 vs recent_avg=3570.10); Potential anomaly: statistical z-score 4.54 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7720)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000075307",
+      "customer_id": "CUST-00000161",
+      "ts": "2025-04-03 23:58:19+05",
+      "amount": 122249.57,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=4.92, amount=122249.57 vs avg=6388.08); Potential anomaly: sudden_behavior_change (amount=122249.57 vs recent_avg=1319.23); Potential anomaly: statistical z-score 4.92 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7574)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000091940",
+      "customer_id": "CUST-00004571",
+      "ts": "2025-10-01 10:03:05+05",
+      "amount": 121743.02,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=6.29, amount=121743.02 vs avg=3794.30); Potential anomaly: night_activity (hour=5, amount=121743.02); Potential anomaly: sudden_behavior_change (amount=121743.02 vs recent_avg=258.02); Potential anomaly: statistical z-score 6.29 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7785)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000006606",
+      "customer_id": "CUST-00002268",
+      "ts": "2023-03-13 20:14:18+05",
+      "amount": 117691.31,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=7.62, amount=117691.31 vs avg=3228.46); Potential anomaly: sudden_behavior_change (amount=117691.31 vs recent_avg=291.60); Potential anomaly: statistical z-score 7.62 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7774)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000073739",
+      "customer_id": "CUST-00003963",
+      "ts": "2025-03-18 08:30:58+05",
+      "amount": 115647.17,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=6.37, amount=115647.17 vs avg=3755.83); Potential anomaly: night_activity (hour=3, amount=115647.17); Potential anomaly: sudden_behavior_change (amount=115647.17 vs recent_avg=263.20); Potential anomaly: statistical z-score 6.45 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7821)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000002871",
+      "customer_id": "CUST-00003256",
+      "ts": "2023-02-01 10:09:03+05",
+      "amount": 115417.22,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=4.78, amount=115417.22 vs avg=5626.53); Potential anomaly: night_activity (hour=5, amount=115417.22); Potential anomaly: sudden_behavior_change (amount=115417.22 vs recent_avg=129.37); Potential anomaly: statistical z-score 4.78 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7742)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000005736",
+      "customer_id": "CUST-00003327",
+      "ts": "2023-03-04 07:40:28+05",
+      "amount": 111298.61,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=6.80, amount=111298.61 vs avg=4239.01); Potential anomaly: night_activity (hour=2, amount=111298.61); Potential anomaly: sudden_behavior_change (amount=111298.61 vs recent_avg=581.05); Potential anomaly: statistical z-score 6.80 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7717)",
+      "score": 0.45
+    },
+    {
+      "transaction_id": "TXN-0000058177",
+      "customer_id": "CUST-00001666",
+      "ts": "2024-09-27 22:39:09+05",
+      "amount": 111169.06,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=4.11, amount=111169.06 vs avg=6985.91); Potential anomaly: sudden_behavior_change (amount=111169.06 vs recent_avg=1896.36); Potential anomaly: statistical z-score 4.11 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7532)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000045704",
+      "customer_id": "CUST-00000161",
+      "ts": "2024-05-14 16:53:09+05",
+      "amount": 109245.84,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=4.37, amount=109245.84 vs avg=6388.08); Potential anomaly: sudden_behavior_change (amount=109245.84 vs recent_avg=1744.27); Potential anomaly: statistical z-score 4.37 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7575)",
+      "score": 0.35
+    },
+    {
+      "transaction_id": "TXN-0000033817",
+      "customer_id": "CUST-00001391",
+      "ts": "2024-01-05 08:53:40+05",
+      "amount": 109202.88,
+      "severity": "High",
+      "anomaly_reason": "Potential anomaly: high_amount (z=8.67, amount=109202.88 vs avg=2090.97); Potential anomaly: night_activity (hour=3, amount=109202.88); Potential anomaly: sudden_behavior_change (amount=109202.88 vs recent_avg=315.42); Potential anomaly: statistical z-score 8.67 (threshold=3.0); Potential anomaly: ml_isolation_forest (score=0.7722)",
+      "score": 0.45
+    }
+  ],
+  "regions": [
+    {
+      "region": "Southeast",
+      "transaction_count": 19953,
+      "transaction_value": 18070155.48
+    },
+    {
+      "region": "Midwest",
+      "transaction_count": 20658,
+      "transaction_value": 16583569.39
+    },
+    {
+      "region": "Southwest",
+      "transaction_count": 20306,
+      "transaction_value": 16245447.9
+    },
+    {
+      "region": "Northeast",
+      "transaction_count": 20884,
+      "transaction_value": 15782328.75
+    },
+    {
+      "region": "West",
+      "transaction_count": 19799,
+      "transaction_value": 14491196.69
+    }
+  ],
+  "failures": [
+    {
+      "month": "2023-01",
+      "failed": 136,
+      "reversed": 95,
+      "total": 2838
+    },
+    {
+      "month": "2023-02",
+      "failed": 126,
+      "reversed": 77,
+      "total": 2632
+    },
+    {
+      "month": "2023-03",
+      "failed": 179,
+      "reversed": 90,
+      "total": 2886
+    },
+    {
+      "month": "2023-04",
+      "failed": 146,
+      "reversed": 80,
+      "total": 2634
+    },
+    {
+      "month": "2023-05",
+      "failed": 163,
+      "reversed": 82,
+      "total": 2904
+    },
+    {
+      "month": "2023-06",
+      "failed": 141,
+      "reversed": 76,
+      "total": 2784
+    },
+    {
+      "month": "2023-07",
+      "failed": 150,
+      "reversed": 79,
+      "total": 2953
+    },
+    {
+      "month": "2023-08",
+      "failed": 144,
+      "reversed": 87,
+      "total": 2974
+    },
+    {
+      "month": "2023-09",
+      "failed": 113,
+      "reversed": 93,
+      "total": 2784
+    },
+    {
+      "month": "2023-10",
+      "failed": 154,
+      "reversed": 96,
+      "total": 2804
+    },
+    {
+      "month": "2023-11",
+      "failed": 125,
+      "reversed": 76,
+      "total": 2808
+    },
+    {
+      "month": "2023-12",
+      "failed": 144,
+      "reversed": 92,
+      "total": 2750
+    },
+    {
+      "month": "2024-01",
+      "failed": 152,
+      "reversed": 88,
+      "total": 2927
+    },
+    {
+      "month": "2024-02",
+      "failed": 150,
+      "reversed": 79,
+      "total": 2684
+    },
+    {
+      "month": "2024-03",
+      "failed": 157,
+      "reversed": 90,
+      "total": 2872
+    },
+    {
+      "month": "2024-04",
+      "failed": 156,
+      "reversed": 87,
+      "total": 2863
+    },
+    {
+      "month": "2024-05",
+      "failed": 133,
+      "reversed": 88,
+      "total": 2889
+    },
+    {
+      "month": "2024-06",
+      "failed": 164,
+      "reversed": 77,
+      "total": 2728
+    },
+    {
+      "month": "2024-07",
+      "failed": 139,
+      "reversed": 87,
+      "total": 2995
+    },
+    {
+      "month": "2024-08",
+      "failed": 166,
+      "reversed": 81,
+      "total": 2955
+    },
+    {
+      "month": "2024-09",
+      "failed": 124,
+      "reversed": 85,
+      "total": 2650
+    },
+    {
+      "month": "2024-10",
+      "failed": 140,
+      "reversed": 84,
+      "total": 2872
+    },
+    {
+      "month": "2024-11",
+      "failed": 144,
+      "reversed": 74,
+      "total": 2680
+    },
+    {
+      "month": "2024-12",
+      "failed": 156,
+      "reversed": 89,
+      "total": 2971
+    },
+    {
+      "month": "2025-01",
+      "failed": 154,
+      "reversed": 89,
+      "total": 2922
+    },
+    {
+      "month": "2025-02",
+      "failed": 133,
+      "reversed": 86,
+      "total": 2596
+    },
+    {
+      "month": "2025-03",
+      "failed": 148,
+      "reversed": 78,
+      "total": 2786
+    },
+    {
+      "month": "2025-04",
+      "failed": 158,
+      "reversed": 80,
+      "total": 2851
+    },
+    {
+      "month": "2025-05",
+      "failed": 149,
+      "reversed": 82,
+      "total": 2888
+    },
+    {
+      "month": "2025-06",
+      "failed": 135,
+      "reversed": 74,
+      "total": 2753
+    },
+    {
+      "month": "2025-07",
+      "failed": 136,
+      "reversed": 109,
+      "total": 2938
+    },
+    {
+      "month": "2025-08",
+      "failed": 134,
+      "reversed": 87,
+      "total": 2935
+    },
+    {
+      "month": "2025-09",
+      "failed": 141,
+      "reversed": 70,
+      "total": 2868
+    },
+    {
+      "month": "2025-10",
+      "failed": 140,
+      "reversed": 78,
+      "total": 2832
+    },
+    {
+      "month": "2025-11",
+      "failed": 137,
+      "reversed": 79,
+      "total": 2695
+    },
+    {
+      "month": "2025-12",
+      "failed": 130,
+      "reversed": 74,
+      "total": 2665
+    },
+    {
+      "month": null,
+      "failed": 3,
+      "reversed": 2,
+      "total": 34
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Deduplicated and standardized customer records
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_status
+        tests:
+          - not_null
+
+  - name: stg_accounts
+    description: Deduplicated and standardized account records
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+  - name: stg_branches
+    columns:
+      - name: branch_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_merchants
+    columns:
+      - name: merchant_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_cards
+    columns:
+      - name: card_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+  - name: stg_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        tests:
+          - relationships:
+              to: ref('stg_accounts')
+              field: account_id
+              config:
+                severity: warn
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+              config:
+                severity: warn
+
+  - name: stg_transfers
+    columns:
+      - name: transfer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_atm_transactions
+    columns:
+      - name: atm_txn_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_card_transactions
+    columns:
+      - name: card_txn_id
+        tests:
+          - unique
+          - not_null

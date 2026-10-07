@@ -1,0 +1,75 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Synthetic NovaBank source-system tables (TEXT columns, intentionally dirty)
+    schema: raw
+    tables:
+      - name: customers
+        description: Customer master from customer_system
+        identifier: customers
+        columns:
+          - name: customer_id
+            description: Business key CUST-XXXXXXXX
+          - name: customer_status
+          - name: _ingested_at
+
+      - name: accounts
+        description: Account master from core_banking
+        identifier: accounts
+        columns:
+          - name: account_id
+            description: Business key ACC-XXXXXXXX
+          - name: customer_id
+          - name: account_status
+
+      - name: branches
+        description: Branch reference from branch_system
+        identifier: branches
+        columns:
+          - name: branch_id
+            description: Business key BR-XXXXXXXX
+
+      - name: merchants
+        description: Merchant reference from card_system
+        identifier: merchants
+        columns:
+          - name: merchant_id
+            description: Business key MERCH-XXXXXXXX
+
+      - name: cards
+        description: Card portfolio from card_system (synthetic CARD-XXXXXX IDs, not PANs)
+        identifier: cards
+        columns:
+          - name: card_id
+            description: Business key CARD-XXXXXX
+
+      - name: transactions
+        description: Core banking transactions
+        identifier: transactions
+        columns:
+          - name: transaction_id
+            description: Business key TXN-XXXXXXXXXX
+          - name: transaction_status
+          - name: is_injected_anomaly
+
+      - name: transfers
+        description: Account-to-account transfers
+        identifier: transfers
+        columns:
+          - name: transfer_id
+            description: Business key XFER-XXXXXXXXXX
+
+      - name: atm_transactions
+        description: ATM channel transactions
+        identifier: atm_transactions
+        columns:
+          - name: atm_txn_id
+            description: Business key ATM-XXXXXXXXXX
+
+      - name: card_transactions
+        description: Card payment transactions
+        identifier: card_transactions
+        columns:
+          - name: card_txn_id
+            description: Business key CTXN-XXXXXXXXXX

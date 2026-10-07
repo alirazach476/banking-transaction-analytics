@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: mart_daily_transactions
+    columns:
+      - name: transaction_date
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_monthly_transactions
+    columns:
+      - name: month_start
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_customer_activity
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: activity_segment
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Inactive', 'Low Activity', 'Medium Activity', 'High Activity', 'Premium Activity', 'Unknown']
+
+  - name: mart_account_activity
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_branch_performance
+    columns:
+      - name: branch_id
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_channel_performance
+    columns:
+      - name: channel
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_anomaly_monitoring
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_transaction_failures
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
