@@ -4,8 +4,6 @@
 
 **Live demo:** [Vercel site](https://banking-transaction-analytics.vercel.app) · [BI Dashboard](https://banking-transaction-analytics.vercel.app/dashboard) · [GitHub](https://github.com/alirazach476/banking-transaction-analytics)
 
-> URLs finalize after first deploy — if the Vercel subdomain differs, use the link printed by `vercel --prod`.
-
 End-to-end portfolio project for **NovaBank**, a fictional retail bank. The platform ingests multi-source synthetic banking feeds, validates data quality, loads a PostgreSQL warehouse via **dbt**, runs **transaction anomaly detection**, and exposes analytics marts for **Power BI** and advanced SQL.
 
 ---
