@@ -1,0 +1,109 @@
+{
+  "fraud_xgb": {
+    "file": "models/fraud_xgb.joblib",
+    "trained_at": "2026-11-20T16:33:24+00:00",
+    "seed": 42,
+    "synthetic_data_only": true,
+    "task": "synthetic fraud-pattern detection",
+    "features": [
+      "log_amt",
+      "intl",
+      "cnp",
+      "night",
+      "hour",
+      "card_txn_60m",
+      "card_amt_60m",
+      "amt_vs_card_mean",
+      "foreign_merchant"
+    ],
+    "metrics": {
+      "pr_auc": 0.2547568656967681
+    }
+  },
+  "anomaly_isoforest": {
+    "file": "models/anomaly_isoforest.joblib",
+    "trained_at": "2026-11-20T16:33:24+00:00",
+    "seed": 42,
+    "synthetic_data_only": true,
+    "task": "unsupervised anomaly score",
+    "features": [
+      "log_amt",
+      "intl",
+      "cnp",
+      "night",
+      "hour",
+      "card_txn_60m",
+      "card_amt_60m",
+      "amt_vs_card_mean",
+      "foreign_merchant"
+    ],
+    "metrics": {
+      "pr_auc": 0.04852591982393681
+    }
+  },
+  "decline_xgb": {
+    "file": "models/decline_xgb.joblib",
+    "trained_at": "2026-11-20T16:34:05+00:00",
+    "seed": 42,
+    "synthetic_data_only": true,
+    "task": "authorization decline probability",
+    "features": [
+      "log_amt",
+      "intl",
+      "cnp",
+      "night",
+      "hour",
+      "channel_E-Commerce",
+      "channel_Mobile Wallet",
+      "channel_Pos Chip",
+      "channel_Pos Contactless",
+      "channel_Recurring",
+      "merchant_category_Education",
+      "merchant_category_Entertainment",
+      "merchant_category_Fuel",
+      "merchant_category_Grocery",
+      "merchant_category_Healthcare",
+      "merchant_category_Other",
+      "merchant_category_Restaurant",
+      "merchant_category_Retail",
+      "merchant_category_Technology",
+      "merchant_category_Travel",
+      "merchant_category_Utilities",
+      "card_status_Active",
+      "card_status_Blocked",
+      "card_status_Expired",
+      "card_status_Inactive"
+    ],
+    "metrics": {
+      "roc_auc": 0.6371862177838699
+    }
+  },
+  "volume_holtwinters": {
+    "file": "models/volume_holtwinters.joblib",
+    "trained_at": "2026-11-20T16:34:05+00:00",
+    "seed": 42,
+    "synthetic_data_only": true,
+    "task": "daily payment volume forecast",
+    "metrics": {
+      "mape_pct": 16.888794804652118
+    }
+  },
+  "customer_segments_kmeans": {
+    "file": "models/customer_segments_kmeans.joblib",
+    "trained_at": "2026-11-20T16:34:07+00:00",
+    "seed": 42,
+    "synthetic_data_only": true,
+    "task": "customer behavioural segmentation",
+    "features": [
+      "log_n",
+      "log_amt",
+      "decline",
+      "intl",
+      "cnp",
+      "n_cat"
+    ],
+    "metrics": {
+      "silhouette": 0.20849627901046136
+    }
+  }
+}

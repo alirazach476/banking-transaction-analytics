@@ -79,3 +79,4 @@ temp/
 data/source/payments/payments_manifest.json
 data/external_downloads/
 data/warehouse/
+models/*.joblib

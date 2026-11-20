@@ -1,0 +1,109 @@
+{
+  "fraud": {
+    "test_rows": 94973,
+    "test_fraud_rate": 0.002505975382477125,
+    "best_params": {
+      "colsample_bytree": 0.7783331011414365,
+      "learning_rate": 0.02517705400593095,
+      "max_depth": 4,
+      "min_child_weight": 4,
+      "n_estimators": 301,
+      "subsample": 0.8603553891795411
+    },
+    "cv_pr_auc": 0.23162523079652167,
+    "supervised_pr_auc": 0.2547568656967681,
+    "supervised_roc_auc": 0.9455029576088629,
+    "best_f1": 0.30581039755351686,
+    "precision_at_best_f1": 0.5617977528089888,
+    "recall_at_best_f1": 0.21008403361344538,
+    "isolation_forest_pr_auc": 0.04852591982393681,
+    "isolation_forest_roc_auc": 0.8704576410180899,
+    "random_baseline_pr_auc": 0.002505975382477125
+  },
+  "decline_tuned": {
+    "best_params": {
+      "colsample_bytree": 0.7783331011414365,
+      "learning_rate": 0.02517705400593095,
+      "max_depth": 4,
+      "min_child_weight": 4,
+      "n_estimators": 301,
+      "subsample": 0.8603553891795411
+    },
+    "cv_pr_auc": 0.17972057534265715,
+    "test_roc_auc": 0.6371862177838699,
+    "test_pr_auc": 0.16863637565675177
+  },
+  "forecast": {
+    "holdout_days": 90,
+    "seasonal_naive_mape_pct": 19.270318092013426,
+    "holt_winters_mape_pct": 16.888794804652118,
+    "mean_daily_volume": 433.8686868686869
+  },
+  "segmentation": {
+    "customers": 3248,
+    "silhouette_by_k": {
+      "3": 0.18724636862522367,
+      "4": 0.2008718234966075,
+      "5": 0.20044021416467675,
+      "6": 0.20849627901046136,
+      "7": 0.20554943150551516
+    },
+    "chosen_k": 6,
+    "profiles": [
+      {
+        "segment": 0,
+        "customers": 489,
+        "avg_payments": 146.198,
+        "avg_amount": 172.833,
+        "decline_rate": 0.054,
+        "intl_share": 0.028,
+        "cnp_share": 0.428
+      },
+      {
+        "segment": 1,
+        "customers": 1050,
+        "avg_payments": 257.085,
+        "avg_amount": 593.067,
+        "decline_rate": 0.049,
+        "intl_share": 0.042,
+        "cnp_share": 0.3
+      },
+      {
+        "segment": 2,
+        "customers": 21,
+        "avg_payments": 8.286,
+        "avg_amount": 4692.05,
+        "decline_rate": 0.979,
+        "intl_share": 0.123,
+        "cnp_share": 0.346
+      },
+      {
+        "segment": 3,
+        "customers": 112,
+        "avg_payments": 58.277,
+        "avg_amount": 1212.044,
+        "decline_rate": 0.082,
+        "intl_share": 0.16,
+        "cnp_share": 0.357
+      },
+      {
+        "segment": 4,
+        "customers": 378,
+        "avg_payments": 19.516,
+        "avg_amount": 135.358,
+        "decline_rate": 0.065,
+        "intl_share": 0.024,
+        "cnp_share": 0.261
+      },
+      {
+        "segment": 5,
+        "customers": 1198,
+        "avg_payments": 99.513,
+        "avg_amount": 148.085,
+        "decline_rate": 0.048,
+        "intl_share": 0.032,
+        "cnp_share": 0.269
+      }
+    ]
+  }
+}
