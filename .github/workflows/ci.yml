@@ -1,0 +1,92 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        # embedded-postgres and xlrd-only tooling are not needed in CI; install everything else
+        run: |
+          grep -v -i "embedded-postgres" requirements.txt > /tmp/req-ci.txt
+          pip install -r /tmp/req-ci.txt
+      - name: Unit tests (database- and model-dependent tests skip themselves)
+        run: PYTHONPATH=. pytest -q
+      - name: dbt project parses
+        env:
+          POSTGRES_HOST: localhost
+          POSTGRES_PORT: "5432"
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci
+          POSTGRES_DB: ci
+        run: cd dbt && dbt deps --profiles-dir . && dbt parse --profiles-dir .
+
+  python-tests-with-postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: novabank
+          POSTGRES_PASSWORD: ci_password
+          POSTGRES_DB: novabank
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U novabank" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: novabank
+      POSTGRES_PASSWORD: ci_password
+      POSTGRES_DB: novabank
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: |
+          grep -v -i "embedded-postgres" requirements.txt > /tmp/req-ci.txt
+          pip install -r /tmp/req-ci.txt
+      - name: Generate small synthetic payment data, load it, build dbt payment models
+        run: |
+          python -m src.payments.writer --payments 20000
+          python -c "from src.payments.load import load_payment_sources; from config.settings import get_settings; print(load_payment_sources(get_settings().data_source_dir / 'payments'))"
+          cd dbt && dbt deps --profiles-dir . && dbt build --select models/payments --profiles-dir .
+      - name: Full test suite against the database
+        run: pytest -q
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web/react-app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npm test
+      - run: npm run build
+
+  api-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f Dockerfile.api -t novabank-api:ci .
+      - name: Container health
+        run: |
+          docker run -d --name api -p 8000:8000 novabank-api:ci
+          for i in $(seq 1 20); do curl -fs localhost:8000/health && break; sleep 2; done
+          curl -fs localhost:8000/health
