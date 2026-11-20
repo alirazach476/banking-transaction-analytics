@@ -157,6 +157,12 @@ WB_FEATURED = {
     "UKRAINE": lambda d: bool(_colls(d) & {"ukraine", "ukraine datasets"}),
     "WDR": lambda d: bool(_colls(d) & {"wdr", "wdr2022", "world development report", "world development report 2021",
                                        "world development report 2022"}),
+    # second carousel page (screenshots supplied by the user)
+    "COVID19": lambda d: bool(_colls(d) & {"covid_19", "coronavirus (covid-19) related datasets"}),
+    "BOUNDARIES": lambda d: "official boundaries" in (d.get("name") or "").lower(),
+    "LIBRARY": lambda d: bool(_colls(d) & {"library", "library databases", "library database"}),
+    "WSF": lambda d: bool(_colls(d) & {"world_settlement", "world settlement footprint"}),
+    "ESA": lambda d: bool(_colls(d) & {"wbg_esa"}),
 }
 EXCEL = {"xls", "xlsx", "excel", "ms excel", "microsoft excel"}
 
@@ -193,39 +199,168 @@ def _is_excel_url(u: str) -> bool:
     return u.lower().split("?")[0].endswith((".xls", ".xlsx"))
 
 
+def _failed_files() -> set[str]:
+    """Destination paths whose latest manifest record is a failure (Excel unavailable -> CSV fallback)."""
+    mf = OUT / "manifest_wb.jsonl"
+    last: dict[str, str] = {}
+    if mf.exists():
+        for line in mf.read_text(encoding="utf-8").splitlines():
+            r = json.loads(line)
+            last[r["file"]] = r["status"]
+    return {f for f, st in last.items() if st not in ("OK", "SKIPPED_EXISTS")}
+
+
+def _classify(res: dict) -> tuple[str, str | None]:
+    """Return (kind, direct_url) with kind in {'excel','csv',''} using listing, then detail endpoint."""
+    rid = res["resource_unique_id"]
+    fmt = (res.get("format") or "").strip().lower()
+    name = res.get("name") or ""
+    url = res.get("url") or ""
+    if fmt in EXCEL or _is_excel_url(url) or name.lower().endswith((".xls", ".xlsx")):
+        return "excel", url or (wb_resource_detail(rid).get("distribution") or {}).get("website_url")
+    if fmt == "csv" or url.lower().split("?")[0].endswith(".csv"):
+        return "csv", url or (wb_resource_detail(rid).get("distribution") or {}).get("website_url")
+    if not url and (fmt == "" or "excel" in name.lower() or "xls" in name.lower() or "csv" in name.lower()):
+        w = (wb_resource_detail(rid).get("distribution") or {}).get("website_url") or ""
+        if _is_excel_url(w):
+            return "excel", w
+        if w.lower().split("?")[0].endswith(".csv"):
+            return "csv", w
+    return "", None
+
+
 def plan_wb() -> list[tuple[str, Path]]:
+    """Per featured dataset: Excel resources; if the dataset has none (or all its Excel downloads
+    failed), its CSV resources instead."""
     items, seen = [], set()
+    failed = _failed_files()
     for d in wb_all_datasets():
         tag = next((t for t, f in WB_FEATURED.items() if f(d)), None)
         if not tag:
             continue
+        excel, csv_ = [], []
         for res in d.get("resources") or []:
-            rid = res["resource_unique_id"]
-            if rid in seen:
+            if res["resource_unique_id"] in seen:
                 continue
-            fmt = (res.get("format") or "").strip().lower()
-            name = res.get("name") or ""
-            url = res.get("url") or ""
-            direct = None
-            if fmt in EXCEL or _is_excel_url(url) or name.lower().endswith((".xls", ".xlsx")):
-                direct = url or None
-                if not direct:  # listed as Excel but no link in the bulk listing
-                    direct = (wb_resource_detail(rid).get("distribution") or {}).get("website_url")
-            elif not url and (fmt in ("", "excel") or "excel" in name.lower() or "xls" in name.lower()):
-                w = (wb_resource_detail(rid).get("distribution") or {}).get("website_url") or ""
-                direct = w if _is_excel_url(w) else None
-            if not direct and not (fmt in EXCEL or _is_excel_url(url)):
-                continue
-            seen.add(rid)
+            kind, direct = _classify(res)
+            if kind == "excel":
+                excel.append((res, direct))
+            elif kind == "csv" and direct:
+                csv_.append((res, direct))
+
+        def dest(res, kind, src):
+            rid, name = res["resource_unique_id"], res.get("name") or ""
             safe = re.sub(r"[^A-Za-z0-9._-]+", "_", name)[:90] or rid
-            src = direct or f"{WB}/resources/{rid}/download"
-            if not safe.lower().endswith((".xls", ".xlsx")):
-                safe += ".xlsx" if (".xlsx" in src.lower() or fmt in ("excel", "ms excel")) else ".xls"
-            items.append((src, OUT / "worldbank" / tag / f'{d["dataset_unique_id"]}_{rid}_{safe}'))
+            ext = ".csv" if kind == "csv" else (".xlsx" if ".xlsx" in (src or "").lower() or
+                                               (res.get("format") or "").lower() in ("excel", "ms excel") else ".xls")
+            if not safe.lower().endswith(ext):
+                safe += ext
+            sub = "csv" if kind == "csv" else ""
+            return OUT / "worldbank" / tag / sub / f'{d["dataset_unique_id"]}_{rid}_{safe}'
+
+        excel_paths = [dest(r, "excel", u or "") for r, u in excel]
+        excel_ok = [p for p in excel_paths if str(p.relative_to(OUT)) not in failed]
+        for (res, direct), path in zip(excel, excel_paths):
+            items.append((direct or f"{WB}/resources/{res['resource_unique_id']}/download", path))
+            seen.add(res["resource_unique_id"])
+        if not excel_ok:  # no Excel at all, or every Excel download failed -> CSV instead
+            for res, direct in csv_:
+                items.append((direct, dest(res, "csv", direct)))
+                seen.add(res["resource_unique_id"])
     return items
 
 
-PLANNERS = {"ecb": plan_ecb, "sbp": plan_sbp, "wb": plan_wb}
+# Datasets matched by the catalog search filter the user supplied (collection_code any of these 8);
+# the API lists collection codes AND titles in collection_id, so both are matched (1,020 datasets).
+WBCAT_NAMES = {"coronavirus (covid-19) related datasets", "covid_19", "data 360", "data360", "energy data info",
+               "energy_data", "equitable growth, finance and institutions", "equitable_growth",
+               "infrastructure finance datasets", "infrastructure_finance_datasets", "rdl", "risk data library",
+               "ukraine", "ukraine datasets", "wb_energy", "world bank energy datasets"}
+
+
+def plan_wbcat() -> list[tuple[str, Path]]:
+    """Every Excel and CSV resource of every dataset in the filtered collections."""
+    have = {p.name.split("_")[1] for p in (OUT / "worldbank").rglob("*") if p.is_file() and p.name.startswith("00")}
+    items, seen_ds, seen = [], set(), set()
+    for d in wb_all_datasets():
+        if not (_colls(d) & WBCAT_NAMES) or d["dataset_unique_id"] in seen_ds:
+            continue
+        seen_ds.add(d["dataset_unique_id"])
+        for res in d.get("resources") or []:
+            rid = res["resource_unique_id"]
+            if rid in seen or rid in have:
+                continue
+            kind, direct = _classify(res)
+            if not kind or not direct:
+                continue
+            seen.add(rid)
+            safe = re.sub(r"[^A-Za-z0-9._-]+", "_", res.get("name") or "")[:80] or rid
+            ext = ".csv" if kind == "csv" else (".xlsx" if ".xlsx" in direct.lower() else ".xls")
+            if not safe.lower().endswith(ext):
+                safe += ext
+            items.append((direct, OUT / "worldbank_collections" / d["dataset_unique_id"] / f"{rid}_{safe}"))
+    return items
+
+
+def plan_wbzip() -> list[tuple[str, Path]]:
+    """Zip resources of featured/filtered datasets that have NO Excel or CSV resource at all."""
+    items, seen_ds = [], set()
+    for d in wb_all_datasets():
+        in_scope = (_colls(d) & WBCAT_NAMES) or any(f(d) for f in WB_FEATURED.values())
+        if not in_scope or d["dataset_unique_id"] in seen_ds:
+            continue
+        seen_ds.add(d["dataset_unique_id"])
+        res_list = d.get("resources") or []
+        if any(_classify(r)[0] for r in res_list):  # has Excel/CSV -> not a zip-only dataset
+            continue
+        for res in res_list:
+            fmt = (res.get("format") or "").strip().lower()
+            url = res.get("url") or ""
+            if fmt != "zip" and not url.lower().split("?")[0].endswith(".zip"):
+                continue
+            rid = res["resource_unique_id"]
+            if not url:
+                url = (wb_resource_detail(rid).get("distribution") or {}).get("website_url") or ""
+            if not url.lower().split("?")[0].endswith(".zip"):
+                continue
+            safe = re.sub(r"[^A-Za-z0-9._-]+", "_", res.get("name") or "")[:80] or rid
+            if not safe.lower().endswith(".zip"):
+                safe += ".zip"
+            items.append((url, OUT / "worldbank_zips" / d["dataset_unique_id"] / f"{rid}_{safe}"))
+    return items
+
+
+def plan_wbrel() -> list[tuple[str, Path]]:
+    """Excel, CSV and zip resources of the datasets judged relevant to NovaBank (finance, banking,
+    payments, credit, inflation, debt, fiscal, trade). ids come from data/external_downloads/relevant_datasets.json."""
+    ids = set(json.loads((OUT / "relevant_datasets.json").read_text(encoding="utf-8")))
+    have = {p.name.split("_")[1] for p in OUT.rglob("*") if p.is_file() and "_" in p.name and p.name.startswith("00")}
+    have |= {p.name.split("_")[0] for p in OUT.rglob("*") if p.is_file() and p.name.startswith("DR")}
+    items, seen = [], set()
+    for d in wb_all_datasets():
+        if d["dataset_unique_id"] not in ids:
+            continue
+        for res in d.get("resources") or []:
+            rid = res["resource_unique_id"]
+            if rid in seen or rid in have:
+                continue
+            kind, direct = _classify(res)
+            fmt = (res.get("format") or "").strip().lower()
+            url = res.get("url") or ""
+            if not kind and (fmt == "zip" or url.lower().split("?")[0].endswith(".zip")):
+                kind, direct = "zip", url or (wb_resource_detail(rid).get("distribution") or {}).get("website_url")
+            if not kind or not direct:
+                continue
+            seen.add(rid)
+            ext = {"csv": ".csv", "zip": ".zip"}.get(kind) or (".xlsx" if ".xlsx" in direct.lower() else ".xls")
+            safe = re.sub(r"[^A-Za-z0-9._-]+", "_", res.get("name") or "")[:80] or rid
+            if not safe.lower().endswith(ext):
+                safe += ext
+            items.append((direct, OUT / "worldbank_relevant" / d["dataset_unique_id"] / f"{rid}_{safe}"))
+    return items
+
+
+PLANNERS = {"ecb": plan_ecb, "sbp": plan_sbp, "wb": plan_wb, "wbcat": plan_wbcat, "wbzip": plan_wbzip, "wbrel": plan_wbrel}
 
 
 def main(argv: list[str] | None = None) -> int:
