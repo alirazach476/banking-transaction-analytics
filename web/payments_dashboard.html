@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaBank Payments</title>
+<style>
+  :root { --bg:#f7f8fa; --card:#fff; --ink:#1b2430; --mute:#5b6675; --line:#e2e6ec; --accent:#1f6feb; --bad:#c62828; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#12161c; --card:#1a2029; --ink:#e8ecf2; --mute:#9aa6b6; --line:#2a3240; --accent:#5aa2ff; --bad:#ff7b72; } }
+  * { box-sizing:border-box } body { margin:0; font:15px/1.5 system-ui,sans-serif; background:var(--bg); color:var(--ink); padding:16px; }
+  h1 { font-size:20px; margin:0 0 2px } .sub { color:var(--mute); margin:0 0 16px; font-size:13px }
+  .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); margin-bottom:16px }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px }
+  .k { color:var(--mute); font-size:12px } .v { font-size:24px; font-weight:600 }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:16px }
+  .panel h2 { font-size:15px; margin:0 0 10px } canvas { max-width:100%; max-height:280px }
+  table { width:100%; border-collapse:collapse; font-size:13px } th,td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line) }
+  form { display:grid; gap:8px; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); align-items:end }
+  label { font-size:12px; color:var(--mute); display:block } input,select,button { width:100%; padding:7px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--ink); font:inherit }
+  button { background:var(--accent); color:#fff; border:0; cursor:pointer } #err { color:var(--bad) }
+  .wrap { overflow-x:auto }
+</style>
+</head>
+<body>
+<h1>NovaBank Payments</h1>
+<p class="sub">Synthetic data only. KPIs from dbt marts; scores from saved models. <span id="err"></span></p>
+<div class="grid" id="tiles"></div>
+<div class="panel"><h2>Daily approval rate (last 180 days)</h2><canvas id="ch1"></canvas></div>
+<div class="panel"><h2>Top decline reasons</h2><canvas id="ch2"></canvas></div>
+<div class="panel"><h2>Open reconciliation exceptions (top 10 by priority)</h2><div class="wrap"><table id="queue"></table></div></div>
+<div class="panel"><h2>Score a payment</h2>
+  <form id="sf">
+    <div><label>Amount (USD)</label><input name="amount" type="number" step="0.01" value="120" min="0.01" required></div>
+    <div><label>Hour (0-23)</label><input name="hour" type="number" value="14" min="0" max="23" required></div>
+    <div><label>Channel</label><select name="channel"><option>POS Chip</option><option>POS Contactless</option><option>E-commerce</option><option>Recurring</option></select></div>
+    <div><label>International</label><select name="is_international"><option value="false">No</option><option value="true">Yes</option></select></div>
+    <div><label>Card payments last 60 min</label><input name="card_txn_60m" type="number" value="1" min="1"></div>
+    <div><button type="submit">Score</button></div>
+  </form>
+  <p id="score" class="sub"></p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const KEY = new URLSearchParams(location.search).get("key");
+const H = KEY ? {"X-API-Key": KEY} : {};
+const api = async (p, opt={}) => { const r = await fetch(p, {headers:{...H,"Content-Type":"application/json"}, ...opt}); if(!r.ok) throw new Error(p+" "+r.status); return r.json(); };
+const pct = x => (x*100).toFixed(2)+"%";
+const tile = (k,v) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+async function main(){
+  try {
+    const s = await api("/kpis/summary");
+    document.getElementById("tiles").innerHTML = tile("Payments", s.payments.toLocaleString()) + tile("Approval rate", pct(s.approval_rate))
+      + tile("Completion rate", pct(s.completion_rate)) + tile("Settlement rate", pct(s.settlement_rate)) + tile("Period", s.first_date+" → "+s.last_date);
+    const d = (await api("/kpis/daily?limit=180")).reverse();
+    new Chart(document.getElementById("ch1"), {type:"line", data:{labels:d.map(r=>r.payment_date), datasets:[{label:"Approval rate", data:d.map(r=>r.approval_rate), borderColor:"#1f6feb", pointRadius:0}]}, options:{scales:{y:{min:0.8,max:1}}}});
+    const dr = await api("/decline-reasons?limit=8");
+    new Chart(document.getElementById("ch2"), {type:"bar", data:{labels:dr.map(r=>r.decline_reason), datasets:[{label:"Declined payments", data:dr.map(r=>r.declined_payments), backgroundColor:"#1f6feb"}]}, options:{indexAxis:"y"}});
+    const qd = await api("/reconciliation/queue?limit=10");
+    document.getElementById("queue").innerHTML = "<tr><th>Payment</th><th>Issue</th><th>At risk</th><th>Priority</th></tr>" +
+      qd.map(r=>`<tr><td>${r.payment_id}</td><td>${r.issue_type}</td><td>${r.amount_at_risk==null?"":r.amount_at_risk.toFixed(2)+" "+(r.currency||"")}</td><td>${r.priority}</td></tr>`).join("");
+  } catch(e){ document.getElementById("err").textContent = "Error: "+e.message+(KEY?"":" (add ?key=... if the API needs a key)"); }
+}
+document.getElementById("sf").addEventListener("submit", async ev => {
+  ev.preventDefault(); const f = Object.fromEntries(new FormData(ev.target));
+  const body = {amount:+f.amount, hour:+f.hour, channel:f.channel, is_international:f.is_international==="true"};
+  try {
+    const dcl = await api("/score/decline", {method:"POST", body:JSON.stringify(body)});
+    const fr = await api("/score/fraud", {method:"POST", body:JSON.stringify({...body, card_txn_60m:+f.card_txn_60m, foreign_merchant:body.is_international})});
+    document.getElementById("score").textContent = `Decline probability ${pct(dcl.decline_probability)} · Fraud probability ${pct(fr.fraud_probability)} (${fr.flag?"FLAGGED":"not flagged"} at threshold ${fr.threshold.toFixed(3)})`;
+  } catch(e){ document.getElementById("score").textContent = "Error: "+e.message; }
+});
+main();
+</script>
+</body>
+</html>
