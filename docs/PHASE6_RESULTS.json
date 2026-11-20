@@ -1,0 +1,148 @@
+{
+  "n_payments_used": 474866,
+  "overall_decline_rate": 0.04957609093933868,
+  "logit": {
+    "n": 394398,
+    "rows": [
+      {
+        "term": "const",
+        "true": -3.4,
+        "estimate": -3.384601137218772,
+        "ci_low": -3.406703430100268,
+        "ci_high": -3.3624988443372756,
+        "ci_covers_truth": true
+      },
+      {
+        "term": "intl",
+        "true": 0.6,
+        "estimate": 0.49646698117350735,
+        "ci_low": 0.3684877362371096,
+        "ci_high": 0.6244462261099051,
+        "ci_covers_truth": true
+      },
+      {
+        "term": "cnp",
+        "true": 0.5,
+        "estimate": 0.4865237736426637,
+        "ci_low": 0.45496880603120976,
+        "ci_high": 0.5180787412541177,
+        "ci_covers_truth": true
+      },
+      {
+        "term": "log10_amount_centered",
+        "true": 0.45,
+        "estimate": 0.4719026108354068,
+        "ci_low": 0.44231945609093004,
+        "ci_high": 0.5014857655798836,
+        "ci_covers_truth": true
+      },
+      {
+        "term": "night",
+        "true": 0.5,
+        "estimate": 0.502341254754731,
+        "ci_low": 0.44725867336663805,
+        "ci_high": 0.557423836142824,
+        "ci_covers_truth": true
+      },
+      {
+        "term": "fraud",
+        "true": 1.5,
+        "estimate": 1.4367434223836355,
+        "ci_low": 1.2710066494541017,
+        "ci_high": 1.6024801953131693,
+        "ci_covers_truth": true
+      }
+    ]
+  },
+  "chi2_channel_vs_decline": {
+    "chi2": 1283.5282174750457,
+    "dof": 4,
+    "p": 1.2400537498395793e-276
+  },
+  "mannwhitney_response_ms_approved_vs_declined": {
+    "median_approved": 350.0,
+    "median_declined": 395.0,
+    "p": 0.0
+  },
+  "decline_rate_by_flag": {
+    "intl": {
+      "0.0": 0.048,
+      "1.0": 0.0887
+    },
+    "cnp": {
+      "0.0": 0.042,
+      "1.0": 0.0662
+    },
+    "night": {
+      "0.0": 0.0479,
+      "1.0": 0.0752
+    },
+    "fraud": {
+      "0.0": 0.049,
+      "1.0": 0.2864
+    }
+  },
+  "xgboost": {
+    "train_rows": 379893,
+    "test_rows": 94973,
+    "test_base_rate": 0.048971813041601295,
+    "roc_auc": 0.6354161751521448,
+    "pr_auc": 0.16730840578488693,
+    "brier": 0.042999863624572754,
+    "calibration": [
+      {
+        "mean_pred": 0.025206662795956146,
+        "observed": 0.025476365933256133
+      },
+      {
+        "mean_pred": 0.02996751930832976,
+        "observed": 0.02864363942712721
+      },
+      {
+        "mean_pred": 0.03291505231246755,
+        "observed": 0.031483626408339474
+      },
+      {
+        "mean_pred": 0.0357968884883623,
+        "observed": 0.03695514845230575
+      },
+      {
+        "mean_pred": 0.03911989169328466,
+        "observed": 0.043382120669685165
+      },
+      {
+        "mean_pred": 0.04335642651482872,
+        "observed": 0.04127619248183637
+      },
+      {
+        "mean_pred": 0.04886011059943269,
+        "observed": 0.046330420132673474
+      },
+      {
+        "mean_pred": 0.055874540422204695,
+        "observed": 0.054216233287714494
+      },
+      {
+        "mean_pred": 0.06402847759892527,
+        "observed": 0.06529752501316483
+      },
+      {
+        "mean_pred": 0.12167793513364128,
+        "observed": 0.11665613813434407
+      }
+    ],
+    "roc_auc_excluding_forced_declines": 0.6063882615210365
+  },
+  "shap_top10_mean_abs": {
+    "cnp": 0.194,
+    "log_amt": 0.1891,
+    "card_status_Blocked": 0.0523,
+    "night": 0.0457,
+    "card_status_Expired": 0.0446,
+    "intl": 0.0443,
+    "hour": 0.0392,
+    "card_status_Active": 0.0294,
+    "card_status_Inactive": 0.0212,
+    "channel_E-Commerce": 0.0146
+  }
+}
