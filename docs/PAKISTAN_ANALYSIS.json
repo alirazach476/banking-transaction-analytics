@@ -1,0 +1,235 @@
+{
+  "policy_rate_changes": [
+    {
+      "date": "2023-03-03",
+      "ceiling": 21.0,
+      "floor": 19.0,
+      "policy": 20.0,
+      "min_saving_dep": 18.5
+    },
+    {
+      "date": "2023-04-05",
+      "ceiling": 22.0,
+      "floor": 20.0,
+      "policy": 21.0,
+      "min_saving_dep": 19.5
+    },
+    {
+      "date": "2023-06-27",
+      "ceiling": 23.0,
+      "floor": 21.0,
+      "policy": 22.0,
+      "min_saving_dep": 20.5
+    },
+    {
+      "date": "2024-06-11",
+      "ceiling": 21.5,
+      "floor": 19.5,
+      "policy": 20.5,
+      "min_saving_dep": 19.0
+    },
+    {
+      "date": "2024-07-30",
+      "ceiling": 20.5,
+      "floor": 18.5,
+      "policy": 19.5,
+      "min_saving_dep": 18.0
+    },
+    {
+      "date": "2024-09-13",
+      "ceiling": 18.5,
+      "floor": 16.5,
+      "policy": 17.5,
+      "min_saving_dep": 16.0
+    },
+    {
+      "date": "2024-11-05",
+      "ceiling": 16.0,
+      "floor": 14.0,
+      "policy": 15.0,
+      "min_saving_dep": 13.5
+    },
+    {
+      "date": "2024-12-17",
+      "ceiling": 14.0,
+      "floor": 12.0,
+      "policy": 13.0,
+      "min_saving_dep": 11.5
+    },
+    {
+      "date": "2025-01-28",
+      "ceiling": 13.0,
+      "floor": 11.0,
+      "policy": 12.0,
+      "min_saving_dep": 10.5
+    },
+    {
+      "date": "2025-05-06",
+      "ceiling": 12.0,
+      "floor": 10.0,
+      "policy": 11.0,
+      "min_saving_dep": 9.5
+    },
+    {
+      "date": "2025-12-16",
+      "ceiling": 11.5,
+      "floor": 9.5,
+      "policy": 10.5,
+      "min_saving_dep": 9.0
+    },
+    {
+      "date": "2026-04-28",
+      "ceiling": 12.5,
+      "floor": 10.5,
+      "policy": 11.5,
+      "min_saving_dep": 10.0
+    },
+    {
+      "date": "2026-10-27",
+      "ceiling": 13.0,
+      "floor": 11.0,
+      "policy": 12.0,
+      "min_saving_dep": 10.5
+    }
+  ],
+  "policy_peak": {
+    "rate": 22.0,
+    "date": "2023-06-27"
+  },
+  "policy_trough": {
+    "rate": 10.5,
+    "date": "2025-12-16"
+  },
+  "bis_xru_collections": {
+    "A: Average of observations through period": 837,
+    "E: End of period": 837
+  },
+  "fx_series_used": "avg",
+  "fx_range": [
+    "1957-01",
+    "2026-09",
+    837
+  ],
+  "fx_latest": {
+    "period": "2026-09",
+    "pkr_per_usd": 277.220386
+  },
+  "fx_worst_12m_depreciation": {
+    "period": "1973-01",
+    "pct": 131.7
+  },
+  "cpi_range": [
+    "2008-07",
+    "2025-03",
+    201
+  ],
+  "inflation_peak": {
+    "period": "2023-05",
+    "pct": 38.0
+  },
+  "inflation_latest": {
+    "period": "2025-03",
+    "pct": 0.7
+  },
+  "joined_months": 25,
+  "real_rate_min": {
+    "period": "2023-05",
+    "pct": -17.0
+  },
+  "real_rate_latest": {
+    "period": "2025-03",
+    "pct": 11.3
+  },
+  "corr_policy_infl_same": 0.79,
+  "corr_policy_vs_future_inflation_by_lag_months": {
+    "0": 0.79,
+    "3": 0.66,
+    "6": 0.34,
+    "9": -0.5,
+    "12": -0.79
+  },
+  "note_joined": "Only monthly overlap of SBP rate table (starts 2023-03) and World Bank CPI; correlations over a short window are descriptive, not causal.",
+  "remittances_usd_m": {
+    "2000": 1075,
+    "2001": 1461,
+    "2002": 3554,
+    "2003": 3964,
+    "2004": 3945,
+    "2005": 4280,
+    "2006": 5121,
+    "2007": 5998,
+    "2008": 7039,
+    "2009": 8717,
+    "2010": 9690,
+    "2011": 12263,
+    "2012": 14007,
+    "2013": 14629,
+    "2014": 17244,
+    "2015": 19306,
+    "2016": 19819,
+    "2017": 19856,
+    "2018": 21193,
+    "2019": 22252,
+    "2020": 26089,
+    "2021": 31312,
+    "2022": 30176,
+    "2023": 26558,
+    "2024": 34914
+  },
+  "remittance_cagr_2017_2024_pct": 8.4,
+  "findex_all_pct": {
+    "2011": {
+      "acc": 10.3,
+      "fiacc": 10.3,
+      "mob": NaN,
+      "dig": NaN
+    },
+    "2014": {
+      "acc": 13.0,
+      "fiacc": 8.7,
+      "mob": 5.8,
+      "dig": NaN
+    },
+    "2017": {
+      "acc": 21.3,
+      "fiacc": 18.0,
+      "mob": 6.9,
+      "dig": NaN
+    },
+    "2021": {
+      "acc": 21.0,
+      "fiacc": 16.3,
+      "mob": 8.5,
+      "dig": NaN
+    },
+    "2024": {
+      "acc": 27.3,
+      "fiacc": 18.3,
+      "mob": 18.4,
+      "dig": 19.8
+    }
+  },
+  "findex_gender_account_pct": {
+    "2011": {
+      "men": 17.3,
+      "women": 3.0
+    },
+    "2014": {
+      "men": 21.0,
+      "women": 4.8
+    },
+    "2017": {
+      "men": 34.6,
+      "women": 7.0
+    },
+    "2021": {
+      "men": 28.2,
+      "women": 13.5
+    },
+    "2024": {
+      "men": 42.3,
+      "women": 11.9
+    }
+  },
+  "findex_gender_gap_2024_pp": 30.4
+}
