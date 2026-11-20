@@ -37,7 +37,8 @@ S = requests.Session()
 S.headers["User-Agent"] = UA
 _last: dict[str, float] = {}
 INTERVAL = {"data.ecb.europa.eu": 1.0, "data-api.ecb.europa.eu": 1.5, "www.sbp.org.pk": 2.5,
-            "ddh-openapi.worldbank.org": 1.0, "datacatalogfiles.worldbank.org": 1.0}
+            "ddh-openapi.worldbank.org": 1.0, "datacatalogfiles.worldbank.org": 1.0,
+            "thedocs.worldbank.org": 1.0}
 
 
 def throttle(url: str) -> None:
@@ -176,6 +177,22 @@ def wb_all_datasets() -> list[dict]:
             return out
 
 
+def wb_resource_detail(rid: str) -> dict:
+    """Per-resource metadata (cached). The bulk search listing often omits url/format that the
+    website shows; the detail endpoint carries distribution.website_url."""
+    cache = OUT / "wb_resource_details.json"
+    store = json.loads(cache.read_text(encoding="utf-8")) if cache.exists() else {}
+    if rid not in store:
+        r = get(f"{WB}/resources/{rid}")
+        store[rid] = r.json() if r.status_code == 200 else {}
+        cache.write_text(json.dumps(store), encoding="utf-8")
+    return store[rid]
+
+
+def _is_excel_url(u: str) -> bool:
+    return u.lower().split("?")[0].endswith((".xls", ".xlsx"))
+
+
 def plan_wb() -> list[tuple[str, Path]]:
     items, seen = [], set()
     for d in wb_all_datasets():
@@ -183,18 +200,28 @@ def plan_wb() -> list[tuple[str, Path]]:
         if not tag:
             continue
         for res in d.get("resources") or []:
+            rid = res["resource_unique_id"]
+            if rid in seen:
+                continue
             fmt = (res.get("format") or "").strip().lower()
-            name = (res.get("name") or "")
-            if fmt in EXCEL or name.lower().endswith((".xls", ".xlsx")):
-                rid = res["resource_unique_id"]
-                if rid in seen:
-                    continue
-                seen.add(rid)
-                safe = re.sub(r"[^A-Za-z0-9._-]+", "_", name)[:90] or rid
-                if not safe.lower().endswith((".xls", ".xlsx")):
-                    safe += ".xlsx" if "xlsx" in fmt or fmt in ("excel", "ms excel") else ".xls"
-                items.append((f"{WB}/resources/{rid}/download",
-                              OUT / "worldbank" / tag / f'{d["dataset_unique_id"]}_{rid}_{safe}'))
+            name = res.get("name") or ""
+            url = res.get("url") or ""
+            direct = None
+            if fmt in EXCEL or _is_excel_url(url) or name.lower().endswith((".xls", ".xlsx")):
+                direct = url or None
+                if not direct:  # listed as Excel but no link in the bulk listing
+                    direct = (wb_resource_detail(rid).get("distribution") or {}).get("website_url")
+            elif not url and (fmt in ("", "excel") or "excel" in name.lower() or "xls" in name.lower()):
+                w = (wb_resource_detail(rid).get("distribution") or {}).get("website_url") or ""
+                direct = w if _is_excel_url(w) else None
+            if not direct and not (fmt in EXCEL or _is_excel_url(url)):
+                continue
+            seen.add(rid)
+            safe = re.sub(r"[^A-Za-z0-9._-]+", "_", name)[:90] or rid
+            src = direct or f"{WB}/resources/{rid}/download"
+            if not safe.lower().endswith((".xls", ".xlsx")):
+                safe += ".xlsx" if (".xlsx" in src.lower() or fmt in ("excel", "ms excel")) else ".xls"
+            items.append((src, OUT / "worldbank" / tag / f'{d["dataset_unique_id"]}_{rid}_{safe}'))
     return items
 
 
