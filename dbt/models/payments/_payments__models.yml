@@ -28,3 +28,7 @@ models:
     columns:
       - name: settlement_date
         tests: [unique, not_null]
+  - name: mart_reconciliation_sql
+    columns:
+      - name: cleared_payments
+        tests: [not_null]

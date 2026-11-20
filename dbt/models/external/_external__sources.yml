@@ -19,3 +19,7 @@ models:
     columns:
       - name: avg_rate
         tests: [not_null]
+  - name: mart_indicators_latest
+    columns:
+      - name: latest_value
+        tests: [not_null]

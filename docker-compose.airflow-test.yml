@@ -1,0 +1,37 @@
+# Isolated, self-contained Airflow DAG test: its own Postgres (fresh, empty) and an Airflow image with the project baked in.
+# Nothing is bind-mounted from the repo, so your local data/ and models/ are never touched.
+#   docker compose -f docker-compose.airflow-test.yml up --build --abort-on-container-exit --exit-code-from airflow-test
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment: {POSTGRES_USER: novabank, POSTGRES_PASSWORD: airflow_test_pw, POSTGRES_DB: novabank}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U novabank -d novabank"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  airflow-test:
+    build:
+      context: .
+      dockerfile: airflow/Dockerfile
+    depends_on:
+      postgres: {condition: service_healthy}
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: novabank
+      POSTGRES_USER: novabank
+      POSTGRES_PASSWORD: airflow_test_pw
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+    command:
+      - bash
+      - -c
+      - |
+        set -e
+        airflow db migrate
+        airflow dags list-import-errors
+        airflow dags test payments_pipeline 2026-01-01 --conf '{"generate": true, "num_payments": 20000}'
+        echo "=== payments_pipeline OK ==="
+        airflow dags test external_data_daily 2026-01-01
+        echo "=== external_data_daily OK ==="

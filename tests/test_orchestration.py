@@ -46,8 +46,10 @@ class _DAG:
 def _load_dag(name):
     air = types.ModuleType("airflow"); air.DAG = _DAG
     ops = types.ModuleType("airflow.operators"); py = types.ModuleType("airflow.operators.python")
-    py.PythonOperator = _Op; py.ShortCircuitOperator = _Op
-    sys.modules.update({"airflow": air, "airflow.operators": ops, "airflow.operators.python": py})
+    bash = types.ModuleType("airflow.operators.bash")
+    py.PythonOperator = _Op; py.ShortCircuitOperator = _Op; bash.BashOperator = _Op
+    sys.modules.update({"airflow": air, "airflow.operators": ops, "airflow.operators.python": py,
+                        "airflow.operators.bash": bash})
     spec = importlib.util.spec_from_file_location(name, ROOT / "airflow" / "dags" / f"{name}.py")
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
     return m, {o.task_id: o for o in _Op.registry}
@@ -65,18 +67,35 @@ def test_payments_dag_structure():
 
 def test_external_dag_structure():
     m, t = _load_dag("external_data_daily")
-    assert t["check_ingest_results"].up == {"ingest_external"} and t["dbt_external"].up == {"check_ingest_results"}
+    assert t["dbt_external"].up == {"ingest_external"}
 
 
-def test_fail_if_sources_failed():
-    m, _ = _load_dag("external_data_daily")
+def test_dag_tasks_call_cli_in_project_python():
+    _, t = _load_dag("payments_pipeline")
+    for name in ("generate_payments", "load_raw_payments", "dbt_payments", "reconcile_payments", "quality_gate", "drift_check"):
+        assert "src.orchestration.cli" in t[name].kw["bash_command"]
+    assert "--select models/payments" in t["dbt_payments"].kw["bash_command"]
 
-    class TI:
-        def __init__(self, v): self.v = v
-        def xcom_pull(self, task_ids): return self.v
-    m._fail_if_sources_failed(ti=TI({"failed": []}))
+
+def test_cli_reports_failure_with_nonzero_exit(monkeypatch, capsys):
+    from src.orchestration import cli
+    monkeypatch.setattr(tasks, "quality_gate", lambda: (_ for _ in ()).throw(tasks.DataQualityError("boom")))
+    assert cli.main(["quality-gate"]) == 1
+    assert "boom" in capsys.readouterr().err
+
+
+def test_cli_prints_json_on_success(monkeypatch, capsys):
+    from src.orchestration import cli
+    monkeypatch.setattr(tasks, "drift_check", lambda: {"alert": False})
+    assert cli.main(["drift"]) == 0
+    assert '"alert": false' in capsys.readouterr().out
+
+
+def test_ingest_external_raises_when_a_source_fails(monkeypatch):
+    import src.external.ingest as ing
+    monkeypatch.setattr(ing, "run_all", lambda only=None: [{"source": "x", "status": "FAILED"}])
     with pytest.raises(RuntimeError):
-        m._fail_if_sources_failed(ti=TI({"failed": ["fred"]}))
+        tasks.ingest_external()
 
 
 def test_quality_gate_passes_on_live_marts():

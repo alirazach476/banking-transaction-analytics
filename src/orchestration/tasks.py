@@ -60,6 +60,8 @@ def ingest_external(only: list[str] | None = None) -> dict:
     from src.external.ingest import run_all
     out = run_all(only=only)
     failed = [r["source"] for r in out if r["status"] not in ("OK", "UNCHANGED", "SUCCESS")]
+    if failed:
+        raise RuntimeError(f"external sources failed: {failed}")
     return {"sources": len(out), "failed": failed}
 
 
