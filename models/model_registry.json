@@ -1,7 +1,7 @@
 {
   "fraud_xgb": {
     "file": "models/fraud_xgb.joblib",
-    "trained_at": "2026-11-20T16:33:24+00:00",
+    "trained_at": "2026-11-20T16:43:00+00:00",
     "seed": 42,
     "synthetic_data_only": true,
     "task": "synthetic fraud-pattern detection",
@@ -17,8 +17,9 @@
       "foreign_merchant"
     ],
     "metrics": {
-      "pr_auc": 0.2547568656967681
-    }
+      "pr_auc": 0.25843976374864247
+    },
+    "tuning": "RandomizedSearchCV n_iter=40, full train window"
   },
   "anomaly_isoforest": {
     "file": "models/anomaly_isoforest.joblib",

@@ -1,0 +1,334 @@
+{
+  "n_iter": 40,
+  "fraud_search": {
+    "seconds": 366,
+    "train_rows": 379893,
+    "cv_pr_auc": 0.3353219880572054,
+    "test_pr_auc_new": 0.25843976374864247,
+    "test_pr_auc_previous": 0.2547568656967681,
+    "promoted": true
+  },
+  "drift": {
+    "reference_rows": 379893,
+    "months": [
+      {
+        "month": "2025-06",
+        "n": 4550,
+        "log_amt": 0.0018,
+        "intl": 0.0,
+        "cnp": 0.0,
+        "night": 0.0,
+        "hour": 0.0058,
+        "card_txn_60m": 0.0,
+        "card_amt_60m": 0.0019,
+        "amt_vs_card_mean": 0.0319,
+        "foreign_merchant": 0.0,
+        "amount": 0.0018,
+        "score_fraud": 0.0073
+      },
+      {
+        "month": "2025-07",
+        "n": 13766,
+        "log_amt": 0.0007,
+        "intl": 0.0,
+        "cnp": 0.0,
+        "night": 0.0,
+        "hour": 0.0023,
+        "card_txn_60m": 0.0,
+        "card_amt_60m": 0.0006,
+        "amt_vs_card_mean": 0.0274,
+        "foreign_merchant": 0.0,
+        "amount": 0.0007,
+        "score_fraud": 0.005
+      },
+      {
+        "month": "2025-08",
+        "n": 13780,
+        "log_amt": 0.0015,
+        "intl": 0.0,
+        "cnp": 0.0,
+        "night": 0.0,
+        "hour": 0.003,
+        "card_txn_60m": 0.0,
+        "card_amt_60m": 0.0015,
+        "amt_vs_card_mean": 0.0304,
+        "foreign_merchant": 0.0,
+        "amount": 0.0015,
+        "score_fraud": 0.0054
+      },
+      {
+        "month": "2025-09",
+        "n": 13446,
+        "log_amt": 0.0015,
+        "intl": 0.0,
+        "cnp": 0.0,
+        "night": 0.0,
+        "hour": 0.0014,
+        "card_txn_60m": 0.0,
+        "card_amt_60m": 0.0014,
+        "amt_vs_card_mean": 0.0297,
+        "foreign_merchant": 0.0,
+        "amount": 0.0015,
+        "score_fraud": 0.0075
+      },
+      {
+        "month": "2025-10",
+        "n": 13844,
+        "log_amt": 0.0009,
+        "intl": 0.0,
+        "cnp": 0.0,
+        "night": 0.0,
+        "hour": 0.0026,
+        "card_txn_60m": 0.0,
+        "card_amt_60m": 0.001,
+        "amt_vs_card_mean": 0.0362,
+        "foreign_merchant": 0.0,
+        "amount": 0.0009,
+        "score_fraud": 0.0078
+      },
+      {
+        "month": "2025-11",
+        "n": 16473,
+        "log_amt": 0.001,
+        "intl": 0.0,
+        "cnp": 0.0,
+        "night": 0.0,
+        "hour": 0.0005,
+        "card_txn_60m": 0.0,
+        "card_amt_60m": 0.001,
+        "amt_vs_card_mean": 0.0343,
+        "foreign_merchant": 0.0,
+        "amount": 0.001,
+        "score_fraud": 0.0069
+      },
+      {
+        "month": "2025-12",
+        "n": 19114,
+        "log_amt": 0.0004,
+        "intl": 0.0,
+        "cnp": 0.0,
+        "night": 0.0,
+        "hour": 0.0003,
+        "card_txn_60m": 0.0,
+        "card_amt_60m": 0.0005,
+        "amt_vs_card_mean": 0.0342,
+        "foreign_merchant": 0.0,
+        "amount": 0.0004,
+        "score_fraud": 0.0067
+      }
+    ],
+    "max_psi_overall": 0.0362,
+    "alert_rule": "PSI>0.25 on any feature or on the score",
+    "alerts": []
+  },
+  "fairness": {
+    "threshold": 0.11407484859228134,
+    "overall_flag_rate": 0.0007265222747517715,
+    "by": {
+      "card_country": {
+        "groups": [
+          {
+            "card_country": "CA",
+            "n": 4950,
+            "base_rate": 0.0022,
+            "flag_rate": 0.0004,
+            "tpr": 0.0909,
+            "fpr": 0.0002,
+            "flag_rate_ratio_vs_overall": 0.5561
+          },
+          {
+            "card_country": "DE",
+            "n": 3865,
+            "base_rate": 0.0028,
+            "flag_rate": 0.0018,
+            "tpr": 0.6364,
+            "fpr": 0.0,
+            "flag_rate_ratio_vs_overall": 2.4929
+          },
+          {
+            "card_country": "GB",
+            "n": 5249,
+            "base_rate": 0.003,
+            "flag_rate": 0.0015,
+            "tpr": 0.4375,
+            "fpr": 0.0002,
+            "flag_rate_ratio_vs_overall": 2.0978
+          },
+          {
+            "card_country": "US",
+            "n": 80909,
+            "base_rate": 0.0025,
+            "flag_rate": 0.0006,
+            "tpr": 0.165,
+            "fpr": 0.0002,
+            "flag_rate_ratio_vs_overall": 0.8846
+          }
+        ],
+        "max_flag_rate_ratio": 2.492869865196768,
+        "max_fpr_gap": 0.00023541364655738518
+      },
+      "channel": {
+        "groups": [
+          {
+            "channel": "E-commerce",
+            "n": 25438,
+            "base_rate": 0.0039,
+            "flag_rate": 0.0019,
+            "tpr": 0.4286,
+            "fpr": 0.0003,
+            "flag_rate_ratio_vs_overall": 2.6513
+          },
+          {
+            "channel": "Mobile Wallet",
+            "n": 15264,
+            "base_rate": 0.002,
+            "flag_rate": 0.0002,
+            "tpr": 0.0,
+            "fpr": 0.0002,
+            "flag_rate_ratio_vs_overall": 0.2705
+          },
+          {
+            "channel": "POS Chip",
+            "n": 22425,
+            "base_rate": 0.0018,
+            "flag_rate": 0.0002,
+            "tpr": 0.025,
+            "fpr": 0.0001,
+            "flag_rate_ratio_vs_overall": 0.2455
+          },
+          {
+            "channel": "POS Contactless",
+            "n": 26820,
+            "base_rate": 0.0026,
+            "flag_rate": 0.0005,
+            "tpr": 0.0725,
+            "fpr": 0.0003,
+            "flag_rate_ratio_vs_overall": 0.6672
+          },
+          {
+            "channel": "Recurring",
+            "n": 5026,
+            "base_rate": 0.0,
+            "flag_rate": 0.0,
+            "tpr": NaN,
+            "fpr": 0.0,
+            "flag_rate_ratio_vs_overall": 0.0
+          }
+        ],
+        "max_flag_rate_ratio": 2.651332424046645,
+        "max_fpr_gap": 0.00029905424096295465
+      },
+      "merchant_category": {
+        "groups": [
+          {
+            "merchant_category": "Education",
+            "n": 3308,
+            "base_rate": 0.0042,
+            "flag_rate": 0.0021,
+            "tpr": 0.4286,
+            "fpr": 0.0003,
+            "flag_rate_ratio_vs_overall": 2.9126
+          },
+          {
+            "merchant_category": "Entertainment",
+            "n": 8453,
+            "base_rate": 0.0014,
+            "flag_rate": 0.0001,
+            "tpr": 0.0833,
+            "fpr": 0.0,
+            "flag_rate_ratio_vs_overall": 0.1628
+          },
+          {
+            "merchant_category": "Fuel",
+            "n": 9067,
+            "base_rate": 0.0039,
+            "flag_rate": 0.001,
+            "tpr": 0.2,
+            "fpr": 0.0002,
+            "flag_rate_ratio_vs_overall": 1.3662
+          },
+          {
+            "merchant_category": "Grocery",
+            "n": 15560,
+            "base_rate": 0.002,
+            "flag_rate": 0.0004,
+            "tpr": 0.2258,
+            "fpr": 0.0,
+            "flag_rate_ratio_vs_overall": 0.6192
+          },
+          {
+            "merchant_category": "Healthcare",
+            "n": 5515,
+            "base_rate": 0.0022,
+            "flag_rate": 0.0011,
+            "tpr": 0.25,
+            "fpr": 0.0005,
+            "flag_rate_ratio_vs_overall": 1.4975
+          },
+          {
+            "merchant_category": "Other",
+            "n": 4618,
+            "base_rate": 0.0028,
+            "flag_rate": 0.0004,
+            "tpr": 0.1538,
+            "fpr": 0.0,
+            "flag_rate_ratio_vs_overall": 0.5961
+          },
+          {
+            "merchant_category": "Restaurant",
+            "n": 15519,
+            "base_rate": 0.003,
+            "flag_rate": 0.0003,
+            "tpr": 0.1087,
+            "fpr": 0.0,
+            "flag_rate_ratio_vs_overall": 0.4435
+          },
+          {
+            "merchant_category": "Retail",
+            "n": 13757,
+            "base_rate": 0.0028,
+            "flag_rate": 0.0011,
+            "tpr": 0.3158,
+            "fpr": 0.0002,
+            "flag_rate_ratio_vs_overall": 1.5008
+          },
+          {
+            "merchant_category": "Technology",
+            "n": 3708,
+            "base_rate": 0.0013,
+            "flag_rate": 0.0003,
+            "tpr": 0.0,
+            "fpr": 0.0003,
+            "flag_rate_ratio_vs_overall": 0.3712
+          },
+          {
+            "merchant_category": "Travel",
+            "n": 8272,
+            "base_rate": 0.0024,
+            "flag_rate": 0.0018,
+            "tpr": 0.25,
+            "fpr": 0.0012,
+            "flag_rate_ratio_vs_overall": 2.4959
+          },
+          {
+            "merchant_category": "Utilities",
+            "n": 7196,
+            "base_rate": 0.0017,
+            "flag_rate": 0.0001,
+            "tpr": 0.0,
+            "fpr": 0.0001,
+            "flag_rate_ratio_vs_overall": 0.1913
+          }
+        ],
+        "max_flag_rate_ratio": 2.9126185093668404,
+        "max_fpr_gap": 0.0012118274357731458
+      }
+    }
+  },
+  "decline_rate_by_card_country": {
+    "CA": 0.048,
+    "DE": 0.0523,
+    "GB": 0.053,
+    "US": 0.0493
+  }
+}

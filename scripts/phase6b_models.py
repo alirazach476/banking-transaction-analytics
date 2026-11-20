@@ -47,14 +47,8 @@ def search(X, y, groups_time_sorted=True, n_iter=8):
     return rs
 
 
-def main():
-    d = load().sort_values("ts").reset_index(drop=True)
-    out = {}
-    cut = d.ts.quantile(0.8)
-    tr, te = (d.ts <= cut).to_numpy(), (d.ts > cut).to_numpy()
-
-    # ---------- card-level behavioural features (point-in-time: only past events)
-    # robust computation: sort by card then time, rolling per card, then restore order
+def build_features(d):
+    """Point-in-time card-level features (rolling window uses only past events)."""
     tmp = d[["card_id", "ts", "amount"]].copy()
     tmp["_i"] = np.arange(len(tmp))
     tmp = tmp.sort_values(["card_id", "ts"])
@@ -67,6 +61,18 @@ def main():
     d["card_amt_60m"] = tmp["card_amt_60m"].to_numpy()
     d["amt_vs_card_mean"] = (d.amount / tmp["card_prior_mean"].to_numpy()).replace([np.inf, -np.inf], np.nan).fillna(1.0)
     d["foreign_merchant"] = (d.merchant_country != d.card_country).astype(float)
+
+    return d
+
+
+def main():
+    d = load().sort_values("ts").reset_index(drop=True)
+    out = {}
+    cut = d.ts.quantile(0.8)
+    tr, te = (d.ts <= cut).to_numpy(), (d.ts > cut).to_numpy()
+
+    # ---------- card-level behavioural features (point-in-time: only past events)
+    d = build_features(d)
 
     # ---------- 1. fraud-pattern model (supervised) + isolation forest (unsupervised)
     fcols = ["log_amt", "intl", "cnp", "night", "hour", "card_txn_60m", "card_amt_60m", "amt_vs_card_mean", "foreign_merchant"]
