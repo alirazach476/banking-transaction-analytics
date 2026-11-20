@@ -258,6 +258,25 @@ Connect to `analytics` schema marts (e.g. `mart_daily_transactions`, `mart_custo
 
 ---
 
+## NovaBank 2.0 additions (payments, external data, ML, API)
+
+Status per phase and honest limits: `docs/IMPLEMENTATION_PROGRESS.md`. Everything is synthetic or public data.
+
+| Area | Where | Run |
+|---|---|---|
+| Payment lifecycle generator + reconciliation | `src/payments/` | `python -m src.payments.writer --payments 500000` |
+| External public data (ECB, World Bank, FRED) | `src/external/`, `docs/WEB_SCRAPING.md` | `python -m src.external.ingest` |
+| Data warehouse of all downloaded files (DuckDB) | `scripts/build_data_warehouse.py`, `docs/DATA_WAREHOUSE.md` | `python -I scripts/build_data_warehouse.py` |
+| Postgres tuning / Parquet benchmarks | `docs/PHASE4_BENCHMARKS.md` | `PYTHONPATH=. python scripts/phase4_benchmark.py` |
+| dbt payment + external models | `dbt/models/payments`, `dbt/models/external` | `cd dbt && dbt build --select models/payments models/external --profiles-dir .` |
+| Stats + ML + monitoring | `docs/PHASE6*_RESULTS.md`, `models/model_registry.json` | `PYTHONPATH=. python -m scripts.phase6b_models` |
+| API + React app | `src/api/main.py`, `web/react-app` | `uvicorn src.api.main:app` then open `/app/` (build UI: `cd web/react-app && npm install && npm run build`) |
+| API container | `Dockerfile.api`, compose profile `api` | `docker compose --profile api up --build` (mount trained `models/`) |
+| Airflow DAGs | `airflow/dags/payments_pipeline.py`, `external_data_daily.py` | enable in Airflow; task logic in `src/orchestration/tasks.py` |
+| BI extracts + spec | `docs/BI_DASHBOARD_SPEC.md` | `PYTHONPATH=. python scripts/export_payment_bi_extracts.py` |
+
+Set `API_KEY` in `.env` for any non-local use of the API. Run tests with `pytest` (database-dependent tests skip if Postgres is down).
+
 ## Documentation Index
 
 | Document | Purpose |

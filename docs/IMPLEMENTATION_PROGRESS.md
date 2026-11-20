@@ -1,7 +1,7 @@
 # NovaBank 2.0 — Implementation Progress
 
-Status: ✅ complete & validated · 🟡 partial · ⏳ pending. Last updated 2026-11-20.
-Test suite: **53 passed** (17 original + 16 payment tests + 4 payment DB tests + 16 external-data tests).
+Status: ✅ complete & validated · 🟡 partial · ⏳ pending. Last updated 2026-11-21.
+Test suite: **72 passed** (see docs/PHASE10_BENCHMARKS.md).
 
 | Phase | Scope | Status | Validation / notes |
 |---|---|---|---|
@@ -15,7 +15,7 @@ Test suite: **53 passed** (17 original + 16 payment tests + 4 payment DB tests +
 | 7 | Tableau / BI | 🟡 | **Done:** `scripts/export_payment_bi_extracts.py` writes 7 BI extracts (CSV + Parquet; e.g. 1,096-day KPI mart, 493,199-row payment outcomes) and a generated data dictionary `docs/BI_EXTRACTS_DICTIONARY.md`; `docs/BI_DASHBOARD_SPEC.md` (sheets, calculated fields matching BUSINESS_METRICS, check values, acceptance list). Same views exist as the React app. **Not done:** an actual Tableau workbook (Tableau not available here; nothing was opened in Tableau). **Data fix:** removed 445,855 bogus RESOLVED queue rows + 1 bad run row created by the reconciliation bug (see phase 9); queue now 15,783 rows, all OPEN |
 | 8 | FastAPI & frontend | ✅ (scope below) | `src/api/main.py`: KPI/decline/reconciliation endpoints; POST /score/decline, /score/fraud and **/score/fraud/card** (card features computed server-side from the indexed dbt table `intermediate.int_card_payments`); optional `X-API-Key`; **in-process sliding-window rate limit** (env `RATE_LIMIT_PER_MIN`, default 120, 429 + Retry-After; single-process only); 8 API tests. **React app** `web/react-app` (Vite + React + Recharts, served at `/app/`, 1 vitest test, builds OK; not visually inspected by me in a browser). **Container:** `Dockerfile.api` (multi-stage: builds the React app, runs as non-root, healthcheck) + compose service `api` (profile `api`, mounts `models/`); image built and run locally, health/score/KPI endpoints verified against the live DB. **Not done:** deployment to a hosted environment (no target/credentials), shared rate-limit store for multi-replica, TLS/gateway |
 | 9 | Airflow | 🟡 | **Done:** `airflow/dags/payments_pipeline.py` (optional generate -> load -> dbt payments -> reconcile + quality gate -> drift check) and `external_data_daily.py` (ingest -> failure check -> dbt external); testable task logic in `src/orchestration/tasks.py` (idempotent; quality gate raises on empty/implausible marts; PSI drift check). 7 tests (DAG graph checked against an Airflow API stub; gate/drift/reconciliation run on the live DB; dbt task executed for real). **Not done:** the DAGs have NOT been run inside an actual Airflow scheduler (Airflow is not installed here; the compose Airflow stack was not started), no alerting/SLAs. **Bug found and fixed while wiring this:** `run_reconciliation_from_raw` filtered `dq_defect IN ('', ...)`, but COPY stores empty as NULL, so only 2,225 of ~448K cleared payments were reconciled; now 448,557 |
-| 10 | Testing, benchmarks, docs | ⏳ | |
+| 10 | Testing, benchmarks, docs | 🟡 | **Done:** 72 pytest tests passing; 1M and 2M generation benchmarks (228 s / 457 s) plus reconciliation and Parquet timings at scale (`docs/PHASE10_BENCHMARKS.md`); README section for all 2.0 components; per-phase result docs. **Not done / not measured:** Postgres + dbt timings at 1M/2M, PySpark, API load tests, browser UI tests, Airflow scheduler run, Tableau workbook, CI pipeline |
 
 ## Measured so far (real runs, this machine)
 | Run | Result |
@@ -24,7 +24,7 @@ Test suite: **53 passed** (17 original + 16 payment tests + 4 payment DB tests +
 
 | External ingestion, live (2026-11-20) | all 8 sources succeeded; immediate re-run: 8/8 UNCHANGED, 0 writes; ECB full history 222,108 rows loaded in ~3 min (uncontrolled timing) |
 
-No 1M / 2M benchmark, ingestion timing, dbt timing or Spark comparison has been run yet; none is claimed.
+1M/2M generation benchmarks are in docs/PHASE10_BENCHMARKS.md; Postgres/dbt timings at those sizes and any Spark comparison have not been run, and none is claimed.
 
 ## Environment notes
 * Embedded PostgreSQL restarts on a **new random port** each time `scripts/start_embedded_postgres.py` runs (this session: 60771); `.env` (git-ignored) was updated locally.
