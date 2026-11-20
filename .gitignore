@@ -76,3 +76,4 @@ desktop.ini
 tmp/
 temp/
 *.tmp
+data/source/payments/payments_manifest.json

@@ -64,3 +64,30 @@ def high_amount_config() -> dict:
         "failure_streak": 10,
         "behavior_change_multiplier": 100.0,
     }
+
+
+@pytest.fixture(scope="session")
+def test_engine():
+    """Engine for a dedicated ``novabank_test`` database (skips if no server is reachable)."""
+    import psycopg2
+    from sqlalchemy import create_engine
+
+    s = get_settings().db
+    try:
+        admin = psycopg2.connect(host=s.host, port=s.port, dbname="postgres", user=s.user,
+                                 password=s.password, connect_timeout=3)
+    except Exception as exc:  # pragma: no cover - environment dependent
+        pytest.skip(f"PostgreSQL not reachable: {exc}")
+    admin.autocommit = True
+    cur = admin.cursor()
+    cur.execute("SELECT 1 FROM pg_database WHERE datname = 'novabank_test'")
+    if not cur.fetchone():
+        cur.execute("CREATE DATABASE novabank_test")
+    admin.close()
+    url = s.sqlalchemy_url.rsplit("/", 1)[0] + "/novabank_test"
+    engine = create_engine(url, pool_pre_ping=True)
+    from src.utils.db import run_ddl
+
+    run_ddl(engine)
+    yield engine
+    engine.dispose()
