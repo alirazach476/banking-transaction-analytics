@@ -26,7 +26,10 @@ the data behind the API and extracts). At 500K the Postgres COPY load of all fou
 PySpark (not installed), concurrent API load testing, Airflow scheduler runs, Tableau extract refresh.
 
 ## Test status
-`pytest`: **72 passed** (original 17 + payments 20 + external 16 + monitoring 4 + API 8 + orchestration 7). Database-dependent tests need the embedded
+`pytest`: **83 passed** (full suite against the local database; 58 passed / 22 skipped on a clean clone with no DB). Database-dependent tests need the embedded
 Postgres running with the payment data loaded and dbt models built; they skip when the database is unreachable.
 dbt: `dbt build --select models/payments models/external` all models and tests pass; one source-freshness check passes.
 Frontend: 1 vitest unit test; the React app builds. No browser/end-to-end UI test was run.
+
+
+**Correction:** the 228.1 s / 457.0 s generation times above were measured while other jobs ran concurrently. An isolated re-run (docs/PG_SCALE_BENCHMARK.md) measured 112.8 s (1M) and 229.1 s (2M); use those. Spark vs DuckDB single-node comparison: docs/SPARK_BENCHMARK.md (Spark ran in a Linux container because native Windows Spark needs winutils).

@@ -29,3 +29,11 @@ Test suite: **72 passed** (see docs/PHASE10_BENCHMARKS.md).
 ## Environment notes
 * Embedded PostgreSQL restarts on a **new random port** each time `scripts/start_embedded_postgres.py` runs (this session: 60771); `.env` (git-ignored) was updated locally.
 * DB-backed tests use a separate `novabank_test` database and skip automatically if no server is reachable.
+
+## Final status update
+- Phase 4: Postgres + dbt measured at 1M and 2M payments (docs/PG_SCALE_BENCHMARK.md); PySpark vs DuckDB measured on 1.92M events (docs/SPARK_BENCHMARK.md, Spark in a Linux container; native Windows Spark failed without winutils).
+- Phase 5: full `dbt build` PASS=157, WARN=1, ERROR=0, including SQL reconciliation, indicators mart and merchant SCD2 snapshot.
+- Phase 8: Playwright e2e (4 tests) verified; API load test in docs/API_LOAD_TEST.md; CI workflow written but NOT run on GitHub (steps emulated locally).
+- Phase 9: both DAGs executed in a real Airflow 2.8.1 container via `airflow dags test` (9 tasks SUCCESS).
+- Phase 10: pytest 83 passed locally.
+- Not done / not possible here: Tableau workbook (no Tableau; extracts + spec provided), hosted deployment (no target/credentials), GitHub Actions run. ML performance is modest (fraud PR-AUC ~0.26, decline ROC-AUC ~0.64) on synthetic data.
