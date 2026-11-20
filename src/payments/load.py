@@ -115,7 +115,7 @@ def run_reconciliation_from_raw(engine=None, cfg: ReconConfig | None = None) -> 
     clr = pd.read_sql(text("""
         SELECT payment_id, event_ts::timestamp AS clearing_ts, amount::numeric::float8 AS amount, currency
         FROM raw.payment_lifecycle_events
-        WHERE event_type = 'CLEARING' AND dq_defect IN ('', 'duplicate_record')
+        WHERE event_type = 'CLEARING' AND COALESCE(dq_defect, '') IN ('', 'duplicate_record')
     """), engine)
     stl = pd.read_sql(text("""
         SELECT settlement_id, payment_id, settlement_ts::timestamp AS settlement_ts,
