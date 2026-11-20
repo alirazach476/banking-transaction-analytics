@@ -1,0 +1,30 @@
+{
+  "load_copy_s": 31.4,
+  "rows": {
+    "payment_transactions": 495665,
+    "payment_lifecycle_events": 1928246,
+    "payment_settlements": 454881,
+    "fx_rates_synthetic": 9072
+  },
+  "build_heap_s": 9.7,
+  "build_partitioned_indexed_s": 18.6,
+  "pg": {
+    "payments.evt_heap:q1_point_lookup": 64.8,
+    "payments.evt_heap:q2_one_month_scan": 76.2,
+    "payments.evt_heap:q3_monthly_decline_rate": 378.8,
+    "payments.evt_part:q1_point_lookup": 1.6,
+    "payments.evt_part:q2_one_month_scan": 10.5,
+    "payments.evt_part:q3_monthly_decline_rate": 230.5
+  },
+  "size_mb": {
+    "payments.evt_heap": "227.3361920000000000",
+    "payments.evt_part": "0E-24"
+  },
+  "parquet_export_s": 1.5,
+  "parquet_mb": 25.2,
+  "duckdb_parquet": {
+    "q1_point_lookup": 36.7,
+    "q2_one_month_scan": 9.1,
+    "q3_monthly_decline_rate": 33.0
+  }
+}
