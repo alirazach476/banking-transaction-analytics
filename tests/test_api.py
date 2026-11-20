@@ -1,9 +1,14 @@
+from pathlib import Path
+
 import pytest
 from fastapi.testclient import TestClient
 
 from src.api.main import app
 
 c = TestClient(app)
+MODELS = Path(__file__).resolve().parents[1] / "models"
+needs_models = pytest.mark.skipif(not (MODELS / "decline_xgb.joblib").exists(),
+                                  reason="models not trained (run scripts/phase6b_models.py)")
 
 
 def _db_ok():
@@ -23,6 +28,7 @@ def test_auth_enforced(monkeypatch):
     assert c.get("/models", headers={"X-API-Key": "secret"}).status_code == 200
 
 
+@needs_models
 def test_score_decline_risky_higher():
     safe = c.post("/score/decline", json={"amount": 20, "hour": 14}).json()["decline_probability"]
     risky = c.post("/score/decline", json={"amount": 2000, "hour": 2, "is_international": True,
@@ -30,6 +36,7 @@ def test_score_decline_risky_higher():
     assert 0 <= safe < risky <= 1
 
 
+@needs_models
 def test_score_fraud_burst_scores_higher():
     base = c.post("/score/fraud", json={"amount": 30, "hour": 14}).json()["fraud_probability"]
     burst = c.post("/score/fraud", json={"amount": 300, "hour": 3, "channel": "E-commerce", "foreign_merchant": True,
@@ -62,6 +69,7 @@ def test_rate_limit(monkeypatch):
 
 
 @pytest.mark.skipif(not _db_ok(), reason="database/marts unavailable")
+@needs_models
 def test_fraud_by_card_computes_features():
     from src.api import main
     main._hits.clear()
