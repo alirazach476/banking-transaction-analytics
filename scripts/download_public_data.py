@@ -38,7 +38,7 @@ S.headers["User-Agent"] = UA
 _last: dict[str, float] = {}
 INTERVAL = {"data.ecb.europa.eu": 1.0, "data-api.ecb.europa.eu": 1.5, "www.sbp.org.pk": 2.5,
             "ddh-openapi.worldbank.org": 1.0, "datacatalogfiles.worldbank.org": 1.0,
-            "thedocs.worldbank.org": 1.0}
+            "thedocs.worldbank.org": 1.0, "data.bis.org": 1.5}
 
 
 def throttle(url: str) -> None:
@@ -360,7 +360,26 @@ def plan_wbrel() -> list[tuple[str, Path]]:
     return items
 
 
-PLANNERS = {"ecb": plan_ecb, "sbp": plan_sbp, "wb": plan_wb, "wbcat": plan_wbcat, "wbzip": plan_wbzip, "wbrel": plan_wbrel}
+# BIS Data Portal bulk downloads (https://data.bis.org/bulkdownload; robots.txt allows /static/bulk/).
+# Topics relevant to a banking & payments analytics project; the tidy "csv_flat" variant is used.
+BIS_TOPICS = {
+    "WS_CPMI_CASHLESS": "CPMI cashless payments", "WS_CPMI_DEVICES": "CPMI payment devices",
+    "WS_CPMI_INSTITUT": "CPMI institutions", "WS_CPMI_PARTICIP": "CPMI participants",
+    "WS_CPMI_SYSTEMS": "CPMI payment systems", "WS_CPMI_MACRO": "CPMI macro", "WS_CPMI_CT1": "CPMI comparative tables 1",
+    "WS_CPMI_CT2": "CPMI comparative tables 2", "WS_LBS_D_PUB": "Locational banking statistics",
+    "WS_CBS_PUB": "Consolidated banking statistics", "WS_CBPOL": "Central bank policy rates",
+    "WS_XRU": "Bilateral exchange rates", "WS_EER": "Effective exchange rates", "WS_LONG_CPI": "Consumer prices",
+    "WS_GLI": "Global liquidity indicators", "WS_TC": "Credit to the non-financial sector",
+    "WS_CREDIT_GAP": "Credit-to-GDP gaps", "WS_DSR": "Debt service ratios", "WS_CBTA": "Central bank total assets",
+}
+
+
+def plan_bis() -> list[tuple[str, Path]]:
+    return [(f"https://data.bis.org/static/bulk/{c}_csv_flat.zip", OUT / "bis" / f"{c}_csv_flat.zip")
+            for c in BIS_TOPICS]
+
+
+PLANNERS = {"ecb": plan_ecb, "sbp": plan_sbp, "wb": plan_wb, "wbcat": plan_wbcat, "wbzip": plan_wbzip, "wbrel": plan_wbrel, "bis": plan_bis}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -370,11 +389,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--max-file-mb", type=int, default=500)
     ap.add_argument("--max-total-gb", type=float, default=10.0)
     ap.add_argument("--limit", type=int, default=0, help="only first N items per source (testing)")
+    ap.add_argument("--only", nargs="*", help="keep only items whose file stem is in this list (e.g. ECB codes)")
+    ap.add_argument("--min-free-gb", type=float, default=5.0, help="stop if free disk falls below this")
     a = ap.parse_args(argv)
     OUT.mkdir(parents=True, exist_ok=True)
     total = 0
     for src in a.sources:
         items = PLANNERS[src]()
+        if a.only:
+            items = [(u, p) for u, p in items if p.stem in set(a.only)]
         if a.limit:
             items = items[: a.limit]
         print(f"[{src}] {len(items)} files planned")
@@ -390,6 +413,10 @@ def main(argv: list[str] | None = None) -> int:
             continue
         man = (OUT / f"manifest_{src}.jsonl").open("a", encoding="utf-8")
         for i, (u, p) in enumerate(items, 1):
+            import shutil
+            if shutil.disk_usage(OUT).free < a.min_free_gb * 1e9:
+                print("free disk below guard - stopping")
+                break
             if total >= a.max_total_gb * 1e9:
                 print("total size cap reached - stopping")
                 break
