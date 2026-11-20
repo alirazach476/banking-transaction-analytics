@@ -1,0 +1,21 @@
+version: 2
+sources:
+  - name: external_staging
+    description: Public external data (ECB FX, World Bank/FRED indicators) ingested by src/external
+    schema: external_staging
+    tables:
+      - name: stg_exchange_rates
+      - name: stg_economic_indicators
+  - name: external_raw
+    schema: external_raw
+    tables:
+      - name: http_snapshots
+        loaded_at_field: extracted_at
+        freshness:
+          warn_after: {count: 7, period: day}
+          error_after: {count: 30, period: day}
+models:
+  - name: mart_fx_monthly
+    columns:
+      - name: avg_rate
+        tests: [not_null]

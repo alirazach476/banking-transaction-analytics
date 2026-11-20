@@ -24,3 +24,7 @@ models:
     columns:
       - name: payment_date
         tests: [unique, not_null]
+  - name: mart_settlement_daily
+    columns:
+      - name: settlement_date
+        tests: [unique, not_null]
