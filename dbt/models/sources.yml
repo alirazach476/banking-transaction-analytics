@@ -73,3 +73,12 @@ sources:
         columns:
           - name: card_txn_id
             description: Business key CTXN-XXXXXXXXXX
+
+  - name: raw_payments
+    description: Synthetic payment lifecycle landing tables (TEXT, intentionally dirty; dq_defect labels injected defects)
+    schema: raw
+    tables:
+      - name: payment_transactions
+      - name: payment_lifecycle_events
+      - name: payment_settlements
+      - name: fx_rates_synthetic
