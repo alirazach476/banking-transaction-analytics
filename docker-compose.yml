@@ -115,5 +115,27 @@ services:
     profiles:
       - pipeline
 
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: novabank-api
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      RATE_LIMIT_PER_MIN: 120
+      # API_KEY: set in .env for any non-local use
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    profiles:
+      - api
+
 volumes:
   postgres_data:

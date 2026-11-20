@@ -1,0 +1,11 @@
+data
+models
+dbt/target
+dbt/logs
+.git
+__pycache__
+*.joblib
+node_modules
+.env
+web/react-app/node_modules
+web/react-app/dist

@@ -7,7 +7,9 @@ from __future__ import annotations
 
 import json
 import os
-from datetime import date
+import time
+from collections import defaultdict, deque
+from datetime import date, datetime
 from functools import lru_cache
 from pathlib import Path
 from typing import Literal
@@ -15,8 +17,9 @@ from typing import Literal
 import joblib
 import numpy as np
 import pandas as pd
-from fastapi import Depends, FastAPI, Header, HTTPException, Query
-from fastapi.responses import FileResponse
+from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from sqlalchemy import text
 
@@ -27,6 +30,31 @@ MODELS = ROOT / "models"
 CNP_CHANNELS = {"E-commerce", "Recurring"}
 app = FastAPI(title="NovaBank Payments API", version="0.1.0",
               description="Synthetic-data payment analytics and model scoring. Not for real customer decisions.")
+
+
+# ---------------------------------------------------------------- rate limiting (in-process sliding window)
+# Per API key (or client IP). Limit from env RATE_LIMIT_PER_MIN (default 120; 0 disables). Single-process only:
+# behind several workers/replicas use a shared store (e.g. Redis) or a gateway instead.
+_hits: dict[str, deque] = defaultdict(deque)
+EXEMPT = {"/health", "/ui", "/docs", "/openapi.json"}
+EXEMPT_PREFIX = ("/app/",)
+
+
+@app.middleware("http")
+async def rate_limit(request: Request, call_next):
+    limit = int(os.getenv("RATE_LIMIT_PER_MIN", "120"))
+    if limit <= 0 or request.url.path in EXEMPT or request.url.path.startswith(EXEMPT_PREFIX):
+        return await call_next(request)
+    who = request.headers.get("x-api-key") or (request.client.host if request.client else "unknown")
+    now = time.monotonic()
+    dq = _hits[who]
+    while dq and now - dq[0] > 60:
+        dq.popleft()
+    if len(dq) >= limit:
+        retry = max(1, int(60 - (now - dq[0])))
+        return JSONResponse({"detail": "rate limit exceeded"}, status_code=429, headers={"Retry-After": str(retry)})
+    dq.append(now)
+    return await call_next(request)
 
 
 def require_key(x_api_key: str | None = Header(default=None)):
@@ -156,6 +184,41 @@ def score_fraud(r: FraudRequest):
     return {"fraud_probability": p, "flag": p >= m["threshold"], "threshold": m["threshold"], "model": "fraud_xgb"}
 
 
+class CardFraudRequest(BaseModel):
+    card_id: str
+    authorization_ts: datetime
+    amount: float = Field(gt=0)
+    channel: str = "POS Chip"
+    is_international: bool = False
+    merchant_country: str | None = None
+    card_country: str | None = None
+
+
+@app.post("/score/fraud/card", dependencies=[Depends(require_key)])
+def score_fraud_by_card(r: CardFraudRequest):
+    """Fraud score with card features computed server-side from the card's payment history
+    (payments strictly before authorization_ts; the current payment is added on top)."""
+    h = q("""SELECT count(*) FILTER (WHERE authorization_ts > :t - interval '60 minutes') AS n60,
+                    coalesce(sum(amount) FILTER (WHERE authorization_ts > :t - interval '60 minutes'), 0) AS a60,
+                    avg(amount) AS prior_mean, count(*) AS prior_n
+             FROM intermediate.int_card_payments WHERE card_id = :c AND authorization_ts < :t""",
+          t=r.authorization_ts.replace(tzinfo=None), c=r.card_id)[0]
+    n60, a60 = int(h["n60"]) + 1, float(h["a60"]) + r.amount
+    ratio = r.amount / float(h["prior_mean"]) if h["prior_mean"] else 1.0
+    foreign = bool(r.merchant_country and r.card_country and r.merchant_country.upper() != r.card_country.upper())
+    res = score_fraud(FraudRequest(amount=r.amount, hour=r.authorization_ts.hour, is_international=r.is_international,
+                                   channel=r.channel, foreign_merchant=foreign or r.is_international, card_txn_60m=n60,
+                                   card_amt_60m=a60, amt_vs_card_mean=ratio))
+    return {**res, "computed_features": {"card_txn_60m": n60, "card_amt_60m": a60, "amt_vs_card_mean": ratio,
+                                         "prior_payments_on_card": int(h["prior_n"]), "foreign_merchant": foreign}}
+
+
 @app.get("/ui", include_in_schema=False)
 def ui():
     return FileResponse(ROOT / "web" / "payments_dashboard.html")
+
+
+# React app (web/react-app, built with `npm run build`) is served at /app/ when its dist/ folder exists.
+_dist = ROOT / "web" / "react-app" / "dist"
+if _dist.exists():
+    app.mount("/app", StaticFiles(directory=_dist, html=True), name="react-app")

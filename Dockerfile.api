@@ -1,0 +1,29 @@
+FROM node:22-slim AS ui
+WORKDIR /ui
+COPY web/react-app/package.json web/react-app/package-lock.json* ./
+RUN npm install --no-audit --no-fund
+COPY web/react-app ./
+RUN npm run build
+
+FROM python:3.12-slim
+
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1 PYTHONPATH=/app PIP_NO_CACHE_DIR=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends libpq5 libgomp1 && rm -rf /var/lib/apt/lists/*
+
+# Only what the API needs (the full requirements.txt also pulls pipeline/ML training tooling)
+RUN pip install fastapi "uvicorn[standard]" "sqlalchemy>=2" psycopg2-binary pandas numpy joblib xgboost scikit-learn \
+    pydantic pydantic-settings python-dotenv pyyaml
+
+COPY src ./src
+COPY config ./config
+COPY web ./web
+COPY --from=ui /ui/dist ./web/react-app/dist
+# models/*.joblib are not in git: mount them (see docker-compose.yml) or bake them in with a build context that has them
+
+RUN useradd -m api && chown -R api /app
+USER api
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=5s CMD python -c "import urllib.request;urllib.request.urlopen('http://localhost:8000/health')"
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

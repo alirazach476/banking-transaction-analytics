@@ -49,3 +49,26 @@ def test_kpis_and_queue():
     assert len(c.get("/kpis/daily?limit=5").json()) == 5
     assert c.get("/decline-reasons").status_code == 200
     assert c.get("/reconciliation/queue?limit=3").status_code == 200
+
+
+def test_rate_limit(monkeypatch):
+    monkeypatch.setenv("RATE_LIMIT_PER_MIN", "3")
+    from src.api import main
+    main._hits.clear()
+    codes = [c.get("/models", headers={"X-API-Key": "rl-test"}).status_code for _ in range(5)]
+    assert codes[:3] == [200, 200, 200] and codes[3:] == [429, 429]
+    assert c.get("/health").status_code == 200  # exempt
+    main._hits.clear()
+
+
+@pytest.mark.skipif(not _db_ok(), reason="database/marts unavailable")
+def test_fraud_by_card_computes_features():
+    from src.api import main
+    main._hits.clear()
+    row = main.q("SELECT card_id, authorization_ts FROM intermediate.int_card_payments ORDER BY authorization_ts DESC LIMIT 1")[0]
+    r = c.post("/score/fraud/card", json={"card_id": row["card_id"], "authorization_ts": row["authorization_ts"].isoformat(),
+                                          "amount": 50, "channel": "E-commerce"})
+    assert r.status_code == 200
+    f = r.json()["computed_features"]
+    assert f["card_txn_60m"] >= 1 and f["prior_payments_on_card"] >= 1
+    assert 0 <= r.json()["fraud_probability"] <= 1
