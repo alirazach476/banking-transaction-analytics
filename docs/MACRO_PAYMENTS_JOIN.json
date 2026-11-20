@@ -1,0 +1,66 @@
+{
+  "months_joined": 25,
+  "span": [
+    "2023-03",
+    "2025-03"
+  ],
+  "n_changes": 24,
+  "correlations": [
+    {
+      "payment_metric": "payments",
+      "macro_change": "policy_rate",
+      "spearman": -0.13,
+      "perm_p": 0.56
+    },
+    {
+      "payment_metric": "payments",
+      "macro_change": "cpi_index",
+      "spearman": 0.23,
+      "perm_p": 0.284
+    },
+    {
+      "payment_metric": "payments",
+      "macro_change": "usd_pkr",
+      "spearman": -0.03,
+      "perm_p": 0.888
+    },
+    {
+      "payment_metric": "approval_rate",
+      "macro_change": "policy_rate",
+      "spearman": -0.03,
+      "perm_p": 0.915
+    },
+    {
+      "payment_metric": "approval_rate",
+      "macro_change": "cpi_index",
+      "spearman": 0.31,
+      "perm_p": 0.129
+    },
+    {
+      "payment_metric": "approval_rate",
+      "macro_change": "usd_pkr",
+      "spearman": 0.03,
+      "perm_p": 0.871
+    },
+    {
+      "payment_metric": "avg_amount",
+      "macro_change": "policy_rate",
+      "spearman": -0.03,
+      "perm_p": 0.891
+    },
+    {
+      "payment_metric": "avg_amount",
+      "macro_change": "cpi_index",
+      "spearman": 0.11,
+      "perm_p": 0.608
+    },
+    {
+      "payment_metric": "avg_amount",
+      "macro_change": "usd_pkr",
+      "spearman": -0.11,
+      "perm_p": 0.612
+    }
+  ],
+  "significant_at_5pct": [],
+  "multiple_testing_note": "9 tests; ~0.5 would pass 5% by chance alone"
+}
