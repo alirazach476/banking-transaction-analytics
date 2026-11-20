@@ -41,6 +41,7 @@ services:
       - ./sql/ddl/03_create_audit_tables.sql:/docker-entrypoint-initdb.d/03_create_audit_tables.sql
       - ./sql/ddl/04_create_monitoring_tables.sql:/docker-entrypoint-initdb.d/04_create_monitoring_tables.sql
       - ./sql/ddl/06_create_payments_tables.sql:/docker-entrypoint-initdb.d/06_create_payments_tables.sql
+      - ./sql/ddl/07_create_external_tables.sql:/docker-entrypoint-initdb.d/07_create_external_tables.sql
       - ./sql/ddl/05_create_airflow_db.sh:/docker-entrypoint-initdb.d/05_create_airflow_db.sh
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U novabank -d novabank"]

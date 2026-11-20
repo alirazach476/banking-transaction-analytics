@@ -29,6 +29,11 @@ dbt-postgres>=1.7.0,<1.9
 pytest>=7.4.0
 pytest-cov>=4.1.0
 
+# External data collection
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
 # Utilities
 tqdm>=4.66.0
 PyYAML>=6.0.1

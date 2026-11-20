@@ -59,6 +59,7 @@ def run_ddl(engine: Engine | None = None) -> None:
         "03_create_audit_tables.sql",
         "04_create_monitoring_tables.sql",
         "06_create_payments_tables.sql",
+        "07_create_external_tables.sql",
     ]:
         path = ddl_dir / name
         if path.exists():

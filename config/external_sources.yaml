@@ -1,0 +1,39 @@
+# Public, officially published data sources only. Prefer APIs/feeds over HTML scraping.
+# Every fetch honours robots.txt and a per-domain minimum interval.
+min_interval_seconds: 1.0
+max_retries: 3
+
+sources:
+  - name: ecb_fx_hist
+    kind: ecb_fx
+    url: https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml
+    source_label: ECB
+  - name: worldbank_indicators
+    kind: worldbank
+    base_url: https://api.worldbank.org/v2/country/{countries}/indicator/{indicator}
+    countries: [PK, US, GB, IN, AE, DE, FR, CA]
+    date_range: "2018:2025"
+    indicators:
+      - {id: FP.CPI.TOTL.ZG, unit: "% annual"}
+      - {id: NY.GDP.MKTP.KD.ZG, unit: "% annual"}
+      - {id: PA.NUS.FCRF, unit: "LCU per USD"}
+    source_label: WORLD_BANK
+  - name: fred_series
+    kind: fred
+    url: https://fred.stlouisfed.org/graph/fredgraph.csv
+    since: "2018-01-01"
+    series:
+      - {id: DFF, unit: "% (effective federal funds rate)"}
+      - {id: CPIAUCSL, unit: "index 1982-84=100"}
+      - {id: UNRATE, unit: "% unemployment"}
+    source_label: FRED
+  - name: ecb_press_rss
+    kind: rss
+    url: https://www.ecb.europa.eu/rss/press.xml
+    source_label: ECB_PRESS
+    category: central_bank_news
+
+# Payment-network pages (Visa/Mastercard) and SBP are intentionally NOT enabled: their public
+# pages are largely JavaScript-rendered and/or restrict automated access, and no official
+# machine-readable feed was verified. Add an entry with kind: html (see parsers.parse_announcement_html)
+# only after checking the site's robots.txt and terms.

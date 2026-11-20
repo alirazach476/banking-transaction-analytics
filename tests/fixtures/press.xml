@@ -1,0 +1,2 @@
+<rss version="2.0"><channel><item><title>ECB publishes thing</title><link>https://example.org/a</link><pubDate>Tue, 05 Mar 2024 10:00:00 +0100</pubDate><description>Short &lt;b&gt;text&lt;/b&gt;</description></item>
+<item><title></title><link>https://example.org/b</link></item><item><title>Bad date</title><link>https://example.org/c</link><pubDate>garbage</pubDate></item></channel></rss>
