@@ -11,7 +11,7 @@ Loading is idempotent: tables already loaded are skipped unless `--force`.
 |---|---|---|---|
 | synthetic_raw / clean / curated | 13 / 6 / 3 | 3.1M / 2.5M / 2.5M | NovaBank synthetic generator output (curated has a rejects table) |
 | ecb | 103 | 82.4M | ECB SDMX CSVs (`data/external_downloads/ecb`) |
-| bis | 18 | 15.8M | BIS bulk flat CSVs |
+| bis | 19 | 53.7M (incl. locational banking `ws_lbs_d_pub`, 37.9M rows) | BIS bulk flat CSVs |
 | worldbank | 1,091 | 20.0M | World Bank Excel/CSV (featured, collections, relevant incl. unzipped members); one table per sheet |
 | sbp | 2 | 27.7K | SBP PDFs OCR'd to text, loaded as long-form cells + document list |
 | external_fred | 4 | 147K | `fredgraph/`: CPI YoY, daily rates, metro unemployment (melted to long) |
@@ -38,9 +38,8 @@ c.sql("select * from external_fred.metro_unemployment_rate_msa_long where region
 
 ## Known limitations
 - `catalog.load_log` is append-only; use each item's latest row. Older FAILED rows were fixed by later runs.
-- `worldbank/..DR0045869..xlsx` (COVID trade flows) is a saved SharePoint error page, not data; not loadable. Re-download needed.
+- World Bank `DR0045869` (COVID trade flows) cannot be obtained: the catalog only links a private SharePoint sign-in page (also with `download=1`), so the saved HTML was moved to `data/external_downloads/_unavailable/`. Request access from the World Bank data team if needed.
 - Some World Bank downloads were blocked (HTTP 403/500) and are absent; see `download_manifest`.
-- BIS `WS_LBS_D_PUB` (locational banking) is not present in `data/external_downloads/bis`; download was incomplete.
 - 14 less-relevant large ECB datasets (SEC, SHSS, IVF, IDCS, STP, RAS, RA6, GFS, QSA, MNA, STS, WTS, E09, E11) were deliberately not downloaded.
 - 8 climate/biomass zips were not extracted (irrelevant to banking).
 - SBP figures are OCR; verify critical numbers against the source PDF (low-confidence cells marked `?`).
