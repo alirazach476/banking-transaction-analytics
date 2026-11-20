@@ -9,6 +9,7 @@ import json
 import os
 import time
 from collections import defaultdict, deque
+from contextlib import asynccontextmanager
 from datetime import date, datetime
 from functools import lru_cache
 from pathlib import Path
@@ -28,7 +29,18 @@ from src.utils.db import get_engine
 ROOT = Path(__file__).resolve().parents[2]
 MODELS = ROOT / "models"
 CNP_CHANNELS = {"E-commerce", "Recurring"}
-app = FastAPI(title="NovaBank Payments API", version="0.1.0",
+@asynccontextmanager
+async def lifespan(_app):
+    """Warm the models at startup so the first scoring request is not slow (XGBoost import + model load)."""
+    for name in ("decline_xgb", "fraud_xgb"):
+        try:
+            load_model(name)
+        except Exception:  # models optional: scoring endpoints return 503 until trained
+            pass
+    yield
+
+
+app = FastAPI(title="NovaBank Payments API", version="0.1.0", lifespan=lifespan,
               description="Synthetic-data payment analytics and model scoring. Not for real customer decisions.")
 
 

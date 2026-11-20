@@ -109,7 +109,7 @@ export default function App() {
             <XAxis dataKey="payment_date" minTickGap={40} />
             <YAxis domain={[0.8, 1]} tickFormatter={(v) => (v * 100).toFixed(0) + "%"} />
             <Tooltip formatter={(v) => pct(v)} />
-            <Line dataKey="approval_rate" dot={false} stroke="#1f6feb" />
+            <Line dataKey="approval_rate" dot={false} stroke="#1f6feb" strokeWidth={2} isAnimationActive={false} connectNulls />
           </LineChart>
         </ResponsiveContainer>
       </div>
@@ -121,7 +121,7 @@ export default function App() {
             <XAxis type="number" />
             <YAxis type="category" dataKey="decline_reason" width={160} />
             <Tooltip />
-            <Bar dataKey="declined_payments" fill="#1f6feb" />
+            <Bar dataKey="declined_payments" fill="#1f6feb" isAnimationActive={false} />
           </BarChart>
         </ResponsiveContainer>
       </div>
