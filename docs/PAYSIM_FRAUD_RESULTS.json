@@ -1,0 +1,55 @@
+{
+  "rows_modelled": 2770409,
+  "train_rows": 2726859,
+  "test_rows": 43550,
+  "train_fraud": 6613,
+  "test_fraud": 1600,
+  "test_fraud_rate": 0.03674,
+  "results": [
+    {
+      "model": "rule: origin emptied & amount>200k",
+      "pr_auc": 0.0719,
+      "roc_auc": 0.6979,
+      "best_f1": 0.161,
+      "precision_at_best_f1": 0.0922,
+      "recall_at_best_f1": 0.6338
+    },
+    {
+      "model": "XGBoost all features",
+      "pr_auc": 1.0,
+      "roc_auc": 1.0,
+      "best_f1": 1.0,
+      "precision_at_best_f1": 1.0,
+      "recall_at_best_f1": 1.0
+    },
+    {
+      "model": "XGBoost without balance-error features",
+      "pr_auc": 0.9936,
+      "roc_auc": 0.9997,
+      "best_f1": 0.9604,
+      "precision_at_best_f1": 0.9428,
+      "recall_at_best_f1": 0.9788
+    },
+    {
+      "model": "XGBoost amount/type/hour only",
+      "pr_auc": 0.5203,
+      "roc_auc": 0.8655,
+      "best_f1": 0.5218,
+      "precision_at_best_f1": 0.5845,
+      "recall_at_best_f1": 0.4713
+    }
+  ],
+  "feature_importance_all": {
+    "dest_zero_both": 0.288,
+    "nb_o": 0.282,
+    "err_orig": 0.197,
+    "ob_o": 0.099,
+    "orig_emptied": 0.087,
+    "is_transfer": 0.015,
+    "amount": 0.013,
+    "hour": 0.009,
+    "nb_d": 0.003,
+    "err_dest": 0.003,
+    "ob_d": 0.002
+  }
+}
