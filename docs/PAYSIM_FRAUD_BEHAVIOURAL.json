@@ -1,0 +1,40 @@
+{
+ "results": [
+  {
+   "model": "amount/type/hour only (earlier baseline)",
+   "pr_auc": 0.5221,
+   "roc_auc": 0.8649,
+   "best_f1": 0.5223,
+   "precision": 0.5674,
+   "recall": 0.4838
+  },
+  {
+   "model": "with account-history features (no balances)",
+   "pr_auc": 0.7986,
+   "roc_auc": 0.9549,
+   "best_f1": 0.7511,
+   "precision": 0.8585,
+   "recall": 0.6675
+  }
+ ],
+ "importance": {
+  "is_transfer": 0.353,
+  "hour": 0.157,
+  "dest_prior_count": 0.136,
+  "dest_seen_before": 0.125,
+  "amount": 0.08,
+  "log_amount": 0.063,
+  "amount_rank_in_step": 0.046,
+  "amount_is_round": 0.025,
+  "orig_prior_count": 0.015,
+  "orig_received_earlier": 0.0
+ },
+ "feature_sanity": {
+  "fraud_dest_seen_before_share": 0.33,
+  "legit_dest_seen_before_share": 0.818,
+  "fraud_orig_received_earlier_share": 0.0,
+  "legit_orig_received_earlier_share": 0.0
+ },
+ "test_rows": 43550,
+ "test_fraud": 1600
+}

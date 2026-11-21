@@ -15,3 +15,13 @@ Feature importance (all-features model): dest_zero_both 0.288, nb_o 0.282, err_o
 - With the balance-consistency features removed it still reaches PR-AUC 0.99, because raw balances still reveal the pattern. Using only amount, type and hour (what you would have without balance data) gives PR-AUC 0.52, which is the more realistic indication of difficulty.
 - The test window (steps 601-743) has a 3.67% fraud rate against 0.24% in training, because PaySim produces few normal transactions late in the simulation. The test is therefore not representative of the overall rate, and precision figures would be lower on a realistic mix.
 - A simple hand rule (origin emptied and amount > 200k) scores only PR-AUC 0.07, so the model does add value over it, but only on this simulator.
+
+## Balance-free model with account-history features (added later)
+Script `scripts/paysim_fraud_behavioural.py`, same time split (train steps 1-600, test 601-743; 43,550 test rows, 1,600 fraud). Features use only what was known before each transaction: amount, log amount, type, hour, how many earlier transactions the destination and the origin account had, whether the destination was seen before, the amount's rank within its hour, and whether the amount is a round thousand. No balances.
+
+| model | PR-AUC | ROC-AUC | best F1 | precision | recall |
+|---|---|---|---|---|---|
+| amount/type/hour only | 0.522 | 0.865 | 0.522 | 0.567 | 0.484 |
+| plus account-history features | 0.799 | 0.955 | 0.751 | 0.859 | 0.668 |
+
+Fraud in this dataset goes to destination accounts that are new: 33% of fraud transactions had a previously seen destination against 82% of legitimate ones. The most important features are transaction type, hour, and the destination's prior count and novelty. This is a real, leakage-free gain over the balance-free baseline, but it is still learned from a simulator: PaySim's fraudsters are built to use fresh destination accounts, so the result shows the method works, not that real fraud looks like this. The test window's 3.7% fraud rate (against 0.24% in training) also makes the precision figures optimistic.
