@@ -31,6 +31,7 @@ pytest-cov>=4.1.0
 
 # External data collection
 requests>=2.31.0
+httpx>=0.27.0
 beautifulsoup4>=4.12.0
 lxml>=5.0.0
 
