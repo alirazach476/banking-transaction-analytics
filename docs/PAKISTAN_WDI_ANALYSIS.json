@@ -1,0 +1,303 @@
+{
+  "pakistan_latest": {
+    "atm_100k": [
+      2024,
+      12.05
+    ],
+    "bank_credit_gdp": [
+      2025,
+      10.68
+    ],
+    "borrowers_1000": [
+      2024,
+      23.34
+    ],
+    "branches_100k": [
+      2024,
+      11.15
+    ],
+    "broad_money_gdp": [
+      2025,
+      40.88
+    ],
+    "ca_gdp": [
+      2025,
+      -0.11
+    ],
+    "credit_gdp": [
+      2025,
+      10.73
+    ],
+    "gdp_growth": [
+      2025,
+      3.7
+    ],
+    "gdp_pc_usd": [
+      2025,
+      1595.91
+    ],
+    "inflation": [
+      2025,
+      3.55
+    ],
+    "internet_pct": [
+      2024,
+      57.25
+    ],
+    "mobile_100": [
+      2024,
+      76.85
+    ],
+    "reer": [
+      2025,
+      102.94
+    ],
+    "remit_gdp": [
+      2025,
+      9.94
+    ],
+    "reserves_months": [
+      2025,
+      3.76
+    ],
+    "usdpkr": [
+      2025,
+      281.14
+    ]
+  },
+  "private_credit_gdp": {
+    "peak": [
+      1986,
+      29.8
+    ],
+    "latest": [
+      2025,
+      10.7
+    ],
+    "year_2008": 24.2,
+    "year_2000": 16.6
+  },
+  "inflation_peak_since_2000": {
+    "year": 2023,
+    "pct": 30.8
+  },
+  "atm_growth": {
+    "from": [
+      2010,
+      3.96
+    ],
+    "to": [
+      2024,
+      12.05
+    ]
+  },
+  "branches": {
+    "from": [
+      2010,
+      7.76
+    ],
+    "to": [
+      2024,
+      11.15
+    ]
+  },
+  "usdpkr_change_2015_2023_pct": 172.8,
+  "peer_table": [
+    {
+      "indicator": "credit_gdp",
+      "pakistan": 10.7,
+      "year": 2025,
+      "peer_median": 44.0,
+      "n_peers": 11,
+      "pakistan_rank_high_to_low": 12,
+      "best": "Viet Nam",
+      "best_value": 125.0
+    },
+    {
+      "indicator": "broad_money_gdp",
+      "pakistan": 40.9,
+      "year": 2025,
+      "peer_median": 59.5,
+      "n_peers": 11,
+      "pakistan_rank_high_to_low": 10,
+      "best": "Viet Nam",
+      "best_value": 136.3
+    },
+    {
+      "indicator": "atm_100k",
+      "pakistan": 12.1,
+      "year": 2024,
+      "peer_median": 25.9,
+      "n_peers": 10,
+      "pakistan_rank_high_to_low": 10,
+      "best": "Turkiye",
+      "best_value": 81.1
+    },
+    {
+      "indicator": "branches_100k",
+      "pakistan": 11.2,
+      "year": 2024,
+      "peer_median": 9.1,
+      "n_peers": 11,
+      "pakistan_rank_high_to_low": 6,
+      "best": "Nepal",
+      "best_value": 23.8
+    },
+    {
+      "indicator": "borrowers_1000",
+      "pakistan": 23.3,
+      "year": 2024,
+      "peer_median": 228.9,
+      "n_peers": 6,
+      "pakistan_rank_high_to_low": 7,
+      "best": "Turkiye",
+      "best_value": 976.7
+    },
+    {
+      "indicator": "remit_gdp",
+      "pakistan": 9.9,
+      "year": 2025,
+      "peer_median": 7.5,
+      "n_peers": 10,
+      "pakistan_rank_high_to_low": 3,
+      "best": "Nepal",
+      "best_value": 32.3
+    },
+    {
+      "indicator": "mobile_100",
+      "pakistan": 76.9,
+      "year": 2024,
+      "peer_median": 108.1,
+      "n_peers": 11,
+      "pakistan_rank_high_to_low": 11,
+      "best": "Sri Lanka",
+      "best_value": 132.5
+    },
+    {
+      "indicator": "inflation",
+      "pakistan": 3.5,
+      "year": 2025,
+      "peer_median": 3.3,
+      "n_peers": 11,
+      "pakistan_rank_high_to_low": 6,
+      "best": "Turkiye",
+      "best_value": 34.9
+    },
+    {
+      "indicator": "gdp_pc_usd",
+      "pakistan": 1595.9,
+      "year": 2025,
+      "peer_median": 3085.8,
+      "n_peers": 11,
+      "pakistan_rank_high_to_low": 10,
+      "best": "Turkiye",
+      "best_value": 18599.4
+    }
+  ],
+  "corr_window": [
+    1990,
+    2024,
+    35
+  ],
+  "corr_levels": {
+    "credit_gdp": {
+      "credit_gdp": 1.0,
+      "inflation": 0.11,
+      "gdp_growth": 0.06,
+      "remit_gdp": -0.79,
+      "broad_money_gdp": -0.16,
+      "reer": 0.42
+    },
+    "inflation": {
+      "credit_gdp": 0.11,
+      "inflation": 1.0,
+      "gdp_growth": -0.35,
+      "remit_gdp": 0.19,
+      "broad_money_gdp": 0.01,
+      "reer": -0.24
+    },
+    "gdp_growth": {
+      "credit_gdp": 0.06,
+      "inflation": -0.35,
+      "gdp_growth": 1.0,
+      "remit_gdp": -0.09,
+      "broad_money_gdp": -0.12,
+      "reer": 0.24
+    },
+    "remit_gdp": {
+      "credit_gdp": -0.79,
+      "inflation": 0.19,
+      "gdp_growth": -0.09,
+      "remit_gdp": 1.0,
+      "broad_money_gdp": 0.44,
+      "reer": -0.35
+    },
+    "broad_money_gdp": {
+      "credit_gdp": -0.16,
+      "inflation": 0.01,
+      "gdp_growth": -0.12,
+      "remit_gdp": 0.44,
+      "broad_money_gdp": 1.0,
+      "reer": -0.01
+    },
+    "reer": {
+      "credit_gdp": 0.42,
+      "inflation": -0.24,
+      "gdp_growth": 0.24,
+      "remit_gdp": -0.35,
+      "broad_money_gdp": -0.01,
+      "reer": 1.0
+    }
+  },
+  "corr_first_diff": {
+    "credit_gdp": {
+      "credit_gdp": 1.0,
+      "inflation": 0.08,
+      "gdp_growth": 0.2,
+      "remit_gdp": -0.33,
+      "broad_money_gdp": 0.37,
+      "reer": -0.03
+    },
+    "inflation": {
+      "credit_gdp": 0.08,
+      "inflation": 1.0,
+      "gdp_growth": -0.35,
+      "remit_gdp": -0.19,
+      "broad_money_gdp": -0.21,
+      "reer": -0.28
+    },
+    "gdp_growth": {
+      "credit_gdp": 0.2,
+      "inflation": -0.35,
+      "gdp_growth": 1.0,
+      "remit_gdp": -0.11,
+      "broad_money_gdp": -0.15,
+      "reer": 0.13
+    },
+    "remit_gdp": {
+      "credit_gdp": -0.33,
+      "inflation": -0.19,
+      "gdp_growth": -0.11,
+      "remit_gdp": 1.0,
+      "broad_money_gdp": 0.16,
+      "reer": 0.3
+    },
+    "broad_money_gdp": {
+      "credit_gdp": 0.37,
+      "inflation": -0.21,
+      "gdp_growth": -0.15,
+      "remit_gdp": 0.16,
+      "broad_money_gdp": 1.0,
+      "reer": 0.22
+    },
+    "reer": {
+      "credit_gdp": -0.03,
+      "inflation": -0.28,
+      "gdp_growth": 0.13,
+      "remit_gdp": 0.3,
+      "broad_money_gdp": 0.22,
+      "reer": 1.0
+    }
+  },
+  "note": "Annual series with n<=35; correlations are descriptive, not causal; levels trend so first differences are also shown."
+}
