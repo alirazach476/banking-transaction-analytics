@@ -172,7 +172,7 @@ def reconcile(clearing: pd.DataFrame, settlements: pd.DataFrame, fx: pd.DataFram
     })
     q2 = pd.DataFrame({
         "payment_id": um["payment_id"], "settlement_id": um["settlement_id"], "issue_type": "UNMATCHED_SETTLEMENT",
-        "amount_at_risk": um["amount_at_risk"].round(2), "currency": um["settlement_currency"],
+        "amount_at_risk": pd.to_numeric(um["amount_at_risk"], errors="coerce").astype(float).round(2), "currency": um["settlement_currency"],
         "issue_flags": "UNMATCHED_SETTLEMENT",
     })
     q = pd.concat([q1, q2], ignore_index=True)
