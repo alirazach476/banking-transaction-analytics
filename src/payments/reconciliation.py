@@ -166,7 +166,7 @@ def reconcile(clearing: pd.DataFrame, settlements: pd.DataFrame, fx: pd.DataFram
     issues = d[~d["primary_status"].isin(["MATCHED", "PENDING"])]
     q1 = pd.DataFrame({
         "payment_id": issues["payment_id"], "settlement_id": "", "issue_type": issues["primary_status"],
-        "amount_at_risk": issues["amount_at_risk"].round(2), "currency": cfg.settlement_currency,
+        "amount_at_risk": pd.to_numeric(issues["amount_at_risk"], errors="coerce").astype(float).round(2), "currency": cfg.settlement_currency,
         "issue_flags": issues[[v for v in flags.values()]].apply(
             lambda r: ",".join(k for k, v in zip(flags.keys(), r) if v), axis=1) if len(issues) else "",
     })
