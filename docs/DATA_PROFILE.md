@@ -86,11 +86,7 @@ Warehouse tables profiled: **1,354** (from 1,349 source files); csv/xlsx/xls fil
 - Empty tables: **1**. Mostly-null (>60%): **95**. Profiling errors: **0**.
 - csv/xlsx/xls files that never became a table: **2** (listed below, first 40).
 - Duplicate-content file groups: **9** (31 files).
-- Latest load status FAILED: **1** items (listed below).
-
-| item | message |
-|---|---|
-| 0037857_DR0045869_Raw_Data_on_Trade_Flows_and_Policies_for_COVID-19_Me | [Errno 2] No such file or directory: 'C:\\Users\\DELL\\Downloads\\Bank Anaylsis\\data\\ext |
+- Latest load status FAILED: **0** items (listed below).
 
 | unloaded file | ext |
 |---|---|

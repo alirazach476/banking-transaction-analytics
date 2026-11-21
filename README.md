@@ -104,7 +104,7 @@ See [docs/architecture.md](docs/architecture.md) for layered diagrams and design
 ### 1. Clone and configure
 
 ```powershell
-cd "c:\Users\DELL\Downloads\Bank Anaylsis"
+cd path\to\the\repository
 copy .env.example .env
 python -m pip install -r requirements.txt
 ```
