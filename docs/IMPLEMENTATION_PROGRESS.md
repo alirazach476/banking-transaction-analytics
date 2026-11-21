@@ -43,3 +43,7 @@ Test suite: **72 passed** (see docs/PHASE10_BENCHMARKS.md).
 - Earlier single-topic reports remain: PAKISTAN_ANALYSIS, PAKISTAN_WDI_ANALYSIS, SBP_ANALYSIS, BIS_CPMI_ANALYSIS, PAYSIM_FRAUD_RESULTS, MACRO_PAYMENTS_JOIN, DATA_PROFILE.
 - Warehouse additions: 57 missing files loaded (WDI, IDS, SDDS/GDDS, legacy .xls) and `sbp.rows_parsed`; 2 files remain unloaded (a login page and an empty workbook).
 - Still limited: SBP payments data is FY2018 only; SBP tables are OCR extractions; BIS country-level claims are mostly confidential; no Tableau workbook, hosted deployment or verified GitHub Actions run.
+
+## Limitations list: what was fixed and what remains (follow-up)
+- Fixed: current SBP payments data (quarterly reviews Q1 FY24-Q3 FY26, Part C2), BIS consolidated country detail (77% visible), ECB terminal benchmark, catalog now shows the two unloadable files as EXCLUDED with reasons (0 FAILED), Tableau `.hyper` extract (`scripts/export_tableau_hyper.py`, built and read back; not opened in Tableau), API Docker image built and `/health` verified locally, leak-free PaySim model (PR-AUC 0.80).
+- Not fixable here: confidential BIS cells (the US and others), the SharePoint-login file, a Tableau workbook (no Tableau to build or verify one), a hosted deployment (no target or credentials), and a GitHub Actions run (needs a push to the remote, which has not been done without confirmation).
