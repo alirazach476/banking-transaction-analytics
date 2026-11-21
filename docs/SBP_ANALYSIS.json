@@ -1,0 +1,255 @@
+{
+  "policy_changes": 90,
+  "policy_span": [
+    "1991-02-26",
+    "2026-10-27"
+  ],
+  "policy_peak": {
+    "rate": 22.0,
+    "date": "2023-06-27"
+  },
+  "policy_trough": {
+    "rate": 5.75,
+    "date": "2016-05-23"
+  },
+  "policy_latest": {
+    "rate": 12.0,
+    "date": "2026-10-27"
+  },
+  "largest_hike": {
+    "pp": 3.0,
+    "date": "1996-10-22"
+  },
+  "largest_cut": {
+    "pp": -2.5,
+    "date": "2024-11-05"
+  },
+  "hikes": 46,
+  "cuts": 42,
+  "adr_missing_months": 0,
+  "adr_span": [
+    "2002-01",
+    "2025-12",
+    288
+  ],
+  "adr_first": 75.1,
+  "adr_peak": {
+    "pct": 84.0,
+    "month": "2008-10"
+  },
+  "adr_trough": {
+    "pct": 37.8,
+    "month": "2025-10"
+  },
+  "adr_latest": {
+    "pct": 39.8,
+    "month": "2025-12"
+  },
+  "advances_cagr_pct": 12.0,
+  "deposits_cagr_pct": 15.0,
+  "adv_yoy_extremes": {
+    "max": [
+      "2005-03",
+      39.4
+    ],
+    "min": [
+      "2025-11",
+      -9.8
+    ]
+  },
+  "corr_adr_vs_policy_levels": 0.07,
+  "corr_advances_growth_vs_policy_change_12m": 0.35,
+  "adr_by_year_end": {
+    "2002": 65.3,
+    "2003": 65.2,
+    "2004": 73.6,
+    "2005": 76.8,
+    "2006": 80.3,
+    "2007": 74.4,
+    "2008": 82.6,
+    "2009": 75.7,
+    "2010": 68.2,
+    "2011": 59.5,
+    "2012": 57.7,
+    "2013": 54.1,
+    "2014": 53.4,
+    "2015": 51.4,
+    "2016": 49.7,
+    "2017": 52.8,
+    "2018": 59.1,
+    "2019": 55.8,
+    "2020": 47.5,
+    "2021": 48.4,
+    "2022": 53.0,
+    "2023": 44.4,
+    "2024": 52.9,
+    "2025": 39.8
+  },
+  "repo_daily_obs": 2808,
+  "repo_span": [
+    "2015-05-25",
+    "2026-11-18"
+  ],
+  "repo_gaps_gt7d": 1,
+  "repo_minus_policy_pp": {
+    "mean": 0.04,
+    "median": 0.05,
+    "p5": -0.66,
+    "p95": 0.79,
+    "months": 139
+  },
+  "repo_outliers_gt30": 0,
+  "repo_within_1pp_of_policy_share": 0.942,
+  "repo_daily_volatility_median_abs_chg_pp": 0.14,
+  "repo_year_mean": {
+    "2015": 6.33,
+    "2016": 5.86,
+    "2017": 5.82,
+    "2018": 7.12,
+    "2019": 11.9,
+    "2020": 8.99,
+    "2021": 7.47,
+    "2022": 13.26,
+    "2023": 20.44,
+    "2024": 19.72,
+    "2025": 11.57,
+    "2026": 11.25
+  },
+  "npl_rows_parsed": 9,
+  "npl_table": [
+    {
+      "group": "AllBanks&DFIs",
+      "npl_mar26": 927934.0,
+      "net_npl_mar26": -115510.0,
+      "net_npl_ratio_mar26": -0.78,
+      "npl_jun26": 918107.0,
+      "net_npl_jun26": -93561.0,
+      "net_npl_ratio_jun26": -0.61
+    },
+    {
+      "group": "All Banks",
+      "npl_mar26": 911696.0,
+      "net_npl_mar26": -113896.0,
+      "net_npl_ratio_mar26": -0.78,
+      "npl_jun26": 902065.0,
+      "net_npl_jun26": -91879.0,
+      "net_npl_ratio_jun26": -0.6
+    },
+    {
+      "group": "All Commercial Banks",
+      "npl_mar26": 887481.0,
+      "net_npl_mar26": -117640.0,
+      "net_npl_ratio_mar26": -0.81,
+      "npl_jun26": 879667.0,
+      "net_npl_jun26": -95493.0,
+      "net_npl_ratio_jun26": -0.63
+    },
+    {
+      "group": "Public Sector Banks",
+      "npl_mar26": 312961.0,
+      "net_npl_mar26": -43809.0,
+      "net_npl_ratio_mar26": -1.79,
+      "npl_jun26": 317160.0,
+      "net_npl_jun26": -26616.0,
+      "net_npl_ratio_jun26": -1.04
+    },
+    {
+      "group": "Local Private Banks",
+      "npl_mar26": 574130.0,
+      "net_npl_mar26": -72723.0,
+      "net_npl_ratio_mar26": -0.63,
+      "npl_jun26": 562118.0,
+      "net_npl_jun26": -67889.0,
+      "net_npl_ratio_jun26": -0.56
+    },
+    {
+      "group": "Foreign Banks",
+      "npl_mar26": 390.0,
+      "net_npl_mar26": -1109.0,
+      "net_npl_ratio_mar26": -0.26,
+      "npl_jun26": 389.0,
+      "net_npl_jun26": -989.0,
+      "net_npl_ratio_jun26": -0.23
+    },
+    {
+      "group": "Specialized Banks",
+      "npl_mar26": 23344.0,
+      "net_npl_mar26": 4513.0,
+      "net_npl_ratio_mar26": 3.32,
+      "npl_jun26": 21404.0,
+      "net_npl_jun26": 4366.0,
+      "net_npl_ratio_jun26": 3.03
+    },
+    {
+      "group": "Digital Banks",
+      "npl_mar26": 871.0,
+      "net_npl_mar26": -769.0,
+      "net_npl_ratio_mar26": -2.84,
+      "npl_jun26": 994.0,
+      "net_npl_jun26": -751.0,
+      "net_npl_ratio_jun26": -2.56
+    },
+    {
+      "group": "DFIs",
+      "npl_mar26": 16238.0,
+      "net_npl_mar26": -1614.0,
+      "net_npl_ratio_mar26": -0.67,
+      "npl_jun26": 16041.0,
+      "net_npl_jun26": -1682.0,
+      "net_npl_ratio_jun26": -0.67
+    }
+  ],
+  "credit_jun25_oct25_jun26_oct26p_rs_m": {
+    "government": [
+      36239017.0,
+      35132789.0,
+      38413726.0,
+      35966523.0
+    ],
+    "non_government": [
+      12933015.0,
+      12658033.0,
+      14339895.0,
+      14528531.0
+    ],
+    "private_sector_total": [
+      9917482.0,
+      9945753.0,
+      11378904.0,
+      11629486.0
+    ],
+    "private_business": [
+      8424111.0,
+      8370684.0,
+      9597279.0,
+      9538761.0
+    ],
+    "personal": [
+      1236379.0,
+      1323688.0,
+      1547944.0,
+      1850538.0
+    ],
+    "total_credit": [
+      49172031.0,
+      47790823.0,
+      52753621.0,
+      50495053.0
+    ]
+  },
+  "government_share_of_total_credit_pct": [
+    73.7,
+    73.5,
+    72.8,
+    71.2
+  ],
+  "personal_share_of_private_credit_pct": [
+    12.5,
+    13.3,
+    13.6,
+    15.9
+  ],
+  "personal_credit_growth_jun25_to_jun26_pct": 25.2,
+  "private_credit_growth_jun25_to_jun26_pct": 14.7,
+  "government_credit_growth_jun25_to_jun26_pct": 6.0
+}
