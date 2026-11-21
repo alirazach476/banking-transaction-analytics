@@ -23,7 +23,7 @@ Postgres load/dbt timings at 1M/2M were NOT measured (the existing database hold
 the data behind the API and extracts). At 500K the Postgres COPY load of all four payment CSVs took 31.4 s and `dbt build` of the payments models ~49 s.
 
 ## Not measured
-PySpark (not installed), concurrent API load testing, Airflow scheduler runs, Tableau extract refresh.
+PySpark (not installed), concurrent API load testing, Airflow scheduler runs, (dashboards are in the React app).
 
 ## Test status
 `pytest`: **83 passed** (full suite against the local database; 58 passed / 22 skipped on a clean clone with no DB). Database-dependent tests need the embedded

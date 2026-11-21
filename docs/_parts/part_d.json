@@ -291,6 +291,798 @@
   "2024": 6.47,
   "2025": 6.43
  },
+ "series": {
+  "lbs": [
+   {
+    "quarter": "2000-Q1",
+    "claims_usd_bn": 6.91,
+    "liabilities_usd_bn": 5.63
+   },
+   {
+    "quarter": "2000-Q2",
+    "claims_usd_bn": 6.89,
+    "liabilities_usd_bn": 5.89
+   },
+   {
+    "quarter": "2000-Q3",
+    "claims_usd_bn": 6.71,
+    "liabilities_usd_bn": 5.82
+   },
+   {
+    "quarter": "2000-Q4",
+    "claims_usd_bn": 6.18,
+    "liabilities_usd_bn": 5.88
+   },
+   {
+    "quarter": "2001-Q1",
+    "claims_usd_bn": 6.13,
+    "liabilities_usd_bn": 5.93
+   },
+   {
+    "quarter": "2001-Q2",
+    "claims_usd_bn": 5.89,
+    "liabilities_usd_bn": 6.81
+   },
+   {
+    "quarter": "2001-Q3",
+    "claims_usd_bn": 5.95,
+    "liabilities_usd_bn": 6.99
+   },
+   {
+    "quarter": "2001-Q4",
+    "claims_usd_bn": 5.14,
+    "liabilities_usd_bn": 7.17
+   },
+   {
+    "quarter": "2002-Q1",
+    "claims_usd_bn": 4.79,
+    "liabilities_usd_bn": 8.59
+   },
+   {
+    "quarter": "2002-Q2",
+    "claims_usd_bn": 5.0,
+    "liabilities_usd_bn": 9.53
+   },
+   {
+    "quarter": "2002-Q3",
+    "claims_usd_bn": 5.02,
+    "liabilities_usd_bn": 10.84
+   },
+   {
+    "quarter": "2002-Q4",
+    "claims_usd_bn": 3.64,
+    "liabilities_usd_bn": 11.26
+   },
+   {
+    "quarter": "2003-Q1",
+    "claims_usd_bn": 3.99,
+    "liabilities_usd_bn": 13.51
+   },
+   {
+    "quarter": "2003-Q2",
+    "claims_usd_bn": 4.35,
+    "liabilities_usd_bn": 14.41
+   },
+   {
+    "quarter": "2003-Q3",
+    "claims_usd_bn": 4.58,
+    "liabilities_usd_bn": 15.53
+   },
+   {
+    "quarter": "2003-Q4",
+    "claims_usd_bn": 3.58,
+    "liabilities_usd_bn": 14.07
+   },
+   {
+    "quarter": "2004-Q1",
+    "claims_usd_bn": 3.6,
+    "liabilities_usd_bn": 13.88
+   },
+   {
+    "quarter": "2004-Q2",
+    "claims_usd_bn": 3.59,
+    "liabilities_usd_bn": 12.25
+   },
+   {
+    "quarter": "2004-Q3",
+    "claims_usd_bn": 3.38,
+    "liabilities_usd_bn": 11.41
+   },
+   {
+    "quarter": "2004-Q4",
+    "claims_usd_bn": 3.12,
+    "liabilities_usd_bn": 11.46
+   },
+   {
+    "quarter": "2005-Q1",
+    "claims_usd_bn": 3.22,
+    "liabilities_usd_bn": 11.99
+   },
+   {
+    "quarter": "2005-Q2",
+    "claims_usd_bn": 3.18,
+    "liabilities_usd_bn": 12.17
+   },
+   {
+    "quarter": "2005-Q3",
+    "claims_usd_bn": 3.4,
+    "liabilities_usd_bn": 11.21
+   },
+   {
+    "quarter": "2005-Q4",
+    "claims_usd_bn": 3.3,
+    "liabilities_usd_bn": 11.06
+   },
+   {
+    "quarter": "2006-Q1",
+    "claims_usd_bn": 3.99,
+    "liabilities_usd_bn": 11.48
+   },
+   {
+    "quarter": "2006-Q2",
+    "claims_usd_bn": 3.97,
+    "liabilities_usd_bn": 12.49
+   },
+   {
+    "quarter": "2006-Q3",
+    "claims_usd_bn": 4.13,
+    "liabilities_usd_bn": 12.07
+   },
+   {
+    "quarter": "2006-Q4",
+    "claims_usd_bn": 4.12,
+    "liabilities_usd_bn": 13.61
+   },
+   {
+    "quarter": "2007-Q1",
+    "claims_usd_bn": 4.5,
+    "liabilities_usd_bn": 14.02
+   },
+   {
+    "quarter": "2007-Q2",
+    "claims_usd_bn": 4.83,
+    "liabilities_usd_bn": 16.79
+   },
+   {
+    "quarter": "2007-Q3",
+    "claims_usd_bn": 5.01,
+    "liabilities_usd_bn": 16.77
+   },
+   {
+    "quarter": "2007-Q4",
+    "claims_usd_bn": 5.2,
+    "liabilities_usd_bn": 16.03
+   },
+   {
+    "quarter": "2008-Q1",
+    "claims_usd_bn": 5.47,
+    "liabilities_usd_bn": 12.4
+   },
+   {
+    "quarter": "2008-Q2",
+    "claims_usd_bn": 5.31,
+    "liabilities_usd_bn": 10.6
+   },
+   {
+    "quarter": "2008-Q3",
+    "claims_usd_bn": 5.23,
+    "liabilities_usd_bn": 9.2
+   },
+   {
+    "quarter": "2008-Q4",
+    "claims_usd_bn": 4.96,
+    "liabilities_usd_bn": 10.35
+   },
+   {
+    "quarter": "2009-Q1",
+    "claims_usd_bn": 4.47,
+    "liabilities_usd_bn": 10.63
+   },
+   {
+    "quarter": "2009-Q2",
+    "claims_usd_bn": 4.85,
+    "liabilities_usd_bn": 11.67
+   },
+   {
+    "quarter": "2009-Q3",
+    "claims_usd_bn": 4.68,
+    "liabilities_usd_bn": 12.41
+   },
+   {
+    "quarter": "2009-Q4",
+    "claims_usd_bn": 4.74,
+    "liabilities_usd_bn": 13.1
+   },
+   {
+    "quarter": "2010-Q1",
+    "claims_usd_bn": 4.42,
+    "liabilities_usd_bn": 11.19
+   },
+   {
+    "quarter": "2010-Q2",
+    "claims_usd_bn": 4.49,
+    "liabilities_usd_bn": 12.31
+   },
+   {
+    "quarter": "2010-Q3",
+    "claims_usd_bn": 4.88,
+    "liabilities_usd_bn": 11.94
+   },
+   {
+    "quarter": "2010-Q4",
+    "claims_usd_bn": 4.59,
+    "liabilities_usd_bn": 11.23
+   },
+   {
+    "quarter": "2011-Q1",
+    "claims_usd_bn": 5.02,
+    "liabilities_usd_bn": 12.64
+   },
+   {
+    "quarter": "2011-Q2",
+    "claims_usd_bn": 5.18,
+    "liabilities_usd_bn": 14.5
+   },
+   {
+    "quarter": "2011-Q3",
+    "claims_usd_bn": 5.8,
+    "liabilities_usd_bn": 12.6
+   },
+   {
+    "quarter": "2011-Q4",
+    "claims_usd_bn": 5.17,
+    "liabilities_usd_bn": 11.66
+   },
+   {
+    "quarter": "2012-Q1",
+    "claims_usd_bn": 5.19,
+    "liabilities_usd_bn": 10.61
+   },
+   {
+    "quarter": "2012-Q2",
+    "claims_usd_bn": 5.52,
+    "liabilities_usd_bn": 7.45
+   },
+   {
+    "quarter": "2012-Q3",
+    "claims_usd_bn": 5.37,
+    "liabilities_usd_bn": 6.37
+   },
+   {
+    "quarter": "2012-Q4",
+    "claims_usd_bn": 5.51,
+    "liabilities_usd_bn": 5.73
+   },
+   {
+    "quarter": "2013-Q1",
+    "claims_usd_bn": 5.0,
+    "liabilities_usd_bn": 5.3
+   },
+   {
+    "quarter": "2013-Q2",
+    "claims_usd_bn": 4.85,
+    "liabilities_usd_bn": 4.83
+   },
+   {
+    "quarter": "2013-Q3",
+    "claims_usd_bn": 5.12,
+    "liabilities_usd_bn": 4.2
+   },
+   {
+    "quarter": "2013-Q4",
+    "claims_usd_bn": 5.31,
+    "liabilities_usd_bn": 4.56
+   },
+   {
+    "quarter": "2014-Q1",
+    "claims_usd_bn": 6.01,
+    "liabilities_usd_bn": 4.74
+   },
+   {
+    "quarter": "2014-Q2",
+    "claims_usd_bn": 5.96,
+    "liabilities_usd_bn": 6.01
+   },
+   {
+    "quarter": "2014-Q3",
+    "claims_usd_bn": 6.1,
+    "liabilities_usd_bn": 7.01
+   },
+   {
+    "quarter": "2014-Q4",
+    "claims_usd_bn": 6.19,
+    "liabilities_usd_bn": 7.18
+   },
+   {
+    "quarter": "2015-Q1",
+    "claims_usd_bn": 5.78,
+    "liabilities_usd_bn": 8.84
+   },
+   {
+    "quarter": "2015-Q2",
+    "claims_usd_bn": 5.82,
+    "liabilities_usd_bn": 9.13
+   },
+   {
+    "quarter": "2015-Q3",
+    "claims_usd_bn": 6.23,
+    "liabilities_usd_bn": 9.47
+   },
+   {
+    "quarter": "2015-Q4",
+    "claims_usd_bn": 12.85,
+    "liabilities_usd_bn": 11.36
+   },
+   {
+    "quarter": "2016-Q1",
+    "claims_usd_bn": 12.78,
+    "liabilities_usd_bn": 10.32
+   },
+   {
+    "quarter": "2016-Q2",
+    "claims_usd_bn": 15.39,
+    "liabilities_usd_bn": 9.95
+   },
+   {
+    "quarter": "2016-Q3",
+    "claims_usd_bn": 16.4,
+    "liabilities_usd_bn": 10.1
+   },
+   {
+    "quarter": "2016-Q4",
+    "claims_usd_bn": 18.11,
+    "liabilities_usd_bn": 9.09
+   },
+   {
+    "quarter": "2017-Q1",
+    "claims_usd_bn": 19.75,
+    "liabilities_usd_bn": 8.41
+   },
+   {
+    "quarter": "2017-Q2",
+    "claims_usd_bn": 23.34,
+    "liabilities_usd_bn": 11.32
+   },
+   {
+    "quarter": "2017-Q3",
+    "claims_usd_bn": 23.91,
+    "liabilities_usd_bn": 8.16
+   },
+   {
+    "quarter": "2017-Q4",
+    "claims_usd_bn": 25.72,
+    "liabilities_usd_bn": 7.15
+   },
+   {
+    "quarter": "2018-Q1",
+    "claims_usd_bn": 26.17,
+    "liabilities_usd_bn": 4.53
+   },
+   {
+    "quarter": "2018-Q2",
+    "claims_usd_bn": 27.98,
+    "liabilities_usd_bn": 4.7
+   },
+   {
+    "quarter": "2018-Q3",
+    "claims_usd_bn": 28.13,
+    "liabilities_usd_bn": 5.02
+   },
+   {
+    "quarter": "2018-Q4",
+    "claims_usd_bn": 28.97,
+    "liabilities_usd_bn": 5.59
+   },
+   {
+    "quarter": "2019-Q1",
+    "claims_usd_bn": 30.86,
+    "liabilities_usd_bn": 7.3
+   },
+   {
+    "quarter": "2019-Q2",
+    "claims_usd_bn": 31.16,
+    "liabilities_usd_bn": 7.1
+   },
+   {
+    "quarter": "2019-Q3",
+    "claims_usd_bn": 30.74,
+    "liabilities_usd_bn": 6.66
+   },
+   {
+    "quarter": "2019-Q4",
+    "claims_usd_bn": 33.81,
+    "liabilities_usd_bn": 6.08
+   },
+   {
+    "quarter": "2020-Q1",
+    "claims_usd_bn": 33.95,
+    "liabilities_usd_bn": 6.04
+   },
+   {
+    "quarter": "2020-Q2",
+    "claims_usd_bn": 34.08,
+    "liabilities_usd_bn": 5.89
+   },
+   {
+    "quarter": "2020-Q3",
+    "claims_usd_bn": 34.01,
+    "liabilities_usd_bn": 7.51
+   },
+   {
+    "quarter": "2020-Q4",
+    "claims_usd_bn": 34.99,
+    "liabilities_usd_bn": 8.08
+   },
+   {
+    "quarter": "2021-Q1",
+    "claims_usd_bn": 35.1,
+    "liabilities_usd_bn": 6.66
+   },
+   {
+    "quarter": "2021-Q2",
+    "claims_usd_bn": 35.77,
+    "liabilities_usd_bn": 8.32
+   },
+   {
+    "quarter": "2021-Q3",
+    "claims_usd_bn": 36.13,
+    "liabilities_usd_bn": 8.65
+   },
+   {
+    "quarter": "2021-Q4",
+    "claims_usd_bn": 36.03,
+    "liabilities_usd_bn": 7.73
+   },
+   {
+    "quarter": "2022-Q1",
+    "claims_usd_bn": 33.63,
+    "liabilities_usd_bn": 5.11
+   },
+   {
+    "quarter": "2022-Q2",
+    "claims_usd_bn": 36.08,
+    "liabilities_usd_bn": 6.98
+   },
+   {
+    "quarter": "2022-Q3",
+    "claims_usd_bn": 35.64,
+    "liabilities_usd_bn": 6.24
+   },
+   {
+    "quarter": "2022-Q4",
+    "claims_usd_bn": 34.23,
+    "liabilities_usd_bn": 6.42
+   },
+   {
+    "quarter": "2023-Q1",
+    "claims_usd_bn": 33.68,
+    "liabilities_usd_bn": 6.64
+   },
+   {
+    "quarter": "2023-Q2",
+    "claims_usd_bn": 33.66,
+    "liabilities_usd_bn": 6.58
+   },
+   {
+    "quarter": "2023-Q3",
+    "claims_usd_bn": 32.99,
+    "liabilities_usd_bn": 6.22
+   },
+   {
+    "quarter": "2023-Q4",
+    "claims_usd_bn": 34.24,
+    "liabilities_usd_bn": 6.29
+   },
+   {
+    "quarter": "2024-Q1",
+    "claims_usd_bn": 33.82,
+    "liabilities_usd_bn": 6.75
+   },
+   {
+    "quarter": "2024-Q2",
+    "claims_usd_bn": 33.21,
+    "liabilities_usd_bn": 6.43
+   },
+   {
+    "quarter": "2024-Q3",
+    "claims_usd_bn": 32.81,
+    "liabilities_usd_bn": 6.19
+   },
+   {
+    "quarter": "2024-Q4",
+    "claims_usd_bn": 32.92,
+    "liabilities_usd_bn": 6.16
+   },
+   {
+    "quarter": "2025-Q1",
+    "claims_usd_bn": 31.64,
+    "liabilities_usd_bn": 6.81
+   },
+   {
+    "quarter": "2025-Q2",
+    "claims_usd_bn": 31.11,
+    "liabilities_usd_bn": 8.27
+   },
+   {
+    "quarter": "2025-Q3",
+    "claims_usd_bn": 30.64,
+    "liabilities_usd_bn": 7.12
+   },
+   {
+    "quarter": "2025-Q4",
+    "claims_usd_bn": 30.79,
+    "liabilities_usd_bn": 7.24
+   },
+   {
+    "quarter": "2026-Q1",
+    "claims_usd_bn": 29.98,
+    "liabilities_usd_bn": 7.89
+   },
+   {
+    "quarter": "2026-Q2",
+    "claims_usd_bn": 30.91,
+    "liabilities_usd_bn": 9.55
+   }
+  ],
+  "ids_debt": [
+   {
+    "year": 2000,
+    "stock_usd_bn": 33.1,
+    "service_usd_bn": 2.87,
+    "projected": false
+   },
+   {
+    "year": 2001,
+    "stock_usd_bn": 32.36,
+    "service_usd_bn": 3.0,
+    "projected": false
+   },
+   {
+    "year": 2002,
+    "stock_usd_bn": 34.3,
+    "service_usd_bn": 2.89,
+    "projected": false
+   },
+   {
+    "year": 2003,
+    "stock_usd_bn": 36.99,
+    "service_usd_bn": 3.08,
+    "projected": false
+   },
+   {
+    "year": 2004,
+    "stock_usd_bn": 36.88,
+    "service_usd_bn": 4.29,
+    "projected": false
+   },
+   {
+    "year": 2005,
+    "stock_usd_bn": 34.52,
+    "service_usd_bn": 2.48,
+    "projected": false
+   },
+   {
+    "year": 2006,
+    "stock_usd_bn": 37.66,
+    "service_usd_bn": 2.33,
+    "projected": false
+   },
+   {
+    "year": 2007,
+    "stock_usd_bn": 42.53,
+    "service_usd_bn": 2.68,
+    "projected": false
+   },
+   {
+    "year": 2008,
+    "stock_usd_bn": 50.11,
+    "service_usd_bn": 3.06,
+    "projected": false
+   },
+   {
+    "year": 2009,
+    "stock_usd_bn": 56.93,
+    "service_usd_bn": 3.5,
+    "projected": false
+   },
+   {
+    "year": 2010,
+    "stock_usd_bn": 63.41,
+    "service_usd_bn": 4.35,
+    "projected": false
+   },
+   {
+    "year": 2011,
+    "stock_usd_bn": 65.01,
+    "service_usd_bn": 3.02,
+    "projected": false
+   },
+   {
+    "year": 2012,
+    "stock_usd_bn": 63.88,
+    "service_usd_bn": 4.95,
+    "projected": false
+   },
+   {
+    "year": 2013,
+    "stock_usd_bn": 60.22,
+    "service_usd_bn": 6.96,
+    "projected": false
+   },
+   {
+    "year": 2014,
+    "stock_usd_bn": 64.28,
+    "service_usd_bn": 4.85,
+    "projected": false
+   },
+   {
+    "year": 2015,
+    "stock_usd_bn": 68.67,
+    "service_usd_bn": 4.24,
+    "projected": false
+   },
+   {
+    "year": 2016,
+    "stock_usd_bn": 75.13,
+    "service_usd_bn": 4.35,
+    "projected": false
+   },
+   {
+    "year": 2017,
+    "stock_usd_bn": 94.08,
+    "service_usd_bn": 6.81,
+    "projected": false
+   },
+   {
+    "year": 2018,
+    "stock_usd_bn": 101.12,
+    "service_usd_bn": 6.18,
+    "projected": false
+   },
+   {
+    "year": 2019,
+    "stock_usd_bn": 111.1,
+    "service_usd_bn": 11.16,
+    "projected": false
+   },
+   {
+    "year": 2020,
+    "stock_usd_bn": 118.95,
+    "service_usd_bn": 11.03,
+    "projected": false
+   },
+   {
+    "year": 2021,
+    "stock_usd_bn": 131.75,
+    "service_usd_bn": 12.35,
+    "projected": false
+   },
+   {
+    "year": 2022,
+    "stock_usd_bn": 127.59,
+    "service_usd_bn": 17.72,
+    "projected": false
+   },
+   {
+    "year": 2023,
+    "stock_usd_bn": 131.02,
+    "service_usd_bn": 16.09,
+    "projected": false
+   },
+   {
+    "year": 2024,
+    "stock_usd_bn": 129.92,
+    "service_usd_bn": 16.16,
+    "projected": false
+   },
+   {
+    "year": 2025,
+    "stock_usd_bn": 135.11,
+    "service_usd_bn": 13.69,
+    "projected": false
+   },
+   {
+    "year": 2026,
+    "stock_usd_bn": null,
+    "service_usd_bn": 24.79,
+    "projected": true
+   },
+   {
+    "year": 2027,
+    "stock_usd_bn": null,
+    "service_usd_bn": 17.7,
+    "projected": true
+   },
+   {
+    "year": 2028,
+    "stock_usd_bn": null,
+    "service_usd_bn": 15.82,
+    "projected": true
+   },
+   {
+    "year": 2029,
+    "stock_usd_bn": null,
+    "service_usd_bn": 11.95,
+    "projected": true
+   },
+   {
+    "year": 2030,
+    "stock_usd_bn": null,
+    "service_usd_bn": 9.45,
+    "projected": true
+   },
+   {
+    "year": 2031,
+    "stock_usd_bn": null,
+    "service_usd_bn": 10.61,
+    "projected": true
+   },
+   {
+    "year": 2032,
+    "stock_usd_bn": null,
+    "service_usd_bn": 7.98,
+    "projected": true
+   },
+   {
+    "year": 2033,
+    "stock_usd_bn": null,
+    "service_usd_bn": 7.29,
+    "projected": true
+   }
+  ],
+  "rpw": [
+   {
+    "year": 2016,
+    "pakistan": 4.64,
+    "all_corridors": 7.33
+   },
+   {
+    "year": 2017,
+    "pakistan": 4.65,
+    "all_corridors": 7.18
+   },
+   {
+    "year": 2018,
+    "pakistan": 5.05,
+    "all_corridors": 6.96
+   },
+   {
+    "year": 2019,
+    "pakistan": 4.77,
+    "all_corridors": 6.83
+   },
+   {
+    "year": 2020,
+    "pakistan": 4.1,
+    "all_corridors": 6.66
+   },
+   {
+    "year": 2021,
+    "pakistan": 4.02,
+    "all_corridors": 6.23
+   },
+   {
+    "year": 2022,
+    "pakistan": 3.63,
+    "all_corridors": 6.16
+   },
+   {
+    "year": 2023,
+    "pakistan": 3.53,
+    "all_corridors": 6.25
+   },
+   {
+    "year": 2024,
+    "pakistan": 2.76,
+    "all_corridors": 6.47
+   },
+   {
+    "year": 2025,
+    "pakistan": 2.61,
+    "all_corridors": 6.43
+   }
+  ]
+ },
  "cbs_by_headquarters_country_2026Q2_usd_m": {
   "CH": 905,
   "GB": 890,

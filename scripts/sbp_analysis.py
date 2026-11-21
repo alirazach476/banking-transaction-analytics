@@ -165,5 +165,10 @@ ax.plot(chk.index.to_timestamp(), chk.repo, label="Overnight repo (monthly mean)
 ax.legend(frameon=False); ax.set_ylabel("%"); ax.set_title("Overnight repo vs policy rate")
 fig.tight_layout(); fig.savefig(ROOT / "docs/img/sbp_repo_policy.png"); plt.close(fig)
 
+R["series"] = {
+    "policy_changes": [{"date": str(r.date.date()), "policy": float(r.policy)} for r in P.itertuples()],
+    "adr_monthly": [{"month": str(i), "adr": round(float(r.adr), 2), "adv_yoy": None if pd.isna(r.adv_yoy) else round(float(r.adv_yoy), 2), "dep_yoy": None if pd.isna(r.dep_yoy) else round(float(r.dep_yoy), 2)} for i, r in A.iterrows()],
+    "repo_vs_policy_monthly": [{"month": str(i), "repo": round(float(r.repo), 2), "policy": float(r.policy)} for i, r in chk.iterrows()],
+}
 (ROOT / "docs" / "SBP_ANALYSIS.json").write_text(json.dumps(R, indent=2, default=str), encoding="utf-8")
 print(json.dumps(R, indent=1, default=str)[:7000])

@@ -103,5 +103,10 @@ for inst, l in (("F", "Card and e-money"), ("B", "Credit transfers"), ("D", "Che
 ax.axhline(100, color="grey", lw=.7); ax.legend(frameon=False); ax.set_ylabel("Median country, 2015 = 100 (number of transactions)")
 ax.set_title("Payment instruments over time (BIS CPMI)"); fig.tight_layout(); fig.savefig(ROOT / "docs/img/bis_instruments.png"); plt.close(fig)
 
+R["series"] = {
+    "instrument_index_2015_100": [{"year": int(y), **{nm: round(float(Nn[(Nn.inst == k) & (Nn.yr == y)].v.median() / Nn[(Nn.inst == k) & (Nn.yr == 2015)].v.median() * 100), 1) for k, nm in (("F", "Card and e-money"), ("B", "Credit transfers"), ("D", "Cheques"), ("M", "Cash withdrawals"))}} for y in range(2012, 2025)
+                                if all(len(Nn[(Nn.inst == k) & (Nn.yr == y)]) for k in "FBDM")],
+    "card_per_capita_2023": [{"country": r.cname[4:], "per_capita": round(float(r.per_capita), 1), "is_india": r.cty == "IN"} for r in card.sort_values("per_capita").itertuples()],
+}
 (ROOT / "docs" / "BIS_CPMI_ANALYSIS.json").write_text(json.dumps(R, indent=2, default=str), encoding="utf-8")
 print(json.dumps(R, indent=1, default=str)[:7500])

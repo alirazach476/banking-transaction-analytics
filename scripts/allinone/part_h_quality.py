@@ -108,7 +108,7 @@ md = f"""## H. Data quality and reconciliation (closing the earlier caveats)
 - The synthetic payments data is not linked to any real series, so no real macro effect on NovaBank-style payments can be claimed (the earlier join found no relationship, as expected from a generator with no macro inputs).
 - Not analysed because they are not relevant to Pakistan banking or payments: about 1,000 World Bank project datasets (for example Ukraine BOOST fiscal data, skills, energy and gas-flaring data), most of the 103 ECB datasets (country HICP detail, survey and securities data), the BIS effective-exchange-rate, global-liquidity and long-CPI tables, and the BIS locational data for other countries. They are loaded and profiled.
 - The machine-learning results remain limited by their data: fraud PR-AUC about 0.26 on the NovaBank synthetic data; on the PaySim simulator 1.0 with leakage-prone balance features, 0.52 with amount/type/hour only and 0.80 with leak-free account-history features (`PAYSIM_FRAUD_RESULTS.md`). All of these learn rules built into simulators, so none demonstrates performance on real fraud.
-- Not built: a Tableau workbook, a hosted deployment, and a verified GitHub Actions run.
+- Not built: a hosted deployment and (until the repository is pushed) a verified GitHub Actions run.
 """
 save("part_h", md, D)
 print(md)

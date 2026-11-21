@@ -126,6 +126,11 @@ ax.plot(gw.index[gw.index.isin(yy)], gw[gw.index.isin(yy)], marker="o", lw=2, la
 fig.tight_layout(); fig.savefig(IMG / "allin_rpw_pk.png"); plt.close(fig)
 
 
+D["series"] = {
+    "lbs": [{"quarter": i, "claims_usd_bn": None if pd.isna(r.get("C")) else round(float(r["C"]) / 1e3, 2), "liabilities_usd_bn": None if pd.isna(r.get("L")) else round(float(r["L"]) / 1e3, 2)} for i, r in allc.iterrows() if i >= "2000-Q1"],
+    "ids_debt": [{"year": int(y), "stock_usd_bn": round(float(tot[y]) / 1e9, 2) if y in tot.index and y <= ly else None, "service_usd_bn": round(float(tds[y]) / 1e9, 2) if y in tds.index else None, "projected": bool(y > ly)} for y in sorted(set(tot.index) | set(tds.index)) if y <= 2033],
+    "rpw": [{"year": int(y), "pakistan": rb_, "all_corridors": D["rpw_world_mean_cost_by_year"].get(str(y))} for y, rb_ in D["rpw_cost_pct_by_year_mean"].items()],
+}
 # ---------- markdown ----------
 _cc = q("""select left(l_rep_ctyreporting_country,2) r, try_cast(obs_valueobservation_value as double) v from bis.ws_cbs_pub
            where l_cp_countrycounterparty_country like 'PK:%' and l_measuremeasure like 'S:%' and left(l_positionbalance_sheet_position,1)='I' and left(l_cp_sectorcounterparty_sector,1)='A'

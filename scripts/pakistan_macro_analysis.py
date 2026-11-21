@@ -122,5 +122,11 @@ for c, l in (("acc", "Any account"), ("fiacc", "Bank/FI account"), ("mob", "Mobi
 ax.set_ylabel("% of adults"); ax.set_xticks(allp.index); ax.legend(frameon=False); ax.set_title("Pakistan financial inclusion (Global Findex)")
 fig.tight_layout(); fig.savefig(IMG / "pk_findex.png"); plt.close(fig)
 
+R["series"] = {
+    "policy_inflation_monthly": [{"month": str(i), "policy": float(r.policy), "inflation": round(float(r.infl_yoy), 2), "real_rate": round(float(r.real_rate), 2)} for i, r in j.iterrows()],
+    "usdpkr_monthly": [{"month": str(i), "usdpkr": round(float(v), 2)} for i, v in fxm[fxm.index >= "2015-01"].items()],
+    "remittances_usd_m": [{"year": int(i), "usd_m": round(float(v))} for i, v in rs.items()],
+    "findex_all_pct": [{"year": int(i), **{k: (None if pd.isna(v) else round(float(v), 1)) for k, v in r.items()}} for i, r in allp.iterrows()],
+}
 (ROOT / "docs" / "PAKISTAN_ANALYSIS.json").write_text(json.dumps(R, indent=2, default=str), encoding="utf-8")
 print(json.dumps(R, indent=2, default=str))

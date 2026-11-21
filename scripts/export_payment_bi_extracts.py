@@ -1,4 +1,4 @@
-"""Phase 7: export BI-ready extracts (CSV + Parquet) of the payment marts for Tableau / Power BI / Excel,
+"""Phase 7: export BI-ready extracts (CSV + Parquet) of the payment marts for spreadsheets or any BI tool,
 and write a machine-generated data dictionary (docs/BI_EXTRACTS_DICTIONARY.md) from the actual exported columns.
 
 Run: PYTHONPATH=. python scripts/export_payment_bi_extracts.py

@@ -114,6 +114,9 @@ D["metro_unemployment_highest3"] = [(r.r, round(r.v, 1)) for r in ml.sort_values
 D["metro_unemployment_lowest3"] = [(r.r, round(r.v, 1)) for r in ml.sort_values("v").head(3).itertuples()]
 
 
+D["series"] = {"hicp_ea_monthly": [{"month": r.tp, "hicp": float(r.v)} for r in hi[hi.tp >= "2021-01"].itertuples()],
+               "ecb_deposit_rate_steps": [{"date": str(r.tp.date()), "rate": float(r.v)} for r in dfr[(dfr.v.diff().fillna(1) != 0) & (dfr.tp >= "2019-01-01")].itertuples()],
+               "bis_policy_rates": [{"country": k, "rate": round(float(v), 2)} for k, v in pl.sort_values().items()]}
 # ---------- markdown ----------
 sl, s2 = D["ssm_latest"], D["ssm_two_years_earlier"]
 pk = D["pakistan_all_banks_sep26"]

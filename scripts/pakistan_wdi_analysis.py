@@ -88,5 +88,11 @@ for ax, ind, t in zip(axs, ("credit_gdp", "atm_100k", "remit_gdp"), ("Private cr
     ax.barh([PEERS[c] for c in d.cc], d.v, color=["#1b9e77" if c == "PAK" else "#999" for c in d.cc]); ax.set_title(t, fontsize=10)
 fig.tight_layout(); fig.savefig(ROOT / "docs/img/wdi_peers.png"); plt.close(fig)
 
+R["series"] = {
+    "depth_annual": [{"year": int(i), **{k: (None if pd.isna(r[k]) else round(float(r[k]), 2)) for k in ("credit_gdp", "broad_money_gdp", "remit_gdp")}} for i, r in pak.iterrows() if i >= 1975],
+    "inflation_annual": [{"year": int(i), "inflation": round(float(v), 2)} for i, v in pak.inflation.dropna().items() if i >= 2000],
+    "peers": {ind: [{"country": PEERS[c], "value": round(float(v), 2), "is_pakistan": c == "PAK"} for c, v in long[(long.ind == ind) & long.year.between(2018, 2025)].sort_values("year").groupby("cc").tail(1).set_index("cc").v.sort_values().items()]
+              for ind in ("credit_gdp", "atm_100k", "remit_gdp")},
+}
 (ROOT / "docs" / "PAKISTAN_WDI_ANALYSIS.json").write_text(json.dumps(R, indent=2, default=str), encoding="utf-8")
 print(json.dumps(R, indent=1, default=str)[:6000])

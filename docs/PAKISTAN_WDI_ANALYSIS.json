@@ -299,5 +299,599 @@
       "reer": 1.0
     }
   },
-  "note": "Annual series with n<=35; correlations are descriptive, not causal; levels trend so first differences are also shown."
+  "note": "Annual series with n<=35; correlations are descriptive, not causal; levels trend so first differences are also shown.",
+  "series": {
+    "depth_annual": [
+      {
+        "year": 1975,
+        "credit_gdp": 19.34,
+        "broad_money_gdp": 34.0,
+        "remit_gdp": null
+      },
+      {
+        "year": 1976,
+        "credit_gdp": 22.22,
+        "broad_money_gdp": 38.33,
+        "remit_gdp": 3.13
+      },
+      {
+        "year": 1977,
+        "credit_gdp": 23.41,
+        "broad_money_gdp": 39.36,
+        "remit_gdp": 5.77
+      },
+      {
+        "year": 1978,
+        "credit_gdp": 22.27,
+        "broad_money_gdp": 40.05,
+        "remit_gdp": 7.35
+      },
+      {
+        "year": 1979,
+        "credit_gdp": 24.84,
+        "broad_money_gdp": 43.16,
+        "remit_gdp": 7.63
+      },
+      {
+        "year": 1980,
+        "credit_gdp": 23.44,
+        "broad_money_gdp": 41.56,
+        "remit_gdp": 8.66
+      },
+      {
+        "year": 1981,
+        "credit_gdp": 24.04,
+        "broad_money_gdp": 39.01,
+        "remit_gdp": 7.36
+      },
+      {
+        "year": 1982,
+        "credit_gdp": 24.7,
+        "broad_money_gdp": 40.79,
+        "remit_gdp": 8.42
+      },
+      {
+        "year": 1983,
+        "credit_gdp": 26.38,
+        "broad_money_gdp": 43.88,
+        "remit_gdp": 10.25
+      },
+      {
+        "year": 1984,
+        "credit_gdp": 24.22,
+        "broad_money_gdp": 39.86,
+        "remit_gdp": 8.28
+      },
+      {
+        "year": 1985,
+        "credit_gdp": 27.78,
+        "broad_money_gdp": 40.66,
+        "remit_gdp": 8.15
+      },
+      {
+        "year": 1986,
+        "credit_gdp": 29.79,
+        "broad_money_gdp": 43.31,
+        "remit_gdp": 7.67
+      },
+      {
+        "year": 1987,
+        "credit_gdp": 27.64,
+        "broad_money_gdp": 45.31,
+        "remit_gdp": 6.54
+      },
+      {
+        "year": 1988,
+        "credit_gdp": 26.37,
+        "broad_money_gdp": 41.37,
+        "remit_gdp": 4.87
+      },
+      {
+        "year": 1989,
+        "credit_gdp": 24.91,
+        "broad_money_gdp": 38.98,
+        "remit_gdp": 5.02
+      },
+      {
+        "year": 1990,
+        "credit_gdp": 24.16,
+        "broad_money_gdp": 39.14,
+        "remit_gdp": 5.01
+      },
+      {
+        "year": 1991,
+        "credit_gdp": 22.24,
+        "broad_money_gdp": 39.04,
+        "remit_gdp": 3.39
+      },
+      {
+        "year": 1992,
+        "credit_gdp": 23.5,
+        "broad_money_gdp": 42.53,
+        "remit_gdp": 3.22
+      },
+      {
+        "year": 1993,
+        "credit_gdp": 24.4,
+        "broad_money_gdp": 45.36,
+        "remit_gdp": 2.79
+      },
+      {
+        "year": 1994,
+        "credit_gdp": 23.82,
+        "broad_money_gdp": 45.41,
+        "remit_gdp": 3.35
+      },
+      {
+        "year": 1995,
+        "credit_gdp": 24.21,
+        "broad_money_gdp": 43.57,
+        "remit_gdp": 2.82
+      },
+      {
+        "year": 1996,
+        "credit_gdp": 24.69,
+        "broad_money_gdp": 46.04,
+        "remit_gdp": 2.03
+      },
+      {
+        "year": 1997,
+        "credit_gdp": 24.65,
+        "broad_money_gdp": 48.2,
+        "remit_gdp": 2.73
+      },
+      {
+        "year": 1998,
+        "credit_gdp": 25.11,
+        "broad_money_gdp": 47.15,
+        "remit_gdp": 1.88
+      },
+      {
+        "year": 1999,
+        "credit_gdp": 25.47,
+        "broad_money_gdp": 44.82,
+        "remit_gdp": 1.58
+      },
+      {
+        "year": 2000,
+        "credit_gdp": 16.6,
+        "broad_money_gdp": 28.69,
+        "remit_gdp": 1.08
+      },
+      {
+        "year": 2001,
+        "credit_gdp": 16.21,
+        "broad_money_gdp": 29.88,
+        "remit_gdp": 1.5
+      },
+      {
+        "year": 2002,
+        "credit_gdp": 16.0,
+        "broad_money_gdp": 32.96,
+        "remit_gdp": 3.63
+      },
+      {
+        "year": 2003,
+        "credit_gdp": 18.22,
+        "broad_money_gdp": 35.59,
+        "remit_gdp": 3.53
+      },
+      {
+        "year": 2004,
+        "credit_gdp": 21.29,
+        "broad_money_gdp": 36.59,
+        "remit_gdp": 2.98
+      },
+      {
+        "year": 2005,
+        "credit_gdp": 21.6,
+        "broad_money_gdp": 37.6,
+        "remit_gdp": 2.95
+      },
+      {
+        "year": 2006,
+        "credit_gdp": 22.77,
+        "broad_money_gdp": 47.8,
+        "remit_gdp": 3.16
+      },
+      {
+        "year": 2007,
+        "credit_gdp": 23.04,
+        "broad_money_gdp": 48.72,
+        "remit_gdp": 3.26
+      },
+      {
+        "year": 2008,
+        "credit_gdp": 24.17,
+        "broad_money_gdp": 45.81,
+        "remit_gdp": 3.48
+      },
+      {
+        "year": 2009,
+        "credit_gdp": 20.4,
+        "broad_money_gdp": 46.34,
+        "remit_gdp": 4.65
+      },
+      {
+        "year": 2010,
+        "credit_gdp": 19.29,
+        "broad_money_gdp": 47.3,
+        "remit_gdp": 4.93
+      },
+      {
+        "year": 2011,
+        "credit_gdp": 16.79,
+        "broad_money_gdp": 44.55,
+        "remit_gdp": 5.32
+      },
+      {
+        "year": 2012,
+        "credit_gdp": 15.2,
+        "broad_money_gdp": 46.19,
+        "remit_gdp": 5.6
+      },
+      {
+        "year": 2013,
+        "credit_gdp": 14.41,
+        "broad_money_gdp": 46.7,
+        "remit_gdp": 5.66
+      },
+      {
+        "year": 2014,
+        "credit_gdp": 14.04,
+        "broad_money_gdp": 46.67,
+        "remit_gdp": 6.35
+      },
+      {
+        "year": 2015,
+        "credit_gdp": 13.88,
+        "broad_money_gdp": 48.09,
+        "remit_gdp": 6.44
+      },
+      {
+        "year": 2016,
+        "credit_gdp": 14.68,
+        "broad_money_gdp": 50.8,
+        "remit_gdp": 6.32
+      },
+      {
+        "year": 2017,
+        "credit_gdp": 15.31,
+        "broad_money_gdp": 51.41,
+        "remit_gdp": 5.85
+      },
+      {
+        "year": 2018,
+        "credit_gdp": 16.63,
+        "broad_money_gdp": 51.22,
+        "remit_gdp": 5.95
+      },
+      {
+        "year": 2019,
+        "credit_gdp": 15.69,
+        "broad_money_gdp": 51.18,
+        "remit_gdp": 6.93
+      },
+      {
+        "year": 2020,
+        "credit_gdp": 15.03,
+        "broad_money_gdp": 54.53,
+        "remit_gdp": 8.68
+      },
+      {
+        "year": 2021,
+        "credit_gdp": 15.34,
+        "broad_money_gdp": 51.26,
+        "remit_gdp": 8.98
+      },
+      {
+        "year": 2022,
+        "credit_gdp": 14.84,
+        "broad_money_gdp": 46.12,
+        "remit_gdp": 8.05
+      },
+      {
+        "year": 2023,
+        "credit_gdp": 12.02,
+        "broad_money_gdp": 42.73,
+        "remit_gdp": 7.89
+      },
+      {
+        "year": 2024,
+        "credit_gdp": 11.46,
+        "broad_money_gdp": 38.21,
+        "remit_gdp": 9.39
+      },
+      {
+        "year": 2025,
+        "credit_gdp": 10.73,
+        "broad_money_gdp": 40.88,
+        "remit_gdp": 9.94
+      }
+    ],
+    "inflation_annual": [
+      {
+        "year": 2000,
+        "inflation": 4.37
+      },
+      {
+        "year": 2001,
+        "inflation": 3.15
+      },
+      {
+        "year": 2002,
+        "inflation": 3.29
+      },
+      {
+        "year": 2003,
+        "inflation": 2.91
+      },
+      {
+        "year": 2004,
+        "inflation": 7.44
+      },
+      {
+        "year": 2005,
+        "inflation": 9.06
+      },
+      {
+        "year": 2006,
+        "inflation": 7.92
+      },
+      {
+        "year": 2007,
+        "inflation": 7.6
+      },
+      {
+        "year": 2008,
+        "inflation": 20.29
+      },
+      {
+        "year": 2009,
+        "inflation": 13.65
+      },
+      {
+        "year": 2010,
+        "inflation": 12.94
+      },
+      {
+        "year": 2011,
+        "inflation": 11.92
+      },
+      {
+        "year": 2012,
+        "inflation": 9.68
+      },
+      {
+        "year": 2013,
+        "inflation": 7.69
+      },
+      {
+        "year": 2014,
+        "inflation": 7.19
+      },
+      {
+        "year": 2015,
+        "inflation": 2.53
+      },
+      {
+        "year": 2016,
+        "inflation": 3.77
+      },
+      {
+        "year": 2017,
+        "inflation": 4.09
+      },
+      {
+        "year": 2018,
+        "inflation": 5.08
+      },
+      {
+        "year": 2019,
+        "inflation": 10.58
+      },
+      {
+        "year": 2020,
+        "inflation": 9.74
+      },
+      {
+        "year": 2021,
+        "inflation": 9.5
+      },
+      {
+        "year": 2022,
+        "inflation": 19.87
+      },
+      {
+        "year": 2023,
+        "inflation": 30.77
+      },
+      {
+        "year": 2024,
+        "inflation": 12.63
+      },
+      {
+        "year": 2025,
+        "inflation": 3.55
+      }
+    ],
+    "peers": {
+      "credit_gdp": [
+        {
+          "country": "Pakistan",
+          "value": 10.73,
+          "is_pakistan": true
+        },
+        {
+          "country": "Nigeria",
+          "value": 13.21,
+          "is_pakistan": false
+        },
+        {
+          "country": "Egypt",
+          "value": 25.84,
+          "is_pakistan": false
+        },
+        {
+          "country": "Kenya",
+          "value": 29.36,
+          "is_pakistan": false
+        },
+        {
+          "country": "Bangladesh",
+          "value": 34.5,
+          "is_pakistan": false
+        },
+        {
+          "country": "Indonesia",
+          "value": 36.28,
+          "is_pakistan": false
+        },
+        {
+          "country": "India",
+          "value": 44.03,
+          "is_pakistan": false
+        },
+        {
+          "country": "Turkiye",
+          "value": 45.78,
+          "is_pakistan": false
+        },
+        {
+          "country": "Sri Lanka",
+          "value": 47.01,
+          "is_pakistan": false
+        },
+        {
+          "country": "Philippines",
+          "value": 52.13,
+          "is_pakistan": false
+        },
+        {
+          "country": "Nepal",
+          "value": 90.54,
+          "is_pakistan": false
+        },
+        {
+          "country": "Viet Nam",
+          "value": 124.96,
+          "is_pakistan": false
+        }
+      ],
+      "atm_100k": [
+        {
+          "country": "Kenya",
+          "value": 6.42,
+          "is_pakistan": false
+        },
+        {
+          "country": "Pakistan",
+          "value": 12.05,
+          "is_pakistan": true
+        },
+        {
+          "country": "Nigeria",
+          "value": 12.83,
+          "is_pakistan": false
+        },
+        {
+          "country": "Bangladesh",
+          "value": 15.87,
+          "is_pakistan": false
+        },
+        {
+          "country": "India",
+          "value": 24.47,
+          "is_pakistan": false
+        },
+        {
+          "country": "Nepal",
+          "value": 24.47,
+          "is_pakistan": false
+        },
+        {
+          "country": "Viet Nam",
+          "value": 27.24,
+          "is_pakistan": false
+        },
+        {
+          "country": "Philippines",
+          "value": 27.84,
+          "is_pakistan": false
+        },
+        {
+          "country": "Egypt",
+          "value": 37.06,
+          "is_pakistan": false
+        },
+        {
+          "country": "Indonesia",
+          "value": 45.64,
+          "is_pakistan": false
+        },
+        {
+          "country": "Turkiye",
+          "value": 81.09,
+          "is_pakistan": false
+        }
+      ],
+      "remit_gdp": [
+        {
+          "country": "Turkiye",
+          "value": 0.05,
+          "is_pakistan": false
+        },
+        {
+          "country": "Indonesia",
+          "value": 1.22,
+          "is_pakistan": false
+        },
+        {
+          "country": "Kenya",
+          "value": 3.76,
+          "is_pakistan": false
+        },
+        {
+          "country": "India",
+          "value": 3.81,
+          "is_pakistan": false
+        },
+        {
+          "country": "Bangladesh",
+          "value": 7.42,
+          "is_pakistan": false
+        },
+        {
+          "country": "Sri Lanka",
+          "value": 7.63,
+          "is_pakistan": false
+        },
+        {
+          "country": "Nigeria",
+          "value": 7.84,
+          "is_pakistan": false
+        },
+        {
+          "country": "Philippines",
+          "value": 8.53,
+          "is_pakistan": false
+        },
+        {
+          "country": "Pakistan",
+          "value": 9.94,
+          "is_pakistan": true
+        },
+        {
+          "country": "Egypt",
+          "value": 11.37,
+          "is_pakistan": false
+        },
+        {
+          "country": "Nepal",
+          "value": 32.31,
+          "is_pakistan": false
+        }
+      ]
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { api, pct } from "./api.js";
+import Analysis from "./Analysis.jsx";
 
 function Tile({ k, v }) {
   return (
@@ -68,7 +69,7 @@ function Scorer() {
   );
 }
 
-export default function App() {
+function PaymentsTab() {
   const [s, setS] = useState(null);
   const [daily, setDaily] = useState([]);
   const [reasons, setReasons] = useState([]);
@@ -89,8 +90,8 @@ export default function App() {
   }, []);
 
   return (
-    <main>
-      <h1>NovaBank Payments</h1>
+    <>
+      <h2 className="sec">NovaBank Payments</h2>
       <p className="sub">Synthetic data only. KPIs from dbt marts; scores from saved models.</p>
       {err && <p className="err">{err}</p>}
       {s && (
@@ -144,6 +145,24 @@ export default function App() {
         </div>
       </div>
       <Scorer />
+    </>
+  );
+}
+
+export default function App() {
+  const [tab, setTab] = useState(() => (window.location.hash.startsWith("#analysis") || window.location.hash.startsWith("#sec-") ? "analysis" : "payments"));
+  const pick = (t) => () => {
+    setTab(t);
+    window.history.replaceState(null, "", t === "analysis" ? "#analysis" : "#payments");
+  };
+  return (
+    <main>
+      <h1>NovaBank</h1>
+      <div className="tabs" role="tablist">
+        <button role="tab" aria-selected={tab === "payments"} className={tab === "payments" ? "on" : ""} onClick={pick("payments")}>Payments (synthetic)</button>
+        <button role="tab" aria-selected={tab === "analysis"} className={tab === "analysis" ? "on" : ""} onClick={pick("analysis")}>Pakistan analysis (real data)</button>
+      </div>
+      {tab === "payments" ? <PaymentsTab /> : <Analysis />}
     </main>
   );
 }

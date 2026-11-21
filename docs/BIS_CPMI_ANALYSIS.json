@@ -178,5 +178,217 @@
     "D": 0.1,
     "E": 0.1,
     "F": 68.1
+  },
+  "series": {
+    "instrument_index_2015_100": [
+      {
+        "year": 2012,
+        "Card and e-money": 77.9,
+        "Credit transfers": 83.5,
+        "Cheques": 101.9,
+        "Cash withdrawals": 80.6
+      },
+      {
+        "year": 2013,
+        "Card and e-money": 82.9,
+        "Credit transfers": 90.1,
+        "Cheques": 87.1,
+        "Cash withdrawals": 87.1
+      },
+      {
+        "year": 2014,
+        "Card and e-money": 92.4,
+        "Credit transfers": 100.5,
+        "Cheques": 104.1,
+        "Cash withdrawals": 89.7
+      },
+      {
+        "year": 2015,
+        "Card and e-money": 100.0,
+        "Credit transfers": 100.0,
+        "Cheques": 100.0,
+        "Cash withdrawals": 100.0
+      },
+      {
+        "year": 2016,
+        "Card and e-money": 112.2,
+        "Credit transfers": 100.2,
+        "Cheques": 96.2,
+        "Cash withdrawals": 105.9
+      },
+      {
+        "year": 2017,
+        "Card and e-money": 121.3,
+        "Credit transfers": 108.8,
+        "Cheques": 93.5,
+        "Cash withdrawals": 108.6
+      },
+      {
+        "year": 2018,
+        "Card and e-money": 138.7,
+        "Credit transfers": 117.3,
+        "Cheques": 77.0,
+        "Cash withdrawals": 111.9
+      },
+      {
+        "year": 2019,
+        "Card and e-money": 173.2,
+        "Credit transfers": 124.3,
+        "Cheques": 65.2,
+        "Cash withdrawals": 107.7
+      },
+      {
+        "year": 2020,
+        "Card and e-money": 176.7,
+        "Credit transfers": 129.8,
+        "Cheques": 49.1,
+        "Cash withdrawals": 89.0
+      },
+      {
+        "year": 2021,
+        "Card and e-money": 211.1,
+        "Credit transfers": 141.0,
+        "Cheques": 42.8,
+        "Cash withdrawals": 90.1
+      },
+      {
+        "year": 2022,
+        "Card and e-money": 257.2,
+        "Credit transfers": 169.6,
+        "Cheques": 38.9,
+        "Cash withdrawals": 92.0
+      },
+      {
+        "year": 2023,
+        "Card and e-money": 292.2,
+        "Credit transfers": 248.9,
+        "Cheques": 38.0,
+        "Cash withdrawals": 88.9
+      },
+      {
+        "year": 2024,
+        "Card and e-money": 334.5,
+        "Credit transfers": 271.0,
+        "Cheques": 31.3,
+        "Cash withdrawals": 89.7
+      }
+    ],
+    "card_per_capita_2023": [
+      {
+        "country": "India",
+        "per_capita": 9.5,
+        "is_india": true
+      },
+      {
+        "country": "Indonesia",
+        "per_capita": 34.6,
+        "is_india": false
+      },
+      {
+        "country": "Mexico",
+        "per_capita": 63.1,
+        "is_india": false
+      },
+      {
+        "country": "Argentina",
+        "per_capita": 99.8,
+        "is_india": false
+      },
+      {
+        "country": "South Africa",
+        "per_capita": 128.1,
+        "is_india": false
+      },
+      {
+        "country": "Germany",
+        "per_capita": 142.0,
+        "is_india": false
+      },
+      {
+        "country": "Italy",
+        "per_capita": 159.3,
+        "is_india": false
+      },
+      {
+        "country": "T\u00fcrkiye",
+        "per_capita": 183.2,
+        "is_india": false
+      },
+      {
+        "country": "Brazil",
+        "per_capita": 210.7,
+        "is_india": false
+      },
+      {
+        "country": "China",
+        "per_capita": 217.9,
+        "is_india": false
+      },
+      {
+        "country": "Spain",
+        "per_capita": 219.4,
+        "is_india": false
+      },
+      {
+        "country": "Saudi Arabia",
+        "per_capita": 266.2,
+        "is_india": false
+      },
+      {
+        "country": "France",
+        "per_capita": 283.9,
+        "is_india": false
+      },
+      {
+        "country": "Switzerland",
+        "per_capita": 284.0,
+        "is_india": false
+      },
+      {
+        "country": "Belgium",
+        "per_capita": 304.9,
+        "is_india": false
+      },
+      {
+        "country": "Netherlands",
+        "per_capita": 337.9,
+        "is_india": false
+      },
+      {
+        "country": "Sweden",
+        "per_capita": 378.1,
+        "is_india": false
+      },
+      {
+        "country": "Canada",
+        "per_capita": 405.6,
+        "is_india": false
+      },
+      {
+        "country": "United Kingdom",
+        "per_capita": 453.9,
+        "is_india": false
+      },
+      {
+        "country": "United States",
+        "per_capita": 482.7,
+        "is_india": false
+      },
+      {
+        "country": "Korea",
+        "per_capita": 552.0,
+        "is_india": false
+      },
+      {
+        "country": "Australia",
+        "per_capita": 555.9,
+        "is_india": false
+      },
+      {
+        "country": "Singapore",
+        "per_capita": 710.6,
+        "is_india": false
+      }
+    ]
   }
 }
