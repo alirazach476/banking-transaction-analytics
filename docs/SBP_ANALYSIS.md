@@ -43,4 +43,4 @@ Amounts are Rs million as published. Real data only.
 - Policy-rate dates and the latest values come as given in the SBP files.
 - ADR and growth correlations: Spearman of ADR vs policy rate levels 0.07 and advances growth vs 12-month policy change 0.35 are descriptive only; there is no causal control.
 - Credit table has only four snapshots, so growth rates are Jun-25 to Jun-26 point-to-point.
-- Not analysed from SBP: M2/M3/reserve money components, balance of payments, GDP tables, sector credit breakdown, FX rates.
+- Not covered in this report but analysed in `ALL_IN_ONE_ANALYSIS.md`: GDP, balance of payments, reserves, money growth, FX rates, the Quarterly Compendium (capital, NPLs by sector, stress tests) and the FY2018 payment-systems review. Still not analysed: M3 components and the monetary-survey tables.
