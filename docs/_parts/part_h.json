@@ -88,6 +88,16 @@
    "pass (9% apart)"
   ],
   [
+   "SBP quarterly payments: channel rows vs published total",
+   "10 of 11 quarters within 0.5% (the other has no POS/e-commerce rows in the old layout)",
+   "pass"
+  ],
+  [
+   "SBP quarterly payments: my digital-channel total vs the digital total SBP states (Q3 FY26)",
+   "3,414.6m / Rs 68.3tn vs 3,414.5m / Rs 68.3tn",
+   "pass"
+  ],
+  [
    "BIS CPMI: instruments add up to 'cashless payments, all'",
    "98.7% of 302 country-years within 5%",
    "pass"

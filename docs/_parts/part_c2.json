@@ -1,0 +1,760 @@
+{
+ "reports": [
+  "Q1FY26",
+  "Q2FY25",
+  "Q2FY26",
+  "Q3FY25",
+  "Q3FY26",
+  "Q4FY25"
+ ],
+ "quarters": [
+  "Q1-FY24",
+  "Q2-FY24",
+  "Q3-FY24",
+  "Q4-FY24",
+  "Q1-FY25",
+  "Q2-FY25",
+  "Q3-FY25",
+  "Q4-FY25",
+  "Q1-FY26",
+  "Q2-FY26",
+  "Q3-FY26"
+ ],
+ "a4_channels": [
+  "ATM/CDM",
+  "POS (CP)",
+  "Internet Banking Portal",
+  "Mobile Banking Apps",
+  "Call Centers/ IVR Banking",
+  "E-Commerce (CNP)",
+  "E-Money Wallets",
+  "Branchless/Digital Banking Apps",
+  "Direct Debit",
+  "Banking Agents",
+  "Bank Branches",
+  "Total Transactions"
+ ],
+ "a4_sum_minus_total_vol_value": {
+  "Q1-FY24": [
+   -9.5,
+   -39.5
+  ],
+  "Q2-FY24": [
+   0.0,
+   -0.0
+  ],
+  "Q3-FY24": [
+   0.1,
+   -0.0
+  ],
+  "Q4-FY24": [
+   -0.1,
+   -0.2
+  ],
+  "Q1-FY25": [
+   0.1,
+   -0.0
+  ],
+  "Q2-FY25": [
+   0.0,
+   0.0
+  ],
+  "Q3-FY25": [
+   -0.2,
+   -0.0
+  ],
+  "Q4-FY25": [
+   0.0,
+   -0.1
+  ],
+  "Q1-FY26": [
+   0.0,
+   -0.2
+  ],
+  "Q2-FY26": [
+   -0.0,
+   0.0
+  ],
+  "Q3-FY26": [
+   0.1,
+   0.2
+  ]
+ },
+ "a4_quarters_passing_sum_check": [
+  "Q2-FY24",
+  "Q3-FY24",
+  "Q4-FY24",
+  "Q1-FY25",
+  "Q2-FY25",
+  "Q3-FY25",
+  "Q4-FY25",
+  "Q1-FY26",
+  "Q2-FY26",
+  "Q3-FY26"
+ ],
+ "quarters_used": [
+  "Q2-FY24",
+  "Q3-FY24",
+  "Q4-FY24",
+  "Q1-FY25",
+  "Q2-FY25",
+  "Q3-FY25",
+  "Q4-FY25",
+  "Q1-FY26",
+  "Q2-FY26",
+  "Q3-FY26"
+ ],
+ "total_revisions_vs_first_report": [
+  [
+   "Q2-FY24",
+   "Q2FY25",
+   "Q4FY25",
+   0.0,
+   0.0
+  ],
+  [
+   "Q3-FY24",
+   "Q2FY25",
+   "Q4FY25",
+   0.0,
+   0.0
+  ],
+  [
+   "Q4-FY24",
+   "Q2FY25",
+   "Q4FY25",
+   0.0,
+   0.0
+  ],
+  [
+   "Q1-FY25",
+   "Q2FY25",
+   "Q1FY26",
+   0.67,
+   0.42
+  ],
+  [
+   "Q2-FY25",
+   "Q2FY25",
+   "Q2FY26",
+   0.95,
+   -0.68
+  ],
+  [
+   "Q3-FY25",
+   "Q3FY25",
+   "Q3FY26",
+   2.23,
+   0.54
+  ],
+  [
+   "Q4-FY25",
+   "Q1FY26",
+   "Q3FY26",
+   0.0,
+   0.0
+  ],
+  [
+   "Q1-FY26",
+   "Q1FY26",
+   "Q3FY26",
+   13.4,
+   -5.58
+  ],
+  [
+   "Q2-FY26",
+   "Q2FY26",
+   "Q3FY26",
+   0.13,
+   0.06
+  ]
+ ],
+ "max_abs_revision_volume_pct": 13.4,
+ "label_map": {
+  "ATM/CDM": "ATM/CDM",
+  "POS (CP)": "POS (CP)",
+  "Internet Banking Portal": "Internet Banking Portal",
+  "Mobile Banking Apps": "Mobile Banking Apps",
+  "Call Centers/ IVR Banking": "Call Centers/ IVR Banking",
+  "E-Commerce (CNP)": "E-Commerce (CNP)",
+  "E-Money Wallets": "E-Money Wallets",
+  "Branchless/Digital Banking Apps": "Branchless/Digital Banking Apps",
+  "Direct Debit": "Direct Debit",
+  "Banking Agents": "Banking Agents",
+  "Bank Branches": "Bank Branches"
+ },
+ "digital_share_of_volume_pct": {
+  "Q2-FY24": 83.2,
+  "Q3-FY24": 84.3,
+  "Q4-FY24": 86.5,
+  "Q1-FY25": 87.1,
+  "Q2-FY25": 87.8,
+  "Q3-FY25": 87.8,
+  "Q4-FY25": 88.6,
+  "Q1-FY26": 91.5,
+  "Q2-FY26": 91.9,
+  "Q3-FY26": 92.4
+ },
+ "digital_share_of_value_pct": {
+  "Q2-FY24": 19.4,
+  "Q3-FY24": 23.1,
+  "Q4-FY24": 24.3,
+  "Q1-FY25": 26.9,
+  "Q2-FY25": 28.8,
+  "Q3-FY25": 29.4,
+  "Q4-FY25": 31.6,
+  "Q1-FY26": 36.0,
+  "Q2-FY26": 38.5,
+  "Q3-FY26": 40.4
+ },
+ "retail_volume_m": {
+  "Q2-FY24": 1555.0,
+  "Q3-FY24": 1639.5,
+  "Q4-FY24": 1807.6,
+  "Q1-FY25": 1947.8,
+  "Q2-FY25": 2163.1,
+  "Q3-FY25": 2461.6,
+  "Q4-FY25": 2509.5,
+  "Q1-FY26": 3129.3,
+  "Q2-FY26": 3382.2,
+  "Q3-FY26": 3697.1
+ },
+ "retail_value_bn": {
+  "Q2-FY24": 143141.7,
+  "Q3-FY24": 131560.3,
+  "Q4-FY24": 136657.1,
+  "Q1-FY25": 137228.9,
+  "Q2-FY25": 152593.8,
+  "Q3-FY25": 165377.1,
+  "Q4-FY25": 156709.1,
+  "Q1-FY26": 156540.7,
+  "Q2-FY26": 167156.6,
+  "Q3-FY26": 168843.5
+ },
+ "window": [
+  "Q2-FY24",
+  "Q3-FY26",
+  "Q3-FY25"
+ ],
+ "retail_volume_yoy_pct": 50.2,
+ "retail_value_yoy_pct": 2.1,
+ "channels_latest": {
+  "ATM/CDM": {
+   "vol_last": 277.5,
+   "vol_yoy_pct": 2.0,
+   "val_last_bn": 5193.1,
+   "val_yoy_pct": 9.3,
+   "share_of_volume_pct": 7.5,
+   "avg_ticket_rs": 18714
+  },
+  "POS (CP)": {
+   "vol_last": 143.2,
+   "vol_yoy_pct": 44.8,
+   "val_last_bn": 798.0,
+   "val_yoy_pct": 45.1,
+   "share_of_volume_pct": 3.9,
+   "avg_ticket_rs": 5573
+  },
+  "Internet Banking Portal": {
+   "vol_last": 88.4,
+   "vol_yoy_pct": 10.6,
+   "val_last_bn": 16317.4,
+   "val_yoy_pct": 61.3,
+   "share_of_volume_pct": 2.4,
+   "avg_ticket_rs": 184586
+  },
+  "Mobile Banking Apps": {
+   "vol_last": 665.0,
+   "vol_yoy_pct": 32.3,
+   "val_last_bn": 33590.8,
+   "val_yoy_pct": 44.2,
+   "share_of_volume_pct": 18.0,
+   "avg_ticket_rs": 50512
+  },
+  "Call Centers/ IVR Banking": {
+   "vol_last": 0.04,
+   "vol_yoy_pct": 100.0,
+   "val_last_bn": 1.8,
+   "val_yoy_pct": 29.5,
+   "share_of_volume_pct": 0.0,
+   "avg_ticket_rs": 45000
+  },
+  "E-Commerce (CNP)": {
+   "vol_last": 16.4,
+   "vol_yoy_pct": 21.5,
+   "val_last_bn": 80.1,
+   "val_yoy_pct": 18.1,
+   "share_of_volume_pct": 0.4,
+   "avg_ticket_rs": 4884
+  },
+  "E-Money Wallets": {
+   "vol_last": 59.4,
+   "vol_yoy_pct": 35.6,
+   "val_last_bn": 183.0,
+   "val_yoy_pct": 40.8,
+   "share_of_volume_pct": 1.6,
+   "avg_ticket_rs": 3081
+  },
+  "Branchless/Digital Banking Apps": {
+   "vol_last": 2164.1,
+   "vol_yoy_pct": 88.2,
+   "val_last_bn": 7897.8,
+   "val_yoy_pct": 97.5,
+   "share_of_volume_pct": 58.5,
+   "avg_ticket_rs": 3649
+  },
+  "Direct Debit": {
+   "vol_last": 0.55,
+   "vol_yoy_pct": -3.5,
+   "val_last_bn": 4217.1,
+   "val_yoy_pct": -26.3,
+   "share_of_volume_pct": 0.0,
+   "avg_ticket_rs": 7667455
+  },
+  "Banking Agents": {
+   "vol_last": 154.7,
+   "vol_yoy_pct": -0.8,
+   "val_last_bn": 1100.4,
+   "val_yoy_pct": 11.2,
+   "share_of_volume_pct": 4.2,
+   "avg_ticket_rs": 7113
+  },
+  "Bank Branches": {
+   "vol_last": 127.9,
+   "vol_yoy_pct": -11.2,
+   "val_last_bn": 99464.2,
+   "val_yoy_pct": -14.1,
+   "share_of_volume_pct": 3.5,
+   "avg_ticket_rs": 777672
+  }
+ },
+ "atm_volume_change_since_first_quarter_pct": 18.1,
+ "atm_share_of_retail_volume_latest_pct": 7.5,
+ "sbp_stated_digital_q2_q3_vol_val": [
+  3109.8,
+  64.4,
+  3414.5,
+  68.3
+ ],
+ "my_digital_q2_q3_vol_val": [
+  3109.9,
+  64.4,
+  3414.6,
+  68.3
+ ],
+ "digital_definition_matches_sbp": true,
+ "infrastructure": {
+  "POS machines": {
+   "Q2-FY24": 121789.0,
+   "Q3-FY24": 120641.0,
+   "Q4-FY24": 125593.0,
+   "Q1-FY25": 132224.0,
+   "Q2-FY25": 151646.0,
+   "Q3-FY25": 179383.0,
+   "Q1-FY24": 118444.0,
+   "Q4-FY25": 195849.0,
+   "Q1-FY26": 220532.0,
+   "Q2-FY26": 232244.0,
+   "Q3-FY26": 247836.0
+  },
+  "ATMs": {
+   "Q2-FY24": 18441.0,
+   "Q3-FY24": 18655.0,
+   "Q4-FY24": 18957.0,
+   "Q1-FY25": 19170.0,
+   "Q2-FY25": 19519.0,
+   "Q3-FY25": 19851.0,
+   "Q1-FY24": 18117.0,
+   "Q4-FY25": 20250.0,
+   "Q1-FY26": 20527.0,
+   "Q2-FY26": 20976.0,
+   "Q3-FY26": 21377.0
+  },
+  "bank branches": {
+   "Q2-FY24": 18178.0,
+   "Q3-FY24": 18193.0,
+   "Q4-FY24": 18450.0,
+   "Q1-FY25": 18669.0,
+   "Q2-FY25": 19110.0,
+   "Q3-FY25": 19170.0,
+   "Q1-FY24": 17768.0,
+   "Q4-FY25": 19347.0,
+   "Q1-FY26": 19547.0,
+   "Q2-FY26": 20143.0,
+   "Q3-FY26": 20232.0
+  },
+  "BB agents": {
+   "Q2-FY24": 649683.0,
+   "Q3-FY24": 651672.0,
+   "Q4-FY24": 666682.0,
+   "Q1-FY25": 693178.0,
+   "Q2-FY25": 703972.0,
+   "Q3-FY25": 722585.0,
+   "Q1-FY24": 640953.0,
+   "Q4-FY25": 731814.0,
+   "Q1-FY26": 757727.0,
+   "Q2-FY26": 808871.0,
+   "Q3-FY26": 819397.0
+  },
+  "QR merchants": {
+   "Q1-FY25": 597411.0,
+   "Q2-FY25": 679745.0,
+   "Q3-FY25": 778936.0,
+   "Q4-FY25": 1092044.0,
+   "Q1-FY26": 1409993.0,
+   "Q2-FY26": 1944747.0,
+   "Q3-FY26": 2506772.0
+  },
+  "POS merchants": {
+   "Q3-FY24": 93664.0,
+   "Q4-FY24": 98936.0,
+   "Q1-FY25": 104281.0,
+   "Q2-FY25": 115177.0,
+   "Q3-FY25": 140861.0,
+   "Q4-FY25": 159284.0,
+   "Q1-FY26": 181067.0
+  },
+  "mobile banking users": {
+   "Q2-FY24": 16297328.0,
+   "Q3-FY24": 17035266.0,
+   "Q4-FY24": 18677692.0,
+   "Q1-FY25": 19577286.0,
+   "Q2-FY25": 21097867.0,
+   "Q3-FY25": 22586402.0,
+   "Q1-FY24": 15084947.0,
+   "Q4-FY25": 24131908.0,
+   "Q1-FY26": 25873112.0,
+   "Q2-FY26": 27184078.0,
+   "Q3-FY26": 28903973.0
+  },
+  "BB mobile app users": {
+   "Q2-FY24": 56239552.0,
+   "Q3-FY24": 59511392.0,
+   "Q4-FY24": 58684920.0,
+   "Q1-FY25": 60318502.0,
+   "Q2-FY25": 64301111.0,
+   "Q3-FY25": 68477003.0,
+   "Q1-FY24": 52441263.0,
+   "Q4-FY25": 79155151.0,
+   "Q1-FY26": 87121631.0,
+   "Q2-FY26": 92250028.0,
+   "Q3-FY26": 95847712.0
+  },
+  "internet banking users": {
+   "Q2-FY24": 10840615.0,
+   "Q3-FY24": 11438001.0,
+   "Q4-FY24": 11995884.0,
+   "Q1-FY25": 12407336.0,
+   "Q2-FY25": 13258511.0,
+   "Q3-FY25": 14125898.0,
+   "Q1-FY24": 10285927.0,
+   "Q4-FY25": 14923294.0,
+   "Q1-FY26": 15164537.0,
+   "Q2-FY26": 15682967.0,
+   "Q3-FY26": 16182314.0
+  },
+  "payment cards": {
+   "Q1-FY25": 55630855.0,
+   "Q2-FY25": 55704648.0,
+   "Q3-FY25": 58094729.0,
+   "Q4-FY25": 59713906.0,
+   "Q1-FY26": 61106005.0,
+   "Q2-FY26": 64104064.0,
+   "Q3-FY26": 68250850.0
+  },
+  "e-commerce merchants (banks)": {
+   "Q2-FY24": 7630.0,
+   "Q3-FY24": 7936.0,
+   "Q4-FY24": 7816.0,
+   "Q1-FY25": 8189.0,
+   "Q2-FY25": 8932.0,
+   "Q1-FY24": 7310.0
+  }
+ },
+ "infra_growth_yoy_pct": {
+  "POS machines": 38.2,
+  "ATMs": 7.7,
+  "bank branches": 5.5,
+  "BB agents": 13.4,
+  "QR merchants": 221.8,
+  "mobile banking users": 28.0,
+  "BB mobile app users": 40.0,
+  "internet banking users": 14.6,
+  "payment cards": 17.5
+ },
+ "infra_growth_over_window_pct": {
+  "POS machines": 109.2,
+  "ATMs": 18.0,
+  "bank branches": 13.9,
+  "BB agents": 27.8,
+  "QR merchants": 319.6,
+  "mobile banking users": 91.6,
+  "BB mobile app users": 82.8,
+  "internet banking users": 57.3,
+  "payment cards": 22.7
+ },
+ "infra_first_quarter_by_series": {
+  "POS machines": "Q1-FY24",
+  "ATMs": "Q1-FY24",
+  "bank branches": "Q1-FY24",
+  "BB agents": "Q1-FY24",
+  "QR merchants": "Q1-FY25",
+  "POS merchants": "Q3-FY24",
+  "mobile banking users": "Q1-FY24",
+  "BB mobile app users": "Q1-FY24",
+  "internet banking users": "Q1-FY24",
+  "payment cards": "Q1-FY25",
+  "e-commerce merchants (banks)": "Q1-FY24"
+ },
+ "infra_window": [
+  "Q1-FY24",
+  "Q3-FY26"
+ ],
+ "cards": {
+  "Credit Cards": {
+   "Q2-FY24": 2003943.0,
+   "Q3-FY24": 2025013.0,
+   "Q4-FY24": 2047802.0,
+   "Q1-FY25": 2112042.0,
+   "Q2-FY25": 2151186.0,
+   "Q3-FY25": 2176278.0,
+   "Q1-FY24": 2069692.0,
+   "Q4-FY25": 2215081.0,
+   "Q1-FY26": 3068869.0,
+   "Q2-FY26": 3111053.0,
+   "Q3-FY26": 3133992.0
+  },
+  "Debit Cards": {
+   "Q2-FY24": 44953927.0,
+   "Q3-FY24": 45360161.0,
+   "Q4-FY24": 48467827.0,
+   "Q1-FY25": 48940944.0,
+   "Q2-FY25": 49586762.0,
+   "Q3-FY25": 51766595.0,
+   "Q1-FY24": 42018336.0,
+   "Q4-FY25": 53490756.0,
+   "Q1-FY26": 54796316.0,
+   "Q2-FY26": 56596599.0,
+   "Q3-FY26": 57196731.0
+  },
+  "Pre-Paid Cards": {
+   "Q2-FY24": 145316.0,
+   "Q3-FY24": 99112.0,
+   "Q4-FY24": 98374.0,
+   "Q1-FY25": 98623.0,
+   "Q2-FY25": 92900.0,
+   "Q3-FY25": 92558.0,
+   "Q1-FY24": 116367.0,
+   "Q4-FY25": 93476.0,
+   "Q1-FY26": 114666.0,
+   "Q2-FY26": 177151.0,
+   "Q3-FY26": 204771.0
+  },
+  "Social Welfare Cards": {
+   "Q2-FY24": 8660025.0,
+   "Q3-FY24": 9520222.0,
+   "Q4-FY24": 3993757.0,
+   "Q1-FY25": 4479246.0,
+   "Q2-FY25": 3873800.0,
+   "Q3-FY25": 4059298.0,
+   "Q1-FY24": 9763898.0,
+   "Q4-FY25": 3914593.0,
+   "Q1-FY26": 3126154.0,
+   "Q2-FY26": 4219261.0,
+   "Q3-FY26": 7715356.0
+  },
+  "Overall Cards": {
+   "Q2-FY24": 55763211.0,
+   "Q3-FY24": 57004508.0,
+   "Q4-FY24": 54607760.0,
+   "Q1-FY25": 55630855.0,
+   "Q2-FY25": 55704648.0,
+   "Q3-FY25": 58094729.0,
+   "Q1-FY24": 53968293.0,
+   "Q4-FY25": 59713906.0,
+   "Q1-FY26": 61106005.0,
+   "Q2-FY26": 64104064.0,
+   "Q3-FY26": 68250850.0
+  }
+ },
+ "raast_quarters": [
+  "Q2-FY24",
+  "Q3-FY24",
+  "Q4-FY24",
+  "Q1-FY25",
+  "Q2-FY25",
+  "Q3-FY25",
+  "Q4-FY25",
+  "Q1-FY26",
+  "Q2-FY26",
+  "Q3-FY26"
+ ],
+ "raast_total": {
+  "Q2-FY24": [
+   107.1,
+   2320.5
+  ],
+  "Q3-FY24": [
+   140.3,
+   3436.9
+  ],
+  "Q4-FY24": [
+   167.7,
+   4050.3
+  ],
+  "Q1-FY25": [
+   197.0,
+   4750.9
+  ],
+  "Q2-FY25": [
+   295.7,
+   6364.2
+  ],
+  "Q3-FY25": [
+   371.2,
+   8456.7
+  ],
+  "Q4-FY25": [
+   412.1,
+   9992.3
+  ],
+  "Q1-FY26": [
+   543.9,
+   12749.1
+  ],
+  "Q2-FY26": [
+   648.4,
+   18478.8
+  ],
+  "Q3-FY26": [
+   742.1,
+   23267.4
+  ]
+ },
+ "raast_p2p_vol": {
+  "Q2-FY24": 106.8,
+  "Q3-FY24": 139.8,
+  "Q4-FY24": 166.8,
+  "Q1-FY25": 196.1,
+  "Q2-FY25": 293.7,
+  "Q3-FY25": 368.3,
+  "Q4-FY25": 408.0,
+  "Q1-FY26": 534.7,
+  "Q2-FY26": 603.0,
+  "Q3-FY26": 664.4
+ },
+ "raast_p2m_vol": {
+  "Q3-FY24": 0.0,
+  "Q4-FY24": 0.1,
+  "Q1-FY25": 0.3,
+  "Q2-FY25": 0.9,
+  "Q3-FY25": 1.5,
+  "Q4-FY25": 2.2,
+  "Q1-FY26": 4.3,
+  "Q2-FY26": 36.3,
+  "Q3-FY26": 55.9
+ },
+ "raast_vol_growth_pct_first_last": 592.9,
+ "raast_value_growth_pct_first_last": 902.7,
+ "raast_share_of_digital_vol_latest_pct": 21.7,
+ "prism_quarters": [
+  "Q1-FY24",
+  "Q2-FY24",
+  "Q3-FY24",
+  "Q4-FY24",
+  "Q1-FY25",
+  "Q2-FY25",
+  "Q3-FY25",
+  "Q4-FY25",
+  "Q1-FY26",
+  "Q2-FY26",
+  "Q3-FY26"
+ ],
+ "prism_total_thousand_trn": {
+  "Q1-FY24": [
+   1423.1,
+   199.3
+  ],
+  "Q2-FY24": [
+   1481.1,
+   272.7
+  ],
+  "Q3-FY24": [
+   1487.7,
+   315.6
+  ],
+  "Q4-FY24": [
+   1396.1,
+   255.5
+  ],
+  "Q1-FY25": [
+   1582.8,
+   278.2
+  ],
+  "Q2-FY25": [
+   1632.6,
+   330.5
+  ],
+  "Q3-FY25": [
+   1533.0,
+   347.1
+  ],
+  "Q4-FY25": [
+   1243.0,
+   308.8
+  ],
+  "Q1-FY26": [
+   1697.5,
+   351.2
+  ],
+  "Q2-FY26": [
+   1657.4,
+   369.6
+  ],
+  "Q3-FY26": [
+   1457.3,
+   389.8
+  ]
+ },
+ "prism_value_growth_over_window_pct": 95.6,
+ "prism_value_yoy_pct": 12.3,
+ "prism_govsec_share_of_value_latest_pct": 70.7,
+ "pos_credit_share_of_pos_volume_pct": {
+  "Q2-FY24": 24.9,
+  "Q3-FY24": 23.8,
+  "Q4-FY24": 25.0,
+  "Q1-FY25": 24.7,
+  "Q2-FY25": 23.7,
+  "Q3-FY25": 22.4,
+  "Q4-FY25": 22.7,
+  "Q1-FY26": 21.9,
+  "Q2-FY26": 21.1,
+  "Q3-FY26": 19.6
+ },
+ "population_m_used": 241.5,
+ "card_payments_per_capita_last4q": 2.37,
+ "cash_withdrawals_last4q_m": {
+  "atm": 1066.4,
+  "branch": 173.1,
+  "agents": 46.0
+ },
+ "card_payments_per_cash_withdrawal_now": 0.44,
+ "digital_txns_per_capita_per_year": 48.1,
+ "mobile_apps_and_wallets_share_of_digital_pct": 84.6,
+ "ecb_terminals": {
+  "year": "2025",
+  "pos_terminals": 22129638.0,
+  "pos_per_million": 62744,
+  "atms": 248954.0,
+  "implied_population_m": 352.7,
+  "atms_per_million": 706
+ },
+ "pakistan_terminals_per_million": {
+  "pos": 1026,
+  "atms": 89
+ },
+ "pakistan_vs_euro_area_density_pct": {
+  "pos": 1.6,
+  "atms": 12.5
+ }
+}

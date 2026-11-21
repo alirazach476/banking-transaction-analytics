@@ -1,6 +1,6 @@
 ## H. Data quality and reconciliation (closing the earlier caveats)
 
-**Checks across independent sources.** 11 of the 14 checks below pass; the other 3 are explained or cannot be tested from these files.
+**Checks across independent sources.** 13 of the 16 checks below pass; the other 3 are explained or cannot be tested from these files.
 | Check | Result | Status |
 |---|---|---|
 | USD/PKR: BIS Sep-26 monthly average vs SBP banks' floating average Oct-26 | 277.22 vs 277.24 (SBP mark-to-market 19 Nov: 276.5205) | pass |
@@ -11,6 +11,8 @@
 | Advances: net advances + provisions = gross advances (SBP, 5 quarters) | max difference Rs 0.0 million | pass |
 | External debt: IDS total vs WDI | 135.11 vs 135.11 US$ bn; creditor rows sum to 100.0% | pass |
 | Bank branches per 100,000 adults: SBP count vs WDI ratio (2018) | 10.95 vs 10.08 (adults implied from WDI's ATM ratio) | pass (9% apart) |
+| SBP quarterly payments: channel rows vs published total | 10 of 11 quarters within 0.5% (the other has no POS/e-commerce rows in the old layout) | pass |
+| SBP quarterly payments: my digital-channel total vs the digital total SBP states (Q3 FY26) | 3,414.6m / Rs 68.3tn vs 3,414.5m / Rs 68.3tn | pass |
 | BIS CPMI: instruments add up to 'cashless payments, all' | 98.7% of 302 country-years within 5% | pass |
 | Overnight repo (OCR daily) vs policy rate | within 1 pp in 94.2% of 139 months; mean gap +0.04 pp | pass |
 | SBP fiscal-year CPI vs World Bank calendar-year CPI (FY12-FY19) | mean absolute gap 1.31 pp (period definitions differ) | explained, not equal |
@@ -30,9 +32,9 @@
 - *Files not loaded:* 2 of 552 CSV/Excel files are still not tables: 0037857_DR0045869_Raw_Data_on_Trade_Flows_and_Policies_for_C, DR0090858_Hydraulic_defenses_protection_level.xlsx (the first is a SharePoint login page saved as .xlsx, not data; the second workbook contains no usable table).
 
 **What is still limited (not fixed)**
-- The only SBP payment-systems data in the warehouse is FY2017-18, so current Pakistani payment volumes, instant-payment growth and card counts cannot be analysed.
+- Current payments data (Part C2) covers formal banking and payment channels only (cash is excluded), the latest quarters are provisional, SBP revises earlier quarters (Q1 FY26 volume by +13.4% between reports), and the Q1 FY25 report was not obtained; the FY2018 review (Part C) is the only older SBP payments source.
 - SBP tables come from OCR. The identity checks above all pass, but an individual cell can still be wrong; no table was verified by hand against the PDF.
-- BIS country-level claims on Pakistan are mostly confidential; the Part D country list covers 8.2% of claims.
+- BIS country-level claims on Pakistan are mostly confidential in the locational statistics (8.2% visible); the consolidated statistics show the headquarters country for 76.9% of claims, with the remainder (including the United States) not published. That residual cannot be recovered from BIS data.
 - The cause of the late-2024 advances surge, and of the Sep-2026 jump in SBP's reserves, is not given in any file.
 - The synthetic payments data is not linked to any real series, so no real macro effect on NovaBank-style payments can be claimed (the earlier join found no relationship, as expected from a generator with no macro inputs).
 - Not analysed because they are not relevant to Pakistan banking or payments: about 1,000 World Bank project datasets (for example Ukraine BOOST fiscal data, skills, energy and gas-flaring data), most of the 103 ECB datasets (country HICP detail, survey and securities data), the BIS effective-exchange-rate, global-liquidity and long-CPI tables, and the BIS locational data for other countries. They are loaded and profiled.

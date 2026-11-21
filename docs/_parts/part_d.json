@@ -291,5 +291,17 @@
   "2024": 6.47,
   "2025": 6.43
  },
+ "cbs_by_headquarters_country_2026Q2_usd_m": {
+  "CH": 905,
+  "GB": 890,
+  "FR": 626,
+  "ES": 88,
+  "SE": 61,
+  "JP": 32,
+  "CA": 11,
+  "AU": 3
+ },
+ "cbs_visible_share_pct": 76.9,
+ "cbs_total_2026Q2_usd_m": 3406,
  "visible_country_claims_share_pct": 8.2
 }

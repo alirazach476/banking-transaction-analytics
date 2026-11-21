@@ -146,7 +146,7 @@ peer_txt = ", ".join(f"{n} {bp_[c]['card_per_capita_2018']}" for c, n in (("IN",
 peer_cw = ", ".join(f"{n} {bp_[c]['card_per_cash_withdrawal_2018']}" for c, n in (("IN", "India"), ("ID", "Indonesia"), ("SA", "Saudi Arabia"), ("MX", "Mexico"), ("CN", "China")) if c in bp_)
 md = f"""## C. Payment systems: Pakistan (SBP FY2018) against BIS, ECB and World Bank
 
-*The SBP payment-systems data in the warehouse is the Payment Systems Review for FY2017-18 (to June 2018), so it is eight years older than the rest of this analysis. It describes the structure of Pakistan's payments before later developments and must not be read as the current position.*
+*The SBP payment-systems data in the warehouse is the Payment Systems Review for FY2017-18 (to June 2018), so it is eight years older than the rest of this analysis. It describes the structure of Pakistan's payments in 2018; the current position, from SBP's quarterly reviews to March 2026, is in Part C2 below.*
 
 **What moved through the system in FY2018.** {cs['Total']['vol_fy18_m']:,.0f} million transactions worth Rs {cs['Total']['value_fy18_bn']/1e3:,.0f} trillion (volume +{cs['Total']['yoy_vol_fy18_pct']}% on FY17). The channel volumes add up exactly to the total (check performed). By volume, electronic banking was {vs['e-Banking']}% and paper instruments {vs['Paper-based']}%; by value, the large-value PRISM system was {prism_val_share}% (only {cs['PRISM System']['vol_fy18_m']} million transactions at an average of Rs {cs['PRISM System']['avg_ticket_rs']/1e6:,.0f} million each) and paper instruments still {paper_val_share}%. Electronic banking rose from 52.7% of non-PRISM volume in FY2014 to 61.8% in FY2018.
 

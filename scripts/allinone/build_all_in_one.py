@@ -11,6 +11,7 @@ from common import *  # noqa
 
 J = lambda n: json.load(open(PARTS / f"{n}.json"))
 A, B, C, Dd, E, FG, H = J("part_a"), J("part_b"), J("part_c"), J("part_d"), J("part_e"), J("part_fg"), J("part_h")
+C2 = J("part_c2")
 W = json.load(open(ROOT / "docs" / "PAKISTAN_WDI_ANALYSIS.json"))
 S = json.load(open(ROOT / "docs" / "SBP_ANALYSIS.json"))
 M = json.load(open(ROOT / "docs" / "PAKISTAN_ANALYSIS.json"))
@@ -30,7 +31,7 @@ summary = f"""## Executive summary
 
 **Credit depth and inclusion (WDI doc, Part F, G).** Private credit is {pt['credit_gdp']['pakistan']}% of GDP, the lowest of 12 peers (median {pt['credit_gdp']['peer_median']}%). Only {rk['any account']['pakistan_pct']}% of adults have an account (rank {rk['any account']['rank_high_to_low']} of {rk['any account']['of']}); **{FG['women_account_pk_pct']}% of women do, the lowest of all {FG['gender_gap_economies']} economies**, and the gender gap ({FG['gender_gap_pk_pp']} points) is the second largest. Mobile-money accounts ({rk['mobile-money account']['pakistan_pct']}%) now roughly equal bank accounts ({rk['financial-institution account']['pakistan_pct']}%).
 
-**Payments (Part C).** In FY2018 (the only SBP payments data in the warehouse) {cs['ATM']['vol_fy18_m']:.0f} million ATM transactions were {C['atm_cash_withdrawal_share_of_atm_volume_fy18_pct']}% cash withdrawals, while card purchases at POS were only {C['ebanking_channel_share_of_ebanking_vol_fy18_pct']['POS']}% of electronic volume: {C['card_payments_per_cash_withdrawal_fy18']} card payments per cash withdrawal against {C['bis_peers_2018']['ID']['card_per_cash_withdrawal_2018']} (Indonesia), {C['bis_peers_2018']['IN']['card_per_cash_withdrawal_2018']} (India) and {C['bis_peers_2018']['MX']['card_per_cash_withdrawal_2018']} (Mexico) in 2018. Mobile banking grew {cs['Mobile Phone Banking']['yoy_vol_fy18_pct']:.0f}% in FY2018 from a small base. Across 23 countries card payments and account transfers grew every year while cheques fell, and India's card use stayed flat as account-to-account transfers rose more than tenfold (BIS).
+**Payments (Part C2, C).** Retail payments through formal channels were {C2['retail_volume_m'][C2['quarters_used'][-1]]:,.0f} million in Q3 FY26 (+{C2['retail_volume_yoy_pct']}% on a year earlier), {C2['digital_share_of_volume_pct'][C2['quarters_used'][-1]]}% digital by volume but only {C2['digital_share_of_value_pct'][C2['quarters_used'][-1]]}% by value (bank branches still carry about 59% of value). Branchless-banking wallet apps are {C2['channels_latest']['Branchless/Digital Banking Apps']['share_of_volume_pct']}% of volume and mobile banking apps {C2['channels_latest']['Mobile Banking Apps']['share_of_volume_pct']}%, while ATM volume has stalled (+{C2['channels_latest']['ATM/CDM']['vol_yoy_pct']:.0f}%) and card-present POS grew {C2['channels_latest']['POS (CP)']['vol_yoy_pct']:.0f}%. Raast instant payments reached {C2['raast_total'][C2['quarters_used'][-1]][0]:,.0f} million (Rs {C2['raast_total'][C2['quarters_used'][-1]][1]/1e3:.1f} trillion) in the quarter, {C2['raast_vol_growth_pct_first_last']/100 + 1:.1f}x two years earlier. Card payments per person are {C2['card_payments_per_capita_last4q']} a year (0.29 in FY2018) and card payments per cash withdrawal {C2['card_payments_per_cash_withdrawal_now']} (0.14 in FY2018, against {C['bis_peers_2018']['ID']['card_per_cash_withdrawal_2018']} for Indonesia and {C['bis_peers_2018']['IN']['card_per_cash_withdrawal_2018']} for India in 2018). BIS data across 23 countries show card payments and account transfers growing every year while cheques fell, and India's card use flat while account-to-account transfers rose more than tenfold.
 
 **External finance (Part D).** External debt is US$ {Dd['ids_total_external_debt_usd_bn']['2025']}bn ({Dd['wdi_external_debt_pct_gni']['2025']:.0f}% of GNI), with debt service taking {Dd['wdi_debt_service_pct_exports']['2025']:.0f}% of exports and **scheduled service of US$ {Dd['ids_debt_service_projection_2026_2030_usd_bn']['2026']}bn in 2026** (about the size of reserves). Foreign banks' cross-border claims on Pakistan are US$ {Dd['lbs_claims_latest_usd_m'][1]/1e3:.1f}bn. Sending money to Pakistan costs {Dd['rpw_cost_pct_by_year_mean']['2025']}% on average (against {Dd['rpw_world_mean_cost_by_year']['2025']}% worldwide) but banks charge {Dd['rpw_cost_by_firm_type_latest_mean']['Bank'][0]}% against {Dd['rpw_cost_by_firm_type_latest_mean']['Money Transfer Operator'][0]}% for money-transfer operators.
 
@@ -39,13 +40,13 @@ summary = f"""## Executive summary
 **Reliability.** {npass} of {len(H['scoreboard'])} cross-source checks pass (Part H): exchange rates from four sources agree, GDP growth recomputes exactly, SBP identities hold, and the World Bank and IDS debt totals match. The SBP tables are OCR extractions and have not been checked cell by cell against the PDFs.
 """
 
-order = ["part_a", "part_b", "part_c", "part_d", "part_e", "part_fg", "part_h"]
+order = ["part_a", "part_b", "part_c", "part_c2", "part_d", "part_e", "part_fg", "part_h"]
 body = "\n".join((PARTS / f"{p}.md").read_text(encoding="utf-8") for p in order)
 head = """# All-in-one analysis of the NovaBank data warehouse (real data)
 
 One document covering every real dataset in the warehouse that bears on Pakistan banking and payments: State Bank of Pakistan (SBP), BIS, World Bank (WDI, IDS, Remittance Prices, Global Findex), ECB, FRED and the PaySim simulator reference. Generated by `scripts/allinone/` (parts A to H, merged by `build_all_in_one.py`; data in `docs/_parts/*.json`). It extends and, where noted, corrects the earlier single-topic reports (`PAKISTAN_ANALYSIS.md`, `PAKISTAN_WDI_ANALYSIS.md`, `SBP_ANALYSIS.md`, `BIS_CPMI_ANALYSIS.md`, `PAYSIM_FRAUD_RESULTS.md`, `MACRO_PAYMENTS_JOIN.md`).
 
-**Contents:** A Banking-system health, B Macro economy, C Payment systems, D Cross-border finance, E Global context, F WDI screen, G Financial inclusion, H Data quality and reconciliation.
+**Contents:** A Banking-system health, B Macro economy, C Payment systems (FY2018), C2 Current payments (SBP quarterly, to Mar 2026), D Cross-border finance, E Global context, F WDI screen, G Financial inclusion, H Data quality and reconciliation.
 
 Dates: the warehouse files run to November 2026; "latest" means the latest value in the files, which differs by source.
 

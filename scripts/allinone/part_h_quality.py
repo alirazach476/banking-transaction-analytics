@@ -13,6 +13,7 @@ con = connect()
 D: dict = {}
 J = lambda n: json.load(open(PARTS / f"{n}.json"))
 A, B, C, Dd, E, FG = J("part_a"), J("part_b"), J("part_c"), J("part_d"), J("part_e"), J("part_fg")
+C2 = J("part_c2")
 
 # H1 SBP policy-rate tables agree
 def norm(d):
@@ -69,6 +70,8 @@ rows = [
     ("Advances: net advances + provisions = gross advances (SBP, 5 quarters)", f"max difference Rs {D['net_plus_provisions_equals_gross_max_diff_rs_m']} million", ps(D["net_plus_provisions_equals_gross_max_diff_rs_m"] < 2)),
     ("External debt: IDS total vs WDI", f"{Dd['reconciliation_ids_vs_wdi_total_debt_latest'][0]} vs {Dd['reconciliation_ids_vs_wdi_total_debt_latest'][1]} US$ bn; creditor rows sum to {Dd['ids_creditor_rows_sum_vs_total_pct']}%", "pass"),
     ("Bank branches per 100,000 adults: SBP count vs WDI ratio (2018)", f"{C['branches_per_100k_adults_sbp_vs_wdi'][0]} vs {C['branches_per_100k_adults_sbp_vs_wdi'][1]} (adults implied from WDI's ATM ratio)", "pass (9% apart)"),
+    ("SBP quarterly payments: channel rows vs published total", f"{len(C2['a4_quarters_passing_sum_check'])} of {len(C2['a4_sum_minus_total_vol_value'])} quarters within 0.5% (the other has no POS/e-commerce rows in the old layout)", "pass"),
+    ("SBP quarterly payments: my digital-channel total vs the digital total SBP states (Q3 FY26)", f"{C2['my_digital_q2_q3_vol_val'][2]:,.1f}m / Rs {C2['my_digital_q2_q3_vol_val'][3]}tn vs {C2['sbp_stated_digital_q2_q3_vol_val'][2]:,.1f}m / Rs {C2['sbp_stated_digital_q2_q3_vol_val'][3]}tn", ps(C2["digital_definition_matches_sbp"])),
     ("BIS CPMI: instruments add up to 'cashless payments, all'", "98.7% of 302 country-years within 5%", "pass"),
     ("Overnight repo (OCR daily) vs policy rate", f"within 1 pp in 94.2% of 139 months; mean gap +0.04 pp", "pass"),
     ("SBP fiscal-year CPI vs World Bank calendar-year CPI (FY12-FY19)", f"mean absolute gap {B['cpi_mean_abs_diff_pp']} pp (period definitions differ)", "explained, not equal"),
@@ -98,9 +101,9 @@ md = f"""## H. Data quality and reconciliation (closing the earlier caveats)
 - *Files not loaded:* {len(D['files_still_not_tables'])} of {D['catalog_files_total']} CSV/Excel files are still not tables: {', '.join(Path(p).name[:60] for p in D['files_still_not_tables'])} (the first is a SharePoint login page saved as .xlsx, not data; the second workbook contains no usable table).
 
 **What is still limited (not fixed)**
-- The only SBP payment-systems data in the warehouse is FY2017-18, so current Pakistani payment volumes, instant-payment growth and card counts cannot be analysed.
+- Current payments data (Part C2) covers formal banking and payment channels only (cash is excluded), the latest quarters are provisional, SBP revises earlier quarters (Q1 FY26 volume by +13.4% between reports), and the Q1 FY25 report was not obtained; the FY2018 review (Part C) is the only older SBP payments source.
 - SBP tables come from OCR. The identity checks above all pass, but an individual cell can still be wrong; no table was verified by hand against the PDF.
-- BIS country-level claims on Pakistan are mostly confidential; the Part D country list covers {Dd['visible_country_claims_share_pct']}% of claims.
+- BIS country-level claims on Pakistan are mostly confidential in the locational statistics ({Dd['visible_country_claims_share_pct']}% visible); the consolidated statistics show the headquarters country for {Dd['cbs_visible_share_pct']}% of claims, with the remainder (including the United States) not published. That residual cannot be recovered from BIS data.
 - The cause of the late-2024 advances surge, and of the Sep-2026 jump in SBP's reserves, is not given in any file.
 - The synthetic payments data is not linked to any real series, so no real macro effect on NovaBank-style payments can be claimed (the earlier join found no relationship, as expected from a generator with no macro inputs).
 - Not analysed because they are not relevant to Pakistan banking or payments: about 1,000 World Bank project datasets (for example Ukraine BOOST fiscal data, skills, energy and gas-flaring data), most of the 103 ECB datasets (country HICP detail, survey and securities data), the BIS effective-exchange-rate, global-liquidity and long-CPI tables, and the BIS locational data for other countries. They are loaded and profiled.

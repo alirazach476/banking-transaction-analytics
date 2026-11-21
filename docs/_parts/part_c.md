@@ -1,6 +1,6 @@
 ## C. Payment systems: Pakistan (SBP FY2018) against BIS, ECB and World Bank
 
-*The SBP payment-systems data in the warehouse is the Payment Systems Review for FY2017-18 (to June 2018), so it is eight years older than the rest of this analysis. It describes the structure of Pakistan's payments before later developments and must not be read as the current position.*
+*The SBP payment-systems data in the warehouse is the Payment Systems Review for FY2017-18 (to June 2018), so it is eight years older than the rest of this analysis. It describes the structure of Pakistan's payments in 2018; the current position, from SBP's quarterly reviews to March 2026, is in Part C2 below.*
 
 **What moved through the system in FY2018.** 1,224 million transactions worth Rs 559 trillion (volume +13.5% on FY17). The channel volumes add up exactly to the total (check performed). By volume, electronic banking was 61.8% and paper instruments 38.1%; by value, the large-value PRISM system was 64.6% (only 1.7 million transactions at an average of Rs 212 million each) and paper instruments still 26.9%. Electronic banking rose from 52.7% of non-PRISM volume in FY2014 to 61.8% in FY2018.
 
