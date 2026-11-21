@@ -47,3 +47,10 @@ Test suite: **72 passed** (see docs/PHASE10_BENCHMARKS.md).
 ## Limitations list: what was fixed and what remains (follow-up)
 - Fixed: current SBP payments data (quarterly reviews Q1 FY24-Q3 FY26, Part C2), BIS consolidated country detail (77% visible), ECB terminal benchmark, catalog now shows the two unloadable files as EXCLUDED with reasons (0 FAILED), API Docker image built and `/health` verified locally, leak-free PaySim model (PR-AUC 0.80).
 - Not fixable here: confidential BIS cells (the US and others), the SharePoint-login file, a hosted deployment (no target or credentials), and a GitHub Actions run (needs a push to the remote, which has not been done without confirmation).
+
+## Final status (follow-up 2)
+- The repository is public (https://github.com/alirazach476/banking-transaction-analytics). Commits are authored with the GitHub noreply address; a private email address that had been used for local commits was rewritten out of the unpushed history before the first push.
+- GitHub Actions: first runs exposed two clean-machine problems (`httpx` missing from requirements; `pandas` object-dtype rounding on empty reconciliation inputs); both were fixed and run 44879469781 passed all four jobs.
+- All charts are native in the React dashboard (`docs/DASHBOARD.md`); Tableau was dropped.
+- Real card-fraud evidence added (`docs/REAL_FRAUD_CREDITCARD.md`): XGBoost PR-AUC 0.79 (95% interval 0.72-0.85) on a time-ordered split of public European card data (132 test frauds); does not transfer to Pakistan.
+- Still not fixable: BIS cells that BIS does not publish (country detail for the US and about a quarter of consolidated claims); World Bank DR0045869 (classified Official Use Only, no public URL); a hosted deployment (no target or credentials).
