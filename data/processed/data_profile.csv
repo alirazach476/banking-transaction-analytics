@@ -9,7 +9,7 @@ synthetic_raw,transfers,data/source/core_banking/transfers.csv,15150,11,0.0,"fx_
 synthetic_raw,atm_transactions,data/source/atm_system/atm_transactions.csv,20200,11,0.0,"payments,inclusion",0.0,updated_at,2023-01-01 0,2025-12-30 2,False,False,False
 synthetic_raw,card_transactions,data/source/card_system/card_transactions.csv,40400,10,0.0,"fx_rates,payments,inclusion",0.001,updated_at,2023-01-01 0,2025-12-30 2,False,False,False
 synthetic_raw,payment_transactions,data/source/payments/payment_transactions.csv,495665,19,0.0,"fx_rates,payments,inclusion",0.052,card_expiry_date,2022-12-31,2030-01-01,False,False,False
-synthetic_raw,payment_lifecycle_events,data/source/payments/payment_lifecycle_events.csv,1928246,11,0.0,"fx_rates,payments",0.178,,,,False,False,False
+synthetic_raw,payment_lifecycle_events,data/source/payments/payment_lifecycle_events.csv,1928246,11,0.0,"fx_rates,payments",0.179,,,,False,False,False
 synthetic_raw,payment_settlements,data/source/payments/payment_settlements.csv,454881,7,0.0,"fx_rates,payments",0.0,,,,False,False,False
 synthetic_raw,fx_rates_synthetic,data/source/payments/fx_rates_synthetic.csv,9072,5,0.0,"fx_rates,interest_rates,payments",0.0,rate_date,2023-01-01,2026-07-19,False,False,False
 synthetic_clean,accounts,data/processed/clean_reference/accounts.csv,7500,9,0.11,"fx_rates,trade_bop,inclusion",0.107,open_date,2020-01-01,2024-02-08,False,False,False
@@ -17,16 +17,16 @@ synthetic_clean,customers,data/processed/clean_reference/customers.csv,5000,11,0
 synthetic_clean,payment_lifecycle_events,data/processed/clean_reference/payments/payment_lifecycle_events.csv,1918653,10,0.2,"fx_rates,payments",0.099,,,,False,False,False
 synthetic_clean,payment_transactions,data/processed/clean_reference/payments/payment_transactions.csv,493199,18,0.06,"fx_rates,payments,inclusion",0.0,card_expiry_date,2022-12-31,2030-01-01,False,False,False
 synthetic_clean,settlement_injected_truth,data/processed/clean_reference/payments/settlement_injected_truth.csv,9563,2,0.0,payments,0.0,,,,False,False,False
-synthetic_clean,transactions,data/processed/clean_reference/transactions.csv,101600,15,0.07,"fx_rates,inclusion",0.145,updated_at,2023-01-01 0,2025-12-30 2,False,False,False
+synthetic_clean,transactions,data/processed/clean_reference/transactions.csv,101600,15,0.07,"fx_rates,inclusion",0.146,updated_at,2023-01-01 0,2025-12-30 2,False,False,False
 synthetic_curated,transactions,synthetic_raw.transactions,101450,14,0.07,"fx_rates,inclusion",0.157,,,,False,False,False
 synthetic_curated,payment_transactions,synthetic_raw.payment_transactions,490242,16,0.06,"fx_rates,payments,inclusion",0.0,,,,False,False,False
-synthetic_curated,payment_lifecycle_events,synthetic_raw.payment_lifecycle_events,1903340,9,0.22,"fx_rates,payments",0.11,,,,False,False,False
-sbp,table_cells,data/external_downloads/sbp_text,27682,7,0.57,,0.048,,,,True,False,False
+synthetic_curated,payment_lifecycle_events,synthetic_raw.payment_lifecycle_events,1903340,9,0.22,"fx_rates,payments",0.109,,,,False,False,False
+sbp,table_cells,data/external_downloads/sbp_text,27682,7,0.57,,0.047,,,,True,False,False
 sbp,documents,data/external_downloads/sbp_text,40,5,0.6,,0.0,,,,False,False,False
 external_paysim,paysim_transactions,data/external_downloads/PS_20174392719_1491204439457_log.csv,6362620,11,0.73,trade_bop,0.0,,,,False,False,False
 external_findex,global_findex_2025,data/external_downloads/GlobalFindexDatabase2025.csv,8577,438,0.0,"credit_debt,payments,inclusion",0.0,_year,2011,2024,True,False,False
 bis,ws_cbpol,data/external_downloads/bis/WS_CBPOL_csv_flat__WS_CBPOL_csv_flat.csv,735156,18,0.06,interest_rates,0.145,time_periodtime_period_or_range,1945-01,2026-11-17,False,False,False
-bis,ws_cbs_pub,data/external_downloads/bis/WS_CBS_PUB_csv_flat__WS_CBS_PUB_csv_flat.csv,11691843,27,0.0,"fx_rates,interest_rates,money_banking,trade_bop",0.151,time_periodtime_period_or_range,1983-Q4,2026-Q2,False,False,False
+bis,ws_cbs_pub,data/external_downloads/bis/WS_CBS_PUB_csv_flat__WS_CBS_PUB_csv_flat.csv,11691843,27,0.0,"fx_rates,interest_rates,money_banking,trade_bop",0.15,time_periodtime_period_or_range,1983-Q4,2026-Q2,False,False,False
 bis,ws_cbta,data/external_downloads/bis/WS_CBTA_csv_flat__WS_CBTA_csv_flat.csv,146797,29,0.07,"fx_rates,fiscal",0.208,time_periodtime_period_or_range,1668,2026-Q2,False,False,False
 bis,ws_cpmi_cashless,data/external_downloads/bis/WS_CPMI_CASHLESS_csv_flat__WS_CPMI_CASHLESS_csv_flat.csv,19514,31,0.13,"interest_rates,payments",0.144,time_periodtime_period_or_range,2012,2024,False,False,False
 bis,ws_cpmi_ct1,data/external_downloads/bis/WS_CPMI_CT1_csv_flat__WS_CPMI_CT1_csv_flat.csv,68197,24,0.08,"interest_rates,payments,money_banking",0.083,time_periodtime_period_or_range,2012,2024,False,False,False
@@ -41,7 +41,7 @@ bis,ws_dsr,data/external_downloads/bis/WS_DSR_csv_flat__WS_DSR_csv_flat.csv,7182
 bis,ws_eer,data/external_downloads/bis/WS_EER_csv_flat__WS_EER_csv_flat.csv,1215609,16,0.06,fx_rates,0.188,time_periodtime_period_or_range,1964-01,2026-11-17,False,False,False
 bis,ws_gli,data/external_downloads/bis/WS_GLI_csv_flat__WS_GLI_csv_flat.csv,24603,21,0.05,"fx_rates,credit_debt",0.095,time_periodtime_period_or_range,1977-Q4,2026-Q2,False,False,False
 bis,ws_long_cpi,data/external_downloads/bis/WS_LONG_CPI_csv_flat__WS_LONG_CPI_csv_flat.csv,106225,17,0.06,inflation_prices,0.353,time_periodtime_period_or_range,1661,2026-09,False,False,False
-bis,ws_tc,data/external_downloads/bis/WS_TC_csv_flat__WS_TC_csv_flat.csv,188399,20,0.1,credit_debt,0.103,time_periodtime_period_or_range,1940-Q2,2026-Q1,False,False,False
+bis,ws_tc,data/external_downloads/bis/WS_TC_csv_flat__WS_TC_csv_flat.csv,188399,20,0.1,credit_debt,0.102,time_periodtime_period_or_range,1940-Q2,2026-Q1,False,False,False
 bis,ws_xru,data/external_downloads/bis/WS_XRU_csv_flat__WS_XRU_csv_flat.csv,1495022,16,0.06,fx_rates,0.062,time_periodtime_period_or_range,1791,2026-Q3,True,False,False
 worldbank,d0038272_dr0095372_data_dictionary_adm0_complete,data/external_downloads/worldbank/BOUNDARIES/0038272_DR0095372_Data_Dictionary.xlsx#ADM0_complete,10,2,0.0,money_banking,0.05,,,,False,False,False
 worldbank,d0038272_dr0095372_data_dictionary_adm0,data/external_downloads/worldbank/BOUNDARIES/0038272_DR0095372_Data_Dictionary.xlsx#ADM0,10,2,0.0,money_banking,0.05,,,,False,False,False
@@ -172,17 +172,17 @@ worldbank,d0038045_dr0046261_excel_employment_growth_from_i_growth_from,data/ext
 worldbank,d0038068_dr0046299_ukraine_boost_2018_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0046299_Ukraine_BOOST_2018_expenditure_EN_.xlsx#Sheet1,615107,20,0.2,"payments,money_banking,fiscal",0.03,year,2018.0,2018.0,False,False,False
 worldbank,d0038068_dr0046300_ukraine_boost_2015_2018_revenu_pivottable,data/external_downloads/worldbank/UKRAINE/0038068_DR0046300_Ukraine_BOOST_2015-2018_revenue_EN_.xlsx#PivotTable,65,6,0.67,"money_banking,fiscal",0.169,,,,False,False,False
 worldbank,d0038068_dr0046300_ukraine_boost_2015_2018_revenu_data,data/external_downloads/worldbank/UKRAINE/0038068_DR0046300_Ukraine_BOOST_2015-2018_revenue_EN_.xlsx#Data,929644,14,0.29,"payments,money_banking,fiscal",0.06,year,2015.0,2018.0,False,False,False
-worldbank,d0038068_dr0092902_ukraine_boost_2017_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092902_Ukraine_BOOST_2017_expenditure.xlsx#Sheet1,633751,20,0.2,"payments,money_banking,fiscal",0.029,year,2017.0,2017.0,False,False,False
-worldbank,d0038068_dr0092903_ukraine_boost_2016_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092903_Ukraine_BOOST_2016_expenditure.xlsx#Sheet1,692784,20,0.2,"payments,money_banking,fiscal",0.03,year,2016.0,2016.0,False,False,False
-worldbank,d0038068_dr0092904_ukraine_boost_2015_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092904_Ukraine_BOOST_2015_expenditure.xlsx#Sheet1,708236,20,0.2,"payments,money_banking,fiscal",0.029,year,2015.0,2015.0,False,False,False
+worldbank,d0038068_dr0092902_ukraine_boost_2017_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092902_Ukraine_BOOST_2017_expenditure.xlsx#Sheet1,633751,20,0.2,"payments,money_banking,fiscal",0.03,year,2017.0,2017.0,False,False,False
+worldbank,d0038068_dr0092903_ukraine_boost_2016_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092903_Ukraine_BOOST_2016_expenditure.xlsx#Sheet1,692784,20,0.2,"payments,money_banking,fiscal",0.031,year,2016.0,2016.0,False,False,False
+worldbank,d0038068_dr0092904_ukraine_boost_2015_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092904_Ukraine_BOOST_2015_expenditure.xlsx#Sheet1,708236,20,0.2,"payments,money_banking,fiscal",0.03,year,2015.0,2015.0,False,False,False
 worldbank,d0038068_dr0092905_ukraine_boost_2014_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092905_Ukraine_BOOST_2014_expenditure.xlsx#Sheet1,770495,26,0.38,"payments,money_banking,fiscal",0.001,year,2014.0,2014.0,False,False,False
 worldbank,d0038068_dr0092906_ukraine_boost_2013_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092906_Ukraine_BOOST_2013_expenditure.xlsx#Sheet1,831231,20,0.2,"payments,money_banking,fiscal",0.033,year,2013.0,2013.0,False,False,False
-worldbank,d0038068_dr0092907_ukraine_boost_2013_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092907_Ukraine_BOOST_2013_expenditure.xlsx#Sheet1,126151,15,0.27,"payments,money_banking,fiscal",0.067,year,2012.0,2012.0,False,False,False
-worldbank,d0038068_dr0092908_ukraine_boost_2009_11_expendit_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092908_Ukraine_BOOST_2009-11_expenditure.xlsx#Sheet1,955405,26,0.38,"payments,money_banking,fiscal",0.046,year,2009.0,2011.0,False,False,False
+worldbank,d0038068_dr0092907_ukraine_boost_2013_expenditure_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092907_Ukraine_BOOST_2013_expenditure.xlsx#Sheet1,126151,15,0.27,"payments,money_banking,fiscal",0.069,year,2012.0,2012.0,False,False,False
+worldbank,d0038068_dr0092908_ukraine_boost_2009_11_expendit_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092908_Ukraine_BOOST_2009-11_expenditure.xlsx#Sheet1,955405,26,0.38,"payments,money_banking,fiscal",0.045,year,2009.0,2011.0,False,False,False
 worldbank,d0038068_dr0092909_ukraine_boost_2007_2008_expend_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092909_Ukraine_BOOST_2007-2008_expenditure.xlsx#Sheet1,709502,26,0.38,"payments,money_banking,fiscal",0.047,year,2007.0,2008.0,False,False,False
-worldbank,d0038068_dr0092910_ukraie_boost_2003_2006_expendi_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092910_Ukraie_BOOST_2003-2006_expenditure.xlsx#Sheet1,694459,26,0.38,"payments,money_banking,fiscal",0.057,year,2003.0,2006.0,False,False,False
+worldbank,d0038068_dr0092910_ukraie_boost_2003_2006_expendi_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092910_Ukraie_BOOST_2003-2006_expenditure.xlsx#Sheet1,694459,26,0.38,"payments,money_banking,fiscal",0.055,year,2003.0,2006.0,False,False,False
 worldbank,d0038068_dr0092911_ukraine_boost_2019_21_expendit_sheet1,data/external_downloads/worldbank/UKRAINE/0038068_DR0092911_Ukraine_BOOST_2019-21_expenditure.xlsx#Sheet1,35744,18,0.22,"payments,money_banking,fiscal",0.057,year,2019.0,2021.0,False,False,False
-worldbank,d0038068_dr0093357_ukraine_boost_revenue_2005_14_c_2005_12,data/external_downloads/worldbank/UKRAINE/0038068_DR0093357_Ukraine_BOOST_revenue_2005-14.xlsx#2005-12,657781,14,0.29,"payments,money_banking,fiscal",0.036,year,2005.0,2012.0,False,False,False
+worldbank,d0038068_dr0093357_ukraine_boost_revenue_2005_14_c_2005_12,data/external_downloads/worldbank/UKRAINE/0038068_DR0093357_Ukraine_BOOST_revenue_2005-14.xlsx#2005-12,657781,14,0.29,"payments,money_banking,fiscal",0.037,year,2005.0,2012.0,False,False,False
 worldbank,d0038068_dr0093357_ukraine_boost_revenue_2005_14_c_2013_14,data/external_downloads/worldbank/UKRAINE/0038068_DR0093357_Ukraine_BOOST_revenue_2005-14.xlsx#2013-14,597233,14,0.29,"payments,money_banking,fiscal",0.0,year,2013.0,2014.0,False,False,False
 worldbank,d0038068_dr0095606_ukraine_boost_revenue_2019_24_c_2019_25,data/external_downloads/worldbank/UKRAINE/0038068_DR0095606_Ukraine_BOOST_revenue_2019-24.xlsx#2019-25,143348,29,0.66,"money_banking,fiscal",0.172,c_2019_executed,-10033.53,99994.39,False,False,False
 worldbank,d0038068_dr0095606_ukraine_boost_revenue_2019_24_legend,data/external_downloads/worldbank/UKRAINE/0038068_DR0095606_Ukraine_BOOST_revenue_2019-24.xlsx#LEGEND,9686,14,0.21,"money_banking,trade_bop,fiscal",0.564,c_13020200,11010100.0,50110000.0,False,False,False
@@ -272,7 +272,7 @@ worldbank,d0038632_dr0047737_c_2019_database_2021_update_c_14,data/external_down
 worldbank,d0038632_dr0047737_c_2019_database_2021_update_c_15,data/external_downloads/worldbank/UKRAINE/0038632_DR0047737_2019_Database_-_2021_Update.xlsx#15,92,159,0.0,"money_banking,pakistan",0.847,,,,False,False,True
 worldbank,d0038632_dr0047737_c_2019_database_2021_update_notes,data/external_downloads/worldbank/UKRAINE/0038632_DR0047737_2019_Database_-_2021_Update.xlsx#Notes,161,16,0.0,money_banking,0.415,,,,True,False,False
 worldbank,d0038647_dr0047775_mix_market_financial_performan_sheet1,data/external_downloads/worldbank/UKRAINE/0038647_DR0047775_MIX_Market_Financial_Performance_Dataset_in_Local_Currencies.xlsx#Sheet1,40478,274,0.98,"fx_rates,interest_rates,credit_debt,payments,money_banking,trade_bop,inclusion,labour,fiscal",0.725,fiscal_year,1999.0,2019.0,True,False,True
-worldbank,d0038647_dr0047776_mix_market_financial_performan_sheet1,data/external_downloads/worldbank/UKRAINE/0038647_DR0047776_MIX_Market_Financial_Performance_Dataset_in_USD.xlsx#Sheet1,41258,276,0.98,"fx_rates,interest_rates,credit_debt,payments,money_banking,trade_bop,inclusion,labour,fiscal",0.722,fiscal_year,1999.0,2020.0,True,False,True
+worldbank,d0038647_dr0047776_mix_market_financial_performan_sheet1,data/external_downloads/worldbank/UKRAINE/0038647_DR0047776_MIX_Market_Financial_Performance_Dataset_in_USD.xlsx#Sheet1,41258,276,0.98,"fx_rates,interest_rates,credit_debt,payments,money_banking,trade_bop,inclusion,labour,fiscal",0.719,fiscal_year,1999.0,2020.0,True,False,True
 worldbank,d0038647_dr0047777_mix_market_mfi_company_metadat_sheet1,data/external_downloads/worldbank/UKRAINE/0038647_DR0047777_MIX_Market_MFI_Company_Metadata.xlsx#Sheet1,3114,7,0.14,money_banking,0.003,,,,True,False,False
 worldbank,d0038647_dr0047778_mix_market_social_performance_sheet1,data/external_downloads/worldbank/UKRAINE/0038647_DR0047778_MIX_Market_Social_Performance_Dataset.xlsx#Sheet1,5155,207,0.99,"inflation_prices,interest_rates,credit_debt,payments,money_banking,gdp_growth,trade_bop,inclusion,labour,fiscal",0.106,fiscal_year,1999.0,2018.0,True,False,False
 worldbank,d0038647_dr0047780_mix_market_financial_performan_sheet1,data/external_downloads/worldbank/UKRAINE/0038647_DR0047780_MIX_Market_Financial_Performance_Field_Definitions.xlsx#Sheet1,270,5,0.0,money_banking,0.08,,,,False,False,False
@@ -306,7 +306,7 @@ worldbank,d0040685_dr0050737_data_list_of_variables,data/external_downloads/worl
 worldbank,d0040685_dr0050737_data_data,data/external_downloads/worldbank/UKRAINE/0040685_DR0050737_Data.xlsx#Data,509,141,0.74,money_banking,0.06,,,,False,False,False
 worldbank,d0041062_dr0051204_dataset_data,data/external_downloads/worldbank/UKRAINE/0041062_DR0051204_Dataset.xlsx#data,1760,36,0.78,"fx_rates,interest_rates,money_banking,gdp_growth",0.261,year,2004.0,2014.0,True,False,False
 worldbank,d0041690_dr0052062_excel_file_sheet1,data/external_downloads/worldbank/UKRAINE/0041690_DR0052062_Excel_file.xlsx#Sheet1,1386,18,0.78,money_banking,0.393,,,,True,False,False
-worldbank,d0042040_dr0052551_worldwide_exclusion_indicators_in,data/external_downloads/worldbank/UKRAINE/0042040_DR0052551_Worldwide_Exclusion_Indicators_WEI_.xlsx#in,27192,289,0.99,money_banking,0.316,year,1789.0,2020.0,True,False,False
+worldbank,d0042040_dr0052551_worldwide_exclusion_indicators_in,data/external_downloads/worldbank/UKRAINE/0042040_DR0052551_Worldwide_Exclusion_Indicators_WEI_.xlsx#in,27192,289,0.99,money_banking,0.322,year,1789.0,2020.0,True,False,False
 worldbank,d0042041_dr0052555_c_2_global_subnational_poverty_dictionary,data/external_downloads/worldbank/UKRAINE/0042041_DR0052555_2_-_Global_Subnational_Poverty_Atlas_GSAP_Data_-_AM26.xlsx#Dictionary,12,11,0.18,money_banking,0.515,,,,False,False,False
 worldbank,d0042041_dr0052555_c_2_global_subnational_poverty_data_2024,data/external_downloads/worldbank/UKRAINE/0042041_DR0052555_2_-_Global_Subnational_Poverty_Atlas_GSAP_Data_-_AM26.xlsx#Data 2024,1977,14,0.5,money_banking,0.009,baseyear,1992.0,2024.0,True,False,False
 worldbank,d0042041_dr0052555_c_2_global_subnational_poverty_data_2023,data/external_downloads/worldbank/UKRAINE/0042041_DR0052555_2_-_Global_Subnational_Poverty_Atlas_GSAP_Data_-_AM26.xlsx#Data 2023,1977,14,0.5,money_banking,0.009,baseyear,1992.0,2024.0,True,False,False
@@ -332,8 +332,8 @@ worldbank,d0038117_dr0046411_airports_geospatial_data,data/external_downloads/wo
 worldbank,d0038706_dr0048016_global_dataset,data/external_downloads/worldbank/UKRAINE/csv/0038706_DR0048016_Global_Dataset.csv,934407,20,0.75,money_banking,0.122,,,,False,False,False
 worldbank,d0038706_dr0048018_regional_dataset,data/external_downloads/worldbank/UKRAINE/csv/0038706_DR0048018_Regional_Dataset.csv,951048,6,0.33,money_banking,0.0,,,,False,False,False
 worldbank,d0039685_dr0049347_country_trade_summary_download,data/external_downloads/worldbank/UKRAINE/csv/0039685_DR0049347_Country_Trade_Summary_Download.csv,61,1,0.0,"money_banking,trade_bop",0.016,,,,False,False,False
-worldbank,d0040437_dr0050404_ave_of_ntm,data/external_downloads/worldbank/UKRAINE/csv/0040437_DR0050404_AVE_of_NTM.csv,53241,6,0.5,"money_banking,trade_bop",0.033,,,,True,False,False
-worldbank,d0040437_dr0050405_ave_of_ntm_by_importing_countr,data/external_downloads/worldbank/UKRAINE/csv/0040437_DR0050405_AVE_of_NTM_by_Importing_Countries.csv,146457,4,0.75,"money_banking,trade_bop",0.149,,,,False,False,False
+worldbank,d0040437_dr0050404_ave_of_ntm,data/external_downloads/worldbank/UKRAINE/csv/0040437_DR0050404_AVE_of_NTM.csv,53241,6,0.5,"money_banking,trade_bop",0.034,,,,True,False,False
+worldbank,d0040437_dr0050405_ave_of_ntm_by_importing_countr,data/external_downloads/worldbank/UKRAINE/csv/0040437_DR0050405_AVE_of_NTM_by_Importing_Countries.csv,146457,4,0.75,"money_banking,trade_bop",0.154,,,,False,False,False
 worldbank,d0040437_dr0050407_ave_estimates_at_gtap_sector,data/external_downloads/worldbank/UKRAINE/csv/0040437_DR0050407_AVE_estimates_at_GTAP_sector.csv,53241,6,0.5,"money_banking,trade_bop",0.033,,,,True,False,False
 worldbank,d0040437_dr0050408_ave_estimates_by_importing_cou,data/external_downloads/worldbank/UKRAINE/csv/0040437_DR0050408_AVE_estimates_by_importing_countries.csv,146457,4,0.75,"money_banking,trade_bop",0.153,,,,False,False,False
 worldbank,d0061361_dr0086426_ukraine_extract_of_hydrowaste,data/external_downloads/worldbank/UKRAINE/csv/0061361_DR0086426_Ukraine_extract_of_HydroWASTE_database_CSV_.csv,312,25,0.8,money_banking,0.095,,,,False,False,False
@@ -616,7 +616,7 @@ worldbank,d0037882_dr0096212_fmis_projects_database_july_20_metadata,data/extern
 worldbank,d0037882_dr0096212_fmis_projects_database_july_20_data,data/external_downloads/worldbank_collections/0037882/DR0096212_FMIS_Projects_Database_July_2026_.xlsx#Data,169,34,0.24,money_banking,0.0,concept_review_date,1984-06-11 0,2025-09-02 0,True,False,False
 worldbank,d0037882_dr0096212_fmis_projects_database_july_20_reference,data/external_downloads/worldbank_collections/0037882/DR0096212_FMIS_Projects_Database_July_2026_.xlsx#Reference,60,7,0.0,"interest_rates,money_banking",0.426,,,,False,False,False
 worldbank,d0037882_dr0096212_fmis_projects_database_july_20_ida,data/external_downloads/worldbank_collections/0037882/DR0096212_FMIS_Projects_Database_July_2026_.xlsx#IDA,74,4,0.0,money_banking,0.0,,,,True,False,False
-worldbank,d0037947_dr0094302_csv_file,data/external_downloads/worldbank_collections/0037947/DR0094302_CSV_file.csv,1048404,12,0.25,money_banking,0.196,_year,2006.0,2024.0,True,False,False
+worldbank,d0037947_dr0094302_csv_file,data/external_downloads/worldbank_collections/0037947/DR0094302_CSV_file.csv,1048404,12,0.25,money_banking,0.197,_year,2006.0,2024.0,True,False,False
 worldbank,d0038027_dr0046196_reference_cross_walk_of_linked,data/external_downloads/worldbank_collections/0038027/DR0046196_Reference_Cross-walk_of_LinkedIn_Industries_to_ISIC_Rev._4_.csv,148,8,0.38,money_banking,0.0,,,,False,False,False
 worldbank,d0038044_dr0046260_reference_cross_walk_of_linked,data/external_downloads/worldbank_collections/0038044/DR0046260_Reference_Cross-walk_of_LinkedIn_Industries_to_ISIC_Rev._4_.csv,148,8,0.38,money_banking,0.0,,,,False,False,False
 worldbank,d0038045_dr0046262_reference_cross_walk_of_linked,data/external_downloads/worldbank_collections/0038045/DR0046262_Reference_Cross-walk_of_LinkedIn_Industries_to_ISIC_Rev._4_.csv,148,8,0.38,money_banking,0.0,,,,False,False,False
@@ -788,7 +788,7 @@ worldbank,d0041104_dr0051295_excel_file_base_de_datos,data/external_downloads/wo
 worldbank,d0041166_dr0051377_data_csv,data/external_downloads/worldbank_collections/0041166/DR0051377_Data_csv_.csv,520,60,0.93,"credit_debt,money_banking,gdp_growth",0.187,_year,65.0,95.0,True,False,False
 worldbank,d0041175_dr0051399_mingov_peru_2016,data/external_downloads/worldbank_collections/0041175/DR0051399_MInGov_Peru_2016.csv,314,18,0.33,money_banking,0.07,,,,False,False,False
 worldbank,d0041182_dr0051413_dataset_sheet1,data/external_downloads/worldbank_collections/0041182/DR0051413_Dataset.xlsx#Sheet1,448,7,0.71,money_banking,0.0,year,2004.0,2007.0,True,False,False
-worldbank,d0041188_dr0051435_dataset,data/external_downloads/worldbank_collections/0041188/DR0051435_Dataset.csv,39588,44,0.98,"interest_rates,credit_debt,money_banking,gdp_growth,trade_bop",0.103,_year,1980.0,2006.0,False,False,False
+worldbank,d0041188_dr0051435_dataset,data/external_downloads/worldbank_collections/0041188/DR0051435_Dataset.csv,39588,44,0.98,"interest_rates,credit_debt,money_banking,gdp_growth,trade_bop",0.105,_year,1980.0,2006.0,False,False,False
 worldbank,d0041432_dr0051701_daily_peak_demand_in_mw_2009_c,data/external_downloads/worldbank_collections/0041432/DR0051701_Daily_Peak_Demand_in_MW_2009_csv_.csv,31,13,1.0,money_banking,0.017,,,,False,False,False
 worldbank,d0041432_dr0051702_daily_peak_demand_in_mw_2010_c,data/external_downloads/worldbank_collections/0041432/DR0051702_Daily_Peak_Demand_in_MW_2010_csv_.csv,31,13,0.92,money_banking,0.094,,,,False,False,False
 worldbank,d0041441_dr0051722_codebook_cambodia_main_dataset,data/external_downloads/worldbank_collections/0041441/DR0051722_Codebook_Cambodia.xlsx#Main dataset,659,7,0.29,money_banking,0.001,,,,False,False,False
@@ -904,19 +904,19 @@ worldbank,d0042066_dr0094835_sdmx_csv_file,data/external_downloads/worldbank_col
 worldbank,d0042083_dr0052663_argentina_crowdsourced_price_d,data/external_downloads/worldbank_collections/0042083/DR0052663_Argentina_Crowdsourced_Price_Data.csv,35631,41,0.51,"inflation_prices,fx_rates,money_banking",0.018,,,,False,False,False
 worldbank,d0042083_dr0052664_bangladesh_crowdsourced_price,data/external_downloads/worldbank_collections/0042083/DR0052664_Bangladesh_Crowdsourced_Price_Data.csv,104489,41,0.51,"inflation_prices,fx_rates,money_banking",0.043,,,,False,False,False
 worldbank,d0042083_dr0052665_colombia_crowdsourced_price_da,data/external_downloads/worldbank_collections/0042083/DR0052665_Colombia_Crowdsourced_Price_Data.csv,61706,41,0.54,"inflation_prices,fx_rates,money_banking",0.034,,,,False,False,False
-worldbank,d0042083_dr0052666_ghana_crowdsourced_price_data,data/external_downloads/worldbank_collections/0042083/DR0052666_Ghana_Crowdsourced_Price_Data.csv,27093,41,0.51,"inflation_prices,fx_rates,money_banking",0.06,,,,False,False,False
+worldbank,d0042083_dr0052666_ghana_crowdsourced_price_data,data/external_downloads/worldbank_collections/0042083/DR0052666_Ghana_Crowdsourced_Price_Data.csv,27093,41,0.51,"inflation_prices,fx_rates,money_banking",0.061,,,,False,False,False
 worldbank,d0042083_dr0052667_kenya_crowdsourced_price_data,data/external_downloads/worldbank_collections/0042083/DR0052667_Kenya_Crowdsourced_Price_Data.csv,89078,41,0.51,"inflation_prices,fx_rates,money_banking",0.042,,,,True,False,False
 worldbank,d0042083_dr0052668_cambodia_crowdsourced_price_da,data/external_downloads/worldbank_collections/0042083/DR0052668_Cambodia_Crowdsourced_Price_Data.csv,14102,41,0.51,"inflation_prices,fx_rates,money_banking",0.023,,,,False,False,False
 worldbank,d0042083_dr0052669_malawi_crowdsourced_price_data,data/external_downloads/worldbank_collections/0042083/DR0052669_Malawi_Crowdsourced_Price_Data.csv,36938,41,0.51,"inflation_prices,fx_rates,money_banking",0.02,,,,False,False,False
-worldbank,d0042083_dr0052670_nigeria_crowdsourced_price_dat,data/external_downloads/worldbank_collections/0042083/DR0052670_Nigeria_Crowdsourced_Price_Data.csv,138594,41,0.51,"inflation_prices,fx_rates,money_banking",0.057,,,,False,False,False
-worldbank,d0042083_dr0052671_peru_crowdsourced_price_data,data/external_downloads/worldbank_collections/0042083/DR0052671_Peru_Crowdsourced_Price_Data.csv,26961,41,0.51,"inflation_prices,fx_rates,money_banking",0.045,,,,False,False,False
+worldbank,d0042083_dr0052670_nigeria_crowdsourced_price_dat,data/external_downloads/worldbank_collections/0042083/DR0052670_Nigeria_Crowdsourced_Price_Data.csv,138594,41,0.51,"inflation_prices,fx_rates,money_banking",0.056,,,,False,False,False
+worldbank,d0042083_dr0052671_peru_crowdsourced_price_data,data/external_downloads/worldbank_collections/0042083/DR0052671_Peru_Crowdsourced_Price_Data.csv,26961,41,0.51,"inflation_prices,fx_rates,money_banking",0.044,,,,False,False,False
 worldbank,d0042083_dr0052672_philippines_crowdsourced_price,data/external_downloads/worldbank_collections/0042083/DR0052672_Philippines_Crowdsourced_Price_Data.csv,47278,41,0.51,"inflation_prices,fx_rates,money_banking",0.029,,,,False,False,False
 worldbank,d0042083_dr0052673_venezuela_crowdsourced_price_d,data/external_downloads/worldbank_collections/0042083/DR0052673_Venezuela_Crowdsourced_Price_Data.csv,134526,41,0.51,"inflation_prices,fx_rates,money_banking",0.025,,,,False,False,False
-worldbank,d0042083_dr0052674_vietnam_crowdsourced_price_dat,data/external_downloads/worldbank_collections/0042083/DR0052674_Vietnam_Crowdsourced_Price_Data.csv,130786,41,0.51,"inflation_prices,fx_rates,money_banking",0.025,,,,False,False,False
+worldbank,d0042083_dr0052674_vietnam_crowdsourced_price_dat,data/external_downloads/worldbank_collections/0042083/DR0052674_Vietnam_Crowdsourced_Price_Data.csv,130786,41,0.51,"inflation_prices,fx_rates,money_banking",0.024,,,,False,False,False
 worldbank,d0042083_dr0052675_metadata_for_crowdsourced_pric_crowdsourced,data/external_downloads/worldbank_collections/0042083/DR0052675_Metadata_for_Crowdsourced_Price_Data_Collection_Pilot.xlsx#CrowdsourcedPDCPilot02_metadata,41,4,0.0,"inflation_prices,money_banking",0.0,,,,False,False,False
 worldbank,d0042083_dr0052676_south_africa_crowdsourced_pric,data/external_downloads/worldbank_collections/0042083/DR0052676_South_Africa_Crowdsourced_Price_Data.csv,50459,41,0.51,"inflation_prices,fx_rates,money_banking",0.036,,,,False,False,False
 worldbank,d0042083_dr0052678_brazil_crowdsourced_price_data,data/external_downloads/worldbank_collections/0042083/DR0052678_Brazil_Crowdsourced_Price_Data.csv,196188,41,0.51,"inflation_prices,fx_rates,money_banking",0.028,,,,False,False,False
-worldbank,d0042083_dr0052679_indonesia_crowdsourced_price_d,data/external_downloads/worldbank_collections/0042083/DR0052679_Indonesia_Crowdsourced_Price_Data.csv,168630,41,0.51,"inflation_prices,fx_rates,money_banking",0.051,,,,False,False,False
+worldbank,d0042083_dr0052679_indonesia_crowdsourced_price_d,data/external_downloads/worldbank_collections/0042083/DR0052679_Indonesia_Crowdsourced_Price_Data.csv,168630,41,0.51,"inflation_prices,fx_rates,money_banking",0.052,,,,False,False,False
 worldbank,d0042282_dr0052900_malawi_energy_access_survey_da,data/external_downloads/worldbank_collections/0042282/DR0052900_Malawi_Energy_Access_Survey_Data.csv,71,91,0.36,"inflation_prices,payments,money_banking,trade_bop,fiscal",0.119,_month,12.0,12.0,False,False,False
 worldbank,d0042286_dr0052911_july_2017_energy_indicators_me_algeria,data/external_downloads/worldbank_collections/0042286/DR0052911_July_2017_Energy_Indicators_MENA_-_Excel.xlsx#Algeria,102,15,0.67,money_banking,0.558,c_2017,12.0,74.45597469,False,False,False
 worldbank,d0042286_dr0052911_july_2017_energy_indicators_me_bahrain,data/external_downloads/worldbank_collections/0042286/DR0052911_July_2017_Energy_Indicators_MENA_-_Excel.xlsx#Bahrain,102,15,0.67,money_banking,0.559,c_2017,0.12,92.029751813,False,False,False
@@ -946,7 +946,7 @@ worldbank,d0042309_dr0095739_mingov_botswana,data/external_downloads/worldbank_c
 worldbank,d0042340_dr0053060_mingov_zambia_2017,data/external_downloads/worldbank_collections/0042340/DR0053060_MinGov_Zambia_2017.csv,314,18,0.33,money_banking,0.07,,,,False,False,False
 worldbank,d0042345_dr0053071_metadata_sheet1,data/external_downloads/worldbank_collections/0042345/DR0053071_Metadata.xlsx#Sheet1,41,3,0.0,money_banking,0.309,,,,False,False,False
 worldbank,d0064167_dr0090882_harmonized_earthquake_catalogu,data/external_downloads/worldbank_collections/0064167/DR0090882_Harmonized_Earthquake_Catalogue_for_Central_Asia.csv,77376,11,0.82,money_banking,0.001,_year,-2000.0,957.0,False,False,False
-worldbank,d0064167_dr0090883_declustered_harmonized_earthqu,data/external_downloads/worldbank_collections/0064167/DR0090883_Declustered_Harmonized_Earthquake_Catalogue_for_Central_Asia.csv,23817,11,0.82,money_banking,0.001,_year,-2000.0,957.0,False,False,False
+worldbank,d0064167_dr0090883_declustered_harmonized_earthqu,data/external_downloads/worldbank_collections/0064167/DR0090883_Declustered_Harmonized_Earthquake_Catalogue_for_Central_Asia.csv,23817,11,0.82,money_banking,0.003,_year,-2000.0,957.0,False,False,False
 worldbank,d0064183_dr0090911_eqosogi_dataset_2021_about_data,data/external_downloads/worldbank_collections/0064183/DR0090911_EQOSOGI_Dataset_2021_.xlsx#About Data,12,2,0.0,money_banking,0.25,,,,False,False,False
 worldbank,d0064183_dr0090911_eqosogi_dataset_2021_eqosogi2021,data/external_downloads/worldbank_collections/0064183/DR0090911_EQOSOGI_Dataset_2021_.xlsx#EQOSOGI2021,16,104,0.94,"interest_rates,credit_debt,payments,money_banking,inclusion,labour",0.0,c_2_4_are_there_any_laws_and_or_regulations_that_mandate_the_revision_of_national_textbooks_national_curriculum_in_primary_and_secondary_education_to_eliminate_discriminatory_language_homophobic_or_transphobic_language_for_example,0.0,1.0,False,False,False
 worldbank,d0064204_dr0090935_global_database_of_country_lea_clo_metadata,data/external_downloads/worldbank_collections/0064204/DR0090935_Global_Database_of_Country_Learning_Outcomes_CLO_.xls#clo_metadata,2455,5,0.0,money_banking,0.383,,,,False,False,False
@@ -1058,12 +1058,12 @@ worldbank,d0037898_dr0095523_remittance_prices_worldwide_co_legend,data/external
 worldbank,d0037898_dr0095523_remittance_prices_worldwide_co_countries,data/external_downloads/worldbank_relevant/0037898/DR0095523_Remittance_Prices_Worldwide_Complete_Dataset_.xlsx#Countries,215,6,0.0,"inflation_prices,credit_debt,payments,money_banking",0.0,,,,True,False,False
 worldbank,d0037898_dr0095523_remittance_prices_worldwide_co_dataset_up_t,data/external_downloads/worldbank_relevant/0037898/DR0095523_Remittance_Prices_Worldwide_Complete_Dataset_.xlsx#Dataset (up to Q1 2016),49491,41,0.34,"inflation_prices,fx_rates,interest_rates,credit_debt,payments,money_banking",0.042,period,2011_1Q,2016_1Q,True,False,False
 worldbank,d0037898_dr0095523_remittance_prices_worldwide_co_dataset_from,data/external_downloads/worldbank_relevant/0037898/DR0095523_Remittance_Prices_Worldwide_Complete_Dataset_.xlsx#Dataset (from Q2 2016),204469,47,0.32,"inflation_prices,fx_rates,interest_rates,credit_debt,payments,money_banking",0.153,period,2016_2Q,2025_3Q,True,False,False
-worldbank,d0038015_dr0092201_bulk_download_file_debtor_coun_a_d,data/external_downloads/worldbank_relevant/0038015/DR0092201_Bulk_Download_File_-_Debtor_Countries_A_to_D_Counterpart-Area_All_XLSX_.xlsx#A_D,724923,70,0.91,"credit_debt,money_banking",0.216,c_1970,-0.1324,9998510.4,True,False,False
-worldbank,d0038015_dr0092202_bulk_download_file_debtor_coun_e_k,data/external_downloads/worldbank_relevant/0038015/DR0092202_Bulk_Download_File_-_Debtor_Countries_E_to_K_Counterpart-Area_All_XLSX_.xlsx#E_K,816219,70,0.91,"credit_debt,money_banking",0.219,c_1970,-0.1187,99960.1,True,False,False
-worldbank,d0038015_dr0092203_bulk_download_file_debtor_coun_l_m,data/external_downloads/worldbank_relevant/0038015/DR0092203_Bulk_Download_File_-_Debtor_Countries_L_to_M_Counterpart-Area_All_XLSX_.xlsx#L_M,795219,70,0.91,"credit_debt,money_banking",0.23,c_1970,-0.105295624,999969000.0,True,False,False
+worldbank,d0038015_dr0092201_bulk_download_file_debtor_coun_a_d,data/external_downloads/worldbank_relevant/0038015/DR0092201_Bulk_Download_File_-_Debtor_Countries_A_to_D_Counterpart-Area_All_XLSX_.xlsx#A_D,724923,70,0.91,"credit_debt,money_banking",0.214,c_1970,-0.1324,9998510.4,True,False,False
+worldbank,d0038015_dr0092202_bulk_download_file_debtor_coun_e_k,data/external_downloads/worldbank_relevant/0038015/DR0092202_Bulk_Download_File_-_Debtor_Countries_E_to_K_Counterpart-Area_All_XLSX_.xlsx#E_K,816219,70,0.91,"credit_debt,money_banking",0.223,c_1970,-0.1187,99960.1,True,False,False
+worldbank,d0038015_dr0092203_bulk_download_file_debtor_coun_l_m,data/external_downloads/worldbank_relevant/0038015/DR0092203_Bulk_Download_File_-_Debtor_Countries_L_to_M_Counterpart-Area_All_XLSX_.xlsx#L_M,795219,70,0.91,"credit_debt,money_banking",0.228,c_1970,-0.105295624,999969000.0,True,False,False
 worldbank,d0038015_dr0092204_bulk_download_file_debtor_coun_r_u,data/external_downloads/worldbank_relevant/0038015/DR0092204_Bulk_Download_File_-_Debtor_Countries_R_to_U_Counterpart-Area_All_XLSX_.xlsx#R_U,713658,70,0.0,"credit_debt,money_banking",0.0,c_1970,-0.2495,NULL,True,False,False
-worldbank,d0038015_dr0092205_bulk_download_file_debtor_coun_v_z,data/external_downloads/worldbank_relevant/0038015/DR0092205_Bulk_Download_File_-_Debtor_Countries_V_to_Z_Counterpart-Area_All_XLSX_.xlsx#V_Z,201850,70,0.91,"credit_debt,money_banking",0.166,c_1970,-0.308,9924643.2,True,False,False
-worldbank,d0038015_dr0093225_bulk_download_file_debtor_coun_n_q,data/external_downloads/worldbank_relevant/0038015/DR0093225_Bulk_Download_File_-_Debtor_Countries_N_to_Q_Counterpart-Area_All_XLSX_.xlsx#N_Q,228174,70,0.91,"credit_debt,money_banking",0.129,c_1970,-0.2756,999189.9,True,False,False
+worldbank,d0038015_dr0092205_bulk_download_file_debtor_coun_v_z,data/external_downloads/worldbank_relevant/0038015/DR0092205_Bulk_Download_File_-_Debtor_Countries_V_to_Z_Counterpart-Area_All_XLSX_.xlsx#V_Z,201850,70,0.91,"credit_debt,money_banking",0.165,c_1970,-0.308,9924643.2,True,False,False
+worldbank,d0038015_dr0093225_bulk_download_file_debtor_coun_n_q,data/external_downloads/worldbank_relevant/0038015/DR0093225_Bulk_Download_File_-_Debtor_Countries_N_to_Q_Counterpart-Area_All_XLSX_.xlsx#N_Q,228174,70,0.91,"credit_debt,money_banking",0.133,c_1970,-0.2756,999189.9,True,False,False
 worldbank,d0038015_dr0096040_bulk_download_file_excel_long_data,data/external_downloads/worldbank_relevant/0038015/DR0096040_Bulk_Download_File_Excel_-_long_format_.xlsx#Data,8576,582,0.99,"fx_rates,money_banking",0.407,year,1970.0,2033.0,True,False,False
 worldbank,d0038015_dr0096040_bulk_download_file_excel_long_country_metad,data/external_downloads/worldbank_relevant/0038015/DR0096040_Bulk_Download_File_Excel_-_long_format_.xlsx#Country - Metadata,134,30,0.2,"inflation_prices,fx_rates,interest_rates,credit_debt,payments,money_banking,trade_bop,inclusion,fiscal",0.192,national_accounts_base_year,1990,Original cha,True,False,False
 worldbank,d0038015_dr0096040_bulk_download_file_excel_long_series_metada,data/external_downloads/worldbank_relevant/0038015/DR0096040_Bulk_Download_File_Excel_-_long_format_.xlsx#Series - Metadata,577,12,0.0,money_banking,0.249,periodicity,Annual,Annual,False,False,False
@@ -1157,11 +1157,11 @@ ecb,rpp,data/external_downloads/ecb/RPP.csv,11028,33,0.12,,0.342,time_period,197
 ecb,rir,data/external_downloads/ecb/RIR.csv,8798,33,0.12,fx_rates,0.225,time_period,1995-12,2009-11,False,False,False
 ecb,pcn,data/external_downloads/ecb/PCN.csv,18649,27,0.11,,0.323,time_period,2000,2025-S2,False,False,False
 ecb,irs,data/external_downloads/ecb/IRS.csv,13925,35,0.09,fx_rates,0.363,time_period,1983-05,2026-10,False,False,False
-ecb,psn,data/external_downloads/ecb/PSN.csv,28489,28,0.11,,0.298,time_period,2000,2025-S2,False,False,False
+ecb,psn,data/external_downloads/ecb/PSN.csv,28489,28,0.11,,0.299,time_period,2000,2025-S2,False,False,False
 ecb,resh,data/external_downloads/ecb/RESH.csv,13750,36,0.08,inflation_prices,0.356,time_period,1905,2026-Q1,False,False,False
-ecb,pis,data/external_downloads/ecb/PIS.csv,29584,32,0.12,,0.287,time_period,2022-S1,2025-S2,False,False,False
+ecb,pis,data/external_downloads/ecb/PIS.csv,29584,32,0.12,,0.288,time_period,2022-S1,2025-S2,False,False,False
 ecb,sur,data/external_downloads/ecb/SUR.csv,19040,33,0.09,,0.364,time_period,2004-Q1,2025-Q1,False,False,False
-ecb,pfbr,data/external_downloads/ecb/PFBR.csv,20758,36,0.08,"fx_rates,interest_rates",0.334,time_period,2008-Q1,2026-Q2,False,False,False
+ecb,pfbr,data/external_downloads/ecb/PFBR.csv,20758,36,0.08,"fx_rates,interest_rates",0.335,time_period,2008-Q1,2026-Q2,False,False,False
 ecb,icpf,data/external_downloads/ecb/ICPF.csv,21176,36,0.11,inflation_prices,0.306,time_period,2008,2016-Q3,False,False,False
 ecb,st1,data/external_downloads/ecb/ST1.csv,41823,31,0.13,trade_bop,0.304,time_period,1970-Q1,2014-Q2,False,False,False
 ecb,ecs,data/external_downloads/ecb/ECS.csv,30240,34,0.09,,0.412,time_period,2004-Q1,2026-Q3,False,False,False
@@ -1176,9 +1176,9 @@ ecb,lci,data/external_downloads/ecb/LCI.csv,85148,26,0.15,,0.231,time_period,200
 ecb,mfi,data/external_downloads/ecb/MFI.csv,164685,28,0.18,,0.362,time_period,1988-12,2026-10,False,False,False
 ecb,pst,data/external_downloads/ecb/PST.csv,123053,32,0.12,fx_rates,0.276,time_period,2000,2025-S2,False,False,False
 ecb,fm,data/external_downloads/ecb/FM.csv,94044,41,0.1,"inflation_prices,fx_rates,interest_rates",0.494,time_period,1900-01,2026-Q3,False,False,False
-ecb,pdd,data/external_downloads/ecb/PDD.csv,154383,32,0.12,,0.276,time_period,2000,2026-Q2,False,False,False
-ecb,rtd,data/external_downloads/ecb/RTD.csv,81863,32,0.09,inflation_prices,0.361,time_period,1913-01,2026-Q3,False,False,False
-ecb,emms,data/external_downloads/ecb/EMMS.csv,81670,40,0.07,fx_rates,0.188,settl_period,DEC,_Z,False,False,False
+ecb,pdd,data/external_downloads/ecb/PDD.csv,154383,32,0.12,,0.277,time_period,2000,2026-Q2,False,False,False
+ecb,rtd,data/external_downloads/ecb/RTD.csv,81863,32,0.09,inflation_prices,0.362,time_period,1913-01,2026-Q3,False,False,False
+ecb,emms,data/external_downloads/ecb/EMMS.csv,81670,40,0.07,fx_rates,0.187,settl_period,DEC,_Z,False,False,False
 ecb,rai,data/external_downloads/ecb/RAI.csv,123996,29,0.1,fx_rates,0.306,time_period,1997-09,2026-Q3,False,False,False
 ecb,pem,data/external_downloads/ecb/PEM.csv,186656,33,0.12,,0.274,time_period,2000,2026-Q2,False,False,False
 ecb,cbd,data/external_downloads/ecb/CBD.csv,116213,32,0.12,fx_rates,0.257,time_period,2007,2014-S1,False,False,False
@@ -1186,7 +1186,7 @@ ecb,ilm,data/external_downloads/ecb/ILM.csv,218561,31,0.1,fx_rates,0.393,time_pe
 ecb,sesfod,data/external_downloads/ecb/SESFOD.csv,306900,29,0.1,,0.207,time_period,2013-Q1,2026-Q3,False,False,False
 ecb,ces,data/external_downloads/ecb/CES.csv,200828,26,0.12,,0.231,time_period,2020-04,2026-Q3,False,False,False
 ecb,bkn,data/external_downloads/ecb/BKN.csv,192746,33,0.09,,0.364,time_period,2000-01,2026-S1,False,False,False
-ecb,pct,data/external_downloads/ecb/PCT.csv,285937,33,0.12,,0.268,time_period,2000,2026-Q2,False,False,False
+ecb,pct,data/external_downloads/ecb/PCT.csv,285937,33,0.12,,0.269,time_period,2000,2026-Q2,False,False,False
 ecb,trd,data/external_downloads/ecb/TRD.csv,296440,34,0.12,,0.359,time_period,2002-01,2026-09,False,False,False
 ecb,iess,data/external_downloads/ecb/IESS.csv,322614,27,0.11,,0.259,time_period,1983-Q1,2026-Q2,False,False,False
 ecb,st3,data/external_downloads/ecb/ST3.csv,288915,31,0.1,trade_bop,0.293,time_period,1999,2014-Q1,False,False,False
@@ -1195,19 +1195,19 @@ ecb,bsp,data/external_downloads/ecb/BSP.csv,527389,37,0.08,fx_rates,0.357,time_p
 ecb,pay,data/external_downloads/ecb/PAY.csv,752668,30,0.1,,0.288,time_period,2000,2026-Q2,False,False,False
 ecb,shs,data/external_downloads/ecb/SHS.csv,324680,39,0.08,credit_debt,0.205,time_period,2013-Q4,2022-Q1,False,False,False
 ecb,pmc,data/external_downloads/ecb/PMC.csv,541854,30,0.1,,0.302,time_period,2022-Q1,2026-Q2,False,False,False
-ecb,bop,data/external_downloads/ecb/BOP.csv,452152,31,0.1,trade_bop,0.297,time_period,1980-Q1,2014-Q2,False,False,False
+ecb,bop,data/external_downloads/ecb/BOP.csv,452152,31,0.1,trade_bop,0.298,time_period,1980-Q1,2014-Q2,False,False,False
 ecb,icb,data/external_downloads/ecb/ICB.csv,442428,36,0.08,"fx_rates,interest_rates",0.335,time_period,2008-Q1,2026-Q2,False,False,False
 ecb,fvc,data/external_downloads/ecb/FVC.csv,399286,39,0.08,"inflation_prices,fx_rates",0.365,time_period,2009-Q4,2026-Q3,False,False,False
 ecb,ptt,data/external_downloads/ecb/PTT.csv,714601,31,0.16,,0.275,time_period,2000,2025-S2,False,False,False
 ecb,dwa,data/external_downloads/ecb/DWA.csv,1133146,28,0.11,inclusion,0.215,time_period,2009-Q1,2026-Q1,False,False,False
-ecb,sup,data/external_downloads/ecb/SUP.csv,761184,35,0.09,,0.292,time_period,2015-Q2,2026-S1,False,False,False
+ecb,sup,data/external_downloads/ecb/SUP.csv,761184,35,0.09,,0.291,time_period,2015-Q2,2026-S1,False,False,False
 ecb,stbs,data/external_downloads/ecb/STBS.csv,930263,34,0.09,,0.365,time_period,1970-Q1,2026-Q3,False,False,False
 ecb,bls,data/external_downloads/ecb/BLS.csv,1240404,28,0.11,money_banking,0.197,time_period,2003-Q1,2026-Q4,False,False,False
 ecb,mir,data/external_downloads/ecb/MIR.csv,1731849,37,0.14,"fx_rates,interest_rates",0.354,time_period,1980-01,2026-09,False,False,False
 ecb,exr,data/external_downloads/ecb/EXR.csv,3556259,33,0.09,fx_rates,0.403,time_period,1981-09,2026-S1,False,False,False
 ecb,cbd2,data/external_downloads/ecb/CBD2.csv,1935988,40,0.1,fx_rates,0.261,time_period,2007,2026-Q2,False,False,False
-ecb,icp,data/external_downloads/ecb/ICP.csv,6662098,33,0.12,,0.375,time_period,1985-01,2025-Q4,False,False,False
-ecb,bp6,data/external_downloads/ecb/BP6.csv,5186255,35,0.09,"fx_rates,inclusion",0.173,time_period,1971-01,2022-Q4,False,False,False
+ecb,icp,data/external_downloads/ecb/ICP.csv,6662098,33,0.12,,0.376,time_period,1985-01,2025-Q4,False,False,False
+ecb,bp6,data/external_downloads/ecb/BP6.csv,5186255,35,0.09,"fx_rates,inclusion",0.174,time_period,1971-01,2022-Q4,False,False,False
 ecb,safe,data/external_downloads/ecb/SAFE.csv,5524129,34,0.18,,0.265,time_period,2009-S1,2026-S1,False,False,False
 ecb,bsi,data/external_downloads/ecb/BSI.csv,8294339,37,0.08,fx_rates,0.354,time_period,1980-01,2026-Q3,False,False,False
 ecb,hicp,data/external_downloads/ecb/HICP.csv,13366421,35,0.09,,0.413,time_period,1947-01,2026-10,False,False,False
@@ -1239,7 +1239,7 @@ ecb,fxi,data/external_downloads/ecb/FXI.csv,113208,26,0.19,fx_rates,0.231,time_p
 ecb,ccp,data/external_downloads/ecb/CCP.csv,88160,29,0.1,fx_rates,0.3,time_period,2006,2025,False,False,False
 ecb,mpd,data/external_downloads/ecb/MPD.csv,193511,33,0.09,,0.455,time_period,1995,2028-Q4,False,False,False
 ecb,ptn,data/external_downloads/ecb/PTN.csv,182150,28,0.14,,0.307,time_period,2000,2025-S2,False,False,False
-ecb,ppc,data/external_downloads/ecb/PPC.csv,230012,32,0.12,,0.288,time_period,2010,2025-S2,False,False,False
+ecb,ppc,data/external_downloads/ecb/PPC.csv,230012,32,0.12,,0.287,time_period,2010,2025-S2,False,False,False
 ecb,ciss,data/external_downloads/ecb/CISS.csv,312578,41,0.07,"inflation_prices,fx_rates,interest_rates",0.49,time_period,1973-01-05,2026-11-19,False,False,False
 ecb,sst,data/external_downloads/ecb/SST.csv,329415,28,0.11,fx_rates,0.306,time_period,2001,2025,False,False,False
 ecb,idcm,data/external_downloads/ecb/IDCM.csv,546524,41,0.1,"inflation_prices,fx_rates,inclusion,fiscal",0.287,time_period,1947-Q1,2026-Q3,False,False,False
@@ -1343,13 +1343,13 @@ worldbank,d0040667_dr0050703_data_bown_reynolds_tftd_july_2_wto_value_re,data/ex
 worldbank,d0040667_dr0050703_data_bown_reynolds_tftd_july_2_wto_volumes,data/external_downloads/worldbank_relevant/0040667/_unzipped/DR0050703_Data__Bown-Reynolds-TFTD-July-2014-Database.xls#WTO_VOLUMES,36820,12,0.08,money_banking,0.0,,,,True,False,False
 worldbank,d0040667_dr0050703_data_bown_reynolds_tftd_july_2_wto_unit_pri,data/external_downloads/worldbank_relevant/0040667/_unzipped/DR0050703_Data__Bown-Reynolds-TFTD-July-2014-Database.xls#WTO_UNIT_PRICES,36820,12,0.08,"inflation_prices,money_banking",0.0,,,,True,False,False
 worldbank,d0037712_dr0095335_csv_file_wdifootnote,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095335_CSV_file__WDIfootnote.csv,850060,4,0.0,money_banking,0.0,_year,YR1960,yr2006    ,True,False,False
-worldbank,d0037740_dr0045613_bulk_download_file_csv_sddscsv,data/external_downloads/worldbank_relevant/0037740/_unzipped/DR0045613_Bulk_Download_File_CSV___SDDSCSV.csv,234000,116,0.97,money_banking,0.904,,,,True,False,True
-worldbank,d0037712_dr0095336_excel_file_wdiexcel_data,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095336_Excel_file__WDIEXCEL.xlsx#Data,398468,70,0.94,money_banking,0.641,c_1960,-0.000126729,9e-06,True,False,True
+worldbank,d0037740_dr0045613_bulk_download_file_csv_sddscsv,data/external_downloads/worldbank_relevant/0037740/_unzipped/DR0045613_Bulk_Download_File_CSV___SDDSCSV.csv,234000,116,0.97,money_banking,0.899,,,,True,False,True
+worldbank,d0037712_dr0095336_excel_file_wdiexcel_data,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095336_Excel_file__WDIEXCEL.xlsx#Data,398468,70,0.94,money_banking,0.634,c_1960,-0.000126729,9e-06,True,False,True
 worldbank,d0037712_dr0095336_excel_file_wdiexcel_country,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095336_Excel_file__WDIEXCEL.xlsx#Country,265,28,0.14,"inflation_prices,fx_rates,interest_rates,credit_debt,payments,money_banking,trade_bop,inclusion,fiscal",0.282,national_accounts_base_year,1990,Original cha,True,False,False
 worldbank,d0037712_dr0095336_excel_file_wdiexcel_series,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095336_Excel_file__WDIEXCEL.xlsx#Series,1498,15,0.0,money_banking,0.249,periodicity,Ad hoc [adho,Triennial,False,False,False
 worldbank,d0037712_dr0095336_excel_file_wdiexcel_country_series,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095336_Excel_file__WDIEXCEL.xlsx#country-series,7940,3,0.0,money_banking,0.0,,,,True,False,False
 worldbank,d0037712_dr0095336_excel_file_wdiexcel_series_time,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095336_Excel_file__WDIEXCEL.xlsx#series-time,146,3,0.0,money_banking,0.0,year,YR1990,YR2025,False,False,False
 worldbank,d0037712_dr0095336_excel_file_wdiexcel_footnote,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095336_Excel_file__WDIEXCEL.xlsx#footnote,850060,4,0.0,money_banking,0.0,year,YR1960,yr2006,True,False,False
 sbp,rows_parsed,data/external_downloads/sbp_text,6953,30,0.73,,0.647,,,,True,False,True
-worldbank,d0037712_dr0095335_csv_file_wdicsv,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095335_CSV_file__WDICSV.csv,398468,70,0.94,money_banking,0.635,,,,True,False,True
+worldbank,d0037712_dr0095335_csv_file_wdicsv,data/external_downloads/worldbank_relevant/0037712/_unzipped/DR0095335_CSV_file__WDICSV.csv,398468,70,0.94,money_banking,0.639,,,,True,False,True
 worldbank,d0042083_dr0052677_all_countries_crowdsourced_pri,data/external_downloads/worldbank_relevant/0042083/_unzipped/DR0052677_All_Countries_Crowdsourced_Price_Data__AllPilotCountries(15)-CrowdsourcedPDCPilot02_final_obs_all_clean.csv,1262459,41,0.51,"inflation_prices,fx_rates,money_banking",0.037,,,,False,False,False
