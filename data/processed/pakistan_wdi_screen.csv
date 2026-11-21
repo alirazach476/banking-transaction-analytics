@@ -1,0 +1,520 @@
+ic,name,year,value,pctl,n_countries,chg10_pct,theme
+FX.OWN.TOTL.OL.ZS,"Account ownership at a financial institution or with a mobile-money-service provider, older adults (% of population ages 25+)",2024,28.5427198593614,3.6231884057971016,139,120.31371477866595,finance & payments
+NY.ADJ.NNAT.GN.ZS,Adjusted savings: net national savings (% of GNI),2021,10.1088177211714,55.639097744360896,134,-5.448423524198322,other
+FB.CBK.BRCH.P5,"Commercial bank branches (per 100,000 adults)",2024,11.150833388396,45.39473684210527,153,26.051791972114223,finance & payments
+BX.GSR.CMCP.ZS,"Communications, computer, etc. (% of service exports, BoP)",2025,73.8938579775238,98.50746268656717,135,6.906791092604972,economy & trade
+AG.PRD.CROP.XD,Crop production index (2014-2016 = 100),2024,121.86,73.29842931937172,192,18.771929824561408,other
+TX.UVI.MRCH.XD.WD,Export unit value index (2015 = 100),2025,103.6,7.462686567164178,202,3.5999999999999943,economy & trade
+NE.EXP.GNFS.KD.ZG,Exports of goods and services (annual % growth),2025,0.606800979103923,27.34375,129,115.84606395841841,economy & trade
+NE.CON.TOTL.ZS,Final consumption expenditure (% of GDP),2025,92.94031577502848,81.81818181818183,133,2.2129593660445575,economy & trade
+AG.LND.FRST.ZS,Forest area (% of land area),2024,4.114349833955998,12.980769230769232,209,3.5880737210996108,energy & environment
+NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2025,6573.416133699246,22.282608695652172,185,46.719421074174775,economy & trade
+AG.PRD.LVSK.XD,Livestock production index (2014-2016 = 100),2024,134.86,83.15789473684211,191,37.73873965887041,other
+TX.MNF.TECH.ZS.UN,Medium and high-tech exports (% manufactured exports),2024,10.6009575586093,19.205298013245034,152,3.6653073493323447,economy & trade
+SH.STA.TRAF.P5,"Mortality caused by road traffic injury (per 100,000 population)",2019,13.0,42.032967032967036,183,-10.344827586206897,health
+SH.VAC.TTNS.ZS,Newborns protected against tetanus (%),2024,85.0,35.57692307692307,105,13.333333333333334,other
+SH.PRV.SMOK.FE,"Prevalence of current tobacco use, females (% of female adults)",2024,6.2,49.696969696969695,166,,education & gender
+SP.RUR.TOTL.ZG,Rural population growth (annual %),2025,0.9792966159227275,73.52941176470588,205,-4.495280737190299,other
+BG.GSR.NFSV.GD.ZS,Trade in services (% of GDP),2025,5.185543994638235,2.2222222222222223,136,5.785799476857805,economy & trade
+SP.URB.GROW,Urban population growth (annual %),2025,2.4549149483783115,74.07407407407408,217,18.062035821743194,other
+EG.ELC.ACCS.ZS,Access to electricity (% of population),2024,95.7,29.906542056074763,215,6.215316315205337,energy & environment
+NY.ADJ.DKAP.GN.ZS,Adjusted savings: consumption of fixed capital (% of GNI),2021,3.9926960413885,3.2432432432432434,186,-20.230919785719717,other
+AG.LND.ARBL.ZS,Arable land (% of land area),2024,39.81164383561644,93.13725490196079,205,0.8212877792378485,other
+EG.USE.ELEC.KH.PC,Electric power consumption (kWh per capita),2024,493.4747982048446,17.56756756756757,149,17.738857334592296,energy & environment
+SL.AGR.EMPL.ZS,Employment in agriculture (% of total employment) (modeled ILO estimate),2025,36.2295491854662,76.79558011049724,182,-11.656826628983797,energy & environment
+SL.AGR.EMPL.FE.ZS,"Employment in agriculture, female (% of female employment) (modeled ILO estimate)",2025,68.0200186878762,93.92265193370166,182,-5.4220418970984605,education & gender
+SL.SRV.EMPL.MA.ZS,"Employment in services, male (% of male employment) (modeled ILO estimate)",2025,44.201929279179,28.176795580110497,182,7.758642954774545,other
+SL.EMP.TOTL.SP.FE.ZS,"Employment to population ratio, 15+, female (%) (modeled ILO estimate)",2025,22.378,8.287292817679557,182,-0.5775724186955705,education & gender
+TM.VAL.FOOD.ZS.UN,Food imports (% of merchandise imports),2025,14.007103072215335,62.745098039215684,103,15.784881558745557,economy & trade
+SP.DYN.LE00.MA.IN,"Life expectancy at birth, male (years)",2024,65.462,22.22222222222222,217,3.5643658339793385,health
+NV.MNF.MTRN.ZS.UN,Machinery and transport equipment (% of value added in manufacturing),2018,5.009502292372215,26.41509433962264,107,290.8175883463261,economy & trade
+SH.STA.BASS.ZS,People using at least basic sanitation services (% of population),2024,71.8828600416756,26.041666666666668,193,26.93095931224289,health
+SH.H2O.SMDW.ZS,People using safely managed drinking water services (% of population),2024,44.9737364064737,23.12925170068027,148,1.917267881583495,health
+EN.ATM.PM25.MC.T3.ZS,"PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-3 value (% of total)",2017,100.0,81.0880829015544,194,,energy & environment
+SP.POP.1014.FE.5Y,"Population ages 10-14, female (% of female population)",2025,11.6336355911628,82.4074074074074,217,0.865925560723226,education & gender
+SH.STA.STNT.ME.FE.ZS,"Prevalence of stunting, height for age, female (modeled estimate, % of children under 5)",2024,32.6,90.6832298136646,162,-22.19570405727923,health
+PA.NUS.GDP.PLI,Price level index (GDP),2025,24.278230528366965,4.3478260869565215,185,-21.205933638221474,economy & trade
+SH.DYN.0509,"Probability of dying among children ages 5-9 years (per 1,000)",2024,3.0,74.87179487179488,196,-36.17021276595745,other
+EG.FEC.RNEW.ZS,Renewable energy consumption (% of total final energy consumption),2021,41.6,72.98578199052133,212,-11.111111111111102,energy & environment
+FS.AST.CGOV.GD.ZS,"Claims on central government, etc. (% GDP)",2025,35.97644304835417,88.57142857142857,106,36.154806966510954,economy & trade
+SH.XPD.PVTD.CH.ZS,Domestic private health expenditure (% of current health expenditure),2023,54.61149597,80.6282722513089,192,-17.615161492420768,health
+EG.ELC.NGAS.ZS,Electricity production from natural gas sources (% of total),2024,30.62087331329188,52.25225225225225,112,15.549731731181973,energy & environment
+SL.EMP.TOTL.SP.MA.ZS,"Employment to population ratio, 15+, male (%) (modeled ILO estimate)",2025,76.155,83.42541436464089,182,-0.7390318292015239,other
+NY.GDP.PCAP.KD.ZG,GDP per capita growth (annual %),2025,2.0933410998789697,45.94594594594595,186,-24.332138610764016,economy & trade
+NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2025,5617.25078028458,22.282608695652172,185,20.923671966825943,economy & trade
+HD_HCIP_OVRL_MA,"Human capital index plus (HCI+): overall score, male (scale 0–325)",2025,161.722916364262,29.936305732484076,158,7.315641771347144,other
+HD_HCIP_OVRL_TO,"Human capital index plus (HCI+): overall score, total (scale 0–325)",2025,129.581274572444,15.527950310559005,162,9.387330008329329,other
+NE.IMP.GNFS.KD.ZG,Imports of goods and services (annual % growth),2025,2.5329006564565333,30.46875,129,354.6143346607241,economy & trade
+TX.VAL.INSF.ZS.WT,Insurance and financial services (% of commercial service exports),2025,2.0510302428682294,33.587786259541986,132,-56.20670611060984,finance & payments
+BM.GSR.INSF.ZS,"Insurance and financial services (% of service imports, BoP)",2025,10.162668257060627,73.33333333333333,136,88.03071289901878,finance & payments
+SL.TLF.CACT.ZS,"Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)",2025,52.335,19.337016574585636,182,0.5939338023295996,other
+SH.STA.POIS.P5.MA,"Mortality rate attributed to unintentional poisoning, male (per 100,000 male population)",2021,0.14,7.608695652173914,185,0.0,health
+PA.NUS.PRVT.PLI,Price level index (Households and NPISHs Final consumption expenditure),2025,23.4047366580374,3.0120481927710845,167,-23.620429918395804,economy & trade
+SE.PRM.ENRR,"School enrollment, primary (% gross)",2024,83.726068200404,7.518796992481203,134,15.98047255834886,education & gender
+SE.PRM.ENRR.MA,"School enrollment, primary, male (% gross)",2024,84.9598810392491,9.022556390977442,134,8.422860161439994,education & gender
+SP.DYN.TO65.MA.ZS,"Survival to age 65, male (% of cohort)",2024,66.106165,28.703703703703702,217,5.316172041199037,other
+EN.GHG.ALL.PC.CE.AR5,Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita),2024,2.092905041065843,28.71287128712871,203,8.72886297600404,energy & environment
+NY.ADJ.DNGY.GN.ZS,Adjusted savings: energy depletion (% of GNI),2021,0.914493271659386,77.71739130434783,185,-48.12047207183298,energy & environment
+AG.LND.AGRI.ZS,Agricultural land (% of land area),2024,47.204493565794934,67.14975845410628,208,0.37791018426569206,energy & environment
+EG.USE.COMM.FO.ZS,Fossil fuel energy consumption (% of total),2024,57.43,30.405405405405407,149,-3.6571045126656596,energy & environment
+SL.TLF.ACTI.ZS,"Labor force participation rate, total (% of total population ages 15-64) (modeled ILO estimate)",2025,54.738,15.469613259668508,182,1.9139824986036096,other
+TX.VAL.MANF.ZS.UN,Manufactures exports (% of merchandise exports),2025,73.19607234972835,71.56862745098039,103,-3.583956388218941,economy & trade
+TX.VAL.MRCH.R1.ZS,Merchandise exports to low- and middle-income economies in East Asia & Pacific (% of total merchandise exports),2023,15.026569299273682,69.45812807881774,204,6.709901381216247,economy & trade
+TM.VAL.MRCH.OR.ZS,Merchandise imports from low- and middle-income economies outside region (% of total merchandise imports),2023,44.91767361196873,90.14778325123153,204,52.01079717525297,economy & trade
+DT.TDS.MLAT.PG.ZS,Multilateral debt service (% of public and publicly guaranteed debt service),2025,34.34685009688673,42.14876033057851,122,-20.610279033505055,economy & trade
+SP.POP.0004.FE.5Y,"Population ages 00-04, female (% of female population)",2025,12.4790353625077,80.0925925925926,217,-12.117617739935854,education & gender
+SP.POP.1014.MA.5Y,"Population ages 10-14, male (% of male population)",2025,11.8322650639459,81.01851851851852,217,0.8469090809795788,other
+SH.HIV.1524.MA.ZS,"Prevalence of HIV, male (% ages 15-24)",2024,0.1,25.874125874125873,144,0.0,other
+SN.ITK.DEFC.ZS,Prevalence of undernourishment (% of population),2024,16.1,78.65853658536585,165,12.587412587412592,other
+SE.PRE.ENRR.FE,"School enrollment, preprimary, female (% gross)",2019,77.1540832519531,49.30555555555556,145,11.794161680866727,education & gender
+SL.EMP.SELF.FE.ZS,"Self-employed, female (% of female employment) (modeled ILO estimate)",2025,73.3279502495798,79.00552486187846,182,-2.146182901791285,education & gender
+TM.TAX.MANF.WM.FN.ZS,"Tariff rate, most favored nation, weighted mean, manufactured products (%)",2022,11.23,79.5774647887324,143,-15.81709145427286,economy & trade
+SL.EMP.WORK.ZS,"Wage and salaried workers, total (% of total employment) (modeled ILO estimate)",2025,42.9975244438603,26.519337016574585,182,9.144169798608461,other
+NY.ADJ.DFOR.GN.ZS,Adjusted savings: net forest depletion (% of GNI),2021,0.130323504356218,65.47619047619048,169,,energy & environment
+ER.H2O.FWAG.ZS,"Annual freshwater withdrawals, agriculture (% of total freshwater withdrawal)",2022,93.97656037,92.65536723163842,178,0.0,health
+ER.H2O.FWIN.ZS,"Annual freshwater withdrawals, industry (% of total freshwater withdrawal)",2022,0.763150722,10.227272727272728,177,0.0,health
+EG.USE.CRNW.ZS,Combustible renewables and waste (% of total energy),2024,32.38046077378248,76.05633802816901,143,-9.23864416520925,energy & environment
+SH.XPD.GHED.GD.ZS,Domestic general government health expenditure (% of GDP),2023,0.90008724,10.99476439790576,192,42.01027521463996,economy & trade
+EG.ELC.HYRO.ZS,Electricity production from hydroelectric sources (% of total),2024,22.731952394679407,49.6,126,-25.107897924433075,energy & environment
+TX.VAL.ICTG.ZS.UN,ICT goods exports (% of total goods exports),2024,0.06,14.285714285714286,120,-68.42105263157895,economy & trade
+LP.LPI.ITRN.XQ,Logistics performance index: Ease of arranging competitively priced shipments (1=low to 5=high),2018,2.63,39.55696202531645,159,,economy & trade
+SH.STA.MMRT,"Maternal mortality ratio (modeled estimate, per 100,000 live births)",2023,155.0,75.64766839378238,194,-29.545454545454547,health
+TX.VAL.MRCH.RS.ZS,"Merchandise exports by the reporting economy, residual (% of total merchandise exports)",2023,0.00971245467171224,80.3921568627451,205,-83.4660896806412,economy & trade
+MS.MIL.XPND.ZS,Military expenditure (% of general government expenditure),2025,13.8282138723,89.1891891891892,149,-23.201645714631606,other
+SH.STA.AIRP.FE.P5,"Mortality rate attributed to household and ambient air pollution, age-standardized, female (per 100,000 female population)",2019,157.5,78.02197802197803,183,,health
+SH.DYN.NMRT,"Mortality rate, neonatal (per 1,000 live births)",2024,36.1,98.97435897435898,196,-21.179039301310034,health
+SH.H2O.BASW.ZS,People using at least basic drinking water services (% of population),2024,90.6932992273275,29.35323383084577,202,1.3795704344140407,health
+SP.POP.6064.FE.5Y,"Population ages 60-64, female (% of female population)",2025,2.53621083066587,24.537037037037038,217,20.028529792881255,education & gender
+SE.SEC.ENRR.FE,"School enrollment, secondary, female (% gross)",2024,46.4835415439493,3.7037037037037033,109,62.75698920511059,education & gender
+SE.SEC.DURS,"Secondary education, duration (years)",2025,7.0,72.59615384615384,209,0.0,education & gender
+TM.TAX.MRCH.SM.AR.ZS,"Tariff rate, applied, simple mean, all products (%)",2022,10.97,70.4225352112676,143,-22.418670438472418,other
+TM.TAX.TCOM.SM.FN.ZS,"Tariff rate, most favored nation, simple mean, primary products (%)",2022,10.25,57.04225352112676,143,-13.429054054054054,other
+EG.CFT.ACCS.RU.ZS,"Access to clean fuels and technologies for cooking, rural (% of rural population)",2024,27.0,30.104712041884813,192,92.85714285714286,energy & environment
+TM.VAL.OTHR.ZS.WT,"Computer, communications and other services (% of commercial service imports)",2025,19.664559513467736,17.037037037037038,136,-31.837824302473656,economy & trade
+SE.SEC.CUAT.UP.FE.ZS,"Educational attainment, at least completed upper secondary, population 25+, female (%) (cumulative)",2018,19.4831493613193,16.964285714285715,113,35.0587027046086,education & gender
+SL.IND.EMPL.ZS,Employment in industry (% of total employment) (modeled ILO estimate),2025,25.2554862685016,77.90055248618785,182,5.145120476794918,other
+NE.CON.GOVT.ZS,General government final consumption expenditure (% of GDP),2025,9.321038943066403,10.687022900763358,132,-4.780110777471197,economy & trade
+NY.GNP.PCAP.PP.KD,"GNI per capita, PPP (constant 2021 international $)",2025,5692.277563520742,27.722772277227726,102,28.981770785445594,other
+NE.GDI.TOTL.KD.ZG,Gross capital formation (annual % growth),2025,11.760842119453898,82.39999999999999,126,-6.219214995929502,other
+HD_HCIP_OTJL_MA,"Human capital index plus (HCI+): on-the-job learning pillar score, male (scale -30–87)",2025,51.4969891194467,62.42774566473989,174,0.3934551001250844,other
+SH.STA.WASH.P5,"Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (per 100,000 population)",2019,38.8,86.26373626373626,183,,health
+SH.STA.BASS.RU.ZS,"People using at least basic sanitation services, rural (% of rural population)",2024,64.9730432556194,31.0126582278481,159,41.218192284685394,health
+EN.URB.MCTY.TL.ZS,Population in urban agglomerations of more than 1 million (% of total population),2025,20.07911392243872,45.83333333333333,121,12.159812182272603,other
+SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),2025,17.0418006430868,26.229508196721312,184,-17.225539733578213,education & gender
+SE.PRE.ENRR,"School enrollment, preprimary (% gross)",2019,82.5566711425781,50.68493150684932,147,13.079275798921383,education & gender
+SE.PRM.ENRR.FE,"School enrollment, primary, female (% gross)",2024,82.4374265095066,8.270676691729323,134,25.60692774809651,education & gender
+SL.EMP.SELF.MA.ZS,"Self-employed, male (% of male employment) (modeled ILO estimate)",2025,52.287355874523,74.03314917127072,182,-7.569060586317769,other
+TM.TAX.TCOM.BC.ZS,"Binding coverage, primary products (%)",2022,0.0,36.2962962962963,136,-100.0,other
+HD_HCIP_EDUC_FE,"Human capital index plus (HCI+): education pillar score, female (scale 0–188)",2025,67.8788527586304,19.25465838509317,162,17.359373331312092,education & gender
+SH.DYN.NCOM.ZS,"Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)",2021,25.5,86.41304347826086,185,-8.602150537634405,health
+SP.POP.1519.FE.5Y,"Population ages 15-19, female (% of female population)",2025,10.5862321197547,83.79629629629629,217,-0.4393262898762364,education & gender
+DT.DOD.PVLX.EX.ZS,"Present value of external debt (% of exports of goods, services and primary income)",2025,200.2210015553672,94.5945945945946,112,,economy & trade
+SH.HIV.1524.FE.ZS,"Prevalence of HIV, female (% ages 15-24)",2024,0.1,30.069930069930066,144,0.0,education & gender
+SH.DYN.1014,"Probability of dying among adolescents ages 10-14 years (per 1,000)",2024,2.8,73.07692307692308,196,-30.000000000000004,other
+SH.STA.SUIC.FE.P5,"Suicide mortality rate, female (per 100,000 female population)",2021,3.16,46.19565217391305,185,-4.242424242424233,health
+BX.GSR.TRVL.ZS,"Travel services (% of service exports, BoP)",2025,8.98084422246938,9.62962962962963,136,67.06636712902815,economy & trade
+SL.EMP.WORK.MA.ZS,"Wage and salaried workers, male (% of male employment) (modeled ILO estimate)",2025,47.7126425252919,25.96685082872928,182,9.85876151838685,other
+NV.AGR.TOTL.KD.ZG,"Agriculture, forestry, and fishing, value added (annual % growth)",2025,1.5250547628208153,34.78260869565217,162,-14.421875982743778,energy & environment
+SH.DTH.COMM.ZS,"Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",2021,37.2884010066938,70.1086956521739,185,,health
+SL.FAM.WORK.MA.ZS,"Contributing family workers, male (% of male employment) (modeled ILO estimate)",2025,9.95458386480817,82.32044198895028,182,-24.239512784100967,other
+SH.XPD.GHED.GE.ZS,Domestic general government health expenditure (% of general government expenditure),2023,4.68260336,10.471204188481675,192,44.11087837354657,health
+NE.RSB.GNFS.ZS,External balance on goods and services (% of GDP),2025,-7.223123957923107,31.386861313868614,138,-7.183212261811084,economy & trade
+AG.PRD.FOOD.XD,Food production index (2014-2016 = 100),2024,135.05,87.43455497382199,192,37.67968192476298,other
+NV.IND.TOTL.ZS,"Industry (including construction), value added (% of GDP)",2025,20.06282275545577,29.29936305732484,158,2.347687257118616,economy & trade
+NV.IND.TOTL.KD.ZG,"Industry (including construction), value added (annual % growth)",2025,5.227360777755365,71.25,161,-3.129680728238323,other
+SL.TLF.ACTI.FE.ZS,"Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)",2025,25.582,7.18232044198895,182,1.8553909858257729,education & gender
+SP.POP.0509.FE.5Y,"Population ages 05-09, female (% of female population)",2025,11.825228256457,79.16666666666666,217,-7.92297341739763,education & gender
+DT.DOD.PVLX.GN.ZS,Present value of external debt (% of GNI),2025,20.973552084171846,51.75438596491229,115,,economy & trade
+SH.ANM.CHLD.ZS,Prevalence of anemia among children (% of children ages 6-59 months),2019,53.0,82.53968253968253,190,-10.62394603709949,other
+SN.ITK.MSFI.ZS,Prevalence of moderate or severe food insecurity in the population (%),2024,22.9,51.49253731343284,135,,other
+TM.TAX.MRCH.SM.FN.ZS,"Tariff rate, most favored nation, simple mean, all products (%)",2022,10.42,64.43661971830986,143,-23.15634218289086,other
+DT.TDS.DECT.GN.ZS,Total debt service (% of GNI),2024,4.497406013379406,51.724137931034484,117,148.18922566863168,economy & trade
+SH.TBS.CURE.ZS,Tuberculosis treatment success rate (% of new cases),2023,95.0,95.19774011299435,178,2.1505376344086025,finance & payments
+TM.TAX.TCOM.BR.ZS,"Bound rate, simple mean, primary products (%)",2021,77.83,83.33333333333334,139,1.3543430134131944,other
+SH.DTH.NCOM.ZS,"Cause of death, by non-communicable diseases (% of total)",2021,52.0324546491852,31.521739130434785,185,,health
+SL.EMP.1524.SP.ZS,"Employment to population ratio, ages 15-24, total (%) (modeled ILO estimate)",2025,39.034,61.32596685082873,182,3.753123172611767,other
+SH.MED.BEDS.ZS,"Hospital beds (per 1,000 people)",2020,0.63,6.870229007633588,132,50.000000000000014,health
+TM.UVI.MRCH.XD.WD,Import unit value index (2015 = 100),2025,68.1,0.49261083743842365,204,-31.900000000000006,economy & trade
+NY.GDP.DEFL.KD.ZG.AD,"Inflation, GDP deflator: linked series (annual %)",2025,4.28342547075624,62.70270270270271,186,-3.5694634305658375,economy & trade
+FR.INR.LEND,Lending interest rate (%),2021,8.66597421472524,58.71559633027523,110,-39.89961822995859,finance & payments
+SP.DYN.LE00.IN,"Life expectancy at birth, total (years)",2024,67.799,22.22222222222222,217,3.709425765594902,health
+SE.SEC.CMPT.LO.MA.ZS,"Lower secondary completion rate, male (% of relevant age group)",2024,57.0468437323659,14.953271028037381,108,34.67514474994703,other
+SE.SEC.AGES,Lower secondary school starting age (years),2025,10.0,4.086538461538462,209,0.0,education & gender
+SP.DYN.IMRT.MA.IN,"Mortality rate, infant, male (per 1,000 live births)",2024,53.3,93.84615384615384,196,-26.177285318559562,health
+SH.DYN.MORT.MA,"Mortality rate, under-5, male (per 1,000 live births)",2024,60.8,88.71794871794872,196,-26.835138387484957,health
+EN.GHG.N2O.ZG.AR5,Nitrous oxide (N2O) emissions (total) excluding LULUCF (% change from 1990),2024,154.1107278563521,85.64356435643565,203,48.05952620491701,energy & environment
+TM.VAL.MMTL.ZS.UN,Ores and metals imports (% of merchandise imports),2025,4.413836455370334,76.47058823529412,103,13.892484879011551,economy & trade
+SH.STA.ODFC.RU.ZS,"People practicing open defecation, rural (% of rural population)",2024,12.961148760322,78.57142857142857,155,-51.76302470630437,other
+SP.POP.2024.FE.5Y,"Population ages 20-24, female (% of female population)",2025,9.16424544714997,81.94444444444444,217,-2.8435143325365835,education & gender
+SP.POP.5559.FE.5Y,"Population ages 55-59, female (% of female population)",2025,2.98122021838837,22.685185185185187,217,5.688648764508854,education & gender
+SH.PRG.ANEM,Prevalence of anemia among pregnant women (%),2023,39.1,78.53403141361257,192,-13.686534216335533,education & gender
+SH.DYN.AIDS.ZS,"Prevalence of HIV, total (% of population ages 15-49)",2024,0.2,33.33333333333333,148,100.0,other
+NV.SRV.TOTL.ZS,"Services, value added (% of GDP)",2025,50.92741844977865,32.48407643312102,158,-3.3389203391943623,economy & trade
+SL.UEM.NEET.MA.ME.ZS,"Share of youth not in education, employment or training, male (% of male youth population)  (modeled ILO estimate)",2025,13.16,45.85635359116022,182,73.75231053604436,education & gender
+SH_UHC_SCI,UHC service coverage index,2023,56.0,24.218750000000004,193,19.148936170212767,other
+MS.MIL.TOTL.TF.ZS,Armed forces personnel (% of total labor force),2020,1.2517796211047603,68.8622754491018,168,-18.44419703508401,other
+TX.VAL.OTHR.ZS.WT,"Computer, communications and other services (% of commercial service exports)",2025,76.22995735993584,96.29629629629629,136,46.00189507642194,economy & trade
+SH.XPD.CHEX.GD.ZS,Current health expenditure (% of GDP),2023,2.51988316,2.6178010471204187,192,4.279151015792242,economy & trade
+SL.SRV.EMPL.ZS,Employment in services (% of total employment) (modeled ILO estimate),2025,38.514965787622,15.469613259668508,182,10.136070242557443,other
+LP.LPI.INFR.XQ,Logistics performance index: Quality of trade and transport-related infrastructure (1=low to 5=high),2018,2.2,24.367088607594937,159,,economy & trade
+SP.POP.3539.MA.5Y,"Population ages 35-39, male (% of male population)",2025,6.15501878527986,27.77777777777778,217,13.058077537806026,other
+SH.ANM.ALLW.ZS,Prevalence of anemia among women of reproductive age (% of women ages 15-49),2023,46.5,95.0261780104712,192,1.528384279475989,education & gender
+SH.DYN.1519,"Probability of dying among adolescents ages 15-19 years (per 1,000)",2024,3.3,46.15384615384615,196,-28.26086956521739,other
+SH.SGR.IRSK.ZS,Risk of impoverishing expenditure for surgical care (% of people at risk),2022,39.9,73.21428571428571,113,-35.54119547657512,other
+ER.PTD.TOTL.ZS,Terrestrial and marine protected areas (% of total territorial area),2025,15.2,60.37735849056604,213,55.102040816326515,other
+TX.VAL.TRAN.ZS.WT,Transport services (% of commercial service exports),2025,11.756865503264526,37.03703703703704,136,-65.36030853850767,economy & trade
+BM.GSR.TRAN.ZS,"Transport services (% of service imports, BoP)",2025,40.307163321172865,77.03703703703704,136,-4.3424447939721365,economy & trade
+FX.OWN.TOTL.PL.ZS,"Account ownership at a financial institution or with a mobile-money-service provider, primary education or less (% of population ages 15+)",2024,18.9106980665209,3.6231884057971016,139,88.58851829574984,finance & payments
+ER.H2O.FWDM.ZS,"Annual freshwater withdrawals, domestic (% of total freshwater withdrawal)",2022,5.260288907,10.734463276836157,178,0.0,health
+SH.DTH.OCVD.ZS,"Cause of death, by other COVID-19 pandemic-related outcomes (% of total)",2021,3.0247166905282,69.02173913043478,185,,health
+FP.CPI.TOTL,Consumer price index (2010 = 100),2025,400.518188961502,88.09523809523809,169,175.68236838369862,economy & trade
+SH.XPD.GHED.PP.CD,"Domestic general government health expenditure per capita, PPP (current international $)",2023,54.3308183283828,18.32460732984293,192,105.36922678266352,health
+SL.EMP.MPYR.FE.ZS,"Employers, female (% of female employment) (modeled ILO estimate)",2025,0.0977886252049544,0.0,182,-6.660197286182852,education & gender
+NE.CON.GOVT.KD.ZG,General government final consumption expenditure (annual % growth),2025,10.075520159261103,90.0,131,443.43460760666113,other
+HD_HCIP_EDUC_TO,"Human capital index plus (HCI+): education pillar score, total (scale 0–188)",2025,70.6504423741136,20.606060606060606,166,14.85062588432737,education & gender
+HD_HCIP_HLTH_TO,"Human capital index plus (HCI+): health pillar score, total (scale 0–50)",2025,38.0281789076328,19.11764705882353,205,5.045210556432434,health
+SH.IMM.IDPT,"Immunization, DPT (% of children ages 12-23 months)",2024,87.0,36.910994764397905,192,26.08695652173913,health
+DT.ODA.ODAT.MP.ZS,"Net ODA received (% of imports of goods, services and primary income)",2023,6.014478717316193,56.41025641025641,118,46.98880020902383,economy & trade
+EN.ATM.PM25.MC.T2.ZS,"PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-2 value (% of total)",2017,99.9010957436499,76.16580310880829,194,,energy & environment
+SH.PRV.SMOK,Prevalence of current tobacco use (% of adults),2024,17.9,46.666666666666664,166,,other
+TM.TAX.TCOM.SM.AR.ZS,"Tariff rate, applied, simple mean, primary products (%)",2022,8.84,57.74647887323944,143,-33.48382242287434,other
+TM.TAX.MANF.WM.AR.ZS,"Tariff rate, applied, weighted mean, manufactured products (%)",2022,10.51,84.50704225352112,143,-11.828859060402685,economy & trade
+TM.TAX.MRCH.WM.FN.ZS,"Tariff rate, most favored nation, weighted mean, all products (%)",2022,8.07,60.56338028169014,143,-17.568947906026548,other
+NV.MNF.TXTL.ZS.UN,Textiles and clothing (% of value added in manufacturing),2018,29.61842982471854,95.53571428571429,113,1.8207428991821797,economy & trade
+SP.URB.TOTL.IN.ZS,Urban population (% of total population),2025,39.5256010979606,19.90740740740741,217,10.09385415928284,other
+EN.GHG.CO2.ZG.AR5,Carbon dioxide (CO2) emissions (total) excluding LULUCF (% change from 1990),2024,210.76591433642338,61.0,201,33.58908945541908,energy & environment
+SL.EMP.1524.SP.FE.ZS,"Employment to population ratio, ages 15-24, female (%) (modeled ILO estimate)",2025,19.458,25.96685082872928,182,3.731741123787181,education & gender
+TM.VAL.FUEL.ZS.UN,Fuel imports (% of merchandise imports),2025,25.702089242156102,95.09803921568627,103,12.22308982404805,economy & trade
+NY.GNS.ICTR.GN.ZS,Gross savings (% of GNI),2025,15.57797069275654,20.0,101,2.6422541675371267,other
+NE.CON.PRVT.ZS,Households and NPISHs final consumption expenditure (% of GDP),2025,83.61927683196217,89.23076923076924,131,3.0566322166777797,economy & trade
+TM.VAL.ICTG.ZS.UN,ICT goods imports (% total goods imports),2024,5.13,54.54545454545454,122,23.61445783132529,economy & trade
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (annual %)",2025,3.54555214890892,58.92857142857143,169,40.17762453281072,economy & trade
+SM.POP.TOTL.ZS,International migrant stock (% of population),2024,1.7,26.279069767441865,216,,other
+SL.TLF.TOTL.FE.ZS,"Labor force, female (% of total labor force)",2025,22.775085442726642,7.734806629834254,182,0.8776047573909462,education & gender
+TX.VAL.MRCH.R2.ZS,Merchandise exports to low- and middle-income economies in Europe & Central Asia (% of total merchandise exports),2023,2.125012390460196,67.01570680628272,192,-7.136160959491653,economy & trade
+TX.VAL.MRCH.OR.ZS,Merchandise exports to low- and middle-income economies outside region (% of total merchandise exports),2023,25.855815053866106,76.5,201,-3.5580713541125695,economy & trade
+SP.DYN.IMRT.FE.IN,"Mortality rate, infant, female (per 1,000 live births)",2024,42.8,92.82051282051282,196,-26.83760683760684,health
+SH.STA.ODFC.ZS,People practicing open defecation (% of population),2024,8.17243283471886,84.69945355191257,184,-54.42081941963206,other
+SH.H2O.BASW.UR.ZS,"People using at least basic drinking water services, urban (% of urban population)",2024,92.9142427063474,23.163841807909606,178,-1.1031237142781056,health
+SP.POP.2024.MA.5Y,"Population ages 20-24, male (% of male population)",2025,9.33019226181064,81.01851851851852,217,-3.079818440421487,other
+SP.POP.2529.MA.5Y,"Population ages 25-29, male (% of male population)",2025,8.17970032134596,72.68518518518519,217,-0.6672668584376505,other
+SP.POP.65UP.FE.ZS,"Population ages 65 and above, female (% of female population)",2025,4.76651054456415,25.0,217,19.454724573946418,education & gender
+SH.STA.STNT.ME.ZS,"Prevalence of stunting, height for age (modeled estimate, % of children under 5)",2024,33.6,89.44099378881988,162,-21.12676056338028,health
+TM.TAX.TCOM.WM.FN.ZS,"Tariff rate, most favored nation, weighted mean, primary products (%)",2022,5.16,35.91549295774648,143,-24.890829694323145,other
+FX.OWN.TOTL.ZS,Account ownership at a financial institution or with a mobile-money-service provider (% of population ages 15+),2024,27.2960071761925,3.6231884057971016,139,109.38636897341874,finance & payments
+TM.TAX.MRCH.BC.ZS,"Binding coverage, all products (%)",2022,0.0,36.2962962962963,136,-100.0,other
+SP.DYN.CBRT.IN,"Birth rate, crude (per 1,000 people)",2024,27.412,81.48148148148148,217,-12.430118518991796,health
+SL.EMP.MPYR.MA.ZS,"Employers, male (% of male employment) (modeled ILO estimate)",2025,1.89138525597074,16.574585635359114,182,6.083884335851469,other
+SL.IND.EMPL.FE.ZS,"Employment in industry, female (% of female employment) (modeled ILO estimate)",2025,13.1553839006689,66.29834254143645,182,-9.83917734380545,education & gender
+NE.EXP.GNFS.ZS,Exports of goods and services (% of GDP),2025,9.985206710421652,2.9197080291970803,138,0.1066287385521266,economy & trade
+NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2025,3.6984266874903255,56.21621621621622,186,-12.316798012975898,economy & trade
+NY.GDS.TOTL.ZS,Gross domestic savings (% of GDP),2025,7.059684224971513,18.181818181818183,133,-22.180637081399105,economy & trade
+TX.VAL.TECH.MF.ZS,High-technology exports (% of manufactured exports),2024,2.4381524801580827,19.35483870967742,125,68.36757472356176,economy & trade
+SP.DYN.LE00.FE.IN,"Life expectancy at birth, female (years)",2024,70.322,20.37037037037037,217,3.693764100446805,health
+LP.LPI.CUST.XQ,Logistics performance index: Efficiency of customs clearance process (1=low to 5=high),2018,2.12,13.291139240506327,159,,other
+NV.IND.MANF.ZS,"Manufacturing, value added (% of GDP)",2025,13.020874831953563,59.541984732824424,132,5.848360961204116,economy & trade
+SP.POP.0014.MA.ZS,"Population ages 0-14, male (% of male population)",2025,36.5422298430807,77.77777777777779,217,-6.152138573067674,other
+SP.POP.5054.FE.5Y,"Population ages 50-54, female (% of female population)",2025,3.50475555862525,18.98148148148148,217,2.1263000921724284,education & gender
+SN.ITK.SVFI.ZS,Prevalence of severe food insecurity in the population (%),2024,5.5,60.22727272727273,133,,other
+SE.ENR.PRSC.FM.ZS,"School enrollment, primary and secondary (gross), gender parity index (GPI)",2019,0.87747997045517,1.6666666666666667,121,5.697557364032745,education & gender
+TM.TAX.TCOM.WM.AR.ZS,"Tariff rate, applied, weighted mean, primary products (%)",2022,4.95,56.33802816901409,143,-25.45180722891566,other
+SH_UHC_SCI_CAPACITY,UHC service coverage sub-index on service capacity and access,2023,37.0,15.364583333333332,193,27.586206896551722,other
+AG.LND.EL5M.UR.ZS,Urban land area where elevation is below 5 meters (% of total land area),2015,0.00813024550618311,28.504672897196258,215,,other
+SP.POP.DPND.OL,"Age dependency ratio, old (% of working-age population)",2025,7.343940200386589,28.703703703703702,217,10.359137454739718,other
+TM.VAL.AGRI.ZS.UN,Agricultural raw materials imports (% of merchandise imports),2025,5.590839468299108,100.0,103,35.58299486292931,economy & trade
+FB.ATM.TOTL.P5,"Automated teller machines (ATMs) (per 100,000 adults)",2024,12.0522028967929,16.666666666666664,151,74.44882111069879,finance & payments
+TX.VAL.MRCH.XD.WD,Export value index (2015 = 100),2024,146.3,47.783251231527096,204,30.625000000000007,economy & trade
+NV.MNF.FBTO.ZS.UN,"Food, beverages and tobacco (% of value added in manufacturing)",2018,22.100300516265918,50.0,117,22.91911448106191,economy & trade
+BM.KLT.DINV.WD.GD.ZS,"Foreign direct investment, net outflows (% of GDP)",2025,0.06555248483465966,26.21951219512195,165,686.534348779232,economy & trade
+SL.GDP.PCAP.EM.KD,GDP per person employed (constant 2021 PPP $),2025,17799.827399819093,22.75449101796407,168,17.726436034076677,economy & trade
+NY.GNP.PCAP.PP.CD,"GNI per capita, PPP (current international $)",2025,6430.0,21.666666666666668,181,45.80498866213152,other
+SE.XPD.TOTL.GB.ZS,"Government expenditure on education, total (% of government expenditure)",2023,9.75506019592285,17.857142857142858,113,-15.276383399610543,education & gender
+TM.VAL.MANF.ZS.UN,Manufactures imports (% of merchandise imports),2025,50.226706924537886,3.9215686274509802,103,-11.650932558379326,economy & trade
+TM.VAL.MRCH.R6.ZS,Merchandise imports from low- and middle-income economies in Sub-Saharan Africa (% of total merchandise imports),2023,3.783622295370871,72.72727272727273,199,104.62683494790564,economy & trade
+NY.GDP.MINR.RT.ZS,Mineral rents (% of GDP),2021,0.0687357166320551,63.26530612244898,197,-18.779069233253484,economy & trade
+SH.STA.POIS.P5,"Mortality rate attributed to unintentional poisoning (per 100,000 population)",2021,0.12,9.782608695652174,185,0.0,health
+SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",2024,56.0,88.2051282051282,196,-27.46113989637306,health
+SH.MED.NUMW.P3,"Nurses and midwives (per 1,000 people)",2021,0.52,6.0344827586206895,117,36.482939632545936,other
+BX.TRF.PWKR.DT.GD.ZS,"Personal remittances, received (% of GDP)",2025,9.937953112873982,86.92307692307692,131,54.40920430456381,finance & payments
+SP.POP.0004.MA.5Y,"Population ages 00-04, male (% of male population)",2025,12.6995559842944,79.16666666666666,217,-10.71351027422174,other
+SP.POP.0014.FE.ZS,"Population ages 0-14, female (% of female population)",2025,35.9378992101275,79.16666666666666,217,-6.8392390897631286,education & gender
+SP.POP.2529.FE.5Y,"Population ages 25-29, female (% of female population)",2025,8.02982270614596,72.22222222222221,217,-1.5899799880078465,education & gender
+SP.POP.4549.FE.5Y,"Population ages 45-49, female (% of female population)",2025,4.19189259014536,17.59259259259259,217,6.651223164002282,education & gender
+EN.POP.SLUM.UR.ZS,Population living in slums (% of urban population),2022,55.97371,87.77777777777777,181,-9.825849928068449,other
+AG.LND.EL5M.RU.ZS,Rural land area where elevation is below 5 meters (% of total land area),2015,1.29788832706209,47.66355140186916,215,,other
+ER.LND.PTLD.ZS,Terrestrial protected areas (% of total land area),2025,19.1,56.60377358490566,213,55.28455284552846,other
+NY.GDP.TOTL.RT.ZS,Total natural resources rents (% of GDP),2021,1.43561633294011,47.95918367346938,197,-45.11666045676155,economy & trade
+SH.DYN.AIDS.FE.ZS,Women's share of population ages 15+ living with HIV (%),2024,17.5290715901133,14.619883040935672,172,10.034994719353815,education & gender
+SH.HIV.ARTC.ZS,Antiretroviral therapy coverage (% of people living with HIV),2024,16.0,0.8,126,300.0,other
+EG.ELC.LOSS.ZS,Electric power transmission and distribution losses (% of output),2024,15.155321281005914,72.97297297297297,149,-8.013983479193241,energy & environment
+SH.MLR.INCD.P3,"Incidence of malaria (per 1,000 population at risk)",2024,12.77,54.807692307692314,105,170.55084745762713,other
+SH.TBS.INCD,"Incidence of tuberculosis (per 100,000 people)",2024,266.0,88.88888888888889,208,-1.4814814814814816,other
+SL.TLF.CACT.MA.ZS,"Labor force participation rate, male (% of male population ages 15+) (modeled ILO estimate)",2025,80.139,85.6353591160221,182,1.5150171642830879,other
+NV.IND.MANF.KD.ZG,"Manufacturing, value added (annual % growth)",2025,1.9588834553853331,38.51851851851852,136,-52.41163996953346,economy & trade
+DT.ODA.ODAT.GI.ZS,Net ODA received (% of gross capital formation),2023,8.42823531947499,46.846846846846844,112,48.83753079014198,other
+SH.XPD.OOPC.PP.CD,"Out-of-pocket expenditure per capita, PPP (current international $)",2023,80.512442042423,23.56020942408377,192,27.221105158365965,other
+SH.H2O.BASW.RU.ZS,"People using at least basic drinking water services, rural (% of rural population)",2024,89.3108623362511,42.51497005988024,168,2.7122639926211836,health
+SP.POP.3034.FE.5Y,"Population ages 30-34, female (% of female population)",2025,6.9843294070463,50.0,217,1.828361648640928,education & gender
+SP.POP.65UP.TO.ZS,Population ages 65 and above (% of total population),2025,4.36186248416949,26.38888888888889,217,14.15740608653705,other
+EN.POP.EL5M.ZS,Population living in areas where elevation is below 5 meters (% of total population),2015,0.448811415274458,25.233644859813083,215,,other
+SP.POP.BRTH.MF,Sex ratio at birth (male births per female births),2024,1.055,61.11111111111111,217,-0.0946969696969803,health
+SH.STA.SUIC.P5,"Suicide mortality rate (per 100,000 population)",2021,5.64,38.58695652173913,185,-9.90415335463259,health
+NY.ADJ.DRES.GN.ZS,Adjusted savings: natural resources depletion (% of GNI),2021,1.0670335939369893,48.80952380952381,169,-40.61183332893555,other
+TM.TAX.MRCH.BR.ZS,"Bound rate, simple mean, all products (%)",2021,60.85,84.78260869565217,139,1.3659836748292524,other
+NE.DAB.TOTL.ZS,Gross national expenditure (% of GDP),2025,107.22312395792267,70.76923076923077,131,0.4535171241165845,economy & trade
+HD_HCIP_HLTH_FE,"Human capital index plus (HCI+): health pillar score, female (scale 0–50)",2025,39.3075123775005,15.686274509803921,205,3.553001414083174,health
+ST.INT.XPND.MP.ZS,"International tourism, expenditures (% of total imports)",2020,2.3897296215758534,36.029411764705884,137,-30.19896311169391,economy & trade
+ST.INT.RCPT.XP.ZS,"International tourism, receipts (% of total exports)",2020,2.7988074519254518,39.516129032258064,125,-21.31929672222398,economy & trade
+SL.TLF.ACTI.1524.MA.ZS,"Labor force participation rate for ages 15-24, male (%) (modeled ILO estimate)",2025,63.707,84.5303867403315,182,8.676071714914448,other
+SL.TLF.CACT.FE.ZS,"Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)",2025,24.046,7.18232044198895,182,0.262686069299082,education & gender
+LP.LPI.TRAC.XQ,Logistics performance index: Ability to track and trace consignments (1=low to 5=high),2018,2.27,15.822784810126583,159,,other
+TM.VAL.MRCH.R5.ZS,Merchandise imports from low- and middle-income economies in South Asia (% of total merchandise imports),2023,2.1745544998525546,52.70935960591133,204,-58.96177844909401,economy & trade
+SH.STA.ODFC.UR.ZS,"People practicing open defecation, urban (% of urban population)",2024,0.479157456000053,67.85714285714286,169,-74.9417756878018,other
+SH.H2O.SMDW.UR.ZS,"People using safely managed drinking water services, urban (% of urban population)",2024,45.4346393800103,20.792079207920793,102,0.37334286575909076,health
+SP.POP.7074.FE.5Y,"Population ages 70-74, female (% of female population)",2025,1.32397140279051,25.925925925925924,217,13.162889382356605,education & gender
+IT.NET.SECR.P6,Secure Internet servers (per 1 million people),2024,109.65133787765538,23.83177570093458,215,4804.886263764834,digital
+SH.DTH.INJR.ZS,"Cause of death, by injury (% of total)",2021,7.6544276535925,63.58695652173913,185,,health
+SL.FAM.WORK.FE.ZS,"Contributing family workers, female (% of female employment) (modeled ILO estimate)",2025,53.428541225302,97.23756906077348,182,-0.2933389604985625,education & gender
+FR.INR.DPST,Deposit interest rate (%),2021,5.75153187603233,83.63636363636363,111,-30.079644906911167,finance & payments
+SE.SEC.CUAT.UP.MA.ZS,"Educational attainment, at least completed upper secondary, population 25+, male (%) (cumulative)",2018,32.7972229341722,19.090909090909093,111,5.976081396810749,education & gender
+EG.ELC.FOSL.ZS,"Electricity production from oil, gas and coal sources (% of total)",2024,55.665829318178695,50.0,147,-12.299349898490574,energy & environment
+IT.NET.BBND.P2,Fixed broadband subscriptions (per 100 people),2024,1.46559368502535,16.0,151,56.33365604912755,digital
+IT.MLT.MAIN.P2,Fixed telephone subscriptions (per 100 people),2024,1.01235183796767,19.310344827586206,146,-55.7126487036985,digital
+LP.LPI.TIME.XQ,Logistics performance index: Frequency with which shipments reach consignee within scheduled or expected time (1=low to 5=high),2018,2.66,15.18987341772152,159,,other
+TM.VAL.MRCH.AL.ZS,Merchandise imports from economies in the Arab World (% of total merchandise imports),2023,32.95842985806268,97.94871794871794,196,-17.46858934633821,economy & trade
+MS.MIL.XPND.GD.ZS,Military expenditure (% of GDP),2025,2.9136125149,80.53691275167785,150,-7.884134780850963,economy & trade
+SP.POP.3034.MA.5Y,"Population ages 30-34, male (% of male population)",2025,7.12740991341026,46.2962962962963,217,4.342970805455898,other
+SP.POP.4044.MA.5Y,"Population ages 40-44, male (% of male population)",2025,5.16819232804442,18.51851851851852,217,14.486788247695698,other
+EN.URB.MCTY,Population in urban agglomerations of more than 1 million,2025,51245825.0,95.0,121,31.737589937831757,other
+BX.GSR.TRAN.ZS,"Transport services (% of service exports, BoP)",2025,10.598777427550534,33.33333333333333,136,-46.76235903725256,economy & trade
+SH_UHC_SCI_ID,UHC service coverage sub-index on infectious diseases,2023,72.0,29.427083333333336,193,30.909090909090907,health
+SL.EMP.VULN.FE.ZS,"Vulnerable employment, female (% of female employment) (modeled ILO estimate)",2025,73.2301616243749,80.66298342541437,182,-2.1398542319255824,education & gender
+NV.AGR.TOTL.ZS,"Agriculture, forestry, and fishing, value added (% of GDP)",2025,23.021294909638883,87.26114649681529,158,-1.038333487793057,economy & trade
+AG.LND.ARBL.HA.PC,Arable land (hectares per person),2024,0.12213993755318102,54.41176470588235,205,-14.02670629292255,other
+EG.ELC.RNWX.ZS,"Electricity production from renewable sources, excluding hydroelectric (% of total)",2021,7.808273358783404,58.454106280193244,208,125.68526190123008,energy & environment
+SH.XPD.EHEX.CH.ZS,External health expenditure (% of current health expenditure),2023,9.66909981,64.73988439306359,174,29.219473204868784,health
+NE.CON.PCAP.PP.CD,"Households and NPISHs Final consumption expenditure per capita, PPP (current international $)",2025,5701.784585964393,24.390243902439025,124,55.98392891222769,other
+TX.VAL.MRCH.R6.ZS,Merchandise exports to low- and middle-income economies in Sub-Saharan Africa (% of total merchandise exports),2023,5.342362227441776,71.93877551020408,197,-14.812154090906665,economy & trade
+FM.AST.PRVT.GD.ZS,Monetary Sector credit to private sector (% GDP),2025,10.726824649669446,8.737864077669903,104,-22.704437726165256,finance & payments
+SH.STA.OWGH.ME.ZS,"Prevalence of overweight, weight for height (modeled estimate, % of children under 5)",2024,2.1,7.407407407407407,163,-51.16279069767441,other
+SH.STA.OWGH.ME.MA.ZS,"Prevalence of overweight, weight for height, male (modeled estimate, % of children under 5)",2024,2.2,6.790123456790123,163,-52.17391304347825,other
+DT.TDS.DPPG.GN.ZS,Public and publicly guaranteed debt service (% of GNI),2024,3.093428276138066,68.96551724137932,117,230.94026823798964,economy & trade
+EG.ELC.RNEW.ZS,Renewable electricity output (% of total electricity output),2021,28.276387758933602,55.66502463054187,204,-15.464909313882341,energy & environment
+SP.RUR.TOTL.ZS,Rural population (% of total population),2025,60.4743989020394,80.0925925925926,217,-5.653613852309929,other
+TM.TAX.MRCH.WM.AR.ZS,"Tariff rate, applied, weighted mean, all products (%)",2022,7.61,69.71830985915493,143,-15.631929046563187,other
+DT.TDS.DECT.EX.ZS,"Total debt service (% of exports of goods, services and primary income)",2025,32.82116257248639,91.8918918918919,112,126.74288188266803,economy & trade
+FX.OWN.TOTL.MA.ZS,"Account ownership at a financial institution or with a mobile-money-service provider, male (% of population ages 15+)",2024,42.2935435576169,9.420289855072465,139,101.66328817145826,finance & payments
+SE.SEC.UNER.LO.ZS,Adolescents out of school (% of lower secondary school age),2024,32.2121051194609,86.72566371681415,114,,education & gender
+SH.XPD.GHED.CH.ZS,Domestic general government health expenditure (% of current health expenditure),2023,35.71940231,26.701570680628272,192,36.1827999332986,health
+SL.SRV.EMPL.FE.ZS,"Employment in services, female (% of female employment) (modeled ILO estimate)",2025,18.8245974114549,2.7624309392265194,182,39.55040398849937,education & gender
+EG.USE.PCAP.KG.OE,Energy use (kg of oil equivalent per capita),2024,388.740076359679,10.81081081081081,149,-11.031394312680892,energy & environment
+NE.IMP.GNFS.ZS,Imports of goods and services (% of GDP),2025,17.20833066834476,7.2992700729927,138,2.9599557032236112,economy & trade
+SL.TLF.ACTI.MA.ZS,"Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)",2025,83.032,79.00552486187846,182,2.4972533915984596,other
+ER.MRN.PTMR.ZS,Marine protected areas (% of territorial waters),2025,1.2,43.35260115606936,174,49.999999999999986,health
+SP.POP.0509.MA.5Y,"Population ages 05-09, male (% of male population)",2025,12.0104087948404,77.77777777777779,217,-7.480263377431622,other
+SP.POP.1564.FE.ZS,"Population ages 15-64, female (% of female population)",2025,59.2955902453084,21.296296296296298,217,3.2420642873306917,education & gender
+SP.POP.6569.MA.5Y,"Population ages 65-69, male (% of male population)",2025,1.73876427373203,28.703703703703702,217,18.099610107332275,other
+SH.STA.OWGH.ME.FE.ZS,"Prevalence of overweight, weight for height, female (modeled estimate, % of children under 5)",2024,1.9,6.790123456790123,163,-52.5,education & gender
+SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",2024,72.8515927841691,8.256880733944955,110,42.32017633709428,education & gender
+TM.TAX.MANF.SM.FN.ZS,"Tariff rate, most favored nation, simple mean, manufactured products (%)",2022,10.5,68.30985915492957,143,-25.952045133991536,economy & trade
+SH.ALC.PCAP.FE.LI,"Total alcohol consumption per capita, female (liters of pure alcohol, projected estimates, female 15+ years of age)",2020,0.023,5.978260869565218,185,9.523809523809515,education & gender
+EN.GHG.CO2.PC.CE.AR5,Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita),2024,0.8118318091749611,27.722772277227726,203,2.803829972124801,energy & environment
+NY.GDP.COAL.RT.ZS,Coal rents (% of GDP),2021,0.121668638591279,85.56149732620321,188,24.289907669988718,economy & trade
+SE.COM.DURS,"Compulsory education, duration (years)",2025,12.0,76.53061224489795,197,0.0,education & gender
+SE.SEC.CMPT.LO.FE.ZS,"Lower secondary completion rate, female (% of relevant age group)",2024,54.5450250285911,13.084112149532709,108,57.085388573448206,education & gender
+TX.VAL.MRCH.HI.ZS,Merchandise exports to high-income economies (% of total merchandise exports),2023,67.18990042234427,52.450980392156865,205,13.078371496214846,economy & trade
+TM.VAL.MRCH.RS.ZS,"Merchandise imports by the reporting economy, residual (% of total merchandise imports)",2023,9.687115157673167e-07,32.84313725490196,205,-98.90691844258315,economy & trade
+TM.VAL.MRCH.R1.ZS,Merchandise imports from low- and middle-income economies in East Asia & Pacific (% of total merchandise imports),2023,34.711211659447564,88.23529411764706,205,41.42389196187929,economy & trade
+SH.XPD.OOPC.CH.ZS,Out-of-pocket expenditure (% of current health expenditure),2023,52.93231964,85.34031413612566,192,-15.638161693917004,health
+SP.POP.80UP.MA.5Y,"Population ages 80 and above, male (% of male population)",2025,0.481712894434861,28.703703703703702,217,8.049021787252245,other
+SL.EMP.WORK.FE.ZS,"Wage and salaried workers, female (% of female employment) (modeled ILO estimate)",2025,26.6720497504202,20.994475138121548,182,6.416702578560986,education & gender
+NY.ADJ.NNTY.PC.KD.ZG,Adjusted net national income per capita (annual % growth),2021,5.752850469653097,66.43356643356644,144,25.420950696476837,economy & trade
+NY.ADJ.DPEM.GN.ZS,Adjusted savings: particulate emission damage (% of GNI),2021,2.32300739565742,97.48427672955975,160,-0.22003138884720805,energy & environment
+SH.XPD.CHEX.PP.CD,"Current health expenditure per capita, PPP (current international $)",2023,152.104499152766,12.56544502617801,192,50.80409218027931,health
+SL.EMP.1524.SP.MA.ZS,"Employment to population ratio, ages 15-24, male (%) (modeled ILO estimate)",2025,57.708,86.74033149171271,182,4.437527146373242,other
+NE.GDI.TOTL.ZS,Gross capital formation (% of GDP),2025,14.282808182894183,10.0,131,-9.66497422807344,economy & trade
+HD_HCIP_HLTH_MA,"Human capital index plus (HCI+): health pillar score, male (scale 0–50)",2025,36.7940436172485,21.07843137254902,205,6.56418659892134,health
+LP.LPI.LOGS.XQ,Logistics performance index: Competence and quality of logistics services (1=low to 5=high),2018,2.59,45.25316455696203,159,,other
+NV.MNF.TECH.ZS.UN,Medium and high-tech manufacturing value added (% manufacturing value added),2024,22.9039928455163,52.980132450331126,152,0.6041663174872662,economy & trade
+TX.VAL.MRCH.R4.ZS,Merchandise exports to low- and middle-income economies in Middle East & North Africa (% of total merchandise exports),2023,1.6693589572656171,72.43243243243244,186,-33.72830024364484,economy & trade
+SH.DYN.NCOM.MA.ZS,"Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70, male (%)",2021,26.0,71.46739130434783,185,-11.864406779661017,health
+SH.MED.PHYS.ZS,"Physicians (per 1,000 people)",2021,1.16,34.42622950819672,123,55.0802139037433,health
+SP.POP.6064.MA.5Y,"Population ages 60-64, male (% of male population)",2025,2.33932562143514,25.0,217,18.188719227168583,other
+EN.URB.LCTY.UR.ZS,Population in the largest city (% of urban population),2025,17.919627576786212,19.736842105263158,153,-2.1683914616979636,other
+SP.DYN.TO65.FE.ZS,"Survival to age 65, female (% of cohort)",2024,76.30956,26.38888888888889,217,5.131141557053402,education & gender
+EN.GHG.TOT.ZG.AR5,Total greenhouse gas emissions excluding LULUCF (% change from 1990),2024,178.42531716340866,73.26732673267327,203,50.74663184785286,energy & environment
+TM.VAL.TRVL.ZS.WT,Travel services (% of commercial service imports),2025,26.45889987761584,70.37037037037037,136,31.097625147535663,economy & trade
+GD_WBL_OVL_LAW,WBL: Legal Framework Index (scale 0-100),2025,46.68,14.095744680851064,189,,other
+SP.POP.DPND.YG,"Age dependency ratio, young (% of working-age population)",2025,61.02313264183308,79.16666666666666,217,-9.605038807491841,other
+EG.USE.COMM.CL.ZS,Alternative and nuclear energy (% of total energy use),2024,10.16,62.16216216216216,149,117.55888650963597,energy & environment
+TM.TAX.MANF.BC.ZS,"Binding coverage, manufactured products (%)",2022,0.0,36.2962962962963,136,-100.0,economy & trade
+SH.XPD.EHEX.PP.CD,"External health expenditure per capita, PPP (current international $)",2023,14.7071362930865,46.82080924855491,174,94.86825161638521,health
+NY.GNP.MKTP.KD.ZG,GNI growth (annual %),2025,3.5076466280461176,44.66019417475729,104,-21.670778246470665,other
+SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",2024,55.8249458158832,13.084112149532709,108,44.37529139884653,other
+IC.BUS.NDNS.ZS,"New business density (new registrations per 1,000 people ages 15-64)",2024,0.202271411412143,7.518796992481203,134,410.20627646951766,other
+TX.VAL.MMTL.ZS.UN,Ores and metals exports (% of merchandise exports),2025,4.564084249093719,64.35643564356435,102,191.2826473670955,economy & trade
+SP.POP.5054.MA.5Y,"Population ages 50-54, male (% of male population)",2025,3.3974699663358,18.51851851851852,217,1.5753430527567596,other
+SP.POP.6569.FE.5Y,"Population ages 65-69, female (% of female population)",2025,1.97066401052375,25.0,217,24.012589719769633,education & gender
+SE.PRM.DURS,"Primary education, duration (years)",2025,5.0,19.37799043062201,210,0.0,education & gender
+SL.UEM.NEET.ME.ZS,"Share of youth not in education, employment or training, total (% of youth population)  (modeled ILO estimate)",2025,34.37,90.60773480662984,182,13.02203222624136,education & gender
+SH.STA.SUIC.MA.P5,"Suicide mortality rate, male (per 100,000 male population)",2021,8.02,37.77173913043478,185,-11.479028697571755,health
+SH.ALC.PCAP.LI,"Total alcohol consumption per capita (liters of pure alcohol, projected estimates, 15+ years of age)",2020,0.084,4.891304347826087,185,6.329113924050639,other
+TX.VAL.TRVL.ZS.WT,Travel services (% of commercial service exports),2025,9.962146893931397,11.851851851851853,136,8.703678568166245,economy & trade
+SH_UHC_SCI_RMNCH,"UHC service coverage sub-index on reproductive, maternal, newborn and child health",2023,64.0,27.34375,193,12.280701754385964,health
+SL.UEM.1524.FE.ZS,"Unemployment, youth female (% of female labor force ages 15-24) (modeled ILO estimate)",2025,10.143,37.569060773480665,182,6.454659949622169,education & gender
+EN.POP.EL5M.UR.ZS,Urban population living in areas where elevation is below 5 meters (% of total population),2015,0.209824035021691,24.766355140186917,215,,other
+SP.POP.DPND,Age dependency ratio (% of working-age population),2025,68.36707284221967,78.70370370370371,217,-7.813641554532314,other
+TX.QTY.MRCH.XD.WD,Export volume index (2015 = 100),2024,144.6,75.24752475247524,203,35.77464788732394,economy & trade
+NY.GNP.PCAP.KD.ZG,GNI per capita growth (annual %),2025,1.9055140102492487,37.254901960784316,103,-36.96619109352752,other
+NY.GNS.ICTR.ZS,Gross savings (% of GDP),2025,15.229929881629753,21.0,101,1.9115286998241106,economy & trade
+TM.VAL.MRCH.XD.WD,Import value index (2015 = 100),2024,127.8,26.108374384236456,204,18.662952646239546,economy & trade
+SL.TLF.ACTI.1524.ZS,"Labor force participation rate for ages 15-24, total (%) (modeled ILO estimate)",2025,43.176,56.9060773480663,182,7.096614163462742,other
+SH.STA.AIRP.P5,"Mortality rate attributed to household and ambient air pollution, age-standardized (per 100,000 population)",2019,192.1,82.96703296703298,183,,health
+NY.GDP.NGAS.RT.ZS,Natural gas rents (% of GDP),2021,0.736337565284813,84.12698412698413,190,-36.0462612408843,economy & trade
+SM.POP.NETM,Net migration,2025,-1235336.0,0.0,217,43.128735333736614,other
+SP.POP.5559.MA.5Y,"Population ages 55-59, male (% of male population)",2025,2.83819588699837,20.37037037037037,217,4.673173146820885,other
+SP.POP.7074.MA.5Y,"Population ages 70-74, male (% of male population)",2025,1.09757954206012,28.240740740740737,217,0.24636901440253456,other
+SE.PRM.AGES,Primary school starting age (years),2025,5.0,5.741626794258373,210,0.0,education & gender
+SL.TLF.CACT.FM.ZS,Ratio of female to male labor force participation rate (%) (modeled ILO estimate),2025,30.005365677135977,4.972375690607735,182,-1.2336412187739056,education & gender
+FR.INR.RINR,Real interest rate (%),2021,-1.4522594230780226,27.522935779816514,110,15.122105207765104,finance & payments
+SE.ENR.SECO.FM.ZS,"School enrollment, secondary (gross), gender parity index (GPI)",2019,0.868359982967377,5.737704918032787,123,9.300536161953707,education & gender
+GD_WBL_OVL_ENF,WBL: Enforcement Perceptions Index (scale 0-100),2025,27.35,6.25,177,,other
+FX.OWN.TOTL.YG.ZS,"Account ownership at a financial institution or with a mobile-money-service provider, young adults (% of population ages 15-24)",2024,24.3424901722908,5.797101449275362,139,84.46259408929622,finance & payments
+SP.DYN.CDRT.IN,"Death rate, crude (per 1,000 people)",2024,6.445,34.72222222222222,217,-11.372387238723872,health
+HD_HCIP_OTJL_FE,"Human capital index plus (HCI+): on-the-job learning pillar score, female (scale -30–87)",2025,-9.42764476528015,6.358381502890173,174,-2.2544230928335125,education & gender
+HD_HCIP_OVRL_FE,"Human capital index plus (HCI+): overall score, female (scale 0–325)",2025,97.7587203708508,5.7324840764331215,158,12.914693306068898,education & gender
+SP.POP.65UP.MA.ZS,"Population ages 65 and above, male (% of male population)",2025,3.96788431197672,27.314814814814813,217,8.430860903432672,other
+SP.POP.7579.FE.5Y,"Population ages 75-79, female (% of female population)",2025,0.825640011770156,25.462962962962965,217,16.2008847069131,education & gender
+SP.POP.7579.MA.5Y,"Population ages 75-79, male (% of male population)",2025,0.649827601749709,28.240740740740737,217,0.5346642611977557,other
+SE.SEC.ENRR,"School enrollment, secondary (% gross)",2024,48.2805022055997,3.7037037037037033,109,47.83965309514554,education & gender
+FX.OWN.TOTL.40.ZS,"Account ownership at a financial institution or with a mobile-money-service provider, poorest 40% (% of population ages 15+)",2024,13.6062537929128,0.0,138,39.48312264423579,finance & payments
+SP.ADO.TFRT,"Adolescent fertility rate (births per 1,000 women ages 15-19)",2024,39.856,62.03703703703704,217,-19.942150088381805,health
+SH.STA.DIAB.ZS,Diabetes prevalence (% of population ages 20 to 79),2024,31.4,100.0,209,,other
+FD.AST.PRVT.GD.ZS,Domestic credit to private sector by banks (% of GDP),2025,10.680433674545725,9.174311926605505,110,-22.63350288491807,finance & payments
+EG.IMP.CONS.ZS,"Energy imports, net (% of energy use)",2024,30.39527836347774,50.72463768115942,139,16.309713931220262,economy & trade
+BX.KLT.DINV.WD.GD.ZS,"Foreign direct investment, net inflows (% of GDP)",2025,0.4546936401265531,18.579234972677597,184,-18.47487334985832,economy & trade
+BX.GSR.INSF.ZS,"Insurance and financial services (% of service exports, BoP)",2025,1.848997339920166,31.297709923664126,132,-32.69421411414063,finance & payments
+FR.INR.LNDP,"Interest rate spread (lending rate minus deposit rate, %)",2021,2.9144423386929104,17.647058823529413,103,-52.94226579074983,finance & payments
+TX.VAL.MRCH.WR.ZS,Merchandise exports to low- and middle-income economies within region (% of total merchandise exports),2023,6.944572069117921,34.82587064676617,202,-49.35647154345982,economy & trade
+SP.POP.1519.MA.5Y,"Population ages 15-19, male (% of male population)",2025,10.8270037317688,82.4074074074074,217,-0.24761924001309885,other
+SH.DYN.2024,"Probability of dying among youth ages 20-24 years (per 1,000)",2024,4.8,48.717948717948715,196,-23.80952380952381,other
+ER.H2O.INTR.PC,Renewable internal freshwater resources per capita (cubic meters),2022,225.68670277787953,8.88888888888889,181,-14.785984151614995,health
+SH_UHC_SCI_NCD,UHC service coverage sub-index on non-communicable diseases,2023,56.0,24.479166666666668,193,5.660377358490567,health
+NY.ADJ.SVNX.GN.ZS,"Adjusted net savings, excluding particulate emission damage (% of GNI)",2021,8.44960283211834,49.59349593495935,124,1.346239029494846,energy & environment
+EG.ELC.PETR.ZS,Electricity production from oil sources (% of total),2024,8.229351123556947,70.8029197080292,138,-77.6599980206767,energy & environment
+SL.EMP.MPYR.ZS,"Employers, total (% of total employment) (modeled ILO estimate)",2025,1.48944707066888,16.574585635359114,182,5.322164549572904,other
+NE.GDI.FTOT.KD.ZG,Gross fixed capital formation (annual % growth),2025,13.166738579415366,89.43089430894308,124,-3.612522342729764,other
+HD_HCIP_OTJL_TO,"Human capital index plus (HCI+): on-the-job learning pillar score, total (scale -30–87)",2025,20.902653290698,15.909090909090908,177,0.7640442475567654,other
+IT.NET.USER.ZS,Individuals using the Internet (% of population),2024,57.253,23.204419889502763,182,472.53,digital
+LP.LPI.OVRL.XQ,Logistics performance index: Overall (1=low to 5=high),2018,2.42,23.417721518987342,159,,other
+TM.VAL.MRCH.R3.ZS,Merchandise imports from low- and middle-income economies in Latin America & the Caribbean (% of total merchandise imports),2023,1.5516868483955544,43.43434343434344,199,110.45953591351608,economy & trade
+NV.MNF.OTHR.ZS.UN,Other manufacturing (% of value added in manufacturing),2018,27.468684262062702,22.22222222222222,118,-26.756452495337413,economy & trade
+SE.PRM.TCHR.FE.ZS,"Primary education, teachers (% female)",2024,51.9293437427811,12.396694214876034,122,4.665337926178484,education & gender
+SH.SGR.CRSK.ZS,Risk of catastrophic expenditure for surgical care (% of people at risk),2022,33.7,76.78571428571429,113,-44.29752066115702,other
+SL.EMP.SELF.ZS,"Self-employed, total (% of total employment) (modeled ILO estimate)",2025,57.0024730729602,73.48066298342542,182,-5.944012308402452,other
+SL.UEM.1524.MA.ZS,"Unemployment, youth male (% of male labor force ages 15-24) (modeled ILO estimate)",2025,9.416,38.67403314917127,182,64.01323811182722,other
+EG.ELC.ACCS.UR.ZS,"Access to electricity, urban (% of urban population)",2024,98.4,25.471698113207548,213,0.5107252298263534,energy & environment
+NY.ADJ.AEDU.GN.ZS,Adjusted savings: education expenditure (% of GNI),2021,2.02734916362365,11.616161616161616,199,39.81718369818275,education & gender
+NY.GDP.FRST.RT.ZS,Forest rents (% of GDP),2021,0.128676978113697,46.42857142857143,197,-51.118978735474094,economy & trade
+SE.XPD.TOTL.GD.ZS,"Government expenditure on education, total (% of GDP)",2023,1.94658005237579,13.333333333333334,121,-12.982173628335952,economy & trade
+NE.GDI.FTOT.ZS,Gross fixed capital formation (% of GDP),2025,12.572808182894182,6.4,126,-10.837032049239959,economy & trade
+IS.SHP.GCNW.XQ,Liner shipping connectivity index (maximum value in 2004 = 100),2021,34.1095612091,68.90243902439023,165,23.40791279981413,other
+TM.VAL.MRCH.R2.ZS,Merchandise imports from low- and middle-income economies in Europe & Central Asia (% of total merchandise imports),2023,0.9443639569325414,33.33333333333333,199,-8.201670778319416,economy & trade
+TM.VAL.MRCH.R4.ZS,Merchandise imports from low- and middle-income economies in Middle East & North Africa (% of total merchandise imports),2023,3.9267888518222,88.42105263157895,191,182.53307832329938,economy & trade
+TG.VAL.TOTL.GD.ZS,Merchandise trade (% of GDP),2025,23.666165629783457,4.787234042553192,189,7.14321530556008,economy & trade
+EN.GHG.CH4.ZG.AR5,Methane (CH4) emissions (total) excluding LULUCF (% change from 1990),2024,153.82859755844643,87.12871287128714,203,65.87971291333622,energy & environment
+SH.DYN.NCOM.FE.ZS,"Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70, female (%)",2021,25.0,90.21739130434783,185,-4.580152671755722,health
+SH.STA.BASS.UR.ZS,"People using at least basic sanitation services, urban (% of urban population)",2024,82.9837739229137,32.35294117647059,171,9.672608436279733,health
+AG.LND.CROP.ZS,Permanent cropland (% of land area),2024,0.9067559153175592,37.878787878787875,199,-13.91625615763547,other
+EN.ATM.PM25.MC.T1.ZS,"PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-1 value (% of total)",2017,99.6142371657863,86.52849740932642,194,,energy & environment
+SP.POP.3539.FE.5Y,"Population ages 35-39, female (% of female population)",2025,6.1050707394389,28.240740740740737,217,11.445402189193649,education & gender
+SH.STA.STNT.ME.MA.ZS,"Prevalence of stunting, height for age, male (modeled estimate, % of children under 5)",2024,34.5,87.5776397515528,162,-20.138888888888896,health
+BM.GSR.TRVL.ZS,"Travel services (% of service imports, BoP)",2025,24.785856802907148,68.14814814814815,136,31.658046358988695,economy & trade
+EG.ELC.ACCS.RU.ZS,"Access to electricity, rural (% of rural population)",2024,94.0,31.100478468899524,210,9.55710955710956,energy & environment
+FX.OWN.TOTL.SO.ZS,"Account ownership at a financial institution or with a mobile-money-service provider, secondary education or more (% of population ages 15+)",2024,46.6859995768197,7.246376811594203,139,85.33833350027807,finance & payments
+NY.ADJ.SVNG.GN.ZS,"Adjusted net savings, including particulate emission damage (% of GNI)",2021,6.12659543646092,40.17094017094017,118,1.9530522078898567,energy & environment
+NY.ADJ.DCO2.GN.ZS,Adjusted savings: carbon dioxide damage (% of GNI),2021,2.61953045873968,80.54054054054053,186,30.503209033160005,energy & environment
+FD.RES.LIQU.AS.ZS,Bank liquid reserves to bank assets ratio (%),2025,16.70060910174634,50.0,111,46.10219354650933,finance & payments
+TM.TAX.MANF.BR.ZS,"Bound rate, simple mean, manufactured products (%)",2021,54.82,88.40579710144928,139,-0.16390457111636553,economy & trade
+SL.FAM.WORK.ZS,"Contributing family workers, total (% of total employment) (modeled ILO estimate)",2025,19.6969324116533,88.39779005524862,182,-10.576709857292345,other
+BN.CAB.XOKA.GD.ZS,Current account balance (% of GDP),2025,-0.10999004782571893,57.77777777777777,136,88.22939362508237,finance & payments
+NE.CON.TOTL.KD.ZG,Final consumption expenditure (annual % growth),2025,2.824129791040207,40.909090909090914,133,-2.794712799304446,other
+TX.VAL.FOOD.ZS.UN,Food exports (% of merchandise exports),2025,18.15376363627485,61.76470588235294,103,-8.873605096623601,economy & trade
+SH.MMR.RISK.ZS,Lifetime risk of maternal death (%),2023,0.564582679346536,79.27461139896373,194,-39.23713843197231,health
+TM.VAL.MRCH.HI.ZS,Merchandise imports from high-income economies (% of total merchandise imports),2023,52.907770919467204,39.705882352941174,205,-18.793399832037252,economy & trade
+SP.POP.4549.MA.5Y,"Population ages 45-49, male (% of male population)",2025,4.12737702851337,17.59259259259259,217,6.843278435955496,other
+SE.PRE.DURS,"Preprimary education, duration (years)",2025,2.0,10.44776119402985,202,0.0,education & gender
+SH.ANM.NPRG.ZS,Prevalence of anemia among non-pregnant women (% of women ages 15-49),2023,47.1,96.8586387434555,192,2.838427947598263,education & gender
+DT.TDS.DPPG.XP.ZS,"Public and publicly guaranteed debt service (% of exports of goods, services and primary income)",2024,27.150997755141503,98.0,101,237.76045475031063,economy & trade
+DT.DOD.DSTC.ZS,Short-term debt (% of total external debt),2025,7.7352,48.739495798319325,120,-17.948065173116085,economy & trade
+TM.TAX.MANF.SM.AR.ZS,"Tariff rate, applied, simple mean, manufactured products (%)",2022,11.23,75.35211267605634,143,-21.358543417366942,economy & trade
+SL.UEM.TOTL.ZS,"Unemployment, total (% of total labor force) (modeled ILO estimate)",2025,5.42,54.69613259668509,182,51.9910263600673,other
+BM.GSR.CMCP.ZS,"Communications, computer, etc. (% of service imports, BoP)",2025,23.830317569808145,26.666666666666668,136,-28.272861641387454,economy & trade
+SL.AGR.EMPL.MA.ZS,"Employment in agriculture, male (% of male employment) (modeled ILO estimate)",2025,27.0478376938644,64.08839779005525,182,-16.275760156839215,energy & environment
+DT.DOD.DECT.GN.ZS,External debt stocks (% of GNI),2025,33.92877256365428,34.21052631578947,115,45.9278592155757,economy & trade
+NE.CON.PRVT.KD.ZG,Households and NPISHs Final consumption expenditure (annual % growth),2025,2.1600019720968078,25.581395348837212,130,-28.893848645322628,other
+NE.CON.PRVT.PC.KD.ZG,Households and NPISHs Final consumption expenditure per capita growth (annual %),2025,0.5787287355228017,21.09375,129,-63.89030164943282,other
+NE.CON.PCAP.PP.KD,"Households and NPISHs Final consumption expenditure per capita, PPP (constant 2021 international $)",2025,5080.746897914227,27.131782945736433,130,39.62782734320011,other
+HD_HCIP_EDUC_MA,"Human capital index plus (HCI+): education pillar score, male (scale 0–188)",2025,73.431883627567,24.074074074074073,163,13.188737181236073,education & gender
+SH.IMM.MEAS,"Immunization, measles (% of children ages 12-23 months)",2024,86.0,36.38743455497382,192,21.12676056338028,health
+AG.LND.EL5M.ZS,Land area where elevation is below 5 meters (% of total land area),2015,1.3060185725682731,45.794392523364486,215,,other
+SP.DYN.AMRT.FE,"Mortality rate, adult, female (per 1,000 female adults)",2024,128.873,62.63157894736842,191,-11.871465401106462,health
+SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2025,59.3940359691365,21.296296296296298,217,3.441728382918681,other
+SP.POP.1564.MA.ZS,"Population ages 15-64, male (% of male population)",2025,59.4898858449426,20.833333333333336,217,3.6356823643486145,other
+SP.POP.80UP.FE.5Y,"Population ages 80 and above, female (% of female population)",2025,0.646235119479729,22.685185185185187,217,24.122752084015808,education & gender
+SH.PRV.SMOK.MA,"Prevalence of current tobacco use, males (% of male adults)",2024,29.5,54.54545454545454,166,,other
+SE.PRM.CMPT.MA.ZS,"Primary completion rate, male (% of relevant age group)",2024,75.3645762926557,14.678899082568808,110,20.888094434368718,other
+SL.EMP.VULN.ZS,"Vulnerable employment, total (% of total employment) (modeled ILO estimate)",2025,55.5130260022914,74.58563535911603,182,-6.213193104440131,other
+GD_WBL_OVL_SFR,WBL: Supportive Framework Index (scale 0-100),2025,50.68,58.51063829787234,189,,other
+EG.CFT.ACCS.ZS,Access to clean fuels and technologies for cooking (% of population),2024,51.0,28.534031413612567,192,30.76923076923077,energy & environment
+FX.OWN.TOTL.60.ZS,"Account ownership at a financial institution or with a mobile-money-service provider, richest 60% (% of population ages 15+)",2024,36.4061624872429,5.109489051094891,138,139.35211658153347,finance & payments
+NV.MNF.CHEM.ZS.UN,Chemicals (% of value added in manufacturing),2018,15.80308310458063,82.0754716981132,107,11.709088528854382,economy & trade
+SE.SEC.CUAT.UP.ZS,"Educational attainment, at least completed upper secondary, population 25+, total (%) (cumulative)",2018,26.0640049316992,19.642857142857142,113,13.166818833072416,education & gender
+SL.IND.EMPL.MA.ZS,"Employment in industry, male (% of male employment) (modeled ILO estimate)",2025,28.7502314267714,66.85082872928176,182,7.780673655754325,other
+BX.GSR.CCIS.ZS,"ICT service exports (% of service exports, BoP)",2025,46.059844449797,96.96969696969697,133,244.25209470272864,economy & trade
+SH.IMM.HEPB,"Immunization, HepB3 (% of one-year-old children)",2024,87.0,39.037433155080215,188,26.08695652173913,health
+TM.VAL.INSF.ZS.WT,Insurance and financial services (% of commercial service imports),2025,10.848647437979759,77.77777777777779,136,87.23033340967166,finance & payments
+TM.VAL.MRCH.WR.ZS,Merchandise imports from low- and middle-income economies within region (% of total merchandise imports),2023,2.1745544998525546,14.427860696517413,202,-58.96177844909401,economy & trade
+SP.DYN.AMRT.MA,"Mortality rate, adult, male (per 1,000 male adults)",2024,199.969,57.36842105263158,191,-7.999742359344307,health
+SP.DYN.IMRT.IN,"Mortality rate, infant (per 1,000 live births)",2024,48.2,93.33333333333333,196,-26.412213740458014,health
+EN.ATM.PM25.MC.ZS,"PM2.5 air pollution, population exposed to levels exceeding WHO guideline value (% of total)",2017,100.0,70.98445595854922,194,,energy & environment
+SP.POP.4044.FE.5Y,"Population ages 40-44, female (% of female population)",2025,5.21181062794774,17.59259259259259,217,13.905124667983152,education & gender
+SL.UEM.TOTL.MA.ZS,"Unemployment, male (% of male labor force) (modeled ILO estimate)",2025,4.972,52.48618784530387,182,76.75079985780306,other
+FX.OWN.TOTL.FE.ZS,"Account ownership at a financial institution or with a mobile-money-service provider, female (% of population ages 15+)",2024,11.9121696598431,0.0,139,145.92882361544304,finance & payments
+TX.VAL.AGRI.ZS.UN,Agricultural raw materials exports (% of merchandise exports),2025,1.6371149084751637,68.62745098039215,103,18.477883869169066,economy & trade
+TM.QTY.MRCH.XD.WD,Import volume index (2015 = 100),2024,196.6,93.06930693069307,203,98.98785425101214,economy & trade
+NY.GDP.DEFL.KD.ZG,"Inflation, GDP deflator (annual %)",2025,4.283425470756242,62.70270270270271,186,-3.569463430565701,economy & trade
+TX.VAL.MRCH.AL.ZS,Merchandise exports to economies in the Arab World (% of total merchandise exports),2023,10.960733820391413,85.12820512820512,196,-19.483925788531447,economy & trade
+TX.VAL.MRCH.R3.ZS,Merchandise exports to low- and middle-income economies in Latin America & the Caribbean (% of total merchandise exports),2023,1.6925121794248357,58.1151832460733,192,2.6089325330079225,economy & trade
+TX.VAL.MRCH.R5.ZS,Merchandise exports to low- and middle-income economies in South Asia (% of total merchandise exports),2023,6.944572069117921,84.34343434343434,199,-49.35647154345982,economy & trade
+SH.STA.POIS.P5.FE,"Mortality rate attributed to unintentional poisoning, female (per 100,000 female population)",2021,0.11,22.282608695652172,185,14.583333333333332,health
+NY.GDP.PETR.RT.ZS,Oil rents (% of GDP),2021,0.380197434318265,71.95767195767195,190,-62.67582081771705,economy & trade
+SP.POP.GROW,Population growth (annual %),2025,1.55994397009632,69.44444444444444,217,11.225861439627835,other
+SE.PRM.CMPT.ZS,"Primary completion rate, total (% of relevant age group)",2024,74.135301829596,11.818181818181818,111,30.195940431712,other
+SE.SEC.ENRR.MA,"School enrollment, secondary, male (% gross)",2024,49.9927712129524,6.481481481481481,109,36.978524783484126,education & gender
+TM.VAL.TRAN.ZS.WT,Transport services (% of commercial service imports),2025,43.02789317093666,77.77777777777779,136,-4.749624791364955,economy & trade
+SH.TBS.DTEC.ZS,"Tuberculosis case detection rate (%, all forms)",2024,74.0,48.684210526315795,191,39.62264150943396,other
+SL.EMP.VULN.MA.ZS,"Vulnerable employment, male (% of male employment) (modeled ILO estimate)",2025,50.39597061855227,75.69060773480662,182,-8.013370309165046,other
+EG.CFT.ACCS.UR.ZS,"Access to clean fuels and technologies for cooking, urban (% of urban population)",2024,88.0,35.07853403141361,192,4.761904761904762,energy & environment
+NY.ADJ.NNTY.KD.ZG,Adjusted net national income (annual % growth),2021,7.767114547116364,78.32167832167832,144,11.713499056743224,economy & trade
+NY.ADJ.ICTR.GN.ZS,Adjusted savings: gross savings (% of GNI),2021,14.1015137625599,15.037593984962406,134,-10.162239502672154,other
+NY.ADJ.DMIN.GN.ZS,Adjusted savings: mineral depletion (% of GNI),2021,0.0222168179213852,61.29032258064516,187,-34.62958968717556,other
+ER.H2O.FWTL.ZS,"Annual freshwater withdrawals, total (% of internal resources)",2022,326.0,94.82758620689656,175,-4.566744730679147,health
+SE.PRM.UNER.ZS,Children out of school (% of primary school age),2024,17.9321832663555,86.5546218487395,120,,education & gender
+SH.XPD.PVTD.PP.CD,"Domestic private health expenditure per capita, PPP (current international $)",2023,83.0665447248968,20.94240837696335,192,24.23970217649392,health
+SL.EMP.TOTL.SP.ZS,"Employment to population ratio, 15+, total (%) (modeled ILO estimate)",2025,49.498,20.441988950276244,182,-1.3394458839944272,other
+SL.TLF.ACTI.1524.FE.ZS,"Labor force participation rate for ages 15-24, female (%) (modeled ILO estimate)",2025,21.655,19.88950276243094,182,4.4419793575769235,education & gender
+IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2024,76.8544559649986,12.0,151,21.29453836557193,digital
+SH.STA.AIRP.MA.P5,"Mortality rate attributed to household and ambient air pollution, age-standardized, male (per 100,000 male population)",2019,225.1,83.24175824175825,183,,health
+SH.DYN.MORT.FE,"Mortality rate, under-5, female (per 1,000 live births)",2024,50.8,88.2051282051282,196,-28.45070422535212,health
+DT.ODA.ODAT.GN.ZS,Net ODA received (% of GNI),2023,1.1977775615523611,34.883720930232556,130,39.17674351484662,other
+SP.POP.0014.TO.ZS,Population ages 0-14 (% of total population),2025,36.244101546694,78.70370370370371,217,-6.493889265973733,other
+EN.POP.EL5M.RU.ZS,Rural population living in areas where elevation is below 5 meters (% of total population),2015,0.238987380252767,29.906542056074763,215,,other
+SE.PRE.ENRR.MA,"School enrollment, preprimary, male (% gross)",2019,87.5581588745117,59.02777777777778,145,14.19621801161019,education & gender
+SE.ENR.PRIM.FM.ZS,"School enrollment, primary (gross), gender parity index (GPI)",2019,0.881079971790314,3.2467532467532463,155,3.115414503615589,education & gender
+NV.SRV.TOTL.KD.ZG,"Services, value added (annual % growth)",2025,3.0278836214444595,37.5,161,-27.86515185378263,other
+SL.UEM.NEET.FE.ME.ZS,"Share of youth not in education, employment or training, female (% of female youth population) (modeled ILO estimate)",2025,56.602,98.89502762430939,182,3.2186297572806564,education & gender
+SH.ALC.PCAP.MA.LI,"Total alcohol consumption per capita, male (liters of pure alcohol, projected estimates, male 15+ years of age)",2020,0.15,4.891304347826087,185,15.384615384615378,other
+NE.TRD.GNFS.ZS,Trade (% of GDP),2025,27.193537378766408,2.18978102189781,138,1.8935395654675489,economy & trade
+SL.UEM.TOTL.FE.ZS,"Unemployment, female (% of female labor force) (modeled ILO estimate)",2025,6.939,62.430939226519335,182,12.884333821376279,education & gender
+SL.UEM.1524.ZS,"Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)",2025,9.594,37.01657458563536,182,43.57976653696497,other

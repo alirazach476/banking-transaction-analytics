@@ -37,3 +37,9 @@ Test suite: **72 passed** (see docs/PHASE10_BENCHMARKS.md).
 - Phase 9: both DAGs executed in a real Airflow 2.8.1 container via `airflow dags test` (9 tasks SUCCESS).
 - Phase 10: pytest 83 passed locally.
 - Not done / not possible here: Tableau workbook (no Tableau; extracts + spec provided), hosted deployment (no target/credentials), GitHub Actions run. ML performance is modest (fraud PR-AUC ~0.26, decline ROC-AUC ~0.64) on synthetic data.
+
+## Real-data analysis update
+- `docs/ALL_IN_ONE_ANALYSIS.md` (parts A-H, `scripts/allinone/`): banking health, macro, payments, cross-border finance, global context, WDI screen, Findex and reconciliation, all from real data in the warehouse (SBP, BIS, World Bank, ECB, FRED). 11 of 14 cross-source checks pass; the rest are explained or not testable.
+- Earlier single-topic reports remain: PAKISTAN_ANALYSIS, PAKISTAN_WDI_ANALYSIS, SBP_ANALYSIS, BIS_CPMI_ANALYSIS, PAYSIM_FRAUD_RESULTS, MACRO_PAYMENTS_JOIN, DATA_PROFILE.
+- Warehouse additions: 57 missing files loaded (WDI, IDS, SDDS/GDDS, legacy .xls) and `sbp.rows_parsed`; 2 files remain unloaded (a login page and an empty workbook).
+- Still limited: SBP payments data is FY2018 only; SBP tables are OCR extractions; BIS country-level claims are mostly confidential; no Tableau workbook, hosted deployment or verified GitHub Actions run.

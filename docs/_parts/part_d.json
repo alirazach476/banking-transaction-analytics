@@ -1,0 +1,295 @@
+{
+ "lbs_span": [
+  "1977-Q4",
+  "2026-Q2",
+  195
+ ],
+ "lbs_claims_latest_usd_m": [
+  "2026-Q2",
+  30910
+ ],
+ "lbs_liabilities_latest_usd_m": [
+  "2026-Q2",
+  9549
+ ],
+ "lbs_claims_peak": [
+  "2021-Q3",
+  36129
+ ],
+ "lbs_claims_trough_since_2010": [
+  "2010-Q1",
+  4421
+ ],
+ "lbs_claims_yoy_latest_pct": -0.6,
+ "lbs_claims_5y_change_pct": -13.6,
+ "lbs_net_position_latest_usd_m": 21361,
+ "claims_by_reporting_country_latest": {
+  "FR": 638,
+  "HK": 573,
+  "CH": 350,
+  "US": 270,
+  "GB": 218,
+  "DE": 124,
+  "KR": 120,
+  "ES": 85,
+  "SE": 61,
+  "JP": 53
+ },
+ "claims_by_sector_latest": {
+  "F": 115,
+  "H": 179,
+  "G": 865,
+  "C": 632,
+  "A": 30910,
+  "N": 27968,
+  "B": 2892,
+  "P": 26805,
+  "U": 50,
+  "X": 1048,
+  "I": 1263,
+  "K": 25129
+ },
+ "top3_reporting_share_of_claims_pct": 5.1,
+ "cbs_international_claims_immediate_counterparty_latest": [
+  "2026-Q2",
+  3406
+ ],
+ "cbs_international_claims_immediate_counterparty_peak": [
+  "2017-Q3",
+  6893
+ ],
+ "cbs_series_note": "CBS = consolidated banking statistics, international claims of banks headquartered in reporting countries (domestic positions excluded), 4R bank type.",
+ "ids_total_external_debt_usd_bn": {
+  "2000": 33.1,
+  "2005": 34.5,
+  "2010": 63.4,
+  "2015": 68.7,
+  "2020": 118.9,
+  "2022": 127.6,
+  "2023": 131.0,
+  "2025": 135.1
+ },
+ "ids_latest_actual_year": 2025,
+ "ids_external_debt_cagr_2000_latest_pct": 5.8,
+ "ids_composition_latest_usd_bn": {
+  "PPG multilateral": 42.7,
+  "PPG bilateral": 42.4,
+  "PPG bonds": 6.8,
+  "PPG commercial banks": 1.0,
+  "PNG (private non-guaranteed)": 17.6,
+  "short-term debt": 10.5,
+  "IMF credit": 14.2
+ },
+ "ids_composition_latest_share_pct": {
+  "PPG multilateral": 31.6,
+  "PPG bilateral": 31.4,
+  "PPG bonds": 5.0,
+  "PPG commercial banks": 0.7,
+  "PNG (private non-guaranteed)": 13.0,
+  "short-term debt": 7.7,
+  "IMF credit": 10.5
+ },
+ "ids_debt_service_usd_bn": {
+  "2015": 4.2,
+  "2020": 11.0,
+  "2022": 17.7,
+  "2023": 16.1,
+  "2025": 13.7
+ },
+ "ids_debt_service_projection_2026_2030_usd_bn": {
+  "2026": 24.8,
+  "2027": 17.7,
+  "2028": 15.8,
+  "2029": 11.9,
+  "2030": 9.5
+ },
+ "wdi_reserves_2024_usd_bn": 18.4,
+ "reconciliation_ids_vs_wdi_total_debt_latest": [
+  135.11,
+  135.11
+ ],
+ "wdi_external_debt_pct_gni": {
+  "2025": 33.92877256365428,
+  "2010": 32.781190555684766,
+  "2020": 40.32616940713307
+ },
+ "wdi_debt_service_pct_exports": {
+  "2025": 32.82116257248639,
+  "2010": 15.140131482757422,
+  "2020": 39.72268084383092
+ },
+ "ids_top_creditors_latest_usd_bn": {
+  "Other Multiple Lenders": 28.03,
+  "China": 22.42,
+  "World Bank-IDA": 19.21,
+  "Asian Dev. Bank": 16.83,
+  "International Monetary Fund": 14.18,
+  "Multiple Lenders": 8.17,
+  "Bondholders": 6.8,
+  "Saudi Arabia": 6.05,
+  "World Bank-IBRD": 2.97,
+  "Japan": 2.68
+ },
+ "ids_creditor_rows_sum_vs_total_pct": 100.0,
+ "rpw_quotes": 6556,
+ "rpw_years": [
+  2016,
+  2025
+ ],
+ "rpw_cost_pct_by_year_mean": {
+  "2016": 4.64,
+  "2017": 4.65,
+  "2018": 5.05,
+  "2019": 4.77,
+  "2020": 4.1,
+  "2021": 4.02,
+  "2022": 3.63,
+  "2023": 3.53,
+  "2024": 2.76,
+  "2025": 2.61
+ },
+ "rpw_cost_pct_by_year_median": {
+  "2016": 3.58,
+  "2017": 3.96,
+  "2018": 4.23,
+  "2019": 4.11,
+  "2020": 3.74,
+  "2021": 3.61,
+  "2022": 3.09,
+  "2023": 3.1,
+  "2024": 1.86,
+  "2025": 1.96
+ },
+ "rpw_latest_window": [
+  2024,
+  2025,
+  1401
+ ],
+ "rpw_cost_by_sender_latest_mean": {
+  "Australia": [
+   2.31,
+   160
+  ],
+  "Bahrain": [
+   0.81,
+   52
+  ],
+  "Canada": [
+   5.0,
+   134
+  ],
+  "India": [
+   6.83,
+   8
+  ],
+  "Kuwait": [
+   0.35,
+   126
+  ],
+  "Norway": [
+   2.94,
+   259
+  ],
+  "Oman": [
+   2.23,
+   24
+  ],
+  "Qatar": [
+   1.0,
+   35
+  ],
+  "Saudi Arabia": [
+   4.75,
+   66
+  ],
+  "Singapore": [
+   2.86,
+   77
+  ],
+  "United Arab Emirates": [
+   1.78,
+   100
+  ],
+  "United Kingdom": [
+   1.84,
+   208
+  ],
+  "United States": [
+   4.42,
+   152
+  ]
+ },
+ "rpw_cost_by_firm_type_latest_mean": {
+  "Bank": [
+   6.29,
+   92
+  ],
+  "Money Transfer Operator": [
+   2.46,
+   1309
+  ]
+ },
+ "rpw_cost_by_instrument_latest_mean": {
+  "Bank account transfer": [
+   2.48,
+   416
+  ],
+  "Cash": [
+   2.97,
+   330
+  ],
+  "Credit Card": [
+   3.09,
+   195
+  ],
+  "Credit card": [
+   3.07,
+   91
+  ],
+  "Debit card": [
+   2.49,
+   357
+  ],
+  "Mobile money": [
+   1.29,
+   12
+  ]
+ },
+ "rpw_cost_by_access_point_latest_mean": {
+  "Agent": [
+   2.75,
+   432
+  ],
+  "Bank branch": [
+   7.72,
+   43
+  ],
+  "Call Center": [
+   3.75,
+   36
+  ],
+  "Internet": [
+   2.42,
+   878
+  ],
+  "Mobile phone": [
+   1.29,
+   12
+  ]
+ },
+ "rpw_share_quotes_above_3pct_latest": 34.5,
+ "rpw_fx_margin_mean_latest": 1.11,
+ "rpw_world_mean_cost_by_year": {
+  "2016": 7.33,
+  "2017": 7.18,
+  "2018": 6.96,
+  "2019": 6.83,
+  "2020": 6.66,
+  "2021": 6.23,
+  "2022": 6.16,
+  "2023": 6.25,
+  "2024": 6.47,
+  "2025": 6.43
+ },
+ "visible_country_claims_share_pct": 8.2
+}

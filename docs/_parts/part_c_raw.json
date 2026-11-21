@@ -1,0 +1,500 @@
+{
+ "table5_channels": {
+  "PRISM System": {
+   "vol_m": [
+    0.6,
+    0.8,
+    0.9,
+    1.1,
+    1.7
+   ],
+   "value_bn": [
+    149302.9,
+    179613.5,
+    231710.5,
+    279464.4,
+    361048.2
+   ]
+  },
+  "e-Banking": {
+   "vol_m": [
+    403.1,
+    468.2,
+    543.1,
+    625.6,
+    756.2
+   ],
+   "value_bn": [
+    33698.6,
+    35848.2,
+    37225.0,
+    37061.9,
+    47403.7
+   ]
+  },
+  "RTOB": {
+   "vol_m": [
+    98.5,
+    113.8,
+    135.4,
+    143.6,
+    165.7
+   ],
+   "value_bn": [
+    30173.3,
+    31559.7,
+    32339.8,
+    31126.4,
+    39857.7
+   ]
+  },
+  "ATM": {
+   "vol_m": [
+    258.5,
+    300.2,
+    342.9,
+    397.7,
+    470.6
+   ],
+   "value_bn": [
+    2648.2,
+    3202.3,
+    3682.3,
+    4562.2,
+    5549.4
+   ]
+  },
+  "POS": {
+   "vol_m": [
+    24.3,
+    32.1,
+    39.2,
+    50.5,
+    63.5
+   ],
+   "value_bn": [
+    124.6,
+    172.1,
+    199.8,
+    246.0,
+    297.0
+   ]
+  },
+  "Internet Banking": {
+   "vol_m": [
+    15.6,
+    16.0,
+    19.0,
+    25.2,
+    31.2
+   ],
+   "value_bn": [
+    675.6,
+    797.7,
+    880.5,
+    968.7,
+    1262.4
+   ]
+  },
+  "Mobile Phone Banking": {
+   "vol_m": [
+    6.2,
+    6.1,
+    6.6,
+    7.4,
+    21.8
+   ],
+   "value_bn": [
+    67.4,
+    106.9,
+    112.5,
+    141.4,
+    409.8
+   ]
+  },
+  "Call Centers/IVRBanking": {
+   "vol_m": [
+    0.7,
+    0.8,
+    0.7,
+    0.3,
+    0.3
+   ],
+   "value_bn": [
+    9.5,
+    9.5,
+    10.1,
+    7.8,
+    8.7
+   ]
+  },
+  "E-Commerce": {
+   "vol_m": [
+    0,
+    0,
+    0,
+    1.2,
+    3.4
+   ],
+   "value_bn": [
+    0,
+    0,
+    0,
+    9.4,
+    18.7
+   ]
+  },
+  "Paper-based": {
+   "vol_m": [
+    362.0,
+    361.5,
+    339.8,
+    451.8,
+    466.5
+   ],
+   "value_bn": [
+    115163.2,
+    127160.0,
+    134410.1,
+    139590.6,
+    150362.1
+   ]
+  },
+  "Total": {
+   "vol_m": [
+    765.7,
+    830.5,
+    883.8,
+    1078.5,
+    1224.4
+   ],
+   "value_bn": [
+    298164.7,
+    342621.7,
+    403345.6,
+    456116.9,
+    558814.0
+   ]
+  }
+ },
+ "total_check": null,
+ "table5_total_fy18": [
+  1224.4,
+  558814.0
+ ],
+ "sum_prism_ebanking_paper_vol_fy18": 1224.4,
+ "channel_summary": {
+  "PRISM System": {
+   "vol_fy18_m": 1.7,
+   "value_fy18_bn": 361048.2,
+   "vol_cagr_fy14_18": 29.7,
+   "value_cagr_fy14_18": 24.7,
+   "avg_ticket_rs": 212381294,
+   "yoy_vol_fy18_pct": 54.5
+  },
+  "e-Banking": {
+   "vol_fy18_m": 756.2,
+   "value_fy18_bn": 47403.7,
+   "vol_cagr_fy14_18": 17.0,
+   "value_cagr_fy14_18": 8.9,
+   "avg_ticket_rs": 62687,
+   "yoy_vol_fy18_pct": 20.9
+  },
+  "RTOB": {
+   "vol_fy18_m": 165.7,
+   "value_fy18_bn": 39857.7,
+   "vol_cagr_fy14_18": 13.9,
+   "value_cagr_fy14_18": 7.2,
+   "avg_ticket_rs": 240541,
+   "yoy_vol_fy18_pct": 15.4
+  },
+  "ATM": {
+   "vol_fy18_m": 470.6,
+   "value_fy18_bn": 5549.4,
+   "vol_cagr_fy14_18": 16.2,
+   "value_cagr_fy14_18": 20.3,
+   "avg_ticket_rs": 11792,
+   "yoy_vol_fy18_pct": 18.3
+  },
+  "POS": {
+   "vol_fy18_m": 63.5,
+   "value_fy18_bn": 297.0,
+   "vol_cagr_fy14_18": 27.1,
+   "value_cagr_fy14_18": 24.3,
+   "avg_ticket_rs": 4677,
+   "yoy_vol_fy18_pct": 25.7
+  },
+  "Internet Banking": {
+   "vol_fy18_m": 31.2,
+   "value_fy18_bn": 1262.4,
+   "vol_cagr_fy14_18": 18.9,
+   "value_cagr_fy14_18": 16.9,
+   "avg_ticket_rs": 40462,
+   "yoy_vol_fy18_pct": 23.8
+  },
+  "Mobile Phone Banking": {
+   "vol_fy18_m": 21.8,
+   "value_fy18_bn": 409.8,
+   "vol_cagr_fy14_18": 36.9,
+   "value_cagr_fy14_18": 57.0,
+   "avg_ticket_rs": 18798,
+   "yoy_vol_fy18_pct": 194.6
+  },
+  "Call Centers/IVRBanking": {
+   "vol_fy18_m": 0.3,
+   "value_fy18_bn": 8.7,
+   "vol_cagr_fy14_18": -19.1,
+   "value_cagr_fy14_18": -2.2,
+   "avg_ticket_rs": 29000,
+   "yoy_vol_fy18_pct": 0.0
+  },
+  "E-Commerce": {
+   "vol_fy18_m": 3.4,
+   "value_fy18_bn": 18.7,
+   "vol_cagr_fy14_18": null,
+   "value_cagr_fy14_18": null,
+   "avg_ticket_rs": 5500,
+   "yoy_vol_fy18_pct": 183.3
+  },
+  "Paper-based": {
+   "vol_fy18_m": 466.5,
+   "value_fy18_bn": 150362.1,
+   "vol_cagr_fy14_18": 6.5,
+   "value_cagr_fy14_18": 6.9,
+   "avg_ticket_rs": 322320,
+   "yoy_vol_fy18_pct": 3.3
+  },
+  "Total": {
+   "vol_fy18_m": 1224.4,
+   "value_fy18_bn": 558814.0,
+   "vol_cagr_fy14_18": 12.5,
+   "value_cagr_fy14_18": 17.0,
+   "avg_ticket_rs": 456398,
+   "yoy_vol_fy18_pct": 13.5
+  }
+ },
+ "volume_share_fy18_pct": {
+  "PRISM System": 0.1,
+  "e-Banking": 61.8,
+  "Paper-based": 38.1
+ },
+ "ebanking_channel_share_of_ebanking_vol_fy18_pct": {
+  "RTOB": 21.9,
+  "ATM": 62.2,
+  "POS": 8.4,
+  "Internet Banking": 4.1,
+  "Mobile Phone Banking": 2.9,
+  "Call Centers/IVRBanking": 0.0,
+  "E-Commerce": 0.4
+ },
+ "ebanking_share_of_non_prism_volume_fy14_vs_fy18_pct": [
+  52.7,
+  61.8
+ ],
+ "atm_cash_withdrawals": {
+  "vol_m": [
+   248.4,
+   288.9,
+   330.1,
+   375.2,
+   446.7
+  ],
+  "value_bn": [
+   2163.2,
+   2662.0,
+   3242.5,
+   3880.3,
+   4838.3
+  ]
+ },
+ "atm_cash_withdrawal_share_of_atm_volume_fy18_pct": 94.9,
+ "atm_cash_withdrawal_avg_rs_fy18": 10831,
+ "card_payments_per_cash_withdrawal_fy18": 0.14,
+ "infrastructure_fy14_fy18": {
+  "bank branches": [
+   11199.0,
+   11937.0,
+   13179.0,
+   14293.0,
+   14970.0
+  ],
+  "RTOB branches": [
+   10640.0,
+   11315.0,
+   12674.0,
+   14150.0,
+   14850.0
+  ],
+  "ATMs": [
+   8240.0,
+   9597.0,
+   11381.0,
+   12689.0,
+   14019.0
+  ],
+  "POS machines": [
+   34428.0,
+   41183.0,
+   50769.0,
+   54490.0,
+   53511.0
+  ],
+  "internet banking users": [
+   1478301.0,
+   1811707.0,
+   1958034.0,
+   2347026.0,
+   3113728.0
+  ],
+  "mobile banking users": [
+   1671693.0,
+   2267688.0,
+   2451420.0,
+   2484044.0,
+   3385889.0
+  ],
+  "call centre/IVR users": [
+   13910779.0,
+   16624377.0,
+   19200005.0,
+   22389113.0,
+   26484765.0
+  ]
+ },
+ "infrastructure_cagr_pct": {
+  "bank branches": 7.5,
+  "RTOB branches": 8.7,
+  "ATMs": 14.2,
+  "POS machines": 11.7,
+  "internet banking users": 20.5,
+  "mobile banking users": 19.3,
+  "call centre/IVR users": 17.5
+ },
+ "cards_fy14_fy18": {
+  "ATM-only cards": [
+   957807.0,
+   900270.0,
+   4798524.0,
+   8043044.0,
+   8586819.0
+  ],
+  "credit cards": [
+   1333827.0,
+   1369958.0,
+   1450095.0,
+   1292136.0,
+   1453867.0
+  ],
+  "debit cards": [
+   23061171.0,
+   25024235.0,
+   27411117.0,
+   17857561.0,
+   21712069.0
+  ],
+  "total": [
+   25352805.0,
+   27294463.0,
+   33659736.0,
+   36632969.0,
+   40918993.0
+  ]
+ },
+ "cards_cagr_pct": {
+  "ATM-only cards": 73.0,
+  "credit cards": 2.2,
+  "debit cards": -1.5,
+  "total": 12.7
+ },
+ "pos_transactions_per_pos_machine_fy18": 1187,
+ "atm_transactions_per_atm_fy18": 33569,
+ "pos_machines_fall_fy17_fy18_pct": -1.8,
+ "wdi_2018": {
+  "FB.CBK.BRCH.P5": 10.0835698616916,
+  "FB.ATM.TOTL.P5": 10.2564024919437,
+  "SP.POP.TOTL": 226928892.0,
+  "IT.CEL.SETS.P2": 67.8567658982797
+ },
+ "implied_adults_from_sbp_atms_and_wdi_per100k_m": 136.7,
+ "adults_as_share_of_total_pop_pct": 60.2,
+ "branches_per_100k_adults_sbp_vs_wdi": [
+  10.95,
+  10.08
+ ],
+ "pop_2018_m": 226.9,
+ "card_payments_per_capita_fy18_pk": 0.29,
+ "atm_withdrawals_per_capita_fy18_pk": 1.97,
+ "bis_peers_2018": {
+  "IN": {
+   "card_per_capita_2018": 7.9,
+   "card_per_cash_withdrawal_2018": 1.1
+  },
+  "ID": {
+   "card_per_capita_2018": 14.2,
+   "card_per_cash_withdrawal_2018": 0.99
+  },
+  "TR": {
+   "card_per_capita_2018": 69.6,
+   "card_per_cash_withdrawal_2018": 3.77
+  },
+  "BR": {
+   "card_per_capita_2018": 80.2,
+   "card_per_cash_withdrawal_2018": 4.85
+  },
+  "MX": {
+   "card_per_capita_2018": 30.8,
+   "card_per_cash_withdrawal_2018": 2.0
+  },
+  "ZA": {
+   "card_per_capita_2018": 54.1,
+   "card_per_cash_withdrawal_2018": 2.33
+  },
+  "SA": {
+   "card_per_capita_2018": 34.2,
+   "card_per_cash_withdrawal_2018": 0.49
+  },
+  "CN": {
+   "card_per_capita_2018": 70.1,
+   "card_per_cash_withdrawal_2018": 6.98
+  }
+ },
+ "ecb_euro_area_per_capita_latest": {
+  "year": 2025,
+  "CHQ": 2.2,
+  "CP0": 260.0,
+  "CT0": 98.3,
+  "DD": 65.4,
+  "TOTL1": 457.1
+ },
+ "ecb_euro_area_share_of_payments_pct_latest": {
+  "year": 2025,
+  "CHQ": 0.5,
+  "CP0": 60.3,
+  "CT0": 19.0,
+  "DD": 14.6
+ },
+ "ecb_cards_per_capita_first_last": [
+  [
+   2009,
+   59.4
+  ],
+  [
+   2025,
+   260.0
+  ]
+ ],
+ "ecb_cheques_per_capita_first_last": [
+  [
+   2009,
+   12.6
+  ],
+  [
+   2025,
+   2.2
+  ]
+ ],
+ "ecb_series_years": [
+  2000,
+  2025
+ ]
+}

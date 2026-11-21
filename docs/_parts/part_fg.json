@@ -1,0 +1,430 @@
+{
+ "wdi_countries_excluding_aggregates": 217,
+ "wdi_rows": 398468,
+ "pakistan_series": 1498,
+ "pakistan_series_with_data_since_2015": 1350,
+ "indicators_ranked_all": 888,
+ "indicators_ranked": 519,
+ "n_lowest_3pct": 12,
+ "n_highest_3pct": 9,
+ "theme_counts_ranked": {
+  "other": 165,
+  "economy & trade": 128,
+  "education & gender": 83,
+  "health": 73,
+  "energy & environment": 40,
+  "finance & payments": 25,
+  "digital": 5
+ },
+ "lowest_extremes_by_theme": {
+  "economy & trade": 5,
+  "education & gender": 3,
+  "finance & payments": 2,
+  "other": 2
+ },
+ "highest_extremes_by_theme": {
+  "economy & trade": 4,
+  "education & gender": 2,
+  "other": 1,
+  "health": 1,
+  "energy & environment": 1
+ },
+ "finance_digital_lowest": [
+  {
+   "indicator": "Account ownership at a financial institution or with a mobile-money-service provider, female (% of population ages 15+)",
+   "year": 2024,
+   "value": 11.91,
+   "percentile": 0.0,
+   "of": 139
+  }
+ ],
+ "finance_digital_highest": [],
+ "all_lowest_sample": [
+  {
+   "indicator": "Employers, female (% of female employment) (modeled ILO estimate)",
+   "year": 2025,
+   "value": 0.1,
+   "percentile": 0.0,
+   "of": 182
+  },
+  {
+   "indicator": "Account ownership at a financial institution or with a mobile-money-service provider, female (% of population ages 15+)",
+   "year": 2024,
+   "value": 11.91,
+   "percentile": 0.0,
+   "of": 139
+  },
+  {
+   "indicator": "Net migration",
+   "year": 2025,
+   "value": -1235336.0,
+   "percentile": 0.0,
+   "of": 217
+  },
+  {
+   "indicator": "Import unit value index (2015 = 100)",
+   "year": 2025,
+   "value": 68.1,
+   "percentile": 0.5,
+   "of": 204
+  },
+  {
+   "indicator": "Antiretroviral therapy coverage (% of people living with HIV)",
+   "year": 2024,
+   "value": 16.0,
+   "percentile": 0.8,
+   "of": 126
+  },
+  {
+   "indicator": "School enrollment, primary and secondary (gross), gender parity index (GPI)",
+   "year": 2019,
+   "value": 0.88,
+   "percentile": 1.7,
+   "of": 121
+  },
+  {
+   "indicator": "Trade (% of GDP)",
+   "year": 2025,
+   "value": 27.19,
+   "percentile": 2.2,
+   "of": 138
+  },
+  {
+   "indicator": "Trade in services (% of GDP)",
+   "year": 2025,
+   "value": 5.19,
+   "percentile": 2.2,
+   "of": 136
+  },
+  {
+   "indicator": "Current health expenditure (% of GDP)",
+   "year": 2023,
+   "value": 2.52,
+   "percentile": 2.6,
+   "of": 192
+  },
+  {
+   "indicator": "Employment in services, female (% of female employment) (modeled ILO estimate)",
+   "year": 2025,
+   "value": 18.82,
+   "percentile": 2.8,
+   "of": 182
+  }
+ ],
+ "all_highest_sample": [
+  {
+   "indicator": "Agricultural raw materials imports (% of merchandise imports)",
+   "year": 2025,
+   "value": 5.59,
+   "percentile": 100.0,
+   "of": 103
+  },
+  {
+   "indicator": "Diabetes prevalence (% of population ages 20 to 79)",
+   "year": 2024,
+   "value": 31.4,
+   "percentile": 100.0,
+   "of": 209
+  },
+  {
+   "indicator": "Mortality rate, neonatal (per 1,000 live births)",
+   "year": 2024,
+   "value": 36.1,
+   "percentile": 99.0,
+   "of": 196
+  },
+  {
+   "indicator": "Share of youth not in education, employment or training, female (% of female youth population) (modeled ILO estimate)",
+   "year": 2025,
+   "value": 56.6,
+   "percentile": 98.9,
+   "of": 182
+  },
+  {
+   "indicator": "Communications, computer, etc. (% of service exports, BoP)",
+   "year": 2025,
+   "value": 73.89,
+   "percentile": 98.5,
+   "of": 135
+  },
+  {
+   "indicator": "Public and publicly guaranteed debt service (% of exports of goods, services and primary income)",
+   "year": 2024,
+   "value": 27.15,
+   "percentile": 98.0,
+   "of": 101
+  },
+  {
+   "indicator": "Merchandise imports from economies in the Arab World (% of total merchandise imports)",
+   "year": 2023,
+   "value": 32.96,
+   "percentile": 97.9,
+   "of": 196
+  },
+  {
+   "indicator": "Adjusted savings: particulate emission damage (% of GNI)",
+   "year": 2021,
+   "value": 2.32,
+   "percentile": 97.5,
+   "of": 160
+  }
+ ],
+ "pp_indicators_with_10y_history": 356,
+ "biggest_10y_increases_pp": [
+  {
+   "indicator": "Individuals using the Internet (% of population)",
+   "from": 10.0,
+   "to": 57.3,
+   "year": 2024,
+   "change_pp": 47.3
+  },
+  {
+   "indicator": "ICT service exports (% of service exports, BoP)",
+   "from": 13.4,
+   "to": 46.1,
+   "year": 2025,
+   "change_pp": 32.7
+  },
+  {
+   "indicator": "Computer, communications and other services (% of commercial service exports)",
+   "from": 52.2,
+   "to": 76.2,
+   "year": 2025,
+   "change_pp": 24.0
+  },
+  {
+   "indicator": "Primary completion rate, female (% of relevant age group)",
+   "from": 51.2,
+   "to": 72.9,
+   "year": 2024,
+   "change_pp": 21.7
+  },
+  {
+   "indicator": "Account ownership at a financial institution or with a mobile-money-service provider, secondary education or more (% of population ages 15+)",
+   "from": 25.2,
+   "to": 46.7,
+   "year": 2024,
+   "change_pp": 21.5
+  },
+  {
+   "indicator": "Tuberculosis case detection rate (%, all forms)",
+   "from": 53.0,
+   "to": 74.0,
+   "year": 2024,
+   "change_pp": 21.0
+  },
+  {
+   "indicator": "Lower secondary completion rate, female (% of relevant age group)",
+   "from": 34.7,
+   "to": 54.5,
+   "year": 2024,
+   "change_pp": 19.8
+  },
+  {
+   "indicator": "Public and publicly guaranteed debt service (% of exports of goods, services and primary income)",
+   "from": 8.0,
+   "to": 27.2,
+   "year": 2024,
+   "change_pp": 19.1
+  }
+ ],
+ "biggest_10y_decreases_pp": [
+  {
+   "indicator": "Binding coverage, manufactured products (%)",
+   "from": 98.8,
+   "to": 0.0,
+   "year": 2022,
+   "change_pp": -98.8
+  },
+  {
+   "indicator": "Binding coverage, all products (%)",
+   "from": 98.7,
+   "to": 0.0,
+   "year": 2022,
+   "change_pp": -98.7
+  },
+  {
+   "indicator": "Binding coverage, primary products (%)",
+   "from": 98.4,
+   "to": 0.0,
+   "year": 2022,
+   "change_pp": -98.4
+  },
+  {
+   "indicator": "Electricity production from oil sources (% of total)",
+   "from": 36.8,
+   "to": 8.2,
+   "year": 2024,
+   "change_pp": -28.6
+  },
+  {
+   "indicator": "Risk of catastrophic expenditure for surgical care (% of people at risk)",
+   "from": 60.5,
+   "to": 33.7,
+   "year": 2022,
+   "change_pp": -26.8
+  },
+  {
+   "indicator": "Transport services (% of commercial service exports)",
+   "from": 33.9,
+   "to": 11.8,
+   "year": 2025,
+   "change_pp": -22.2
+  },
+  {
+   "indicator": "Risk of impoverishing expenditure for surgical care (% of people at risk)",
+   "from": 61.9,
+   "to": 39.9,
+   "year": 2022,
+   "change_pp": -22.0
+  },
+  {
+   "indicator": "People practicing open defecation, rural (% of rural population)",
+   "from": 26.9,
+   "to": 13.0,
+   "year": 2024,
+   "change_pp": -13.9
+  }
+ ],
+ "median_percentile_all_indicators": 43.4,
+ "findex_economies_2024": 153,
+ "pakistan_findex_rank_2024": {
+  "any account": {
+   "pakistan_pct": 27.3,
+   "rank_high_to_low": 148,
+   "of": 153,
+   "median_pct": 73.1
+  },
+  "financial-institution account": {
+   "pakistan_pct": 18.3,
+   "rank_high_to_low": 143,
+   "of": 153,
+   "median_pct": 70.5
+  },
+  "mobile-money account": {
+   "pakistan_pct": 18.4,
+   "rank_high_to_low": 59,
+   "of": 93,
+   "median_pct": 28.8
+  },
+  "borrowed in the past year": {
+   "pakistan_pct": 69.5,
+   "rank_high_to_low": 26,
+   "of": 108,
+   "median_pct": 58.1
+  },
+  "dig_acc (digital; exact definition not in warehouse)": {
+   "pakistan_pct": 19.8,
+   "rank_high_to_low": 94,
+   "of": 108,
+   "median_pct": 47.7
+  }
+ },
+ "gender_gap_pk_pp": 30.4,
+ "gender_gap_pk_rank_largest": 2,
+ "gender_gap_economies": 153,
+ "gender_gap_median_pp": 4.7,
+ "gender_gap_largest5": [
+  [
+   "DZA",
+   33.8
+  ],
+  [
+   "PAK",
+   30.4
+  ],
+  [
+   "ARE",
+   29.6
+  ],
+  [
+   "TGO",
+   24.7
+  ],
+  [
+   "PSE",
+   23.4
+  ]
+ ],
+ "women_account_pk_pct": 11.9,
+ "women_account_rank_lowest": 1,
+ "peers_findex_2024_pct": {
+  "PAK": {
+   "account": 27.3,
+   "mobile_money": 18.4,
+   "women_account": 11.9
+  },
+  "IND": {
+   "account": 89.0,
+   "mobile_money": 23.1,
+   "women_account": 89.2
+  },
+  "BGD": {
+   "account": 43.3,
+   "mobile_money": 20.8,
+   "women_account": 33.3
+  },
+  "LKA": {
+   "account": 81.7,
+   "mobile_money": 3.0,
+   "women_account": 80.2
+  },
+  "NPL": {
+   "account": 60.0,
+   "mobile_money": 10.6,
+   "women_account": 59.8
+  },
+  "IDN": {
+   "account": 56.3,
+   "mobile_money": 22.0,
+   "women_account": 58.0
+  },
+  "EGY": {
+   "account": 43.1,
+   "mobile_money": 15.6,
+   "women_account": 40.2
+  },
+  "TUR": {
+   "account": 81.6,
+   "mobile_money": 23.3,
+   "women_account": 71.7
+  },
+  "NGA": {
+   "account": 63.3,
+   "mobile_money": 32.8,
+   "women_account": 52.2
+  },
+  "KEN": {
+   "account": 90.1,
+   "mobile_money": 87.5,
+   "women_account": 86.5
+  },
+  "VNM": {
+   "account": 70.6,
+   "mobile_money": 38.7,
+   "women_account": 69.9
+  },
+  "PHL": {
+   "account": 50.2,
+   "mobile_money": 28.8,
+   "women_account": 57.1
+  }
+ },
+ "pakistan_account_by_income_pct": {
+  "richest 60%": 36.4,
+  "poorest 40%": 13.6
+ },
+ "pakistan_account_by_urbanicity_pct": {
+  "rural": 21.1,
+  "urban": 32.9
+ },
+ "pakistan_account_by_education_pct": {
+  "secondary edu or more": 46.7,
+  "prim edu or less": 18.9
+ },
+ "pakistan_account_by_age_cat_pct": {
+  "age 25+": 28.5,
+  "ages 15-24": 24.3
+ },
+ "findex_mobile_vs_fi_note": "mobile-money account share exceeds financial-institution account share in Pakistan 2024"
+}

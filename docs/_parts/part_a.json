@@ -1,0 +1,695 @@
+{
+ "fsi_indicators_found": [
+  "RiskWeightedCAR^",
+  "Tier1CapitaltoRWA^",
+  "CapitaltoTotalAssets*",
+  "NPLstoTotal Loans",
+  "Provisions toNPLs**",
+  "NetNPLstoNetLoans",
+  "Net NPLs to Capital*",
+  "InvestmentinEquitiestoCapital#",
+  "GrossAssetPositioninFinancialDerivativestoCapital^^#",
+  "GrossLiabilityPositioninFinancial DerivativestoCapital^#",
+  "Return onAssets(BeforeTax)",
+  "Return onAssets(After Tax)",
+  "ROE(Avg.Equity&Surplus)(BeforeTax)",
+  "ROE(Avg.Equity&Surplus)(AfterTax)",
+  "NII/GrossIncome",
+  "Cost/IncomeRatio",
+  "TradingIncome toGross Income#",
+  "PersonnelExpensestoNon-interestExpenses#",
+  "LiquidAssets/TotalAssets",
+  "Liquid Assets/Total Deposits",
+  "LiquidAssets/Short termLiabilities^#",
+  "Advances/Deposits",
+  "Customer Deposits toTotal Loans#",
+  "DomesticLoans to Total Loans#",
+  "PublicSectorDomesticLoanstoTotalLoans#",
+  "DomesticLoanstoFinancial Institutions/Total Loans#",
+  "Corporate&SMESectorDomesticLoanstoTotal Loans#",
+  "OtherDomesticLoanstoTotalLoans#",
+  "OverseasLoanstoTotal Loans#",
+  "Foreign CurrencyLoanstoTotal Loans#",
+  "Foreign Currency Liabilities toTotal Liabilities#"
+ ],
+ "all_banks_fsi": {
+  "CAR": [
+   21.5,
+   20.6,
+   21.2,
+   21.8,
+   22.1,
+   20.8,
+   18.6,
+   19.6,
+   18.6
+  ],
+  "Tier1": [
+   16.9,
+   16.4,
+   17.3,
+   17.6,
+   18.0,
+   16.8,
+   16.2,
+   16.3,
+   15.7
+  ],
+  "NPL ratio": [
+   8.4,
+   6.3,
+   7.1,
+   7.4,
+   6.6,
+   6.1,
+   5.8,
+   5.5,
+   5.6
+  ],
+  "Provisions/NPLs": [
+   101.2,
+   103.9,
+   111.7,
+   106.2,
+   112.6,
+   107.7,
+   112.5,
+   110.2,
+   105.8
+  ],
+  "ROA after tax": [
+   1.3,
+   1.3,
+   1.3,
+   1.3,
+   1.3,
+   1.2,
+   1.2,
+   1.1,
+   1.1
+  ],
+  "ROE after tax": [
+   22.5,
+   21.5,
+   21.7,
+   21.3,
+   21.0,
+   19.8,
+   20.4,
+   19.0,
+   18.6
+  ],
+  "Cost/income": [
+   42.9,
+   43.3,
+   42.9,
+   43.9,
+   44.9,
+   46.4,
+   49.3,
+   49.9,
+   50.4
+  ],
+  "Liquid assets/deposits": [
+   106.1,
+   101.9,
+   107.1,
+   107.3,
+   105.2,
+   105.6,
+   108.7,
+   108.8,
+   103.0
+  ],
+  "Advances/deposits": [
+   36.3,
+   49.7,
+   39.7,
+   35.3,
+   35.6,
+   37.5,
+   36.8,
+   35.5,
+   36.1
+  ],
+  "Domestic loans to public sector / total loans": [
+   24.7,
+   21.2,
+   21.9,
+   22.1,
+   21.4,
+   22.9,
+   22.3,
+   22.8,
+   21.3
+  ],
+  "Corporate & SME loans / total loans": [
+   55.5,
+   60.7,
+   57.7,
+   57.0,
+   57.1,
+   55.8,
+   54.9,
+   54.9,
+   54.3
+  ],
+  "FX loans / total loans": [
+   12.9,
+   12.4,
+   12.2,
+   13.7,
+   13.8,
+   13.9,
+   14.2,
+   13.8,
+   15.0
+  ]
+ },
+ "fsi_period_labels": [
+  "Sep-24",
+  "Dec-24",
+  "Mar-25",
+  "Jun-25",
+  "Sep-25",
+  "Dec-25",
+  "Mar-26",
+  "Jun-26",
+  "Sep-26"
+ ],
+ "npl_ratio_by_group_sep26": {
+  "PublicSector Commercial Banks": 11.9,
+  "Local Private Banks": 4.2,
+  "Foreign Banks": 0.1,
+  "Commercial Banks": 5.5,
+  "Digital Banks": 2.9,
+  "SpecializedBanks": 14.1,
+  "All Banks": 5.6
+ },
+ "car_by_group_sep26": {
+  "PublicSector Commercial Banks": 19.0,
+  "Local Private Banks": 17.2,
+  "Foreign Banks": 54.9,
+  "CommercialBanks": 18.2,
+  "Digital Banks": 31.6,
+  "Specialized Banks": 44.5,
+  "All Banks": 18.6
+ },
+ "asset_quality_sep25_to_sep26": {
+  "periods": [
+   "Sep-25",
+   "Dec-25",
+   "Mar-26",
+   "Jun-26",
+   "Sep-26"
+  ],
+  "gross_advances": [
+   14296863.0,
+   15895941.0,
+   15632909.0,
+   16355659.0,
+   16683861.0
+  ],
+  "npls": [
+   947770.0,
+   964322.0,
+   911696.0,
+   902065.0,
+   929577.0
+  ],
+  "provisions": [
+   1067332.0,
+   1038622.0,
+   1025592.0,
+   993944.0,
+   983140.0
+  ],
+  "net_advances": [
+   13229531.0,
+   14857319.0,
+   14607317.0,
+   15361715.0,
+   15700721.0
+  ],
+  "net_npls": [
+   -119562.0,
+   -74300.0,
+   -113896.0,
+   -91879.0,
+   -53563.0
+  ],
+  "oaem": [
+   10790.0,
+   25233.0,
+   17211.0,
+   12894.0,
+   14830.0
+  ],
+  "substandard": [
+   54706.0,
+   106797.0,
+   57856.0,
+   49932.0,
+   41670.0
+  ],
+  "doubtful": [
+   53702.0,
+   47352.0,
+   49221.0,
+   63333.0,
+   98460.0
+  ],
+  "loss": [
+   828572.0,
+   784940.0,
+   787409.0,
+   775906.0,
+   774618.0
+  ]
+ },
+ "gross_npl_ratio_sep26_pct": 5.57,
+ "loss_category_share_of_npls_sep26_pct": 83.3,
+ "gross_advances_growth_sep25_sep26_pct": 16.7,
+ "npl_growth_sep25_sep26_pct": -1.9,
+ "doubtful_npl_jump_jun26_sep26_pct": 55.5,
+ "earlier_implied_gross_loans_jun26_rs_m": 16355659.0,
+ "segment_npl_sep26": {
+  "CorporateSector": {
+   "advances_m": 11088137.0,
+   "npls_m": 644710.0,
+   "npl_ratio_pct": 5.8
+  },
+  "Fixed Investments": {
+   "advances_m": 562736.0,
+   "npls_m": 33840.0,
+   "npl_ratio_pct": 6.0
+  },
+  "Working Capital": {
+   "advances_m": 501681.0,
+   "npls_m": 82180.0,
+   "npl_ratio_pct": 16.4
+  },
+  "Trade Finance": {
+   "advances_m": 82374.0,
+   "npls_m": 7205.0,
+   "npl_ratio_pct": 8.7
+  },
+  "SMEsSector": {
+   "advances_m": 1146791.0,
+   "npls_m": 123225.0,
+   "npl_ratio_pct": 10.7
+  },
+  "Agriculture Sector": {
+   "advances_m": 764038.0,
+   "npls_m": 81805.0,
+   "npl_ratio_pct": 10.7
+  },
+  "Consumer sector": {
+   "advances_m": 1327899.0,
+   "npls_m": 43354.0,
+   "npl_ratio_pct": 3.3
+  },
+  "i.Credit cards": {
+   "advances_m": 231370.0,
+   "npls_m": 4318.0,
+   "npl_ratio_pct": 1.9
+  },
+  "i.Auto loans": {
+   "advances_m": 395976.0,
+   "npls_m": 4299.0,
+   "npl_ratio_pct": 1.1
+  },
+  "ii.Consumer durable": {
+   "advances_m": 3667.0,
+   "npls_m": 86.0,
+   "npl_ratio_pct": 2.4
+  },
+  "iv.Mortgage loans": {
+   "advances_m": 363307.0,
+   "npls_m": 12982.0,
+   "npl_ratio_pct": 3.6
+  },
+  "v.Other personal loans": {
+   "advances_m": 333578.0,
+   "npls_m": 21668.0,
+   "npl_ratio_pct": 6.5
+  },
+  "Commodity financing": {
+   "advances_m": 1270622.0,
+   "npls_m": 15993.0,
+   "npl_ratio_pct": 1.3
+  },
+  "Cotton": {
+   "advances_m": 145527.0,
+   "npls_m": 5679.0,
+   "npl_ratio_pct": 3.9
+  },
+  "Rice": {
+   "advances_m": 25589.0,
+   "npls_m": 2725.0,
+   "npl_ratio_pct": 10.6
+  },
+  "Sugar": {
+   "advances_m": 207417.0,
+   "npls_m": 4867.0,
+   "npl_ratio_pct": 2.3
+  },
+  "Wheat": {
+   "advances_m": 799023.0,
+   "npls_m": 2287.0,
+   "npl_ratio_pct": 0.3
+  },
+  "Others": {
+   "advances_m": 772923.0,
+   "npls_m": 15190.0,
+   "npl_ratio_pct": 2.0
+  },
+  "StaffLoans": {
+   "advances_m": 313451.0,
+   "npls_m": 5301.0,
+   "npl_ratio_pct": 1.7
+  },
+  "Total": {
+   "advances_m": 16683861.0,
+   "npls_m": 929577.0,
+   "npl_ratio_pct": 5.6
+  }
+ },
+ "sector_npl_sep26": {
+  "Agribusiness": {
+   "advances_m": 1538487.0,
+   "npls_m": 90593.0,
+   "npl_ratio_pct": 5.9
+  },
+  "Automobile/Transportation": {
+   "advances_m": 168336.0,
+   "npls_m": 13507.0,
+   "npl_ratio_pct": 8.0
+  },
+  "Cement": {
+   "advances_m": 248182.0,
+   "npls_m": 11361.0,
+   "npl_ratio_pct": 4.6
+  },
+  "Chemical & Pharmaceuticals": {
+   "advances_m": 675429.0,
+   "npls_m": 7862.0,
+   "npl_ratio_pct": 1.2
+  },
+  "Electronics": {
+   "advances_m": 218822.0,
+   "npls_m": 18073.0,
+   "npl_ratio_pct": 8.3
+  },
+  "Financial": {
+   "advances_m": 978302.0,
+   "npls_m": 6243.0,
+   "npl_ratio_pct": 0.6
+  },
+  "Individuals": {
+   "advances_m": 1688485.0,
+   "npls_m": 39179.0,
+   "npl_ratio_pct": 2.3
+  },
+  "Insurance": {
+   "advances_m": 5731.0,
+   "npls_m": 62.0,
+   "npl_ratio_pct": 1.1
+  },
+  "Others": {
+   "advances_m": 3855964.0,
+   "npls_m": 323538.0,
+   "npl_ratio_pct": 8.4
+  },
+  "Production/Transmission ofEnergy": {
+   "advances_m": 1642197.0,
+   "npls_m": 64131.0,
+   "npl_ratio_pct": 3.9
+  },
+  "Shoes&Leathergarments": {
+   "advances_m": 52808.0,
+   "npls_m": 4998.0,
+   "npl_ratio_pct": 9.5
+  },
+  "Sugar": {
+   "advances_m": 473093.0,
+   "npls_m": 37826.0,
+   "npl_ratio_pct": 8.0
+  },
+  "Textile": {
+   "advances_m": 2500130.0,
+   "npls_m": 174516.0,
+   "npl_ratio_pct": 7.0
+  },
+  "Mining and Quarying": {
+   "advances_m": 95094.0,
+   "npls_m": 104.0,
+   "npl_ratio_pct": 0.1
+  },
+  "Other Leather Garments": {
+   "advances_m": 9607.0,
+   "npls_m": 899.0,
+   "npl_ratio_pct": 9.4
+  },
+  "Construction": {
+   "advances_m": 364116.0,
+   "npls_m": 38595.0,
+   "npl_ratio_pct": 10.6
+  },
+  "Gas, Water, Sanitary": {
+   "advances_m": 84937.0,
+   "npls_m": 2730.0,
+   "npl_ratio_pct": 3.2
+  },
+  "Wholesale and Retail Trade": {
+   "advances_m": 855627.0,
+   "npls_m": 65624.0,
+   "npl_ratio_pct": 7.7
+  },
+  "Exports/Imports": {
+   "advances_m": 5430.0,
+   "npls_m": 306.0,
+   "npl_ratio_pct": 5.6
+  },
+  "Transportation,Storage andCommunication": {
+   "advances_m": 819495.0,
+   "npls_m": 8507.0,
+   "npl_ratio_pct": 1.0
+  },
+  "Services": {
+   "advances_m": 403590.0,
+   "npls_m": 20926.0,
+   "npl_ratio_pct": 5.2
+  },
+  "Total": {
+   "advances_m": 16683861.0,
+   "npls_m": 929577.0,
+   "npl_ratio_pct": 5.6
+  }
+ },
+ "sector_highest_npl_ratio_sep26": [
+  [
+   "Construction",
+   10.6,
+   364116.0
+  ],
+  [
+   "Electronics",
+   8.3,
+   218822.0
+  ],
+  [
+   "Sugar",
+   8.0,
+   473093.0
+  ],
+  [
+   "Wholesale and Retail Trade",
+   7.7,
+   855627.0
+  ],
+  [
+   "Textile",
+   7.0,
+   2500130.0
+  ],
+  [
+   "Agribusiness",
+   5.9,
+   1538487.0
+  ]
+ ],
+ "sector_lowest_npl_ratio_sep26": [
+  [
+   "Individuals",
+   2.3,
+   1688485.0
+  ],
+  [
+   "Chemical & Pharmaceuticals",
+   1.2,
+   675429.0
+  ],
+  [
+   "Transportation,Storage andCommunication",
+   1.0,
+   819495.0
+  ],
+  [
+   "Financial",
+   0.6,
+   978302.0
+  ]
+ ],
+ "stress_scenarios_parsed": 16,
+ "stress_max_banks_below_8pct": 1,
+ "stress_scenarios_with_any_bank_below_8pct": [
+  "C-1",
+  "C-2",
+  "C-3",
+  "C-4",
+  "C-5",
+  "C-6",
+  "C-8",
+  "C-9",
+  "C-10",
+  "IR-1",
+  "IR-2",
+  "IR-4",
+  "ER-1",
+  "ER-2",
+  "EQ-1"
+ ],
+ "stress_banks_total": 32,
+ "stress_scenarios": [
+  {
+   "id": "C-1",
+   "type": "Hypothetical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 1,
+   "above11.5": 30
+  },
+  {
+   "id": "C-2",
+   "type": "Hypothetical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 2,
+   "above11.5": 29
+  },
+  {
+   "id": "C-3",
+   "type": "Hypothetical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 2,
+   "above11.5": 29
+  },
+  {
+   "id": "C-4",
+   "type": "Hypothetical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "C-5",
+   "type": "Hypothetical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "C-6",
+   "type": "Historical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 2,
+   "above11.5": 29
+  },
+  {
+   "id": "C-8",
+   "type": "Historical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "C-9",
+   "type": "Historical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "C-10",
+   "type": "Historical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "IR-1",
+   "type": "Hypothetical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 1,
+   "above11.5": 30
+  },
+  {
+   "id": "IR-2",
+   "type": "Historical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "IR-3",
+   "type": "Historical",
+   "below0": 0,
+   "0_8": 0,
+   "8_11.5": 1,
+   "above11.5": 31
+  },
+  {
+   "id": "IR-4",
+   "type": "Hypothetical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "ER-1",
+   "type": "Hypothetical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "ER-2",
+   "type": "Historical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  },
+  {
+   "id": "EQ-1",
+   "type": "Historical",
+   "below0": 0,
+   "0_8": 1,
+   "8_11.5": 0,
+   "above11.5": 31
+  }
+ ],
+ "spike_note": "SBP's own all-banks advances/deposits ratio (FSI table) jumps 36.3% (Sep-24) -> 49.7% (Dec-24) -> 39.7% (Mar-25)."
+}

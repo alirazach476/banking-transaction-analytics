@@ -23,7 +23,7 @@ No synthetic data is used on this page.
 - ![](img/pk_remittances.png)
 
 **4. Financial inclusion (Global Findex)**
-| Year | Any account | Bank/FI account | Mobile money | Digital payments |
+| Year | Any account | Bank/FI account | Mobile money | dig_acc (definition unverified) |
 |---|---|---|---|---|
 | 2011 | 10.3% | 10.3% | n/a | n/a |
 | 2014 | 13.0% | 8.7% | 5.8% | n/a |
@@ -41,4 +41,4 @@ No synthetic data is used on this page.
 - The SBP rows were parsed from a PDF-to-table extraction; column meaning (ceiling, floor, policy, minimum saving deposit rate) was inferred from the header and checked against the known 2023 history (e.g. 20% to 21% to 22% policy rate). Values from the file are used as they are, including dates after today's real-world data I can verify.
 - World Bank CPI ends Mar 2025, so there is no inflation data for the later period.
 - Findex is survey based (sampling error not shown here); the 2011 mobile/digital fields are missing.
-- BIS has no Pakistan policy rate, CPI, or credit-gap series, so only USD/PKR comes from BIS.
+- BIS has no Pakistan policy rate, CPI, or credit-gap series, but (correction) it does have Pakistan as a counterparty in its locational and consolidated banking statistics; see `ALL_IN_ONE_ANALYSIS.md` Part D. The Findex column labelled `dig_acc` was called 'digital payments' here on assumption; the codebook is not in the warehouse.

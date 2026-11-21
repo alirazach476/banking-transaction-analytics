@@ -1,0 +1,347 @@
+{
+ "gdp_growth_pct": {
+  "FY2001": 3.64,
+  "FY2002": 2.62,
+  "FY2003": 5.17,
+  "FY2004": 7.69,
+  "FY2005": 8.0,
+  "FY2006": 5.66,
+  "FY2007": 5.11,
+  "FY2008": 4.44,
+  "FY2009": 1.06,
+  "FY2010": 2.26,
+  "FY2011": 3.2,
+  "FY2012": 3.2,
+  "FY2013": 3.86,
+  "FY2014": 3.56,
+  "FY2015": 3.81,
+  "FY2016": 4.07,
+  "FY2017": 4.61,
+  "FY2018": 6.1,
+  "FY2019": 3.12,
+  "FY2020": -0.94,
+  "FY2021": 5.84,
+  "FY2022": 6.25,
+  "FY2023": -0.33,
+  "FY2024": 2.59,
+  "FY2025": 3.11,
+  "FY2026": 3.65
+ },
+ "gdp_levels_rs_m_fy2000_to_fy2026": [
+  15807077.0,
+  16382114.0,
+  16811857.0,
+  17680556.0,
+  19040336.0,
+  20563084.0,
+  21727753.0,
+  22838183.0,
+  23853320.0,
+  24106914.0,
+  24652816.0,
+  25442797.0,
+  26256028.0,
+  27268549.0,
+  28238304.0,
+  29314628.0,
+  30508205.0,
+  31914207.0,
+  33859620.0,
+  34916041.0,
+  34586665.0,
+  36606290.0,
+  38892476.0,
+  38763377.0,
+  39766646.0,
+  41001521.0,
+  42498079.0
+ ],
+ "gdp_growth_check_max_abs_diff_pp": 0.0,
+ "gdp_growth_avg_fy2001_fy2026": 3.9,
+ "gdp_growth_avg_last5": 3.05,
+ "gdp_negative_years": {
+  "FY2020": -0.94,
+  "FY2023": -0.33
+ },
+ "gdp_best_year": [
+  "FY2005",
+  8.0
+ ],
+ "gdp_growth_std": 2.1,
+ "services_residual_check_max_abs_diff_rs_m": 1.0,
+ "sector_levels_len": {
+  "agriculture": 27,
+  "industry": 27,
+  "services": 27
+ },
+ "sector_share_fy2001_vs_fy2026_pct": {
+  "agriculture": [
+   30.6,
+   23.6
+  ],
+  "industry": [
+   17.2,
+   18.1
+  ],
+  "services": [
+   52.2,
+   58.3
+  ]
+ },
+ "sector_cagr_fy2016_fy2026_pct": {
+  "agriculture": 3.2,
+  "industry": 2.63,
+  "services": 3.68
+ },
+ "bop_columns_note": "col1 = Jul-Jun FY25, col3 = Jul-Jun FY26 (full years); col8 = Jul-Oct FY27",
+ "bop": {
+  "CurrentAccount Balance": [
+   1838.0,
+   -307.0,
+   -391.0,
+   -371.0,
+   -889.0,
+   39.0,
+   -1062.0,
+   -850.0
+  ],
+  "Exports of Goods FOB": [
+   32343.0,
+   2649.0,
+   30836.0,
+   3013.0,
+   8452.0,
+   2902.0,
+   10502.0,
+   11354.0
+  ],
+  "Imports of Goods FOB": [
+   59146.0,
+   5404.0,
+   64527.0,
+   6161.0,
+   17773.0,
+   5869.0,
+   20962.0,
+   23642.0
+  ],
+  "BalanceonTradein Goods": [
+   -26803.0,
+   -2755.0,
+   -33691.0,
+   -3148.0,
+   -9321.0,
+   -2967.0,
+   -10460.0,
+   -12288.0
+  ],
+  "Workers'Remittances": [
+   38300.0,
+   3420.0,
+   41585.0,
+   3588.0,
+   10875.0,
+   3892.0,
+   12956.0,
+   14767.0
+  ],
+  "Exports of Services": [
+   8450.0,
+   808.0,
+   10047.0,
+   96.0,
+   2753.0,
+   968.0,
+   3022.0,
+   3721.0
+  ],
+  "Imports of Services": [
+   11286.0,
+   1004.0,
+   11938.0,
+   1240.0,
+   3578.0,
+   1213.0,
+   4058.0,
+   4791.0
+  ],
+  "Direct Investment in Pakistan": [
+   2477.0,
+   164.0,
+   1792.0,
+   219.0,
+   720.0,
+   216.0,
+   764.0,
+   996.0
+  ],
+  "PortfolioInvestment": [
+   720.0,
+   66.0,
+   1176.0,
+   -2866.0,
+   -2935.0,
+   -133.0,
+   531.0,
+   -3068.0
+  ],
+  "Financial Account": [
+   -1585.0,
+   -616.0,
+   -2029.0,
+   -4689.0,
+   -4186.0,
+   -204.0,
+   -1342.0,
+   -4390.0
+  ]
+ },
+ "bop_fy25_fy26": {
+  "CurrentAccount Balance": [
+   1838.0,
+   -391.0
+  ],
+  "Exports of Goods FOB": [
+   32343.0,
+   30836.0
+  ],
+  "Imports of Goods FOB": [
+   59146.0,
+   64527.0
+  ],
+  "BalanceonTradein Goods": [
+   -26803.0,
+   -33691.0
+  ],
+  "Workers'Remittances": [
+   38300.0,
+   41585.0
+  ],
+  "Exports of Services": [
+   8450.0,
+   10047.0
+  ],
+  "Imports of Services": [
+   11286.0,
+   11938.0
+  ],
+  "Direct Investment in Pakistan": [
+   2477.0,
+   1792.0
+  ],
+  "PortfolioInvestment": [
+   720.0,
+   1176.0
+  ],
+  "Financial Account": [
+   -1585.0,
+   -2029.0
+  ]
+ },
+ "exports_goods_growth_pct": -4.7,
+ "imports_goods_growth_pct": 9.1,
+ "remittances_growth_pct": 8.6,
+ "remittances_cover_of_goods_trade_deficit_fy26_pct": 123.4,
+ "liquid_reserves_total_usd_m_fy_end": {
+  "2021-22": 15449.9,
+  "2022-23": 9160.0,
+  "2023-24": 13996.3,
+  "2024-25": 19269.2,
+  "2025-26": 23207.6
+ },
+ "liquid_reserves_total_usd_m_monthly": {
+  "Jul-25": 18976.1,
+  "Aug-25": 19077.1,
+  "Sep-25": 18904.3,
+  "Oct-25": 19174.0,
+  "Nov-25": 19135.6,
+  "Dec-25": 20838.3,
+  "Jan-26": 20971.8,
+  "Feb-26": 21060.2,
+  "Mar-26": 21331.9,
+  "Apr-26": 20803.6,
+  "May-26": 22109.5,
+  "Jun-26": 23207.6,
+  "Jul-26": 21891.6,
+  "Aug-26": 22031.9,
+  "Sep-26": 26330.1,
+  "Oct-26": 26372.8
+ },
+ "reserves_latest": [
+  "Oct-26",
+  26372.8
+ ],
+ "reserves_fy23_low_to_oct26_multiple": 2.88,
+ "m2_growth_fy25_fy26_jul_nov25_jul_nov26": [
+  12.89,
+  14.7,
+  -2.27,
+  -4.92
+ ],
+ "reserve_money_growth_same_columns": [
+  11.69,
+  11.6,
+  4.71,
+  -0.9
+ ],
+ "sbp_ibf_oct26_usd_line": [
+  "USA | U.S.Dollar | 277.239140 | 1.000000"
+ ],
+ "bis_usdpkr_sep26_avg": 277.220386,
+ "sbp_mtm_usd_ready_19nov26": 276.5205,
+ "open_market_usd_buy_sell_19nov26": [
+  277.24,
+  278.35
+ ],
+ "open_market_spread_pct": 0.4,
+ "open_market_vs_interbank_premium_pct": 0.66,
+ "sbp_cpi_general_annual_avg_fy12_fy19": {
+  "FY12": 11.0,
+  "FY13": 7.4,
+  "FY14": 8.6,
+  "FY15": 4.5,
+  "FY16": 2.9,
+  "FY17": 4.2,
+  "FY18": 3.9,
+  "FY19": 7.3
+ },
+ "cpi_sbp_fy_vs_wdi_calendar": {
+  "FY12": [
+   11.0,
+   9.7
+  ],
+  "FY13": [
+   7.4,
+   7.7
+  ],
+  "FY14": [
+   8.6,
+   7.2
+  ],
+  "FY15": [
+   4.5,
+   2.5
+  ],
+  "FY16": [
+   2.9,
+   3.8
+  ],
+  "FY17": [
+   4.2,
+   4.1
+  ],
+  "FY18": [
+   3.9,
+   5.1
+  ],
+  "FY19": [
+   7.3,
+   10.6
+  ]
+ },
+ "cpi_mean_abs_diff_pp": 1.31,
+ "bis_usdpkr_2024_01": 280.5,
+ "bis_usdpkr_2024_09": 278.3,
+ "bis_usdpkr_2025_09": 281.5,
+ "bis_usdpkr_range_2024_09_to_2026_09_pct": 2.5
+}

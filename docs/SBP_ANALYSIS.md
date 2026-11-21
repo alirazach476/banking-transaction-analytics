@@ -13,7 +13,7 @@ Amounts are Rs million as published. Real data only.
 - Advances-to-deposits ratio: 75.1% (Jan 2002) -> peak 84.0% (Oct 2008) -> 52.9% (Dec 2024) -> low 37.8% (Oct 2025); 39.8% in Dec 2025.
 - Over the 24 years advances grew 12.0% a year against 15.0% for deposits.
 - ![](img/sbp_adr.png)
-- **Data oddity:** advances rise from Rs 12.3tn (Sep 2024) to Rs 16.0tn (Dec 2024), +30% in three months with flat deposits, then fall back through 2025. I can't tell from this file whether it is a genuine temporary surge, a reclassification or a data break. The -9.8% advances growth in Nov 2025 is largely the base effect of this spike; treat the 2024-25 ratio with caution.
+- **Data oddity:** advances rise from Rs 12.3tn (Sep 2024) to Rs 16.0tn (Dec 2024), +30% in three months with flat deposits, then fall back through 2025. I can't tell from this file whether it is a genuine temporary surge, a reclassification or a data break. (Update: SBP's own all-banks advances-to-deposits ratio shows the same jump, 36.3% in Sep-24 to 49.7% in Dec-24 and 39.7% in Mar-25, so it is in SBP's published data and not an OCR error; the cause is still not stated. See `ALL_IN_ONE_ANALYSIS.md` Part A.) The -9.8% advances growth in Nov 2025 is largely the base effect of this spike; treat the 2024-25 ratio with caution.
 
 **3. Credit is dominated by lending to government** (Jun-25, Oct-25, Jun-26, Oct-26P)
 - Credit to government Rs 36.2tn (Jun-25) vs private-sector credit Rs 9.9tn; government is 73.7% of total credit (Jun-25) and 72.8% (Jun-26).
@@ -36,7 +36,7 @@ Amounts are Rs million as published. Real data only.
 | Specialized banks | 23,344 | 21,404 | 4,366 | +3.03% |
 | Digital banks | 871 | 994 | -751 | -2.56% |
 - Net NPLs are negative for most groups: provisions exceed gross NPLs. Specialized banks are the only group with a positive net ratio. Gross NPLs fell about 1.1% in a quarter overall but rose for public sector banks (+1.3%) and digital banks (+14%, from a very small base).
-- The table gives net, not gross, NPL ratios, so I did not compute a gross NPL ratio.
+- The table gives net, not gross, NPL ratios. (Update: the Quarterly Compendium gives gross figures: gross NPL ratio 5.6% at Sep-26; see `ALL_IN_ONE_ANALYSIS.md` Part A.)
 
 ## Caveats
 - The tables were extracted by OCR; I validated by checks (the repo series tracks policy rates, M2 components add up), but individual cells can be wrong. The 2020 rows were read correctly after fixing a parsing bug (rows labelled `2020**`).

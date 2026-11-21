@@ -1,0 +1,121 @@
+{
+ "policy_rate_tables_compared": 13,
+ "policy_rate_tables_matching": 13,
+ "crowdsourced_strict_read_rows": 1262459,
+ "crowdsourced_loaded_rows": 1262459,
+ "crowdsourced_line_count_note": "wc -l counted 1,270,165 lines; the 7,706 extra lines are line breaks inside quoted text fields, not rows",
+ "tables_profiled": 1354,
+ "mostly_null_tables": 95,
+ "mostly_null_by_schema": {
+  "worldbank": 94,
+  "sbp": 1
+ },
+ "mostly_null_median_rows": 98,
+ "mostly_null_median_cols": 82,
+ "mostly_null_wide_30plus_cols": 61,
+ "mostly_null_tiny_50rows": 15,
+ "mostly_null_examples": [
+  [
+   "d0037712_dr0095336_excel_file_wdiexcel_data",
+   398468,
+   70,
+   0.64
+  ],
+  [
+   "d0037712_dr0095335_csv_file_wdicsv",
+   398468,
+   70,
+   0.64
+  ],
+  [
+   "d0037740_dr0045613_bulk_download_file_csv_sddscsv",
+   234000,
+   116,
+   0.9
+  ],
+  [
+   "d0037740_dr0045612_bulk_download_file_excel_sddse_data",
+   234000,
+   116,
+   0.9
+  ]
+ ],
+ "files_still_not_tables": [
+  "data/external_downloads/worldbank/UKRAINE/0037857_DR0045869_Raw_Data_on_Trade_Flows_and_Policies_for_COVID-19_Medical_Supplies.xlsx",
+  "data/external_downloads/worldbank_collections/0064152/DR0090858_Hydraulic_defenses_protection_level.xlsx"
+ ],
+ "catalog_files_total": 552,
+ "net_plus_provisions_equals_gross_max_diff_rs_m": 0.0,
+ "scoreboard": [
+  [
+   "USD/PKR: BIS Sep-26 monthly average vs SBP banks' floating average Oct-26",
+   "277.22 vs 277.24 (SBP mark-to-market 19 Nov: 276.5205)",
+   "pass"
+  ],
+  [
+   "SBP policy-rate table (policy rate changes since Mar-2023) vs SBP long rate history",
+   "13 of 13 changes identical",
+   "pass"
+  ],
+  [
+   "GDP growth recomputed from SBP GDP levels vs SBP growth row",
+   "max difference 0.0 pp",
+   "pass"
+  ],
+  [
+   "GDP services = total - agriculture - industry, vs published services row",
+   "max difference Rs 1 million",
+   "pass"
+  ],
+  [
+   "Payment-channel volumes sum to published total (SBP FY18)",
+   "1224.4 = 1224.4 million",
+   "pass"
+  ],
+  [
+   "Advances: net advances + provisions = gross advances (SBP, 5 quarters)",
+   "max difference Rs 0.0 million",
+   "pass"
+  ],
+  [
+   "External debt: IDS total vs WDI",
+   "135.11 vs 135.11 US$ bn; creditor rows sum to 100.0%",
+   "pass"
+  ],
+  [
+   "Bank branches per 100,000 adults: SBP count vs WDI ratio (2018)",
+   "10.95 vs 10.08 (adults implied from WDI's ATM ratio)",
+   "pass (9% apart)"
+  ],
+  [
+   "BIS CPMI: instruments add up to 'cashless payments, all'",
+   "98.7% of 302 country-years within 5%",
+   "pass"
+  ],
+  [
+   "Overnight repo (OCR daily) vs policy rate",
+   "within 1 pp in 94.2% of 139 months; mean gap +0.04 pp",
+   "pass"
+  ],
+  [
+   "SBP fiscal-year CPI vs World Bank calendar-year CPI (FY12-FY19)",
+   "mean absolute gap 1.31 pp (period definitions differ)",
+   "explained, not equal"
+  ],
+  [
+   "Crowdsourced price file: rows loaded vs strict read",
+   "1,262,459 vs 1,262,459",
+   "pass"
+  ],
+  [
+   "World Bank monthly CPI (0.7% in Mar-25) vs WDI 2025 average (3.55%)",
+   "different periods, not reconcilable from these files",
+   "not testable"
+  ],
+  [
+   "KNOMAD remittances (calendar 2024, US$ 34.9bn) vs SBP balance of payments (FY25, US$ 38.3bn)",
+   "different periods and definitions",
+   "not testable"
+  ]
+ ]
+}

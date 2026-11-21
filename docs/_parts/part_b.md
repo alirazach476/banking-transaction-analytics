@@ -1,0 +1,15 @@
+## B. Macro economy (SBP tables, cross-checked against BIS and World Bank)
+
+**Growth is modest and volatile.** Real GDP growth (constant 2015-16 prices, FY2001-FY2026) averages 3.9% a year with a standard deviation of 2.1 pp; the last five years average 3.05%. Best year FY2005 (8.0%); contractions only in FY2020 (-0.94%, COVID) and FY2023 (-0.33%, the year of the exchange-rate and inflation crisis). Parsing check: growth recomputed from the GDP levels matches SBP's published growth row exactly. The economy has shifted toward services: services 52.2% of GDP in FY2001 to 58.3% in FY2026, agriculture 30.6% to 23.6%, industry 17.2% to 18.1%; over FY2016-FY2026 services grew 3.68% a year, agriculture 3.2%, industry 2.63%.
+- ![](img/allin_gdp.png)
+
+**Balance of payments, FY2025 to FY2026 (US$ million, Jul-Jun).** The current account swung from a surplus of 1,838 to a deficit of 391. Goods exports fell 4.7% (to 30,836) while imports rose 9.1% (to 64,527), widening the goods trade deficit from 26,803 to 33,691. Workers' remittances rose 8.6% to 41,585 and covered 123.4% of the goods trade deficit; services exports rose 18.9%. Foreign direct investment into Pakistan fell 27.7% (to 1,792). (Column mapping of the SBP table was inferred from its header: first column Jul-Jun FY25, third column Jul-Jun FY26.)
+
+**FX reserves rebuilt strongly.** Total liquid reserves (SBP plus banks) were US$ 15.4bn at June 2022, fell to US$ 9.2bn at June 2023 (the crisis low), then rose to 14.0bn, 19.3bn and 23.2bn at June 2026; Oct 2026 is US$ 26.4bn, 2.88x the June 2023 level. Most of the Sep-26 jump (US$ 21.9bn to 26.3bn) is in SBP's own reserves; the source does not say why.
+- ![](img/allin_reserves.png)
+
+**Money.** Broad money (M2) grew 12.89% in FY25 and 14.7% in FY26, then contracted 4.92% from 1 July to 6 Nov 2026 (against -2.27% in the same period of 2025); reserve money grew 11.69% and 11.6% in the two fiscal years and -0.9% in Jul-Nov 2026. (Column meaning inferred from the SBP header.)
+
+**Exchange rate: four independent sources agree.** BIS monthly average Sep-26: 277.22 PKR per USD; SBP banks' floating average Oct-26: 277.24; SBP mark-to-market ready rate on 19 Nov 2026: 276.5205; open market 19 Nov 2026: 277.24/278.35 (buy/sell spread 0.4%, selling rate 0.66% above the interbank mark-to-market rate). In the BIS monthly series the rupee was 280.5 in Jan-24, 278.3 in Sep-24, 281.5 in Sep-25 and 277.2 in Sep-26; the gap between its highest and lowest monthly average since Sep-24 is 2.5%, so the rate has been very stable.
+
+**Inflation reconciliation (closes an earlier caveat).** SBP's fiscal-year average CPI and the World Bank's calendar-year CPI differ by 1.31 pp on average over FY12-FY19 (largest gap FY19: 7.3% vs 10.6%, because calendar 2019 mixes two fiscal years). The two sources agree on level and direction once the period definitions are accounted for; the SBP inflation snapshot in the warehouse only covers FY12 to Nov-18, so it cannot be used for the 2022-23 spike (World Bank/IMF monthly CPI covers that).
