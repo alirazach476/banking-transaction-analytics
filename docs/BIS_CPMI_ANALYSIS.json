@@ -1,0 +1,182 @@
+{
+  "raw_rows": 19514,
+  "headline_rows": 4062,
+  "validation_sum_of_instruments_over_total": {
+    "n": 302,
+    "median": 1.0,
+    "share_within_5pct": 0.987
+  },
+  "wdi_join_missing_fx_rows": 0,
+  "card_payments_per_capita_2023": {
+    "Singapore": 710.6,
+    "Australia": 555.9,
+    "Korea": 552.0,
+    "United States": 482.7,
+    "United Kingdom": 453.9,
+    "Canada": 405.6,
+    "Sweden": 378.1,
+    "Netherlands": 337.9,
+    "Belgium": 304.9,
+    "Switzerland": 284.0,
+    "France": 283.9,
+    "Saudi Arabia": 266.2,
+    "Spain": 219.4,
+    "China": 217.9,
+    "Brazil": 210.7,
+    "T\u00fcrkiye": 183.2,
+    "Italy": 159.3,
+    "Germany": 142.0,
+    "South Africa": 128.1,
+    "Argentina": 99.8,
+    "Mexico": 63.1,
+    "Indonesia": 34.6,
+    "India": 9.5
+  },
+  "avg_card_ticket_usd_2023": {
+    "Indonesia": 10.7,
+    "Brazil": 16.2,
+    "South Africa": 16.9,
+    "Saudi Arabia": 18.2,
+    "T\u00fcrkiye": 23.0,
+    "India": 23.7,
+    "Singapore": 25.6,
+    "Argentina": 30.8,
+    "Sweden": 30.9,
+    "Korea": 32.3,
+    "Netherlands": 33.0,
+    "Mexico": 33.9,
+    "Spain": 36.1,
+    "United Kingdom": 42.2,
+    "Australia": 44.4,
+    "France": 44.8,
+    "Belgium": 46.3,
+    "Italy": 49.1,
+    "Germany": 49.7,
+    "Canada": 52.0,
+    "Switzerland": 60.1,
+    "China": 62.4,
+    "United States": 66.4
+  },
+  "avg_card_ticket_usd_median": 33.9,
+  "cagr_2015_2023_card_emoney": {
+    "countries": 23,
+    "median_pct": 15.5,
+    "share_declining": 0.0,
+    "fastest": [
+      "Saudi Arabia",
+      47.8
+    ],
+    "slowest": [
+      "Singapore",
+      1.1
+    ]
+  },
+  "cagr_2015_2023_credit_transfers": {
+    "countries": 23,
+    "median_pct": 10.6,
+    "share_declining": 0.0,
+    "fastest": [
+      "India",
+      61.7
+    ],
+    "slowest": [
+      "Indonesia",
+      2.3
+    ]
+  },
+  "cagr_2015_2023_cheques": {
+    "countries": 23,
+    "median_pct": -15.9,
+    "share_declining": 1.0,
+    "fastest": [
+      "T\u00fcrkiye",
+      -3.2
+    ],
+    "slowest": [
+      "Netherlands",
+      -100.0
+    ]
+  },
+  "cagr_2015_2023_cash_withdrawals": {
+    "countries": 21,
+    "median_pct": -4.1,
+    "share_declining": 0.71,
+    "fastest": [
+      "Indonesia",
+      4.9
+    ],
+    "slowest": [
+      "China",
+      -12.6
+    ]
+  },
+  "india_number_millions": {
+    "A": {
+      "2015": 6995.0,
+      "2019": 32658.0,
+      "2023": 150115.0,
+      "2024": 208242.0
+    },
+    "B": {
+      "2015": 2874.0,
+      "2019": 18486.0,
+      "2023": 134012.0,
+      "2024": 192284.0
+    },
+    "C": {
+      "2015": 289.0,
+      "2019": 826.0,
+      "2023": 1753.0,
+      "2024": 2087.0
+    },
+    "D": {
+      "2015": 1096.0,
+      "2019": 1070.0,
+      "2023": 673.0,
+      "2024": 626.0
+    },
+    "F": {
+      "2015": 2736.0,
+      "2019": 12275.0,
+      "2023": 13677.0,
+      "2024": 13245.0
+    },
+    "M": {
+      "2015": 8082.0,
+      "2019": 9588.0,
+      "2023": 6758.0,
+      "2024": 6199.0
+    }
+  },
+  "card_payments_per_cash_withdrawal_2023_median": 15.5,
+  "card_payments_per_cash_withdrawal_2023": {
+    "India": 2.0,
+    "Indonesia": 2.3,
+    "Argentina": 3.8,
+    "South Africa": 4.6,
+    "Mexico": 4.8,
+    "Saudi Arabia": 5.9,
+    "Germany": 7.4,
+    "T\u00fcrkiye": 9.4,
+    "Italy": 10.7,
+    "Spain": 13.6,
+    "Switzerland": 15.5,
+    "France": 17.1,
+    "Brazil": 19.3,
+    "Belgium": 24.0,
+    "Singapore": 24.6,
+    "Australia": 30.4,
+    "Sweden": 40.0,
+    "Netherlands": 41.1,
+    "United Kingdom": 41.5,
+    "China": 49.0,
+    "Canada": 59.1
+  },
+  "instrument_mix_2023_median_pct": {
+    "B": 20.6,
+    "C": 7.2,
+    "D": 0.1,
+    "E": 0.1,
+    "F": 68.1
+  }
+}
