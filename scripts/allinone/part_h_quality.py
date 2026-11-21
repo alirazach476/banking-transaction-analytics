@@ -14,6 +14,7 @@ D: dict = {}
 J = lambda n: json.load(open(PARTS / f"{n}.json"))
 A, B, C, Dd, E, FG = J("part_a"), J("part_b"), J("part_c"), J("part_d"), J("part_e"), J("part_fg")
 C2 = J("part_c2")
+RF = json.load(open(ROOT / "docs" / "REAL_FRAUD_CREDITCARD.json"))
 
 # H1 SBP policy-rate tables agree
 def norm(d):
@@ -107,7 +108,7 @@ md = f"""## H. Data quality and reconciliation (closing the earlier caveats)
 - The cause of the late-2024 advances surge, and of the Sep-2026 jump in SBP's reserves, is not given in any file.
 - The synthetic payments data is not linked to any real series, so no real macro effect on NovaBank-style payments can be claimed (the earlier join found no relationship, as expected from a generator with no macro inputs).
 - Not analysed because they are not relevant to Pakistan banking or payments: about 1,000 World Bank project datasets (for example Ukraine BOOST fiscal data, skills, energy and gas-flaring data), most of the 103 ECB datasets (country HICP detail, survey and securities data), the BIS effective-exchange-rate, global-liquidity and long-CPI tables, and the BIS locational data for other countries. They are loaded and profiled.
-- The machine-learning results remain limited by their data: fraud PR-AUC about 0.26 on the NovaBank synthetic data; on the PaySim simulator 1.0 with leakage-prone balance features, 0.52 with amount/type/hour only and 0.80 with leak-free account-history features (`PAYSIM_FRAUD_RESULTS.md`). All of these learn rules built into simulators, so none demonstrates performance on real fraud.
+- Machine learning: on the NovaBank synthetic data the fraud PR-AUC is about 0.26; on the PaySim simulator it is 1.0 with leakage-prone balance features, 0.52 with amount/type/hour only and 0.80 with leak-free account-history features (these learn rules built into simulators). The only evidence on real card fraud is the public European card dataset (`REAL_FRAUD_CREDITCARD.md`): XGBoost PR-AUC {RF['results'][2]['pr_auc']} (95% bootstrap interval {RF['results'][2]['pr_auc_95ci'][0]}-{RF['results'][2]['pr_auc_95ci'][1]}) on a time-ordered split with only {RF['test_fraud']} test frauds; it is anonymised 2013 data from one European issuer and does not transfer to Pakistani cards or wallets, and the NovaBank API's fraud model is unaffected by it.
 - Not built: a hosted deployment and (until the repository is pushed) a verified GitHub Actions run.
 """
 save("part_h", md, D)

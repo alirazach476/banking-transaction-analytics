@@ -167,6 +167,7 @@ ch = [
 sections.append({"id": "inclusion", "title": "Financial inclusion", "intro": f"Only {rk['any account']['pakistan_pct']}% of adults have an account (rank {rk['any account']['rank_high_to_low']} of {rk['any account']['of']}). {FG['women_account_pk_pct']}% of women do, the lowest of all economies; the gender gap is {FG['gender_gap_pk_pp']} points, the second largest.", "kpis": [], "charts": ch})
 
 # ---------------- Machine learning ----------------
+SHORT = {"NovaBank synthetic payments": "Synthetic", "PaySim simulator": "PaySim sim", "REAL card transactions": "REAL EU cards"}
 mlrows = [{"data": "NovaBank synthetic payments (card fraud)", "model": "XGBoost, tuned", "pr_auc": round(J(DOCS / "PHASE6C_RESULTS.json")["fraud_search"]["test_pr_auc_new"], 3), "note": "synthetic labels from the generator's own rules"},
           {"data": "PaySim simulator", "model": "XGBoost, balances included", "pr_auc": PAY["results"][1]["pr_auc"], "note": "leakage-prone features; simulator rule"},
           {"data": "PaySim simulator", "model": "XGBoost, amount/type/hour only", "pr_auc": PAYB["results"][0]["pr_auc"], "note": "no balances"},
@@ -174,7 +175,7 @@ mlrows = [{"data": "NovaBank synthetic payments (card fraud)", "model": "XGBoost
 if REAL:
     for r in REAL["results"]:
         mlrows.append({"data": "REAL card transactions (anonymised, Europe 2013)", "model": r["model"], "pr_auc": r["pr_auc"], "note": f"time-ordered split; {REAL['test_fraud']} test frauds"})
-ch = [chart("ml_prauc", "Fraud models: precision-recall AUC by dataset", "barh", [{"x": f"{r['data'][:28]} | {r['model'][:34]}", "v": r["pr_auc"], "highlight": r["data"].startswith("REAL")} for r in mlrows], [S("v", "PR-AUC")], source="docs/PAYSIM_FRAUD_RESULTS.md, docs/REAL_FRAUD_CREDITCARD.md",
+ch = [chart("ml_prauc", "Fraud models: precision-recall AUC by dataset", "barh", [{"x": f"{SHORT[r['data'].split(' (')[0]]} | {r['model']}".replace(" (balanced)", "").replace(", balances included", " + balances").replace(", amount/type/hour only", " (amount/type/hour)").replace(", plus account history", " + history").replace(", tuned", ""), "v": r["pr_auc"], "highlight": r["data"].startswith("REAL")} for r in mlrows], [S("v", "PR-AUC")], source="docs/PAYSIM_FRAUD_RESULTS.md, docs/REAL_FRAUD_CREDITCARD.md",
             note="Simulated datasets reward learning the simulator's rules; the REAL rows are the only evidence about real card fraud.", wide=True),
       chart("ml_table", "Model results", "table", [{"data": r["data"], "model": r["model"], "pr_auc": r["pr_auc"], "note": r["note"]} for r in mlrows], [S("data", "Dataset"), S("model", "Model"), S("pr_auc", "PR-AUC"), S("note", "Note")], wide=True, source="docs/PAYSIM_FRAUD_RESULTS.md, docs/PHASE6C_RESULTS.md, docs/REAL_FRAUD_CREDITCARD.md")]
 sections.append({"id": "ml", "title": "Fraud models", "intro": "PR-AUC (higher is better; random is the fraud rate). Only the real-transaction rows say anything about real fraud.", "kpis": [], "charts": ch})

@@ -12,6 +12,7 @@ from common import *  # noqa
 J = lambda n: json.load(open(PARTS / f"{n}.json"))
 A, B, C, Dd, E, FG, H = J("part_a"), J("part_b"), J("part_c"), J("part_d"), J("part_e"), J("part_fg"), J("part_h")
 C2 = J("part_c2")
+RF = json.load(open(ROOT / "docs" / "REAL_FRAUD_CREDITCARD.json"))
 W = json.load(open(ROOT / "docs" / "PAKISTAN_WDI_ANALYSIS.json"))
 S = json.load(open(ROOT / "docs" / "SBP_ANALYSIS.json"))
 M = json.load(open(ROOT / "docs" / "PAKISTAN_ANALYSIS.json"))
@@ -35,7 +36,7 @@ summary = f"""## Executive summary
 
 **External finance (Part D).** External debt is US$ {Dd['ids_total_external_debt_usd_bn']['2025']}bn ({Dd['wdi_external_debt_pct_gni']['2025']:.0f}% of GNI), with debt service taking {Dd['wdi_debt_service_pct_exports']['2025']:.0f}% of exports and **scheduled service of US$ {Dd['ids_debt_service_projection_2026_2030_usd_bn']['2026']}bn in 2026** (about the size of reserves). Foreign banks' cross-border claims on Pakistan are US$ {Dd['lbs_claims_latest_usd_m'][1]/1e3:.1f}bn. Sending money to Pakistan costs {Dd['rpw_cost_pct_by_year_mean']['2025']}% on average (against {Dd['rpw_world_mean_cost_by_year']['2025']}% worldwide) but banks charge {Dd['rpw_cost_by_firm_type_latest_mean']['Bank'][0]}% against {Dd['rpw_cost_by_firm_type_latest_mean']['Money Transfer Operator'][0]}% for money-transfer operators.
 
-**What the earlier synthetic-data work can and cannot say.** The NovaBank payments data is synthetic and has no macro inputs, so it shows no relationship to any real series (as it should). The fraud result on the PaySim simulator (PR-AUC 1.0) reflects a rule built into the simulator, not real fraud detection. Nothing here validates the synthetic generator against real Pakistani payment behaviour; Part C gives real benchmarks that a future generator calibration could use.
+**What the earlier synthetic-data work can and cannot say.** The NovaBank payments data is synthetic and has no macro inputs, so it shows no relationship to any real series (as it should). The fraud result on the PaySim simulator (PR-AUC 1.0) reflects a rule built into the simulator, not real fraud detection. The only real-transaction fraud result is on public European card data: XGBoost PR-AUC {RF['results'][2]['pr_auc']} (95% interval {RF['results'][2]['pr_auc_95ci'][0]}-{RF['results'][2]['pr_auc_95ci'][1]}), anonymised 2013 data that does not transfer to Pakistan. Nothing here validates the synthetic generator against real Pakistani payment behaviour; Part C gives real benchmarks that a future generator calibration could use.
 
 **Reliability.** {npass} of {len(H['scoreboard'])} cross-source checks pass (Part H): exchange rates from four sources agree, GDP growth recomputes exactly, SBP identities hold, and the World Bank and IDS debt totals match. The SBP tables are OCR extractions and have not been checked cell by cell against the PDFs.
 """

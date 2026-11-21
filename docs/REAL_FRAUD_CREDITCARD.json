@@ -1,0 +1,68 @@
+{
+ "dataset": "creditcard (ULB / OpenML 1597)",
+ "validation": {
+  "rows": 284807,
+  "frauds": 492,
+  "time_max": 172792.0,
+  "amount_mean": 88.3496,
+  "missing_cells": 0
+ },
+ "train_rows": 172090,
+ "test_rows": 112717,
+ "train_fraud": 360,
+ "test_fraud": 132,
+ "test_fraud_rate": 0.00117,
+ "split": "train Time <= 120954s (first 70% of the span), test after",
+ "results": [
+  {
+   "model": "Logistic regression (balanced)",
+   "pr_auc": 0.7487,
+   "pr_auc_95ci": [
+    0.664,
+    0.831
+   ],
+   "roc_auc": 0.9773,
+   "best_f1": 0.7803,
+   "precision_at_best_f1": 0.956,
+   "recall_at_best_f1": 0.6591,
+   "recall_at_1pct_fpr": 0.8636
+  },
+  {
+   "model": "IsolationForest (unsupervised)",
+   "pr_auc": 0.0236,
+   "pr_auc_95ci": [
+    0.018,
+    0.031
+   ],
+   "roc_auc": 0.9394,
+   "best_f1": 0.0655,
+   "precision_at_best_f1": 0.0351,
+   "recall_at_best_f1": 0.5,
+   "recall_at_1pct_fpr": 0.2727
+  },
+  {
+   "model": "XGBoost",
+   "pr_auc": 0.7888,
+   "pr_auc_95ci": [
+    0.719,
+    0.848
+   ],
+   "roc_auc": 0.9819,
+   "best_f1": 0.8205,
+   "precision_at_best_f1": 0.9412,
+   "recall_at_best_f1": 0.7273,
+   "recall_at_1pct_fpr": 0.8485
+  }
+ ],
+ "random_baseline_pr_auc": 0.00117,
+ "top_features_xgboost": {
+  "V14": 0.463,
+  "V10": 0.1,
+  "V17": 0.071,
+  "V4": 0.044,
+  "V12": 0.035,
+  "V19": 0.018,
+  "V21": 0.018,
+  "V13": 0.017
+ }
+}
