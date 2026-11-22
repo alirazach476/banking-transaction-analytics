@@ -4,7 +4,7 @@ import os
 
 from fastapi import APIRouter
 
-from .common import cached, one, q
+from .common import DEMO, cached, one, q
 
 router = APIRouter(tags=["meta"])
 
@@ -40,4 +40,5 @@ def meta():
         "definitions": DEFINITIONS,
         "airflow_configured": bool(os.getenv("AIRFLOW_BASE_URL")),
         "auth": "api_key" if os.getenv("API_KEY") else "none (local development)",
+        "demo": DEMO,  # hosted read-only demo: bundled DuckDB snapshot, no model scoring, no write-backs
     }

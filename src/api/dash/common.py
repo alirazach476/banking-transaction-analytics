@@ -4,6 +4,7 @@ from __future__ import annotations
 import datetime as dt
 import functools
 import os
+import re
 import threading
 import time
 from decimal import Decimal
@@ -11,7 +12,6 @@ from decimal import Decimal
 from fastapi import Header, HTTPException, Query
 from sqlalchemy import text
 
-from src.utils.db import get_engine
 
 DEFAULT_FROM, DEFAULT_TO = dt.date(2023, 1, 1), dt.date(2025, 12, 31)  # extent of the synthetic data
 
@@ -22,8 +22,76 @@ def require_key(x_api_key: str | None = Header(default=None)):
         raise HTTPException(401, "invalid or missing X-API-Key")
 
 
+DEMO_DB = os.getenv("DEMO_DUCKDB")  # hosted demo: a bundled, read-only DuckDB file instead of PostgreSQL (see scripts/build_demo_db.py)
+DEMO = bool(DEMO_DB)
+_PARAM = re.compile(r"(?<![:\w]):([A-Za-z_]\w*)")  # :name bind parameters (not the :: cast operator)
+
+
+class _Row(tuple):
+    """Result row: a tuple that also exposes ._mapping, like a SQLAlchemy Row."""
+    def __new__(cls, cols, vals):
+        o = super().__new__(cls, vals)
+        o._cols = cols
+        return o
+
+    @property
+    def _mapping(self):
+        return dict(zip(self._cols, self))
+
+
+class _Result:
+    def __init__(self, cur):
+        cols = [d[0] for d in cur.description] if cur.description else []
+        self._rows = [_Row(cols, r) for r in cur.fetchall()] if cols else []
+
+    def __iter__(self):
+        return iter(self._rows)
+
+    def fetchall(self):
+        return self._rows
+
+    def scalar(self):
+        return self._rows[0][0] if self._rows else None
+
+
+class _DuckConn:
+    def __init__(self, con):
+        self._cur = con.cursor()
+
+    def execute(self, stmt, params=None):
+        sql = getattr(stmt, "text", stmt)
+        names = set(_PARAM.findall(sql))
+        bound = {k: v for k, v in (params or {}).items() if k in names}
+        self._cur.execute(_PARAM.sub(lambda m: "$" + m.group(1), sql), bound)
+        return _Result(self._cur)
+
+    def execution_options(self, **_):
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        self._cur.close()
+
+
+class _DuckEngine:
+    """Minimal stand-in for a SQLAlchemy engine over a read-only DuckDB file; same SQL, same call sites."""
+    def __init__(self, path):
+        import duckdb
+        self._con = duckdb.connect(path, read_only=True)
+
+    def connect(self):
+        return _DuckConn(self._con)
+
+    begin = connect
+
+
 @functools.lru_cache
 def engine():
+    if DEMO:
+        return _DuckEngine(DEMO_DB)
+    from src.utils.db import get_engine
     return get_engine()
 
 
@@ -45,6 +113,8 @@ def q(sql: str, **params) -> list[dict]:
 
 def write(sql: str, **params) -> None:
     """Execute a data-changing statement in its own committed transaction."""
+    if DEMO:
+        raise HTTPException(403, "The hosted demo is read-only. Run the project locally to record investigation outcomes.")
     try:
         with engine().begin() as c:
             c.execute(text(sql), params)

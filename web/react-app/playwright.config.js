@@ -6,8 +6,8 @@ export default defineConfig({
   testDir: "./e2e",
   testMatch: "**/*.pw.js",
   timeout: 60000,
-  use: { baseURL: "http://127.0.0.1:8792", screenshot: "only-on-failure" },
-  webServer: {
+  use: { baseURL: process.env.E2E_BASE_URL || "http://127.0.0.1:8792", screenshot: "only-on-failure" },
+  webServer: process.env.E2E_BASE_URL ? undefined : {
     command: "python -m uvicorn src.api.main:app --port 8792 --log-level warning",
     cwd: "../..",
     url: "http://127.0.0.1:8792/health",

@@ -19,7 +19,7 @@ SEGMENT_SQL = """CASE WHEN r >= 4 AND (f + m) / 2.0 >= 4 THEN 'Champions' WHEN r
 
 RFM_CTE = f"""WITH c AS (SELECT customer_id, max(d) last_d, count(*) freq, sum(amount_usd) monetary FROM ui.core_txn_usd
                    WHERE status = 'Completed' AND customer_id IS NOT NULL AND amount_usd IS NOT NULL AND d BETWEEN :a AND :b GROUP BY 1),
-              s AS (SELECT customer_id, last_d, freq, monetary, (CAST(:b AS date) - last_d) recency, ntile(5) OVER (ORDER BY last_d) r, ntile(5) OVER (ORDER BY freq, monetary) f, ntile(5) OVER (ORDER BY monetary) m FROM c),
+              s AS (SELECT customer_id, last_d, freq, monetary, (CAST(:b AS date) - last_d) recency, ntile(5) OVER (ORDER BY last_d, customer_id) r, ntile(5) OVER (ORDER BY freq, monetary, customer_id) f, ntile(5) OVER (ORDER BY monetary, customer_id) m FROM c),
               g AS (SELECT *, {SEGMENT_SQL} segment FROM s)"""
 
 
@@ -92,11 +92,11 @@ def clv(r: DR = Depends(date_range), revenue_rate: float = Query(0.015, ge=0, le
 
 @cached(ttl=180)
 def _clv(d0, d1, rate, life):
-    base = """WITH c AS (SELECT customer_id, sum(amount_usd) v, greatest(1, (max(d) - min(d)) / 30.0) months, count(*) n FROM ui.core_txn_usd
+    base = """WITH c AS (SELECT customer_id, sum(amount_usd) v, greatest(1, (max(d) - min(d)) / 30.0) AS n_months, count(*) n FROM ui.core_txn_usd
                          WHERE status='Completed' AND amount_usd IS NOT NULL AND customer_id IS NOT NULL AND d BETWEEN :a AND :b GROUP BY 1 HAVING count(*) >= 3),
-                   e AS (SELECT customer_id, n, v / months monthly_value, v / months * :rate * :life clv FROM c)"""
+                   e AS (SELECT customer_id, n, v / n_months monthly_value, v / n_months * :rate * :life clv FROM c)"""
     top = q(base + " SELECT e.customer_id, d.customer_type, e.n transactions, e.monthly_value, e.clv FROM e LEFT JOIN warehouse.dim_customer d ON d.customer_id = e.customer_id AND d.is_current ORDER BY clv DESC LIMIT 10", a=d0, b=d1, rate=rate, life=life)
-    dist = q(base + " SELECT width_bucket(clv, 0, 2000, 10) bin, count(*) customers FROM e GROUP BY 1 ORDER BY 1", a=d0, b=d1, rate=rate, life=life)
+    dist = q(base + " SELECT CASE WHEN clv < 0 THEN 0 WHEN clv >= 2000 THEN 11 ELSE CAST(floor(clv / 200) AS INTEGER) + 1 END bin, count(*) customers FROM e GROUP BY 1 ORDER BY 1", a=d0, b=d1, rate=rate, life=life)
     stats = one(base + " SELECT count(*) customers, avg(clv) mean, percentile_cont(0.5) WITHIN GROUP (ORDER BY clv) median, sum(clv) total FROM e", a=d0, b=d1, rate=rate, life=life)
     return {"assumptions": {"revenue_rate": rate, "lifetime_months": life, "min_completed_transactions": 3, "unit": "USD"}, "stats": stats, "top": top, "distribution": dist,
             "note": "ESTIMATE from the assumptions above, not observed revenue. Customers with fewer than 3 completed transactions in the range are excluded. Distribution bins are 0-200, 200-400 ... USD (last bin open-ended)."}

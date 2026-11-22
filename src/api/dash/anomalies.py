@@ -66,7 +66,7 @@ def score_distribution(r: DR = Depends(date_range)):
 
 @cached(ttl=120)
 def _scores(d0, d1):
-    return q(f"""SELECT floor(ml_anomaly_score / 0.025) * 0.025 AS score_from, count(*) alerts, count(*) FILTER (WHERE severity='High') high
+    return q(f"""SELECT floor(round(ml_anomaly_score / 0.025, 6)) * 0.025 AS score_from, count(*) alerts, count(*) FILTER (WHERE severity='High') high
                  FROM monitoring.transaction_anomalies a WHERE {W} GROUP BY 1 ORDER BY 1""", a=d0, b=d1)
 
 

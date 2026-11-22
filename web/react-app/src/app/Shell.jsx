@@ -132,6 +132,7 @@ export default function Shell() {
   const [collapsed, setCollapsed] = useState(() => { try { return localStorage.getItem("nb_collapsed") === "1"; } catch { return false; } });
   const [drawer, setDrawer] = useState(false);
   const { theme, setTheme } = useTheme();
+  const demoMeta = useApi("/v1/meta").data;
   const loc = useLocation();
   useEffect(() => setDrawer(false), [loc.pathname]);
   const cur = FLAT.find((n) => loc.pathname === n.to || loc.pathname.startsWith(n.to + "/"));
@@ -159,6 +160,7 @@ export default function Shell() {
           <div className="spacer" />
           <GlobalSearch />
           {cur?.range && <div className="hide-xs"><RangeControl /></div>}
+          {demoMeta?.demo && <span className="badge simulated demo-chip" title="A read-only snapshot of the synthetic data; scoring and write-backs are switched off">Hosted demo · read-only</span>}
           <Notifications />
           <button className="icon-btn" aria-label="Toggle theme" title={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>{theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}</button>
           <Profile />

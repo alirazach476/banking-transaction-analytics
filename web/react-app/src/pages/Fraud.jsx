@@ -19,6 +19,7 @@ function InvestigationPanel({ row, onSaved }) {
   const [assignee, setAssignee] = useState(row.assignee || "");
   const [note, setNote] = useState(row.note || "");
   const [msg, setMsg] = useState("");
+  const demo = useApi("/v1/meta").data?.demo;
   const save = async () => {
     try { await send("PUT", `/v1/anomalies/${row.anomaly_id}/investigation`, { status, assignee: assignee || null, note: note || null }); setMsg("Saved"); onSaved(); } catch (e) { setMsg(e.message); }
   };
@@ -40,13 +41,14 @@ function InvestigationPanel({ row, onSaved }) {
           <select className="field" style={{ width: "100%" }} value={status} onChange={(e) => setStatus(e.target.value)} aria-label="Investigation status">{STATUSES.map((s) => <option key={s}>{s}</option>)}</select></label>
         <label style={{ fontSize: 11, color: "var(--muted)", textTransform: "uppercase" }}>Assignee<input className="field" style={{ width: "100%" }} value={assignee} maxLength={80} onChange={(e) => setAssignee(e.target.value)} aria-label="Assignee" /></label>
         <label style={{ fontSize: 11, color: "var(--muted)", textTransform: "uppercase" }}>Note<input className="field" style={{ width: "100%" }} value={note} maxLength={1000} onChange={(e) => setNote(e.target.value)} aria-label="Note" /></label>
-        <div className="actions"><button className="btn primary sm" onClick={save}>Save investigation</button><span style={{ color: "var(--muted)", fontSize: 12.5 }} role="status">{msg}</span></div>
+        <div className="actions"><button className="btn primary sm" onClick={save} disabled={!!demo} title={demo ? "The hosted demo is read-only" : undefined}>Save investigation</button>{demo && <span className="badge neutral">Read-only in the hosted demo</span>}<span style={{ color: "var(--muted)", fontSize: 12.5 }} role="status">{msg}</span></div>
       </div>
     </div>
   );
 }
 
 export default function Fraud() {
+  const demo = useApi("/v1/meta").data?.demo;
   const nav = useNavigate();
   const qc = useQueryClient();
   const [sp] = useSearchParams();
@@ -158,9 +160,11 @@ export default function Fraud() {
           extraParams={sp.get("anomaly") ? { filters: JSON.stringify([{ id: "anomaly_id", op: "eq", value: Number(sp.get("anomaly")) }]) } : {}}
           renderDetail={(row) => <InvestigationPanel key={row.anomaly_id} row={row} onSaved={() => { setRefresh((x) => x + 1); qc.invalidateQueries({ queryKey: ["/v1/anomalies/summary"] }); }} />} />
       </Card>
-      <div className="grid g-2 mb"><div><Scorer /></div>
+      {demo ? (
+        <Card style={{ padding: 18 }} data-testid="scorer-demo-note"><h3 style={{ marginBottom: 6 }}>Payment scoring</h3><p style={{ color: "var(--text-2)", margin: 0 }}>The scoring form calls saved XGBoost models (trained on <b>synthetic</b> card payments) and runs only in the local deployment. This hosted demo is a read-only snapshot of the data, so the form and investigation saves are switched off. Everything else on this page is live against the snapshot.</p></Card>
+      ) : <div className="grid g-2 mb"><div><Scorer /></div>
         <Card style={{ padding: 18 }}><h3 style={{ marginBottom: 6 }}>About the scoring models</h3><p style={{ color: "var(--text-2)", margin: 0 }}>The form on the left calls the saved decline and fraud models (XGBoost trained on <b>synthetic</b> card payments). Probabilities are for demonstration; they were validated only on synthetic labels and must not be used for real customer decisions.</p></Card>
-      </div>
+      </div>}
     </>
   );
 }

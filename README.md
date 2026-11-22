@@ -4,7 +4,7 @@
 
 > **Safety notice:** This project uses synthetic banking data generated solely for demonstrating data engineering, analytics, and transaction-monitoring capabilities. It does not represent real customer or banking data.
 
-**Live demo:** [Vercel site](https://banking-transaction-analytics.vercel.app) · [BI Dashboard](https://banking-transaction-analytics.vercel.app/dashboard) · [GitHub](https://github.com/alirazach476/banking-transaction-analytics)
+**Live demo:** [Analytics app](https://banking-transaction-analytics.vercel.app) (read-only snapshot, see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)) · [API docs](https://banking-transaction-analytics.vercel.app/docs) · [Portfolio page](https://banking-transaction-analytics.vercel.app/portfolio) · [BI dashboard](https://banking-transaction-analytics.vercel.app/dashboard) · [GitHub](https://github.com/alirazach476/banking-transaction-analytics)
 
 End-to-end portfolio project for **NovaBank**, a fictional retail bank. The platform ingests multi-source synthetic banking feeds, validates data quality, loads a PostgreSQL warehouse via **dbt**, runs **transaction anomaly detection**, and exposes analytics marts for **Power BI** and advanced SQL.
 
@@ -278,6 +278,7 @@ Status per phase and honest limits: `docs/IMPLEMENTATION_PROGRESS.md`. Everythin
 | Dashboards (all charts) | `docs/DASHBOARD.md` | ten-page React analytics UI (dark/light): overview, payments, fraud/anomalies, customers, merchants, branches + map, explorer, global intelligence (63 real-data charts incl. backtested forecasts), real-vs-synthetic benchmarks, engineering/monitoring, settings; `/v1` API; rebuild data with `python scripts/export_dashboard_data.py` |
 | BI extracts (optional, for other tools) | `docs/BI_EXTRACTS_DICTIONARY.md` | `PYTHONPATH=. python scripts/export_payment_bi_extracts.py` |
 | Real-data analysis | `docs/ALL_IN_ONE_ANALYSIS.md` | `python scripts/allinone/run_all.py` |
+| Hosted demo (Vercel, DuckDB snapshot) | `docs/DEPLOYMENT.md` | `python scripts/build_demo_db.py` then `python scripts/build_vercel_bundle.py`, `vercel deploy --prod` from `deploy/vercel` |
 | Generator calibration, forecasts, real-vs-synthetic | `docs/CALIBRATION_AND_FORECASTS.md` | `PYTHONPATH=. python scripts/calibrate_payments.py` and `scripts/forecast_real_series.py` |
 
 Set `API_KEY` in `.env` for any non-local use of the API. Run tests with `pytest` (database-dependent tests skip if Postgres is down).

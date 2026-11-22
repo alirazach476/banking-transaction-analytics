@@ -1,5 +1,7 @@
 # Dashboard (React)
 
+Live: https://banking-transaction-analytics.vercel.app (a read-only snapshot of the synthetic data, see [DEPLOYMENT.md](DEPLOYMENT.md)); locally at `http://127.0.0.1:8792/app/`.
+
 One React app (`web/react-app`, served by the API at `/app/`) holds every dashboard in the project. It is a ten-page analytics UI with a dark and a light theme; see [UI_UPGRADE_PROGRESS.md](UI_UPGRADE_PROGRESS.md) for what was built, how it was verified and the known limits.
 
 ![Executive overview, dark](ui/overview-dark.png)

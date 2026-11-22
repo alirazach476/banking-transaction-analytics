@@ -108,3 +108,4 @@ table.dt { font-size: 13px; }
 .menu a:focus-visible, .menu button.row:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
 .dt.auto td.r, .dt.auto th.r { white-space: nowrap; }
 code { overflow-wrap: anywhere; word-break: break-word; }
+@media (max-width: 700px) { .demo-chip { display: none !important; } }

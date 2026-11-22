@@ -3,6 +3,7 @@ write endpoints are exercised. Tests skip themselves when the database or the UI
 from __future__ import annotations
 
 import json
+import os
 
 import pytest
 from fastapi.testclient import TestClient
@@ -141,6 +142,11 @@ def test_anomaly_summary_and_comparison_consistent(client):
 
 def test_investigation_status_roundtrip_and_validation(client):
     aid = sql("SELECT anomaly_id FROM monitoring.transaction_anomalies ORDER BY anomaly_id LIMIT 1")[0][0]
+    if os.getenv("DEMO_DUCKDB"):  # hosted read-only demo: writes are refused, with a clear message
+        r = client.put(f"/v1/anomalies/{aid}/investigation", json={"status": "FALSE_POSITIVE", "note": "pytest"})
+        assert r.status_code == 403 and "read-only" in r.json()["detail"]
+        assert client.get("/v1/meta").json()["demo"] is True
+        return
     try:
         assert client.put(f"/v1/anomalies/{aid}/investigation", json={"status": "FALSE_POSITIVE", "note": "pytest"}).status_code == 200
         assert client.get(f"/v1/anomalies/{aid}").json()["investigation_status"] == "FALSE_POSITIVE"
