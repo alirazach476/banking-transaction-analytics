@@ -101,3 +101,8 @@ table.dt { font-size: 13px; }
 .page-head::after { content: ""; position: absolute; right: -60px; top: -80px; width: 260px; height: 260px; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--blue) 24%, transparent); box-shadow: 0 0 0 30px color-mix(in srgb, var(--blue) 4%, transparent), 0 0 0 64px color-mix(in srgb, var(--violet) 3%, transparent); pointer-events: none; }
 .page-head > * { position: relative; z-index: 1; }
 @media (max-width: 900px) { .page-head { padding: 16px; } }
+.menu a, .menu button.row { align-items: center; line-height: 1.35; font-size: 13px; }
+.menu a span:first-child, .menu button.row span:first-child { min-width: 0; }
+.menu .badge { flex: none; align-self: center; font-size: 10.5px; padding: 1px 8px 1px 7px; text-transform: capitalize; }
+.menu { min-width: 340px; }
+.menu a:focus-visible, .menu button.row:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
