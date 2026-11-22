@@ -45,3 +45,6 @@ Defects found and fixed during verification (kept here because they changed beha
 - Date presets such as "last 30 days" are relative to the end of the data (2025-12-31), not today.
 - Tables export at most 50,000 rows per file (Excel is built in memory).
 - No visual-regression suite; screenshots were reviewed by eye.
+
+## Visual polish pass (second iteration)
+Feedback: the first version looked plain, with few visuals and basic tables. Changes: new NovaBank logo (squircle mark with an N whose diagonal is a rising chart line, glowing node and orbit; `web/react-app/public/logo.svg`, `favicon.svg`, `src/ui/Logo.jsx`); mesh-gradient background, glass cards, page banners; Overview rebuilt with a hero banner and approval-rate gauge, icon KPI cards with sparklines, gradient area/bar charts, donuts with centre totals and share legends, a category rose chart, a branch-efficiency bubble chart and a weekday-by-hour heat map; tables now show ID chips, coloured category tags, avatars, in-cell data bars, status dots, zebra rows, a filter toggle and a compact/comfortable density switch. Same data and endpoints; all 21 browser tests and 6 unit tests still pass.

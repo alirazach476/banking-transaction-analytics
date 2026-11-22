@@ -11,6 +11,7 @@
   --chart-grid: rgba(148,163,184,.14); --chart-axis: #7d8bab;
   --c1: #4f8cff; --c2: #8b6cf6; --c3: #2dd4bf; --c4: #fbbf24; --c5: #f472b6; --c6: #34d399; --c7: #22d3ee; --c8: #fb923c;
   --skeleton-a: #18223b; --skeleton-b: #202c4a;
+  --mesh1: rgba(79,140,255,.14); --mesh2: rgba(139,108,246,.13); --mesh3: rgba(45,212,191,.07);
 }
 [data-theme="light"] {
   color-scheme: light;
@@ -24,6 +25,7 @@
   --chart-grid: rgba(100,116,139,.18); --chart-axis: #6a799a;
   --c1: #2563eb; --c2: #7c3aed; --c3: #0d9488; --c4: #d97706; --c5: #db2777; --c6: #059669; --c7: #0891b2; --c8: #ea580c;
   --skeleton-a: #e8edf7; --skeleton-b: #f4f7fc;
+  --mesh1: rgba(37,99,235,.09); --mesh2: rgba(124,58,237,.08); --mesh3: rgba(13,148,136,.05);
 }
 :root {
   --font: "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;

@@ -1,3 +1,4 @@
+import { LogoMark } from "../ui/Logo.jsx";
 import React, { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { Link, NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Activity, Bell, ChevronsLeft, ChevronsRight, CreditCard, Globe2, KeyRound, Landmark, LayoutDashboard, Menu, Moon, Search, Settings as Cog, ShieldAlert, Store, Sun, Table2, Users, Zap } from "lucide-react";
@@ -136,7 +137,7 @@ export default function Shell() {
   return (
     <div className={"app" + (collapsed ? " collapsed" : "") + (drawer ? " drawer" : "")}>
       <aside className="sidebar" aria-label="Primary">
-        <Link to="/overview" className="brand"><span className="logo"><Zap size={18} /></span><div>NovaBank<small>Analytics Intelligence</small></div></Link>
+        <Link to="/overview" className="brand" aria-label="NovaBank home"><LogoMark size={38} /><div className="wm"><b>Nova<i>Bank</i></b><small>Analytics Intelligence</small></div></Link>
         <nav className="nav">
           {NAV.map((n, i) => n.group ? <div className="group" key={i}>{n.group}</div> : (
             <NavLink key={n.to} to={n.to} title={n.label} className={({ isActive }) => (isActive ? "active" : "")}><n.icon size={18} /><span>{n.label}</span></NavLink>

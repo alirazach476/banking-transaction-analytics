@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/ui/logo.svg" alt="NovaBank" height="64"></p>
+
 # NovaBank Banking Transaction Analytics Pipeline
 
 > **Safety notice:** This project uses synthetic banking data generated solely for demonstrating data engineering, analytics, and transaction-monitoring capabilities. It does not represent real customer or banking data.

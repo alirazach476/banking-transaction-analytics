@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts/core";
-import { BarChart, FunnelChart, HeatmapChart, LineChart, PieChart, SankeyChart, ScatterChart, TreemapChart } from "echarts/charts";
+import { BarChart, FunnelChart, GaugeChart, HeatmapChart, LineChart, PieChart, SankeyChart, ScatterChart, TreemapChart } from "echarts/charts";
 import { AriaComponent, DataZoomComponent, GridComponent, LegendComponent, MarkLineComponent, TitleComponent, ToolboxComponent, TooltipComponent, VisualMapComponent } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";
 import { useTheme } from "../lib/context.jsx";
 import { axis, baseGrid } from "../lib/chartkit.js";
 
-echarts.use([BarChart, FunnelChart, HeatmapChart, LineChart, PieChart, SankeyChart, ScatterChart, TreemapChart, AriaComponent, DataZoomComponent, GridComponent, LegendComponent,
+echarts.use([BarChart, FunnelChart, GaugeChart, HeatmapChart, LineChart, PieChart, SankeyChart, ScatterChart, TreemapChart, AriaComponent, DataZoomComponent, GridComponent, LegendComponent,
   MarkLineComponent, TitleComponent, ToolboxComponent, TooltipComponent, VisualMapComponent, CanvasRenderer]);
 
 // Design tokens read from CSS so charts follow the active theme

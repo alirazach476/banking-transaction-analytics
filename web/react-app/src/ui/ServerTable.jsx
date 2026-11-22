@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
-import { ArrowDown, ArrowUp, ChevronDown, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Columns3, Download, FileSpreadsheet, Search } from "lucide-react";
+import { ArrowDown, ArrowUp, ChevronDown, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Columns3, Download, FileSpreadsheet, Filter, Rows3, Search } from "lucide-react";
 import { download } from "../lib/api.js";
 import { useApi, useRange } from "../lib/context.jsx";
 import { date, dateTime, int, num, pct, usdFull } from "../lib/format.js";
@@ -9,21 +9,33 @@ import { Badge, EmptyState, ErrorState, Skeleton, saveText, toCsv } from "./kit.
 const STATUSY = /(^|_)(status|severity)$|^investigation_status$/;
 const pretty = (id) => id.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()).replace(/ Usd\b/, " (USD)").replace(/ Id\b/, " ID").replace(/ Ms\b/, " (ms)").replace(/ Pct\b/, " %");
 
-// Default cell rendering with conditional formatting (status badges, severity, scores, amounts, rates)
-export function renderCell(id, kind, v) {
+const hash = (v) => { let h = 0; for (const c of String(v)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; };
+const AVATARS = [["--c1", "--c2"], ["--c2", "--c5"], ["--c3", "--c1"], ["--c4", "--c8"], ["--c6", "--c3"], ["--c5", "--c2"], ["--c7", "--c1"], ["--c8", "--c5"]];
+const initials = (s) => String(s).replace(/[^A-Za-z0-9 ]/g, " ").split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || "?";
+const TAGGED = /^(channel|transaction_type|merchant_category|region|customer_type|branch_type|activity_segment|check_type|issue_type|source_system|decline_reason|mode)$/;
+const NAMED = /^(merchant_name|branch_name)$/;
+const DBAR = /(_count|^payments$|^declined$|^chargebacks$|rows_processed|rows_failed|response_ms|duration_s|execution_time_ms|failed_rows|active_customers)$/;
+const BAD_BAR = /failed|declined|chargebacks/;
+const dbar = (v, max, color, text) => (max > 0 ? <span className="dbar" style={{ "--p": `${Math.max(2, Math.min(100, (v / max) * 100))}%`, "--c": color }}>{text}</span> : text);
+
+// Default cell rendering with conditional formatting (status badges, ID chips, tags, avatars, data bars, scores, rates)
+export function renderCell(id, kind, v, max) {
   if (v === null || v === undefined || v === "") return <span style={{ color: "var(--muted)" }}>–</span>;
   if (STATUSY.test(id)) return <Badge value={v} />;
-  if (kind === "bool") return v ? <span className="badge success">Yes</span> : <span className="badge neutral">No</span>;
+  if (kind === "bool") return v ? <span className="yes">✓ Yes</span> : <span className="no">– No</span>;
+  if (/_id$/.test(id) || id === "run_id") return <span className="idchip">{kind === "num" ? "#" + v : String(v)}</span>;
   if (kind === "ts") return <span className="num">{id.endsWith("_at") || id === "ts" || id.includes("time") ? dateTime(v) : date(v)}</span>;
+  if (NAMED.test(id)) { const [c1, c2] = AVATARS[hash(v) % AVATARS.length]; return <span className="cell-name"><span className="avatar" style={{ "--a1": `var(${c1})`, "--a2": `var(${c2})` }}>{initials(v)}</span><span>{String(v)}</span></span>; }
+  if (TAGGED.test(id)) return <span className="tag" style={{ "--tc": `var(--c${(hash(v) % 8) + 1})` }}>{String(v).replace(/_/g, " ")}</span>;
   if (/score$/.test(id)) {
     const c = v >= 0.65 ? "var(--bad)" : v >= 0.55 ? "var(--warn)" : "var(--info)";
-    return <span style={{ display: "inline-flex", alignItems: "center", gap: 6, justifyContent: "flex-end", width: "100%" }}><span className="num">{Number(v).toFixed(3)}</span><span style={{ width: 34, height: 5, borderRadius: 3, background: "var(--surface-3)" }}><i style={{ display: "block", height: 5, borderRadius: 3, width: `${Math.min(100, v * 100)}%`, background: c }} /></span></span>;
+    return <span style={{ display: "inline-flex", alignItems: "center", gap: 6, justifyContent: "flex-end", width: "100%" }}><span className="num">{Number(v).toFixed(3)}</span><span style={{ width: 40, height: 6, borderRadius: 3, background: "var(--surface-3)" }}><i style={{ display: "block", height: 6, borderRadius: 3, width: `${Math.min(100, v * 100)}%`, background: c }} /></span></span>;
   }
   if (kind === "num") {
-    if (/amount_usd|value_usd|^amount$/.test(id)) return <span style={{ fontWeight: v >= 10000 ? 700 : 400, color: v >= 10000 ? "var(--warn)" : undefined }}>{usdFull(v)}</span>;
-    if (/approval_rate|completion_rate/.test(id)) return <span style={{ color: v < 0.9 ? "var(--warn)" : undefined }}>{pct(v, 2)}</span>;
-    if (/failure_rate_pct/.test(id)) return <span style={{ color: v > 7 ? "var(--bad)" : v > 5.5 ? "var(--warn)" : undefined, fontWeight: v > 7 ? 700 : 400 }}>{num(v, 2)}%</span>;
-    if (/failed|chargebacks|declined|failed_rows/.test(id) && v > 0) return <span style={{ color: "var(--bad)" }}>{int(v)}</span>;
+    if (/amount_usd|value_usd|^amount$/.test(id)) return dbar(v, max, v >= 10000 ? "var(--warn)" : "var(--c1)", <span style={{ fontWeight: v >= 10000 ? 700 : 500, color: v >= 10000 ? "var(--warn)" : undefined }}>{usdFull(v)}</span>);
+    if (/approval_rate|completion_rate/.test(id)) return <span style={{ color: v < 0.9 ? "var(--warn)" : "var(--good)", fontWeight: 600 }}>{pct(v, 2)}</span>;
+    if (/failure_rate_pct/.test(id)) return <span style={{ color: v > 7 ? "var(--bad)" : v > 5.5 ? "var(--warn)" : "var(--good)", fontWeight: 600 }}>{num(v, 2)}%</span>;
+    if (DBAR.test(id)) return dbar(v, max, BAD_BAR.test(id) ? "var(--bad)" : "var(--c1)", <span style={{ color: BAD_BAR.test(id) && v > 0 ? "var(--bad)" : undefined }}>{int(v)}</span>);
     return Number.isInteger(v) ? int(v) : num(v, 3);
   }
   return String(v);
@@ -44,6 +56,8 @@ export default function ServerTable({ dataset, extraParams = {}, filterOptions =
   const [selection, setSelection] = useState({});
   const [open, setOpen] = useState(null);
   const [colMenu, setColMenu] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
+  const [dense, setDense] = useState(false);
   useEffect(() => { const t = setTimeout(() => { setDq(search.trim()); setPage(0); }, 300); return () => clearTimeout(t); }, [search]);
   useEffect(() => { setPage(0); setSelection({}); setOpen(null); }, [dataset, from, to, JSON.stringify(extraParams)]);
 
@@ -67,6 +81,11 @@ export default function ServerTable({ dataset, extraParams = {}, filterOptions =
   const q = useApi(`/v1/tables/${dataset}`, { ...params, _r: refreshKey }, { enabled: !!spec });
   const rows = q.data?.rows || [];
 
+  const maxes = useMemo(() => {
+    const m = {};
+    for (const c of spec?.columns || []) if (c.kind === "num") m[c.id] = Math.max(0, ...rows.map((r) => Number(r[c.id]) || 0));
+    return m;
+  }, [rows, spec]);
   const columns = useMemo(() => {
     if (!spec) return [];
     const sel = { id: "_sel", size: 36, enableResizing: false, header: () => <input type="checkbox" aria-label="Select all rows on this page" checked={rows.length > 0 && rows.every((r) => selection[r[spec.id]])}
@@ -74,9 +93,9 @@ export default function ServerTable({ dataset, extraParams = {}, filterOptions =
       cell: ({ row }) => <input type="checkbox" aria-label="Select row" checked={!!selection[row.original[spec.id]]} onChange={(e) => setSelection({ ...selection, [row.original[spec.id]]: e.target.checked })} onClick={(e) => e.stopPropagation()} /> };
     const exp = { id: "_exp", size: 34, enableResizing: false, header: () => null, cell: ({ row }) => <button className="icon-btn" style={{ width: 24, height: 24, border: 0, background: "none" }} aria-label="Expand row"
       onClick={(e) => { e.stopPropagation(); setOpen(open === row.original[spec.id] ? null : row.original[spec.id]); }}>{open === row.original[spec.id] ? <ChevronDown size={15} /> : <ChevronRight size={15} />}</button> };
-    return [sel, exp, ...spec.columns.map((c) => ({ id: c.id, accessorKey: c.id, header: pretty(c.id), size: c.kind === "ts" ? 160 : c.kind === "num" ? 120 : c.id.endsWith("_id") ? 150 : 150, meta: { kind: c.kind },
-      cell: ({ getValue }) => renderCell(c.id, c.kind, getValue()) }))];
-  }, [spec, rows, selection, open]);
+    return [sel, exp, ...spec.columns.map((c) => ({ id: c.id, accessorKey: c.id, header: pretty(c.id), size: c.kind === "ts" ? 160 : c.kind === "num" ? 150 : 150, meta: { kind: c.kind },
+      cell: ({ getValue }) => renderCell(c.id, c.kind, getValue(), maxes[c.id]) }))];
+  }, [spec, rows, selection, open, maxes]);
 
   const table = useReactTable({ data: rows, columns, getCoreRowModel: getCoreRowModel(), columnResizeMode: "onChange", state: { columnVisibility: { ...visibility, _sel: true, _exp: true }, columnSizing: sizing }, onColumnSizingChange: setSizing, manualSorting: true, manualPagination: true, manualFiltering: true,
     getRowId: (r) => String(r[spec?.id]) });
@@ -108,6 +127,8 @@ export default function ServerTable({ dataset, extraParams = {}, filterOptions =
         <div className="search" style={{ width: 260 }}><Search size={15} /><input aria-label={`Search ${dataset}`} placeholder="Search…" value={search} onChange={(e) => setSearch(e.target.value)} style={{ height: 34 }} /></div>
         <span className="spacer" />
         {nSel > 0 && <><span className="badge neutral">{nSel} selected</span><button className="btn sm" onClick={exportSel}><Download size={14} /> Export selected</button></>}
+        <button className="btn sm" onClick={() => setShowFilters(!showFilters)} aria-pressed={showFilters} aria-label="Toggle column filters"><Filter size={14} /> Filters{filtersJson.length > 0 && <span className="badge info" style={{ padding: "0 7px" }}>{filtersJson.length}</span>}</button>
+        <button className="btn sm" onClick={() => setDense(!dense)} aria-pressed={dense} aria-label="Toggle compact rows"><Rows3 size={14} /> {dense ? "Compact" : "Comfortable"}</button>
         <div style={{ position: "relative" }}>
           <button className="btn sm" onClick={() => setColMenu(!colMenu)} aria-label="Columns"><Columns3 size={14} /> Columns</button>
           {colMenu && <div className="menu" style={{ minWidth: 220 }}><div className="colmenu">{spec.columns.map((c) => (
@@ -117,7 +138,7 @@ export default function ServerTable({ dataset, extraParams = {}, filterOptions =
         <button className="btn sm" onClick={() => download(`/v1/tables/${dataset}/export`, { ...exportParams, fmt: "xlsx" }, `${dataset}.xlsx`)} aria-label="Export Excel"><FileSpreadsheet size={14} /> Excel</button>
       </div>
       <div className="table-wrap" style={{ opacity: q.isFetching && q.data ? 0.65 : 1, transition: "opacity .15s" }}>
-        <table className="dt" style={{ width: Math.max(table.getTotalSize(), 600) }}>
+        <table className={"dt" + (dense ? " compact" : "")} style={{ width: Math.max(table.getTotalSize(), 600) }}>
           <thead>
             {table.getHeaderGroups().map((hg) => (
               <tr key={hg.id}>{hg.headers.map((h) => {
@@ -133,10 +154,10 @@ export default function ServerTable({ dataset, extraParams = {}, filterOptions =
                     {h.column.getCanResize() && <div className={"resizer" + (h.column.getIsResizing() ? " on" : "")} onMouseDown={h.getResizeHandler()} onTouchStart={h.getResizeHandler()} />}
                   </th>);
               })}</tr>))}
-            <tr>{table.getVisibleLeafColumns().map((c) => {
+            {showFilters && <tr>{table.getVisibleLeafColumns().map((c) => {
               const kind = c.columnDef.meta?.kind;
               const f = colFilters[c.id] || {};
-              const th = { position: "sticky", top: 36, background: "var(--surface-2)", padding: "4px 6px", zIndex: 2 };
+              const th = { position: "sticky", top: 38, background: "var(--surface-2)", padding: "4px 6px", zIndex: 2 };
               if (c.id.startsWith("_") || !kind) return <th key={c.id} style={th} />;
               const opts = filterOptions[c.id];
               return (
@@ -147,7 +168,7 @@ export default function ServerTable({ dataset, extraParams = {}, filterOptions =
                     : kind === "ts" ? <div style={{ display: "flex", gap: 4 }}><input className="field" style={{ height: 28, width: "50%", padding: "0 4px" }} type="date" aria-label={`${c.id} from`} value={f.from || ""} onChange={(e) => setF(c.id, { from: e.target.value })} /><input className="field" style={{ height: 28, width: "50%", padding: "0 4px" }} type="date" aria-label={`${c.id} to`} value={f.to || ""} onChange={(e) => setF(c.id, { to: e.target.value })} /></div>
                     : null}
                 </th>);
-            })}</tr>
+            })}</tr>}
           </thead>
           <tbody>
             {q.isPending && Array.from({ length: 8 }).map((_, i) => <tr key={i}>{table.getVisibleLeafColumns().map((c) => <td key={c.id}><Skeleton h={14} /></td>)}</tr>)}

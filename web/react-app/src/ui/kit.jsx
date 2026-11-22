@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { AlertTriangle, ArrowDownRight, ArrowUpRight, Download, Inbox, Minus, RefreshCw } from "lucide-react";
+import { Activity, AlertTriangle, ArrowDownRight, ArrowUpRight, BadgeCheck, CircleX, Coins, CreditCard, DollarSign, Download, Inbox, Landmark, Minus, Receipt, RefreshCw, RotateCcw, ShieldAlert } from "lucide-react";
 import { deltaText, formatKpi } from "../lib/format.js";
 import { PRESETS, useRange } from "../lib/context.jsx";
 
@@ -35,16 +35,45 @@ export function PageHeader({ title, subtitle, domains = [], actions }) {
 
 const INVERT = new Set(["decline_rate", "anomaly_rate", "chargeback_rate", "core_failure_rate"]); // an increase is bad
 
-export function KpiCard({ k, loading, onClick }) {
+const KPI_STYLE = {
+  payment_volume: [CreditCard, "--c1", "--c2"], payment_value_usd: [DollarSign, "--c3", "--c1"], approval_rate: [BadgeCheck, "--c6", "--c3"], decline_rate: [CircleX, "--c8", "--c5"],
+  anomaly_rate: [ShieldAlert, "--c5", "--c2"], avg_transaction_value: [Receipt, "--c7", "--c1"], chargeback_rate: [RotateCcw, "--c8", "--c4"],
+  core_volume: [Landmark, "--c2", "--c1"], core_value_usd: [Coins, "--c4", "--c8"], core_failure_rate: [Activity, "--c5", "--c8"],
+};
+
+// Dependency-free sparkline: smooth path + gradient area, last point highlighted
+export function Spark({ data = [], color = "var(--c1)", height = 38 }) {
+  const id = React.useId().replace(/:/g, "");
+  const v = data.filter((x) => typeof x === "number" && isFinite(x));
+  if (v.length < 3) return <div style={{ height }} />;
+  const W = 120, H = height, pad = 3;
+  const lo = Math.min(...v), hi = Math.max(...v), span = hi - lo || 1;
+  const pts = v.map((y, i) => [(i / (v.length - 1)) * W, H - pad - ((y - lo) / span) * (H - pad * 2)]);
+  const d = pts.map((p, i) => (i === 0 ? `M${p[0]},${p[1]}` : `C${(pts[i - 1][0] + p[0]) / 2},${pts[i - 1][1]} ${(pts[i - 1][0] + p[0]) / 2},${p[1]} ${p[0]},${p[1]}`)).join(" ");
+  return (
+    <svg className="spark" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" width="100%" height={H} aria-hidden="true">
+      <defs><linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={color} stopOpacity=".35" /><stop offset="1" stopColor={color} stopOpacity="0" /></linearGradient></defs>
+      <path d={`${d} L${W},${H} L0,${H} Z`} fill={`url(#${id})`} />
+      <path d={d} fill="none" stroke={color} strokeWidth="1.8" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function KpiCard({ k, loading, onClick, spark }) {
   if (loading || !k) return <Card className="kpi"><Skeleton h={12} w="55%" /><Skeleton h={30} w="70%" style={{ margin: "10px 0" }} /><Skeleton h={12} w="40%" /></Card>;
   const d = k.delta;
   const bad = INVERT.has(k.key) ? d > 0 : d < 0;
   const cls = d === null || d === undefined || Math.abs(d) < 0.005 ? "flat" : bad ? "down" : "up";
   const Icon = cls === "flat" ? Minus : d > 0 ? ArrowUpRight : ArrowDownRight;
+  const [KIcon, c1, c2] = KPI_STYLE[k.key] || [Activity, "--c1", "--c2"];
   return (
-    <Card className="kpi" onClick={onClick} style={onClick ? { cursor: "pointer" } : undefined} data-testid={"kpi-" + k.key}>
-      <div className="label"><span>{k.label}</span><span className={"badge " + (k.domain === "payments" || k.domain === "core" ? "synthetic" : "real")} style={{ fontSize: 10 }}>{k.domain === "core" ? "core banking" : k.domain}</span></div>
+    <Card className="kpi" onClick={onClick} style={{ "--k1": `var(${c1})`, "--k2": `var(${c2})`, ...(onClick ? { cursor: "pointer" } : {}) }} data-testid={"kpi-" + k.key}>
+      <div className="label">
+        <span className="ico" title={(k.domain === "core" ? "Synthetic · core banking" : "Synthetic · card payments")}><KIcon size={17} strokeWidth={2.2} /></span>
+        <span className="lbl">{k.label}<small className={"dom " + (k.domain === "core" ? "core" : "pay")}>{k.domain === "core" ? "core banking · synthetic" : "card payments · synthetic"}</small></span>
+      </div>
       <div className="value num" data-testid={"kpi-value-" + k.key}>{formatKpi(k)}</div>
+      {spark && <Spark data={spark} color={`var(${c1})`} />}
       <div className="foot">
         <span className={"delta " + cls} title="Change vs the immediately preceding period of equal length"><Icon size={13} />{deltaText(d, k.delta_unit)}</span>
         <span>{k.note || "vs prior period"}</span>
@@ -122,7 +151,10 @@ export function saveText(text, filename, type = "text/csv") {
 // Plain stat tile (no period comparison)
 export function Stat({ label, value, note, loading }) {
   if (loading) return <Card className="kpi"><Skeleton h={12} w="55%" /><Skeleton h={28} w="70%" style={{ margin: "10px 0" }} /></Card>;
-  return <Card className="kpi"><div className="label"><span>{label}</span></div><div className="value num">{value}</div>{note && <div className="foot"><span>{note}</span></div>}</Card>;
+  let h = 0; for (const ch of String(label)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const pairs = [["--c1", "--c2"], ["--c3", "--c1"], ["--c2", "--c5"], ["--c6", "--c3"], ["--c4", "--c8"], ["--c7", "--c1"]];
+  const [a, b] = pairs[h % pairs.length];
+  return <Card className="kpi stat" style={{ "--k1": `var(${a})`, "--k2": `var(${b})` }}><div className="label"><span className="lbl">{label}</span></div><div className="value num">{value}</div>{note && <div className="foot"><span>{note}</span></div>}</Card>;
 }
 
 // Multi-select dropdown with checkboxes
