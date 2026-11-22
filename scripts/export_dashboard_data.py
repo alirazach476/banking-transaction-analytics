@@ -184,6 +184,36 @@ sections.append({"id": "ml", "title": "Fraud models", "intro": "PR-AUC (higher i
 ch = [chart("scoreboard", "Cross-source reconciliation checks", "table", [{"check": r[0], "result": r[1], "status": r[2]} for r in H["scoreboard"]], [S("check", "Check"), S("result", "Result"), S("status", "Status")], wide=True, source="docs/ALL_IN_ONE_ANALYSIS.md Part H")]
 sections.append({"id": "quality", "title": "Data quality", "intro": f"{sum(1 for r in H['scoreboard'] if r[2].startswith('pass'))} of {len(H['scoreboard'])} checks pass; the rest are explained by differing periods or cannot be tested from these files. SBP tables come from OCR and have not been checked cell by cell against the PDFs.", "kpis": [], "charts": ch})
 
+# ---------------- ECB payment statistics and FRED (real external aggregates; read straight from the warehouse) ----------------
+import duckdb
+_wh = duckdb.connect(str(ROOT / "data" / "warehouse" / "novabank_data.duckdb"), read_only=True)
+_pay = lambda sql: _wh.execute(sql).df()
+ECB_C = {"AT": "Austria", "BE": "Belgium", "BG": "Bulgaria", "CY": "Cyprus", "CZ": "Czechia", "DE": "Germany", "EE": "Estonia", "ES": "Spain", "FI": "Finland", "FR": "France", "GR": "Greece", "HR": "Croatia",
+         "HU": "Hungary", "IE": "Ireland", "IT": "Italy", "LT": "Lithuania", "LU": "Luxembourg", "LV": "Latvia", "MT": "Malta", "NL": "Netherlands", "PL": "Poland", "PT": "Portugal", "RO": "Romania",
+         "SI": "Slovenia", "SK": "Slovakia", "U2": "Euro area"}
+inst = _pay("""SELECT time_period y, typ_trnsctn t, obs_value v FROM ecb.pay WHERE ref_area='U2' AND freq='A' AND transformation='N' AND unit_measure='PN_R_POP' AND rl_trnsctn IN ('1','2') AND frd_typ='_Z'
+               AND typ_trnsctn IN ('CP0','CT0','DD','CHQ') AND time_period >= '2009' ORDER BY 1""")
+inst["v"] = inst.v.astype(float)
+ip = inst.pivot_table(index="y", columns="t", values="v").reset_index()
+card_c = _pay("""SELECT ref_area r, obs_value v FROM ecb.pay WHERE freq='A' AND typ_trnsctn='CP0' AND unit_measure='PN_R_POP' AND rl_trnsctn='1' AND transformation='N' AND frd_typ='_Z' AND time_period='2024' AND ref_area <> 'B0'""")
+card_c = card_c[card_c.r.isin(ECB_C)].assign(v=lambda d: d.v.astype(float)).sort_values("v")
+fr = _pay("SELECT time_period p, obs_value v FROM ecb.pay WHERE _key='PAY.H.U2.W0.CP0.1.F.N.EUR' ORDER BY 1")
+den = _pay("SELECT time_period p, obs_value v FROM ecb.pay WHERE _key='PAY.H.U2.W0.CP0.1._Z.N.EUR' ORDER BY 1").set_index("p").v.astype(float)
+fraud_rows = [{"x": r.p, "fraud_eur_m": round(float(r.v), 1), "fraud_rate_bps": round(float(r.v) / float(den[r.p]) * 1e4, 2)} for r in fr.itertuples() if r.p in den.index]
+cpi = _pay("SELECT observation_date d, cpiaucsl_pc1 v FROM external_fred.fred_cpiaucsl_pc1 WHERE observation_date >= '2015-01-01' AND cpiaucsl_pc1 IS NOT NULL ORDER BY 1")
+fed = _pay("SELECT observation_date d, dfedtaru u, dff e FROM external_fred.fred_daily_7day WHERE dfedtaru IS NOT NULL ORDER BY 1")
+fed = fed.iloc[::5]
+ch = [
+    chart("ecb_instruments", "Euro-area payments per inhabitant by instrument", "line", [{"x": r.y, "Card payments": round(r.CP0, 1), "Credit transfers": round(r.CT0, 1), "Direct debits": round(r.DD, 1), "Cheques": round(r.CHQ, 1)} for r in ip.itertuples()],
+          [S("Card payments", "Card payments"), S("Credit transfers", "Credit transfers"), S("Direct debits", "Direct debits"), S("Cheques", "Cheques")], source="ECB payment statistics", note="Cards overtook every other instrument; cheques are nearly gone."),
+    chart("ecb_card_country", "Card payments per inhabitant by country, 2024", "barh", [{"x": ECB_C[r.r], "v": round(r.v, 1), "highlight": r.r == "U2"} for r in card_c.itertuples()], [S("v", "Payments per inhabitant")], source="ECB payment statistics", note="Euro area highlighted."),
+    chart("ecb_fraud", "Euro-area card fraud (value, half-yearly)", "line", [{"x": r["x"], "Fraud rate (basis points of card payment value)": r["fraud_rate_bps"]} for r in fraud_rows], [S("Fraud rate (basis points of card payment value)", "Fraud rate (basis points)")],
+          source="ECB payment statistics", note="Fraudulent card transactions as a share of card payment value; 1 basis point = 0.01%. Euro-area figures; they say nothing about Pakistani card fraud."),
+    chart("fred_cpi", "US consumer price inflation (year on year)", "line", [{"x": str(r.d)[:7], "inflation": round(float(r.v), 2)} for r in cpi.itertuples()], [S("inflation", "CPI inflation")], unit="%", source="FRED"),
+    chart("fred_fed", "US Federal Reserve target rate and effective funds rate", "line", [{"x": str(r.d)[:10], "Target (upper bound)": r.u, "Effective funds rate": r.e} for r in fed.itertuples()], [S("Target (upper bound)", "Target (upper bound)"), S("Effective funds rate", "Effective funds rate")], unit="%", source="FRED", note="The FRED rates files in the warehouse cover one year only."),
+]
+sections.append({"id": "ecb_fred", "title": "ECB payments and FRED", "intro": "Euro-area payment behaviour and fraud (ECB) and US inflation and policy rates (FRED): real aggregate statistics, kept separate from the synthetic transaction data.", "kpis": [], "charts": ch})
+
 out = {"generated": dt.date.today().isoformat(), "title": "Pakistan banking and payments: real-data analysis", "sections": sections}
 dest = ROOT / "web" / "react-app" / "public"
 dest.mkdir(parents=True, exist_ok=True)

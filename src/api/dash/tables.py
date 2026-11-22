@@ -172,15 +172,17 @@ def export(name: str, fmt: str = Query("csv", pattern="^(csv|xlsx)$"), p: Q = De
     names = list(spec["cols"])
     if fmt == "csv":
         def gen():
+            # rows are written in chunks: one yield per row costs a thread hop each and made a 50k-row export take over a minute
             with engine().connect().execution_options(stream_results=True) as c:
                 buf = io.StringIO()
                 wr = csv.writer(buf)
                 wr.writerow(names)
-                yield buf.getvalue()
-                for row in c.execute(sql, {**params, "lim": limit}):
-                    buf.seek(0); buf.truncate()
+                for i, row in enumerate(c.execute(sql, {**params, "lim": limit}), 1):
                     wr.writerow(["" if v is None else v for v in row])
-                    yield buf.getvalue()
+                    if i % 2000 == 0:
+                        yield buf.getvalue()
+                        buf.seek(0); buf.truncate()
+                yield buf.getvalue()
         return StreamingResponse(gen(), media_type="text/csv", headers={"Content-Disposition": f'attachment; filename="{name}.csv"'})
     from openpyxl import Workbook
     wb = Workbook(write_only=True)

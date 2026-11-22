@@ -35,7 +35,7 @@ def _rfm(d0, d1):
     total = one("SELECT count(*) n FROM warehouse.dim_customer WHERE is_current")["n"]
     active = sum(s["customers"] for s in seg)
     return {"as_of": d1, "segments": seg, "grid": grid, "customers_total": total, "customers_without_completed_txn_in_range": total - active,
-            "definition": __doc__.split("RFM (as of")[1].split("CLV is")[0].strip()}
+            "definition": "RFM (as of " + __doc__.split("RFM (as of")[1].split("CLV is")[0].strip()}
 
 
 @router.get("/trends")
