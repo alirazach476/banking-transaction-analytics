@@ -106,3 +106,5 @@ table.dt { font-size: 13px; }
 .menu .badge { flex: none; align-self: center; font-size: 10.5px; padding: 1px 8px 1px 7px; text-transform: capitalize; }
 .menu { min-width: 340px; }
 .menu a:focus-visible, .menu button.row:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+.dt.auto td.r, .dt.auto th.r { white-space: nowrap; }
+code { overflow-wrap: anywhere; word-break: break-word; }

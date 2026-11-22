@@ -183,3 +183,32 @@ def test_api_key_is_enforced_when_configured(client, monkeypatch):
     monkeypatch.setenv("API_KEY", "secret-for-test")
     assert client.get("/v1/meta").status_code == 401
     assert client.get("/v1/meta", headers={"X-API-Key": "secret-for-test"}).status_code == 200
+
+
+# ---- real-vs-synthetic benchmarks ----
+def test_benchmarks_dashboard_metrics_match_independent_sql(client):
+    d = client.get("/v1/benchmarks").json()
+    row = {r["key"]: r for r in d["scorecard"]}
+    n = dict(sql("""SELECT channel, count(*) FROM ui.payments_usd WHERE channel IN ('POS Chip','POS Contactless','E-commerce')
+                    AND NOT coalesce(synthetic_fraud_label, false) GROUP BY 1"""))
+    assert row["cnp_share"]["dashboard"] == pytest.approx(n["E-commerce"] / sum(n.values()))
+    pos = sql("""SELECT avg(amount_usd) FROM ui.payments_usd WHERE channel IN ('POS Chip','POS Contactless') AND NOT coalesce(synthetic_fraud_label, false)""")[0][0]
+    assert row["avg_ticket_usd.pos"]["dashboard"] == pytest.approx(float(pos))
+    y = dict(sql("""SELECT EXTRACT(year FROM payment_date)::int, count(*) FROM ui.payments_usd WHERE channel IN ('POS Chip','POS Contactless','E-commerce')
+                    AND NOT coalesce(synthetic_fraud_label, false) GROUP BY 1"""))
+    assert row["annual_volume_growth"]["dashboard"] == pytest.approx(y[2025] / y[2024] - 1)
+
+
+def test_benchmarks_real_values_come_from_the_sbp_table_and_statuses_are_honest(client):
+    d = client.get("/v1/benchmarks").json()
+    row = {r["key"]: r for r in d["scorecard"]}
+    assert row["cnp_share"]["real"] == pytest.approx(16.4 / (143.2 + 16.4), rel=1e-3)
+    assert row["avg_ticket_usd.pos"]["real"] == pytest.approx(5573 / d["real"]["usd_pkr"], rel=1e-3)
+    assert row["decline_rate"]["real"] is None and row["decline_rate"]["status_dashboard"] == "no real target"
+    # the dashboard's own synthetic data is NOT calibrated and the page must say so
+    assert row["avg_ticket_usd.pos"]["status_dashboard"] == "far off"
+    assert "not calibrated" in d["note"].lower()
+    assert d["not_calibrated"] and d["assumptions"]
+    if d["calibrated_available"]:
+        assert row["cnp_share"]["status_calibrated"] == "matches"
+        assert len(d["real_channels"]) >= 9

@@ -275,9 +275,10 @@ Status per phase and honest limits: `docs/IMPLEMENTATION_PROGRESS.md`. Everythin
 | API + React app | `src/api/main.py`, `web/react-app` | `uvicorn src.api.main:app` then open `/app/` (build UI: `cd web/react-app && npm install && npm run build`) |
 | API container | `Dockerfile.api`, compose profile `api` | `docker compose --profile api up --build` (mount trained `models/`) |
 | Airflow DAGs | `airflow/dags/payments_pipeline.py`, `external_data_daily.py` | enable in Airflow; task logic in `src/orchestration/tasks.py` |
-| Dashboards (all charts) | `docs/DASHBOARD.md` | ten-page React analytics UI (dark/light): overview, payments, fraud/anomalies, customers, merchants, branches + map, explorer, global intelligence (57 real-data charts from `public/analysis.json`), engineering/monitoring, settings; `/v1` API; rebuild data with `python scripts/export_dashboard_data.py` |
+| Dashboards (all charts) | `docs/DASHBOARD.md` | ten-page React analytics UI (dark/light): overview, payments, fraud/anomalies, customers, merchants, branches + map, explorer, global intelligence (63 real-data charts incl. backtested forecasts), real-vs-synthetic benchmarks, engineering/monitoring, settings; `/v1` API; rebuild data with `python scripts/export_dashboard_data.py` |
 | BI extracts (optional, for other tools) | `docs/BI_EXTRACTS_DICTIONARY.md` | `PYTHONPATH=. python scripts/export_payment_bi_extracts.py` |
 | Real-data analysis | `docs/ALL_IN_ONE_ANALYSIS.md` | `python scripts/allinone/run_all.py` |
+| Generator calibration, forecasts, real-vs-synthetic | `docs/CALIBRATION_AND_FORECASTS.md` | `PYTHONPATH=. python scripts/calibrate_payments.py` and `scripts/forecast_real_series.py` |
 
 Set `API_KEY` in `.env` for any non-local use of the API. Run tests with `pytest` (database-dependent tests skip if Postgres is down).
 

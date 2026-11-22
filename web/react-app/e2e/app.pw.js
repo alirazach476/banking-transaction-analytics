@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 // End-to-end checks of the NovaBank analytics UI against the real API. Needs the built app (npm run build) and Postgres with the marts + UI views.
 const ROUTES = [
   ["overview", "Executive overview"], ["payments", "Payment intelligence"], ["fraud", "Fraud & anomaly"], ["customers", "Customer analytics"], ["merchants", "Merchant analytics"],
-  ["branches", "Branch & regional"], ["explorer", "Transaction explorer"], ["global", "Global financial intelligence"], ["engineering", "Data engineering"], ["settings", "Settings"],
+  ["branches", "Branch & regional"], ["explorer", "Transaction explorer"], ["global", "Global financial intelligence"], ["benchmarks", "Real vs synthetic"], ["engineering", "Data engineering"], ["settings", "Settings"],
 ];
 const IGNORED = /WebGL|GPU stall|Failed to load resource.*(openstreetmap|404)|tile\./i;
 
@@ -117,4 +117,25 @@ test("global search returns results", async ({ page }) => {
   await page.goto("/app/overview", { waitUntil: "networkidle" });
   await page.getByLabel("Global search").fill("CUST-0000");
   await expect(page.locator("button.row").first()).toBeVisible();
+});
+
+test("benchmarks page: scorecard shows real, dashboard and calibrated values and is honest about what is not calibrated", async ({ page, request }) => {
+  const api = await (await request.get("/v1/benchmarks")).json();
+  await page.goto("/app/benchmarks", { waitUntil: "networkidle" });
+  const card = page.getByTestId("scorecard");
+  await expect(card.locator("tbody tr")).toHaveCount(api.scorecard.length);
+  const cnp = api.scorecard.find((r) => r.key === "cnp_share");
+  await expect(card.locator("tbody tr").first()).toContainText((cnp.real * 100).toFixed(1) + "%");
+  await expect(card.getByText("far off").first()).toBeVisible();
+  await expect(card.getByText("no real target").first()).toBeVisible();
+  await expect(page.getByTestId("not-calibrated").locator("li")).toHaveCount(api.not_calibrated.length);
+  expect(await page.locator("canvas").count()).toBeGreaterThanOrEqual(3);
+});
+
+test("global page has a forecasts tab with a backtest scorecard", async ({ page }) => {
+  await page.goto("/app/global", { waitUntil: "networkidle" });
+  await page.getByRole("tab", { name: /Forecasts/ }).click();
+  await expect(page.getByTestId("chart-fc_scores")).toBeVisible();
+  await expect(page.getByTestId("chart-fc_remittances")).toBeVisible();
+  await expect(page.getByText("Beats naive?")).toBeVisible();
 });

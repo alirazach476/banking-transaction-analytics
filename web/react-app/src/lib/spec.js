@@ -34,7 +34,7 @@ export function toOption(c, t) {
     yAxis,
     series: c.series.map((s, i) => ({
       name: s.name, type: isBar ? "bar" : "line", step: c.type === "step" ? "end" : undefined, stack: c.type === "stacked" ? "a" : undefined,
-      connectNulls: true, showSymbol: c.data.length <= 14, symbolSize: 6, smooth: false, lineStyle: { width: 2 }, barMaxWidth: 30,
+      connectNulls: true, showSymbol: c.data.length <= 14, symbolSize: 6, smooth: false, lineStyle: { width: s.faint ? 1.2 : 2.2, type: s.dash ? "dashed" : "solid", opacity: s.faint ? 0.55 : 1, color: t.colors[s.colorIdx ?? (s.dash ? 1 : i) % 8] }, itemStyle: { color: t.colors[s.colorIdx ?? (s.dash ? 1 : i) % 8] }, barMaxWidth: 30,
       data: c.data.map((r) => (isBar && !c.type.startsWith("stack") && r[s.key] < 0 ? { value: r[s.key], itemStyle: { color: t.colors[3] } } : r[s.key])),
     })),
   };

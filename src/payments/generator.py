@@ -122,12 +122,15 @@ def build_reference(cfg: PaymentGenConfig, existing_dir: Path | None = None) -> 
 # --------------------------------------------------------------------------- #
 # Temporal sampling
 # --------------------------------------------------------------------------- #
-def _calendar_weights(start: str, end: str) -> tuple[np.ndarray, np.ndarray]:
+def _calendar_weights(start: str, end: str, annual_growth: float | None = None) -> tuple[np.ndarray, np.ndarray]:
     days = pd.date_range(start, end, freq="D")
     dow = np.where(days.dayofweek == 5, 0.88, np.where(days.dayofweek == 6, 0.78, 1.0))
     month = days.month.map({11: 1.25, 12: 1.40, 1: 0.90, 2: 0.92}).fillna(1.0).to_numpy()
     payday = np.where(np.isin(days.day, [1, 15, 30]), 1.15, 1.0)
-    trend = 1.0 + 0.15 * (np.arange(len(days)) / max(len(days) - 1, 1))
+    if annual_growth is None:
+        trend = 1.0 + 0.15 * (np.arange(len(days)) / max(len(days) - 1, 1))
+    else:  # calibrated: compound growth per year of daily volume
+        trend = np.exp(np.log1p(annual_growth) * np.arange(len(days)) / 365.25)
     w = dow * month * payday * trend
     return days.to_numpy(dtype="datetime64[D]"), w / w.sum()
 
@@ -158,7 +161,12 @@ class PaymentGenerator:
     def __init__(self, cfg: PaymentGenConfig, ref: Reference | None = None, existing_dir: Path | None = None):
         self.cfg = cfg
         self.ref = ref or build_reference(cfg, existing_dir)
-        self.days, self.day_p = _calendar_weights(cfg.start_date, cfg.end_date)
+        cal = cfg.calibration
+        self.days, self.day_p = _calendar_weights(cfg.start_date, cfg.end_date, cal.annual_volume_growth if cal else None)
+        w = (cal.channel_weights if cal and cal.channel_weights else None)
+        self._channel_p = np.array([w.get(c, 0.0) for c in CHANNELS], dtype=float) if w else np.array(CHANNEL_WEIGHTS, dtype=float)
+        self._channel_p = self._channel_p / self._channel_p.sum()
+        self._amount_scale = dict(cal.amount_scale) if cal and cal.amount_scale else {}
         # FX window extends past end_date because clearing/settlement/chargebacks trail auth
         fx_end = (pd.Timestamp(cfg.end_date) + pd.Timedelta(days=200)).strftime("%Y-%m-%d")
         self.fx = generate_fx_rates(cfg.seed, cfg.start_date, fx_end)
@@ -229,6 +237,8 @@ class PaymentGenerator:
             amount_usd = np.clip(rng.lognormal(mu, sg) * mult, 1.0, 25_000.0)
         if amount_boost is not None:
             amount_usd = amount_usd * amount_boost
+        if self._amount_scale and recurring_amount is None:  # calibrated average ticket per channel
+            amount_usd = np.maximum(amount_usd * np.array([self._amount_scale.get(c, 1.0) for c in channel]), 0.5)
         mccy = m["merchant_currency"].to_numpy()
         # convert USD-equivalent amount to merchant currency at the auth-date rate
         rate = self.fx_rate(mccy, auth_ts)
@@ -265,7 +275,7 @@ class PaymentGenerator:
         card_idx = rng.choice(len(self.ref.cards), size=n, p=self._card_p)
         merch_idx = self._pick_merchants(rng, card_idx)
         ts = _timestamps(rng, n, self.days, self.day_p)
-        channel = rng.choice(CHANNELS, size=n, p=np.array(CHANNEL_WEIGHTS) / sum(CHANNEL_WEIGHTS))
+        channel = rng.choice(CHANNELS, size=n, p=self._channel_p)
         # a small share of high-value foreign card-not-present payments (synthetic fraud-like)
         fv = rng.random(n) < 0.002
         boost = np.where(fv, rng.uniform(6, 15, n), 1.0)

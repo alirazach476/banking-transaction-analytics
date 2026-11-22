@@ -1,0 +1,62 @@
+{
+  "n_payments_requested": 150000,
+  "seed": 42,
+  "real": {
+    "cnp_share": 0.10275689223057644,
+    "annual_volume_growth": 0.42405764411027563,
+    "avg_ticket_usd": {
+      "pos": 20.10313916812741,
+      "e_commerce": 17.617751964316216,
+      "wallet": 13.10807670905243
+    }
+  },
+  "baseline_generated": {
+    "payments": 140712,
+    "decline_rate": 0.0468048211950651,
+    "cnp_share": 0.3380508257037734,
+    "annual_volume_growth": 0.049075190477412045,
+    "avg_ticket_usd": {
+      "pos": 162.56749209185634,
+      "e_commerce": 165.21117309199326,
+      "wallet": 161.31652860020762
+    },
+    "channel_mix": {
+      "POS Contactless": 0.30099067599067597,
+      "E-commerce": 0.28077207345500027,
+      "POS Chip": 0.2487989652623799,
+      "Mobile Wallet": 0.16943828529194382
+    }
+  },
+  "calibrated_generated": {
+    "payments": 140712,
+    "decline_rate": 0.030054295298197736,
+    "cnp_share": 0.10409001454607683,
+    "annual_volume_growth": 0.4351352077123445,
+    "avg_ticket_usd": {
+      "pos": 20.173971784099418,
+      "e_commerce": 17.740927997908756,
+      "wallet": 13.109080398741296
+    },
+    "channel_mix": {
+      "POS Contactless": 0.40671015975894026,
+      "POS Chip": 0.33739837398373984,
+      "Mobile Wallet": 0.16943828529194382,
+      "E-commerce": 0.08645318096537609
+    }
+  },
+  "parameters": {
+    "channel_weights": {
+      "POS Chip": 0.338505354294828,
+      "POS Contactless": 0.40620642515379357,
+      "E-commerce": 0.08528822055137845,
+      "Mobile Wallet": 0.17
+    },
+    "annual_volume_growth": 0.42405764411027563,
+    "amount_scale": {
+      "POS Chip": 0.12514839080262355,
+      "POS Contactless": 0.12245663730725083,
+      "E-commerce": 0.10663777536708283,
+      "Mobile Wallet": 0.08125687319703183
+    }
+  }
+}

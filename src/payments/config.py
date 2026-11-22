@@ -44,6 +44,29 @@ class SettlementIssueRates:
 
 
 @dataclass
+class Calibration:
+    """Optional calibration of the generator to REAL published aggregates (see config/pakistan_calibration.json).
+
+    Every field is optional; ``None`` keeps the generator's original behaviour, so a config without calibration
+    reproduces the baseline dataset exactly. The data stays synthetic: only a few aggregate properties are matched.
+    """
+
+    channel_weights: dict | None = None      # replaces CHANNEL_WEIGHTS (channel name -> weight)
+    annual_volume_growth: float | None = None  # compound growth per year of payment volume (0.42 = +42%/yr), replaces the linear trend
+    amount_scale: dict | None = None         # channel -> multiplier on the USD-equivalent amount
+    source: str = ""
+
+    @classmethod
+    def from_json(cls, path) -> "Calibration":
+        import json
+        with open(path, encoding="utf-8") as fh:
+            d = json.load(fh)
+        p = d.get("parameters", d)
+        return cls(channel_weights=p.get("channel_weights"), annual_volume_growth=p.get("annual_volume_growth"),
+                   amount_scale=p.get("amount_scale"), source=str(path))
+
+
+@dataclass
 class PaymentGenConfig:
     seed: int = 42
     num_payments: int = 100_000          # random-stream payment attempts
@@ -63,6 +86,7 @@ class PaymentGenConfig:
     settlement_sla_days: int = 3
     defects: DefectRates = field(default_factory=DefectRates)
     issues: SettlementIssueRates = field(default_factory=SettlementIssueRates)
+    calibration: Calibration | None = None
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -80,4 +104,5 @@ class PaymentGenConfig:
             start_date=g("DATA_START_DATE", "2023-01-01"),
             end_date=g("DATA_END_DATE", "2025-12-31"),
             chunk_size=int(g("GEN_CHUNK_SIZE", "200000")),
+            calibration=Calibration.from_json(g("PAYMENT_CALIBRATION")) if g("PAYMENT_CALIBRATION") else None,
         )

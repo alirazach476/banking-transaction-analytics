@@ -1,7 +1,7 @@
 import { LogoMark } from "../ui/Logo.jsx";
 import React, { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { Link, NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { Activity, Bell, ChevronsLeft, ChevronsRight, CreditCard, Globe2, KeyRound, Landmark, LayoutDashboard, Menu, Moon, Search, Settings as Cog, ShieldAlert, Store, Sun, Table2, Users, Zap } from "lucide-react";
+import { Activity, Bell, ChevronsLeft, ChevronsRight, CreditCard, Globe2, KeyRound, Landmark, LayoutDashboard, Menu, Moon, Search, Settings as Cog, ShieldAlert, Scale, Store, Sun, Table2, Users, Zap } from "lucide-react";
 import { useApi, useTheme } from "../lib/context.jsx";
 import { apiKey } from "../lib/api.js";
 import { RangeControl, Skeleton } from "../ui/kit.jsx";
@@ -15,6 +15,7 @@ const Merchants = lazy(() => import("../pages/Merchants.jsx"));
 const Branches = lazy(() => import("../pages/Branches.jsx"));
 const Explorer = lazy(() => import("../pages/Explorer.jsx"));
 const GlobalIntel = lazy(() => import("../pages/GlobalIntel.jsx"));
+const Benchmarks = lazy(() => import("../pages/Benchmarks.jsx"));
 const Engineering = lazy(() => import("../pages/Engineering.jsx"));
 const SettingsPage = lazy(() => import("../pages/Settings.jsx"));
 
@@ -29,6 +30,7 @@ export const NAV = [
   { group: "Data" },
   { to: "/explorer", label: "Transaction Explorer", icon: Table2, range: true },
   { to: "/global", label: "Global Financial Intelligence", icon: Globe2, range: false },
+  { to: "/benchmarks", label: "Real vs Synthetic", icon: Scale, range: false },
   { to: "/engineering", label: "Data Engineering & Monitoring", icon: Activity, range: false },
   { group: "System" },
   { to: "/settings", label: "Settings", icon: Cog, range: false },
@@ -177,6 +179,7 @@ export default function Shell() {
               <Route path="/branches/:id" element={<Branches />} />
               <Route path="/explorer" element={<Explorer />} />
               <Route path="/global" element={<GlobalIntel />} />
+              <Route path="/benchmarks" element={<Benchmarks />} />
               <Route path="/engineering" element={<Engineering />} />
               <Route path="/settings" element={<SettingsPage />} />
               <Route path="*" element={<div className="state"><h2>Page not found</h2><Link className="link" to="/overview">Go to the overview</Link></div>} />

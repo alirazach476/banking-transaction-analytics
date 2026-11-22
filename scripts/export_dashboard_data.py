@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import sys
 import re
 from pathlib import Path
 
@@ -213,6 +214,13 @@ ch = [
     chart("fred_fed", "US Federal Reserve target rate and effective funds rate", "line", [{"x": str(r.d)[:10], "Target (upper bound)": r.u, "Effective funds rate": r.e} for r in fed.itertuples()], [S("Target (upper bound)", "Target (upper bound)"), S("Effective funds rate", "Effective funds rate")], unit="%", source="FRED", note="The FRED rates files in the warehouse cover one year only."),
 ]
 sections.append({"id": "ecb_fred", "title": "ECB payments and FRED", "intro": "Euro-area payment behaviour and fraud (ECB) and US inflation and policy rates (FRED): real aggregate statistics, kept separate from the synthetic transaction data.", "kpis": [], "charts": ch})
+
+# forecasts of the real series (scripts/forecast_real_series.py); kept when present so a re-export does not drop them
+_fc = ROOT / "docs" / "_parts" / "forecasts.json"
+if _fc.exists():
+    sys.path.insert(0, str(ROOT))
+    from scripts.forecast_real_series import chart_specs as _fc_specs
+    sections.append(_fc_specs(json.loads(_fc.read_text(encoding="utf-8"))))
 
 out = {"generated": dt.date.today().isoformat(), "title": "Pakistan banking and payments: real-data analysis", "sections": sections}
 dest = ROOT / "web" / "react-app" / "public"
