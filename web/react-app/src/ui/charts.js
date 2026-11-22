@@ -66,14 +66,14 @@ export function hbar(rows, nameKey, valueKey, { fmt = compact, colorFn, name = "
 }
 
 // Semicircle gauge for a 0..1 ratio
-export function gauge(value, { name = "", fmt = (v) => (v * 100).toFixed(1) + "%", min = 0, max = 1 } = {}) {
+export function gauge(value, { name = "", fmt = (v) => (v * 100).toFixed(1) + "%", min = 0, max = 1, valueColor = "good" } = {}) {
   return (t) => ({
     series: [{ type: "gauge", startAngle: 205, endAngle: -25, min, max, radius: "96%", center: ["50%", "58%"], splitNumber: 5,
       progress: { show: true, width: 16, roundCap: true, itemStyle: { color: { type: "linear", x: 0, y: 0, x2: 1, y2: 0, colorStops: [{ offset: 0, color: t.teal }, { offset: 1, color: t.blue }] } } },
       axisLine: { roundCap: true, lineStyle: { width: 16, color: [[1, hex(t.muted, "30")]] } },
       axisTick: { show: false }, splitLine: { show: false }, axisLabel: { show: false }, pointer: { show: false }, anchor: { show: false },
-      title: { offsetCenter: [0, "38%"], color: t.muted, fontSize: 12 },
-      detail: { valueAnimation: true, offsetCenter: [0, "-4%"], fontSize: 30, fontWeight: 800, color: t.text, formatter: (v) => fmt(v) },
+      title: { offsetCenter: [0, "40%"], color: t.text, fontSize: 14, fontWeight: 600 },
+      detail: { valueAnimation: true, offsetCenter: [0, "-4%"], fontSize: 32, fontWeight: 800, color: t[valueColor] || valueColor, formatter: (v) => fmt(v) },
       data: [{ value, name }] }],
   });
 }

@@ -72,7 +72,7 @@ export function KpiCard({ k, loading, onClick, spark }) {
         <span className="ico" title={(k.domain === "core" ? "Synthetic · core banking" : "Synthetic · card payments")}><KIcon size={17} strokeWidth={2.2} /></span>
         <span className="lbl">{k.label}<small className={"dom " + (k.domain === "core" ? "core" : "pay")}>{k.domain === "core" ? "core banking · synthetic" : "card payments · synthetic"}</small></span>
       </div>
-      <div className="value num" data-testid={"kpi-value-" + k.key}>{formatKpi(k)}</div>
+      <div className="value num" data-testid={"kpi-value-" + k.key} style={k.key === "approval_rate" ? { color: "var(--good)" } : undefined}>{formatKpi(k)}</div>
       {spark && <Spark data={spark} color={`var(${c1})`} />}
       <div className="foot">
         <span className={"delta " + cls} title="Change vs the immediately preceding period of equal length"><Icon size={13} />{deltaText(d, k.delta_unit)}</span>
