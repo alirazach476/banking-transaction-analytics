@@ -37,6 +37,15 @@ async def lifespan(_app):
             load_model(name)
         except Exception:  # models optional: scoring endpoints return 503 until trained
             pass
+    try:  # analytics-UI objects (USD views, investigation table); created once if missing
+        from scripts.create_ui_objects import run as _create_ui
+        from sqlalchemy import text as _t
+        with get_engine().connect() as _c:
+            have = _c.execute(_t("SELECT to_regclass('ui.payments_usd') IS NOT NULL")).scalar()
+        if not have:
+            _create_ui()
+    except Exception:  # database unavailable at startup: /v1 endpoints answer 503 until it is
+        pass
     yield
 
 
@@ -230,7 +239,19 @@ def ui():
     return FileResponse(ROOT / "web" / "payments_dashboard.html")
 
 
+from src.api.dash import router as dash_router  # noqa: E402  analytics-UI endpoints under /v1
+
+app.include_router(dash_router)
+
 # React app (web/react-app, built with `npm run build`) is served at /app/ when its dist/ folder exists.
 _dist = ROOT / "web" / "react-app" / "dist"
 if _dist.exists():
-    app.mount("/app", StaticFiles(directory=_dist, html=True), name="react-app")
+    from fastapi.responses import HTMLResponse as _HTML
+
+    @app.get("/app/{path:path}", include_in_schema=False)
+    def spa(path: str):
+        """Serve built assets; any other /app/... route falls back to index.html so client-side routes work on refresh."""
+        f = (_dist / path).resolve()
+        if path and f.is_file() and _dist.resolve() in f.parents:
+            return FileResponse(f)
+        return _HTML((_dist / "index.html").read_text(encoding="utf-8"))

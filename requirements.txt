@@ -52,3 +52,4 @@ joblib
 xgboost
 shap
 statsmodels
+geonamescache>=2.0.0
