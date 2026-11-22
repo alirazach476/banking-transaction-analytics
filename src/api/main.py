@@ -253,5 +253,8 @@ if _dist.exists():
         """Serve built assets; any other /app/... route falls back to index.html so client-side routes work on refresh."""
         f = (_dist / path).resolve()
         if path and f.is_file() and _dist.resolve() in f.parents:
-            return FileResponse(f)
-        return _HTML((_dist / "index.html").read_text(encoding="utf-8"))
+            # hashed bundles can be cached for a long time; everything else (analysis.json, favicon) must revalidate
+            cache = "public, max-age=31536000, immutable" if path.startswith("assets/") else "no-cache"
+            return FileResponse(f, headers={"Cache-Control": cache})
+        # index.html names the current bundle hashes, so a stale copy would keep showing an old build
+        return _HTML((_dist / "index.html").read_text(encoding="utf-8"), headers={"Cache-Control": "no-cache"})
